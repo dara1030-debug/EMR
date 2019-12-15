@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::middleware('auth')->group(function () {
     Route::resource('users', 'UserController')->middleware('admin');
     Route::get('dashboard', 'HomeController@index')->name('home');
