@@ -103,5 +103,49 @@ class DiseasesTableSeeder extends Seeder
         Disease::create([
             'name' => 'Pneumonia',
         ]);
+
+        Disease::create([
+            'name' => 'Prostate Problems',
+        ]);
+        
+        Disease::create([
+            'name' => 'Seizure',
+        ]);
+
+        Disease::create([
+            'name' => 'Sinusitis/Aliergic rhinitis',
+        ]);
+
+        Disease::create([
+            'name' => 'Skin Disorders',
+        ]);
+
+        Disease::create([
+            'name' => 'STI/HIV',
+        ]);
+
+        Disease::create([
+            'name' => 'Stroke',
+        ]);
+
+        Disease::create([
+            'name' => 'Surgery/Injury',
+        ]);
+
+        Disease::create([
+            'name' => 'Thyroid Problems',
+        ]);
+
+        Disease::create([
+            'name' => 'Tonsillitis',
+        ]);
+
+        Disease::create([
+            'name' => 'Tuberculosis',
+        ]);
+
+        Disease::create([
+            'name' => 'UTI',
+        ]);
     }
 }
