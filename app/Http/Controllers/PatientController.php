@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class PatientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $patients = Patient::all();
 
-        return view('users.index', compact('users'));
+        return view('patients.index', compact('patients'));
     }
 
     /**
@@ -26,9 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-
-        return view('users.create', compact('roles'));
+        return view('patients.create');
     }
 
     /**
@@ -50,9 +47,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
+        $patient = Patient::findOrFail($id);
 
-        return view('users.show', compact('user'));
+        return view('patients.show', compact('patient'));
     }
 
     /**
@@ -63,9 +60,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-
-        return view('users.edit', compact('user'));
+        $patient = Patient::findOrFail($id);
+        
+        return view('patients.edit', compact('patient'));
     }
 
     /**
