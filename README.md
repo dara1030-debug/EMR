@@ -12,30 +12,35 @@
 
 <b><u>Step 1</u></b>:
 <p>Clone the project into your machine, by executing this command but make sure you have Git installed.</p>
+
 ```
 git clone https://github.com/carlomigueldy/EMR
 ```
 
 <b><u>Step 2</u></b>
 <p>After cloning the project, go to the project directory by executing this command.</p>
+
 ```
 cd EMR
 ```
 
 <b><u>Step 3</u></b>
 <p>Once inside the project directory, you need to install the project's dependencies. Execute this command,</p>
+
 ```
 composer install
 ```
 
 <b><u>Step 4</u></b>
 <p>After dependencies are installed, setup an .env file by simple copying the .env.example file. Execute this command.</p>
+
 ```
 cp .env.example .env
 ```
 
 <b><u>Step 5</u></b>
 <p>After copying the file, set up the following configurations for your Database setup.</p>
+
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -47,12 +52,14 @@ DB_PASSWORD=<your_database_password>
 
 <b><u>Step 6</u></b>
 <p>Save the file after setting it up. Then run this command to generate a key.</p>
+
 ```
 php artisan key:generate
 ```
 
 <b><u>Step 7</u></b>
 <p>After all the neccessary configurations, you can now run a migration. Simply execute this command in the terminal.</p>
+
 ```
 php artisan mirate:fresh --seed
 ```
