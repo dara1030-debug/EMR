@@ -56,14 +56,14 @@ php artisan mirate:fresh --seed
   <dt>I have implemented several features for the system. How do I push this to the main repository?</dt>
   <dd>
       <p>Stage the changes and commit it along with a relevant commit message.</p>
-      Stage the changes by executing the command below.
-      ```
+      <div>Stage the changes by executing the command below.</div>
+      <code>
       git add .      
-      ```
-      Commit it with a relevant commit message
-      ```
+      </code>
+      <div>Commit it with a relevant commit message</div>
+      <code>
       git commit -m 'Write something relevant on what feature you have implemented (e.g. Added login page)'
-      ```
+      </code>
   </dd>
   <dt>Milk</dt>
   <dd>- white cold drink</dd>
