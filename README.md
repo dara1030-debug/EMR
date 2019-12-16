@@ -65,20 +65,17 @@ php artisan mirate:fresh --seed
 ```
 
 ## Collaborative Development utilizing Git
-<p>We are constantly writing code and make changes and so on. And this repository is our single code base so this is somewhat our single source of truth. We will be using Git a lot during development, so here are my tips and best practicies for using Git for our collaborative development for the EMR System.</p>
-<dl>/
+
+<dl>
+  <p>We are constantly writing code and make changes and so on. And this repository is our single code base so this is somewhat our single source of truth. We will be using Git a lot during development, so here are my tips and best practicies for using Git for our collaborative development for the EMR System.</p>
   <dt>I have implemented several features for the system. How do I push this to the main repository?</dt>
   <dd>
       <p>Stage the changes and commit it along with a relevant commit message.</p>
       <div>Stage the changes by executing the command below.</div>
-      <code>
-      git add .      
-      </code>
-      <div>Commit it with a relevant commit message</div>
-      <code>
-      git commit -m 'Write something relevant on what feature you have implemented (e.g. Added login page)'
-      </code>
+      <code>git add .</code>
+      <div>Commit it with a relevant commit message. (e.g. implemented User create form)</div>
+      <code>git commit -m 'I have implemented something'</code>
+      <div>After committing changes, simply push those changes into the repository</div>
+      <code>git push</code>
   </dd>
-  <dt>Milk</dt>
-  <dd>- white cold drink</dd>
 </dl>
