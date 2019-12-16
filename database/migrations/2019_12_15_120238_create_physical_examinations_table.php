@@ -15,6 +15,8 @@ class CreatePhysicalExaminationsTable extends Migration
     {
         Schema::create('physical_examinations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('remarks');
             $table->timestamps();
         });
     }

@@ -15,7 +15,19 @@ class CreatePerformServicesTable extends Migration
     {
         Schema::create('perform_services', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('health_examination_record_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->unsignedBigInteger('user_id');  
+            $table->string('name');
+            $table->date('service_date');
+            $table->string('remarks');
             $table->timestamps();
+        });
+
+        Schema::table('perform_services', function (Blueprint $table) {
+            $table->foreign('health_examination_record_id')->references('id')->on('health_examination_records');
+            $table->foreign('patient_id')->references('id')->on('patients');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

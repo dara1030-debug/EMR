@@ -15,7 +15,23 @@ class CreateHealthExaminationRecordsTable extends Migration
     {
         Schema::create('health_examination_records', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('physical_examination_id');
+            $table->text('past_medical_history');
+            $table->date('last_menstrual_period')->nullable();
+            $table->string('menstrual_pattern');
+            $table->text('family_history');
+            $table->text('social_history');
+            $table->string('vital_signs');
+            $table->string('added_by');
+            $table->string('updated_by');
+            $table->string('assessment');
+            $table->string('reccommendation');
+            $table->date('examination_date');
             $table->timestamps();
+        });
+
+        Schema::table('health_examination_records', function (Blueprint $table) {
+            $table->foreign('physical_examination_id')->references('id')->on('physical_examinations');
         });
     }
 

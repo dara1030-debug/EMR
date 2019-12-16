@@ -15,7 +15,13 @@ class CreatePrescriptionsTable extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('perform_service_id');
+            $table->string('prescription');
             $table->timestamps();
+        });
+
+        Schema::table('prescriptions', function (Blueprint $table) {
+            $table->foreign('perform_service_id')->references('id')->on('perform_services');
         });
     }
 
