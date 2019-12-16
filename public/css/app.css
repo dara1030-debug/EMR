@@ -259,6 +259,10 @@ textarea {
   line-height: inherit;
 }
 
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
 button,
 input {
   overflow: visible;

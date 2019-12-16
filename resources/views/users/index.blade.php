@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Users</h1>
+<div class="container" style="margin-left:10%">    
+<h1>Users</h1>
 <table class="table table-bordereds">
     <thead class="thead-light">
       <tr>
@@ -32,4 +33,5 @@
       </tr>
     </tbody>
   </table>
+</div>
 @stop
