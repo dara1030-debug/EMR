@@ -1,3 +1,13 @@
+## Installation Pre-requisites
+<p>You need to have these installed in your machine to be able to install & run Laravel.</p>
+<ol>
+    <li>XAMPP (with PHP 7.3.8 or newer)</li>
+    <li>Composer</li>
+    <li>Git</li>
+    <li>Visual Studio Code (This is optional but is preffered)</li>
+    <li>NPM (Node Package Manager)</li>
+</ol>
+
 ## Project Installation
 
 Clone the project into your machine, by executing this command but make sure you have Git installed.
