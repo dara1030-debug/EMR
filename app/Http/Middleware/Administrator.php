@@ -19,6 +19,8 @@ class Administrator
         $auth = Auth::user();
         if ($auth->role_id == 1) {
             return $next($request);
+        } else {
+            return redirect()->route('errors.admin');
         }
     }
 }

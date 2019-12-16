@@ -11,14 +11,20 @@
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+Route::get('error', function () {
+    return view('errors.admin');
+})->name('errors.admin');
 
 Route::middleware('auth')->group(function () {
+    Route::get('dashboard', function () {
+        return view('dashboard');
+    })->name('home');
+    
     Route::resource('users', 'UserController')->middleware('admin');
-    Route::get('dashboard', 'HomeController@index')->name('home');
     Route::resource('patients', 'PatientController');
 });
