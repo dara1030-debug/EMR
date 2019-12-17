@@ -66,6 +66,7 @@ php artisan migrate:fresh --seed
 
 <b><u>Step 8</u></b>
 <p>Then host a local web server by executing this command.</p>
+
 ```
 php artisan serve --port=50
 ```
