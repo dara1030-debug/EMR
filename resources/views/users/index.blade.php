@@ -21,8 +21,8 @@
         <td>{{ $user->email }}</td>
         <td>
           <a class="btn btn-primary" href="#">View</a>
-          <a class="btn btn-primary" href="#">View</a>
-          <a class="btn btn-primary" href="#">View</a>
+          <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
+          <a class="btn btn-primary" href="#">Delete</a>
         </td>
       </tr>
       @endforeach
