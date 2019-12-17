@@ -1,7 +1,5 @@
-<body>
-
+<?php $auth = Auth::user(); ?>
     <div id="wrapper" class="toggled">
-
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -17,10 +15,10 @@
                       </div>
                       <div class="profile-usertitle">
                         <div class="user-name">
-                            <h3>Admin admin</h3>
+                            <h3>{{ $auth->first_name }} {{ $auth->last_name }}</h3>
                         </div>
                         <div class="user-role">
-                            Developer
+                            {{ $auth->role->name }}
                         </div>
                     </div>
                 </li>
@@ -47,14 +45,3 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
-  
-</body>

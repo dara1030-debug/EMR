@@ -15,28 +15,40 @@ class UsersTableSeeder extends Seeder
         User::create([
             'role_id' => 1,
             'first_name' => 'Anne',
+            'middle_name' => 'Medieval',
             'last_name' => 'Abdulazis',
             'email' => 'admin@admin.com',
             'password' => bcrypt('password'),
+            'address' => 'Earth',
             'gender' => 'Female',
+            'contact_number' => '+639167784412',
+            'license_number' => '123456',
         ]);
 
         User::create([
             'role_id' => 2,
             'first_name' => 'Doky Carl',
+            'middle_name' => 'Medieval',
             'last_name' => 'Schawrznerger',
             'email' => 'doctor@doctor.com',
             'password' => bcrypt('password'),
+            'address' => 'Earth',
             'gender' => 'Male',
+            'contact_number' => '+639167784412',
+            'license_number' => '123456',
         ]);
 
         User::create([
             'role_id' => 3,
             'first_name' => 'Nars',
+            'middle_name' => 'Medieval',
             'last_name' => 'Musky',
             'email' => 'nurse@nurse.com',
             'password' => bcrypt('password'),
+            'address' => 'Earth',
             'gender' => 'Female',
+            'contact_number' => '+639167784412',
+            'license_number' => '123456',
         ]);
     }
 }
