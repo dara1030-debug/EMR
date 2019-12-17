@@ -23,7 +23,7 @@ Route::get('error', function () {
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
-    })->name('home');
+    })->name('dashboard');
     
     Route::resource('users', 'UserController')->middleware('admin');
     Route::resource('patients', 'PatientController');

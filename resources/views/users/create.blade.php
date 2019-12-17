@@ -12,12 +12,13 @@
             </ul>
         </div>
     @endif
-    
+
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
+    
     <div class="row">
         <form action="{{ route('users.store') }}" method="post">
             @csrf

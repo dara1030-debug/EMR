@@ -24,7 +24,7 @@
                 </li>
                 <hr class="style2">
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 <li>
                     <a href="#">Profile</a>
