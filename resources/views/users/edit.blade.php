@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- HTML Code here --}}
+<div class="container" style="margin-left:10%"> 
+
+
 @stop

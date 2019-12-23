@@ -8,8 +8,8 @@
       <tr>
         <th scope="col">Role</th>
         <th scope="col">Username</th>
-        <th scope="col">Real Name</th>
-        <th scope="col">EmailAddress</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Email Address</th>
       </tr>
     </thead>
     <tbody>

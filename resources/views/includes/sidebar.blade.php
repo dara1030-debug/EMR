@@ -17,7 +17,7 @@
                       </div>
                       <div class="profile-usertitle">
                         <div class="user-name">
-                            <h3>Admin admin</h3>
+                            <h3>Admin</h3>
                         </div>
                         <div class="user-role">
                             Developer
