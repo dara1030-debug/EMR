@@ -8,15 +8,9 @@
     <thead class="text-center thead-light">
       <tr>
         <th scope="col">Role</th>
-<<<<<<< HEAD
         <th scope="col">Username</th>
         <th scope="col">Full Name</th>
         <th scope="col">Email Address</th>
-=======
-        <th scope="col">Name</th>
-        <th scope="col">Email Address</th>
-        <th scope="col">Actions</th>
->>>>>>> 341602d4a9fb1ff9ff1cb00e63b8280c493f73ea
       </tr>
     </thead>
     <tbody class="text-center">

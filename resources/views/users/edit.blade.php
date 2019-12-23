@@ -1,11 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-<div class="container" style="margin-left:10%"> 
-
-
-=======
 <div class="container register"  style="margin-left: 25%">
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -89,5 +84,4 @@
         </form>
     </div>
 </div>
->>>>>>> 341602d4a9fb1ff9ff1cb00e63b8280c493f73ea
 @stop
