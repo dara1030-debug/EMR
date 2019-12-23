@@ -40,7 +40,33 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name' => 'required|string',
+            'middle_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'gender' => 'required|string',
+            'role_id' => 'required|integer',
+            'contact_number' => 'required',
+            'license_number' => 'required',
+            'address' => 'required',
+        ]);
+
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'middle_name' => $request->middle_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'gender' => $request->gender,
+            'role_id' => $request->role_id,
+            'contact_number' => $request->contact_number,
+            'license_number' => $request->license_number,
+            'address' => $request->address,
+        ]);
+
+        return redirect()->back()->with('success', 'A user has been successfully added.');
     }
 
     /**
@@ -78,7 +104,33 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'first_name' => 'required|string',
+            'middle_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'gender' => 'required|string',
+            'role_id' => 'required|integer',
+            'contact_number' => 'required',
+            'license_number' => 'required',
+            'address' => 'required',
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->first_name = $request->first_name;
+        $user->middle_name = $request->middle_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->gender = $request->gender;
+        $user->role_id = $request->role_id;
+        $user->contact_number = $request->contact_number;
+        $user->license_number = $request->license_number;
+        $user->address = $request->address;
+        $user->save();
+
+        return redirect()->back()->with('success', 'A user has been updated.');
     }
 
     /**

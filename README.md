@@ -58,10 +58,17 @@ php artisan key:generate
 ```
 
 <b><u>Step 7</u></b>
-<p>After all the neccessary configurations, you can now run a migration. Simply execute this command in the terminal.</p>
+<p>After all the neccessary configurations, you can now run a migration. Make sure you have your Apache & MySQL server turned on, then simply execute this command in the terminal.</p>
 
 ```
-php artisan mirate:fresh --seed
+php artisan migrate:fresh --seed
+```
+
+<b><u>Step 8</u></b>
+<p>Then host a local web server by executing this command.</p>
+
+```
+php artisan serve --port=50
 ```
 
 ## Collaborative Development utilizing Git
