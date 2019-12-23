@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< Updated upstream
 <div class="container register"  style="margin-left: 25%">
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -84,4 +85,9 @@
         </form>
     </div>
 </div>
+=======
+<div class="container" style="margin-left:10%"> 
+
+
+>>>>>>> Stashed changes
 @stop
