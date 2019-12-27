@@ -115,8 +115,6 @@
                                                 <option>OPD/Dependent</option>
                                             </select>
                                         </div>
-                                        <button type ="button" class = "btn btn-info">Register</button>
-                                    </div>
                                 </div>
                             </div>
                            
@@ -127,43 +125,48 @@
                                 <div class="column">
                                     <div class="card">
                             <form action="">
-                            <input type="checkbox" name="history" value=""> Allergies<br>
-                            <input type="checkbox" name="history" value=""> Amoebiasis<br>
-                            <input type="checkbox" name="history" value=""> Anemia<br>
-                            <input type="checkbox" name="history" value=""> Arthritis<br>
-                            <input type="checkbox" name="history" value=""> Back and Joints Pains<br>
-                            <input type="checkbox" name="history" value=""> Bone Fracture<br>
-                            <input type="checkbox" name="history" value=""> Breast mass/lump<br>
-                            <input type="checkbox" name="history" value=""> Chest Pains<br>
-                            <input type="checkbox" name="history" value=""> Chicken Pox<br>
-                            <input type="checkbox" name="history" value=""> Diabetes Mellitus<br>
-                            <input type="checkbox" name="history" value=""> Epilepsy<br>
-                            <input type="checkbox" name="history" value=""> Eye or Ear Problem<br>
-                            <input type="checkbox" name="history" value=""> Gallbladder Stone<br>
-                            <input type="checkbox" name="history" value=""> Goiter<br>
-                            <input type="checkbox" name="history" value=""> Gout<br>
-                            <input type="checkbox" name="history" value=""> Hemorrhoids<br>
-                            <input type="checkbox" name="history" value=""> Hepatitis: A/B/C<br>
-                            <input type="checkbox" name="history" value=""> Hyperacidity/Ulcer<br>
-                            <input type="checkbox" name="history" value=""> Hypertension<br>
-                            <input type="checkbox" name="history" value=""> Kidney/Bladder Stones<br>
-                            <input type="checkbox" name="history" value=""> Loss of Conciousness<br>
-                            <input type="checkbox" name="history" value=""> Measles<br>
-                            <input type="checkbox" name="history" value=""> Mumps<br>
-                            <input type="checkbox" name="history" value=""> Pneumonia<br>
-                            <input type="checkbox" name="history" value=""> Prostate Problems<br>
-                            <input type="checkbox" name="history" value=""> Seizure<br>
-                            <input type="checkbox" name="history" value=""> Sinusitis/Allergic rhinitis<br>
-                            <input type="checkbox" name="history" value=""> Skin Disorders<br>
-                            <input type="checkbox" name="history" value=""> STI/HIV<br>
-                            <input type="checkbox" name="history" value=""> Stroke<br>
-                            <input type="checkbox" name="history" value=""> Surgery/Injury<br>
-                            <input type="checkbox" name="history" value=""> Thyroid Problems<br>
-                            <input type="checkbox" name="history" value=""> Tonsillitis<br>
-                            <input type="checkbox" name="history" value=""> Tuberculosis<br>
-                            <input type="checkbox" name="history" value=""> UTI<br>
-                            <input type="checkbox" name="history" value=""> Others: 
-                            <input type="text" name="" value="">
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Allergies<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Amoebiasis<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Anemia<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Arthritis<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Back and Joints Pains<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Bone Fracture<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Breast mass/lump<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Chest Pains<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Chicken Pox<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Diabetes Mellitus<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Epilepsy<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Eye or Ear Problem<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Gallbladder Stone<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Goiter<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Gout<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Hemorrhoids<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Hepatitis: A/B/C<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Hyperacidity/Ulcer<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Hypertension<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Kidney/Bladder Stones<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Loss of Conciousness<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Measles<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Mumps<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Pneumonia<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Prostate Problems<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Seizure<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Sinusitis/Allergic rhinitis<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Skin Disorders<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> STI/HIV<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Stroke<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Surgery/Injury<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Thyroid Problems<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Tonsillitis<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Tuberculosis<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> UTI<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Others: 
+                            <input style= "margin-left: 2%" type="text" name="" value="">
+                            <br><br>
+                            <b>For Women: Last Menstrual Period(LMP)</b><input type="date" name="" value=""><br>
+                            <h6><b>Menstrual Pattern:</b><h6>
+                            <td><input style="margin-left: 2%" type="checkbox" name="name1" />Regular &nbsp;
+                                <input type="checkbox" name="name2" />Irregular &nbsp;</td>
                             <br>
                     </div>        
                 </div>  
@@ -177,16 +180,16 @@
                              <div class="col-md-6">
                                 <div class="column">
                                     <div class="card">
-                            <form action="">
-                            <input type="checkbox" name="history" value=""> High Blood Pressure<br>
-                            <input type="checkbox" name="history" value=""> Tuberculosis<br>
-                            <input type="checkbox" name="history" value=""> Heart Disease<br>
-                            <input type="checkbox" name="history" value=""> Asthma<br>
-                            <input type="checkbox" name="history" value=""> Diabetes<br>
-                            <input type="checkbox" name="history" value=""> Allergies<br>
-                            <input type="checkbox" name="history" value=""> Cancer<br>
-                            <input type="checkbox" name="history" value=""> Other:
-                            <input type="text" name="" value="">
+                            <form action=""><p>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> High Blood Pressure<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Tuberculosis<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Heart Disease<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Asthma<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Diabetes<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Allergies<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Cancer<br>
+                            <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Other:
+                            <input style= "margin-left: 2%" type="text" name="" value="">
                             <br>
 
                         </div>
@@ -203,18 +206,18 @@
                             <h6>  1. Do you Smoke? 
                             <td><input type="checkbox" name="name1" />No &nbsp;
                                 <input type="checkbox" name="name2" />Yes &nbsp;</td>
-                            <h6>     If yes, how many packs?</h6><input type="text" name="" value=""><br>
+                            <h6>     If yes, how many packs?</h6><input style="margin: 2%" type="text" name="" value="">
                             <h6>  2. Do you drink alcohol (beer/liquer)? 
                             <td><input type="checkbox" name="name1" />No &nbsp;
                                 <input type="checkbox" name="name2" />Yes &nbsp;</td>
-                            <h6>     If yes, how frequent? Occasional or Seldom</h6><input type="text" name="" value=""><br>
+                            <h6>     If yes, how frequent? Occasional or Seldom</h6><input style="margin: 2%" type="text" name="" value="">
                             <h6>  2. Do you take medication at present? 
                             <td><input type="checkbox" name="name1" />No &nbsp;
                                 <input type="checkbox" name="name2" />Yes &nbsp;</td>
                             <h6>     If yes, please indicate below 
-                            </h6><input type="text" name="" value="">
-                            <input type="text" name="" value="">
-                            <input type="text" name="" value=""><br>
+                            </h6><input style="margin: 2%" type="text" name="" value="">
+                            <input style="margin: 2%" type="text" name="" value="">
+                            <input style="margin: 2%" type="text" name="" value=""><br>
 
                     </div>        
              </div>  
@@ -224,7 +227,7 @@
                             <h3 class="register-heading">D. PHYSICAL EXAMINATION</h3>
                              <div class="col-md-6">
                                 <div class="column">
-                                    <div class="card">
+                                    <div class="card" >
                             <form action="">
                             <table>
                                 <thead>
@@ -354,9 +357,10 @@
                                         <td>Others</td>
                                         <td><input type="checkbox" name="history" value=""></td>
                                         <td><input type="checkbox" name="history" value=""></td>
-                                        <td><input type="text" name="" value=""></td>
+                                        <td><input type="text" name="" value="" style="margin-bottom: 5%"></td>
                                     </tr>
                                     <br>
+                                    
                                 </tbody>
                             </table>               
 
@@ -366,10 +370,102 @@
                         </div>
                     </div>
 
+                    <div class="container register"> <br>             
+                            <h3 class="register-heading">E. VITAL SIGNS</h3>
+                             <div class="col-md-6">
+                                <div class="column">
+                                    <div class="card">
+                            <form action="">
+                               <tr> <br>
+                            <td><p>T:  <input style="margin: 2%" type="text" name="" value="">°C<br> 
+                               <td> PR:<input style="margin: 2%" type="text" name="" value="">bpm<br> 
+                               <td> RR:<input style="margin: 2%" type="text" name="" value="">bpm<br>
+                               <td>BP:<input style="margin: 2%" type="text" name="" value="">mmhg<br>
+                               <td>WT:<input style="margin: 2%" type="text" name="" value="">kg</p>
+                               </tr>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
                            
-                            <br><input type="submit" value="Submit">
-                            </form>
+                <div class="container register"> <br>             
+                            <h3 class="register-heading">F. NURSING INVENTIONS</h3>
+                             <div class="col-md-6">
+                                <div class="column">
+                                    <div class="card">
+                            <form action="">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Time:</th>
+                                        <th>By:</th>
+                                        
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td><input style="margin: 2%" type="text" name="" value=""></td>
+                                        <td><input type="time" name="" value=""></td>
+                                        <td><input type="text" name="" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input style="margin: 2%" type="text" name="" value=""></td>
+                                        <td><input type="time" name="" value=""></td>
+                                        <td><input type="text" name="" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input style="margin: 2%" type="text" name="" value=""></td>
+                                        <td><input type="time" name="" value=""></td>
+                                        <td><input type="text" name="" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input style="margin: 2%" type="text" name="" value=""></td>
+                                        <td><input type="time" name="" value=""></td>
+                                        <td><input type="text" name="" value=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input style="margin: 2%" type="text" name="" value=""></td>
+                                        <td><input type="time" name="" value=""></td>
+                                        <td><input type="text" name="" value=""></td>
+                                    </tr>
+                                    
+
+                                    </tbody>
+
+                                </table><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container register"> <br>             
+                            <h3 class="register-heading">H. ASSESSMENT AND RECOMMENDATIONS</h3>
+                             <div class="col-md-6">
+                                <div class="column">
+                                    <div class="card">
+                            <form action="">
+                            <h6> <h6>
+                            <td><input style="margin-left: 2%" type="checkbox" name="name1" />Physically Fit &nbsp;
+                                <input type="checkbox" name="name2" />Not Physically Fit &nbsp;</td>
+
+                                <input style="padding: 10%" type="text" name="" value=""><br>
+                                 Date of Examination: <input type="date" name="" value="">
+                                 <br><br>
+                                 <b>MEDICAL EXAMINER</b>
+                                 <p>By:<input type="text" name="" value=""><br>
+                                 Licence No.<input type="number" name="" value=""></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    <br><br><br>
+                                    </div>
+                                        <button style="margin-right: 80%" type ="button" class = "btn btn-info">Register</button>
+                                    </div>
+                            
                             
                             </div>
                             </div>
