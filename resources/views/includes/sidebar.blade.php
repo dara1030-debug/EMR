@@ -1,5 +1,4 @@
 <?php $auth = Auth::user(); ?>
-    <div id="wrapper" class="toggled">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <div id="main">
@@ -20,6 +19,7 @@
         
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <img src="/img/Picture1.png" alt="Avatar" class="avatar">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -50,10 +50,17 @@
         
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+
+            
+            <div class="prof">
+                <img src="/img/Picture1.png" alt="Avatar" class="profile"><br>
+                <h4 style="color:white">Anne Hayathi Albiso</h4>
+                <p class="title" style="color:gray">Admin</p>
+            </div>
+            <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+            <a href="#"><i class="fa fa-cogs"></i> Services</a>
+            <a href="#"><i class="fa fa-user"></i> Account</a>
+            <a href="#"><i class="fa fa-phone"></i> Contact</a>
           </div>
           
           
@@ -61,7 +68,7 @@
           <script>
           function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+           // document.getElementById("main").style.marginLeft = "250px";
             document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
           }
           

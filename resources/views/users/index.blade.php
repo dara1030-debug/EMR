@@ -14,6 +14,12 @@
   </div>
   <div class="card-body">
       <table class="table table-bordereds">
+        <div class="input-group mb-4" style="margin:auto;max-width:300px">
+          <input type="search"  placeholder="Search for Users" aria-describedby="button-addon5" class="form-control">
+          <div class="input-group-append">
+            <button id="button-addon5" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
           <thead class="text-center thead-light">
             <tr>
               <th scope="col">Role</th>

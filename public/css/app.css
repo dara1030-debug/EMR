@@ -11380,22 +11380,47 @@ a.text-dark:focus {
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
 }
 
+#container {
+  min-height: 100%;
+
+}
 .footer {
-  position: bottom;
+  position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
-}
-
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color:#082338;
+  background-color:#082338;
    color: white;
    text-align: center;
 }
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+  position: relative;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.profile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 50%;
+}
+
+.prof {
+  text-align: center;
+}
+
+
