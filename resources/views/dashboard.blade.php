@@ -3,40 +3,39 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card border-primary">
+        <div class="col">
                 <br>
-        <div class="row">
-                <div class="col-sm-4">       
-                        <a href="/patients/create" class="nav-link">
-                            <i><img src="img/home.png" height="150px" width="150px" alt="Anne Hayathi Albiso" class="bio-image"></i>
-                            <p class="card-text">Manage Patients</p>
+            <div class="card-deck" >
+                <div class="card border-primary">       
+                        <a href="/patients" class="nav-link">
+                            <img class="card-img-top" src="img/p1.png" alt="Card image">
+                            <p class="card-body text-center">Manage Patients</p>
                         </a>
                 </div>
-                <div class="col-sm-4">
+                <div class="card border-primary">
                     <a href="/users" class="nav-link">
-                        <i><img src="img/mywork.png" height="150px" width="150px" alt="Anne Hayathi Albiso" class="bio-image"></i>
-                        <p class="card-text">Manage Users</p>
+                        <img class="card-img-top" src="img/p2.png" alt="Card image">
+                        <p class="card-body text-center">Manage Users</p>
                     </a>
                 </div>
-                <div class="col-sm-4">
+                <div class="card border-primary">
                     <a href="index.html" class="nav-link">
-                        <i><img src="img/home.png" height="150px" width="150px" alt="Anne Hayathi Albiso" class="bio-image"></i>
-                        <p class="card-text">Manage Services</p>
+                        <img class="card-img-top" src="img/p3.png" alt="Card image">
+                        <p class="card-body text-center">Manage Services</p>
                     </a>
     
                 </div>
-                <div class="col-sm-4">
+                <div class="card border-primary">
                     <a href="index.html" class="nav-link">
-                        <i><img src="img/mywork.png" height="150px" width="150px" alt="Anne Hayathi Albiso" class="bio-image"></i>
-                        <p class="card-text">Generate Report</p>
+                        <img class="card-img-top" src="img/p4.png" alt="Card image">
+                        <p class="card-body text-center">Generate Report</p>
                     </a>
                 </div>
             </div>
-            
         </div>
+            
     </div>
-</div>
+    
 @endsection
 
 

@@ -19,7 +19,6 @@
 </head>
 <body>
     <div id="app">
-        @include('includes.nav')
         @include('includes.sidebar')
         <div class="container">
         <main class="py-4">
@@ -34,5 +33,8 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+    <div class="footer">
+        <p>Electronic Medical Record @2020</p>
+    </div>
 </body>
 </html>
