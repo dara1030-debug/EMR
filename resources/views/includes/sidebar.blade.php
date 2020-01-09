@@ -47,11 +47,10 @@
                     </ul>
                 </div>
             </div>
-        
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-            
+        <!--sidebar content-->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>            
             <div class="prof">
                 <img src="/img/Picture1.png" alt="Avatar" class="profile"><br>
                 <h4 style="color:white">Anne Hayathi Albiso</h4>
@@ -62,22 +61,48 @@
             <a href="#"><i class="fa fa-user"></i> Account</a>
             <a href="#"><i class="fa fa-phone"></i> Contact</a>
           </div>
+          <!--end of side bar content-->
+          
+          <!--Active Users-->
+          <button class="open-button" onclick="openForm()"> <i class="fa fa-check"></i>Active Users</button>
+
+            <div class="chat-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <img src="/img/Picture1.png" alt="Avatar" class="avatar"> Anne Albiso <br>
+                <img src="/img/p1.png" alt="Avatar" class="avatar"> Isnaina Abdulazis<br>
+                <textarea  name="msg" required></textarea>
+                <!--<label for="msg"><b>Message</b></label>
+                     -->
+
+                <!-- <button type="submit" class="btn">Send</button>-->
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+            </div>
+            <!--End for Active Users-->
+
+            <script>
+            function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+            }
+            
           
           
-          
-          <script>
-          function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-           // document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-          }
-          
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-            document.body.style.backgroundColor = "white";
-          }
-          </script>
-        </nav>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            // document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+            
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+                document.body.style.backgroundColor = "white";
+            }
+            </script>
+            </nav>
     </div>
     <!-- /#wrapper -->
