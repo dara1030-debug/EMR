@@ -134,7 +134,7 @@
                         </div>
                        
                         <div class="container register"> <br>             
-                            <h3 class="register-heading text-left">A. PAST MEDICAL HISTORY</h3><br>
+                            <h3 class="register-heading text-left"><br>A. PAST MEDICAL HISTORY</h3><br>
                             <div class="row">
                                 <div class="col text-left">
                                     <form action="">
@@ -183,21 +183,34 @@
                                         <input style= "margin-left: 2%" type="text" name="" value="">
                                         <br><br>    
                                 </div>
-                                    <div class="w-100"></div>
                              </div>
-                       
+                             <div class="row">
+                             <div class="col text-left">
+                                <b><br><br>For Women:<br> Last Menstrual Period(LMP) </b><br><input type="date" name="" value="">
+                            </div>
+                            <div class="col text-left">
+                                <h6><br><br><br><b>Menstrual Pattern:</b><h6>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                          Regular
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                        <label class="form-check-label" for="exampleRadios2">
+                                          Irregular
+                                        </label>
+                                      </div>
+                             </div>
+                        </div>
+                            
+    
                         
-                            <b><br>For Women: Last Menstrual Period(LMP) </b><input type="date" name="" value=""><br>
-                            <h6><b>Menstrual Pattern:</b><h6>
-                            <td><input style="margin-left: 2%" type="checkbox" name="name1" />Regular &nbsp;
-                                <input type="checkbox" name="name2" />Irregular &nbsp;</td>
-                            <br>
-                    
-                        </div> 
-                        
-                        <br><h3 class="register-heading text-left">B. FAMILY HISTORY</h3><br>
+                        <br><h3 class="register-heading text-left"><br>B. FAMILY HISTORY</h3><br>
                             <div class="row">
                                     <div class="col text-left">
+                                        <p>Do you have a close relative (parent/grandparents/siblings) who have been diagnosed of:</p>
                                                 <form action=""><p>
                                                 <input style= "margin-left: 2%" type="checkbox" name="history" value=""> High Blood Pressure<br>
                                                 <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Tuberculosis<br>
@@ -206,8 +219,8 @@
                                             <br>
                                     </div>
                                     <div class="col text-left">
-                                        <form action=""><p>
-                                        
+                                        <form action="">
+                                        <br><br><br>
                                         <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Diabetes<br>
                                         <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Allergies<br>
                                         <input style= "margin-left: 2%" type="checkbox" name="history" value=""> Cancer<br>
@@ -217,171 +230,277 @@
                                     </div>
                         </div>
                             
-                        <h3 class="register-heading text-left">C. SOCIAL HISTORY</h3><br>
+                        <h3 class="register-heading text-left"><br>C. SOCIAL HISTORY</h3><br>
                              <div class="row">
                                 <div class="col text-left">
                                     <form action="">
                                     <h6>  1. Do you Smoke? 
-                                    <td><input type="checkbox" name="name1" />No &nbsp;
-                                        <input type="checkbox" name="name2" />Yes &nbsp;</td>
-                                    <h6>     If yes, how many packs?</h6><input style="margin: 2%" type="text" name="" value="">
-                                    <h6>  2. Do you drink alcohol (beer/liquer)? 
-                                    <td><input type="checkbox" name="name1" />No &nbsp;
-                                        <input type="checkbox" name="name2" />Yes &nbsp;</td>
-                                    <h6>     If yes, how frequent? Occasional or Seldom</h6><input style="margin: 2%" type="text" name="" value="">
-                                    
+                                        <div class="form-check">
+                                            <input style= "margin-left: 2%" class="form-check-input" type="radio" name="choices1" id="choice1" value="option1" checked>
+                                            <label style= "margin-left: 9%"class="form-check-label" for="choice1" >
+                                              No
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input style= "margin-left: 2%" class="form-check-input" type="radio" name="choices1" id="choice2" value="option2">
+                                            <label style= "margin-left: 9%" class="form-check-label" for="choice2">
+                                              Yes
+                                            </label>
+                                          </div>
+                                    <h6>     If yes, how many packs?</h6><input style="margin: 2%" type="number" name="" value="">
+                                    <h6> <br> 2. Do you drink alcohol (beer/liquer)? 
+                                        <div class="form-check">
+                                            <input style= "margin-left: 2%" class="form-check-input" type="radio" name="choices1a" id="choice1a" value="option1" checked>
+                                            <label style= "margin-left: 9%"class="form-check-label" for="choice1a">
+                                              No
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input style= "margin-left: 2%" class="form-check-input" type="radio" name="choices1a" id="choice2a" value="option2">
+                                            <label style= "margin-left: 9%" class="form-check-label" for="choice2a">
+                                              Yes
+                                            </label>
+                                          </div>
+                                    <h6>     If yes, how frequent?</h6>
+                                    <div class="form-check">
+                                        <input style= "margin-left: 2%" class="form-check-input" type="radio" name="choices2b" id="choice1b" value="option1" checked>
+                                        <label style= "margin-left: 9%"class="form-check-label" for="choice1b">
+                                            Occasional
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input style= "margin-left: 2%" class="form-check-input" type="radio" name="choices2b" id="choice2b" value="option2">
+                                        <label style= "margin-left: 9%" class="form-check-label" for="choice2b">
+                                          Seldom
+                                        </label>
+                                      </div>
 
                                 </div>   
                                 <div class="col text-left">
                                     <form action="">
-                                   <h6>  2. Do you take medication at present? 
-                                    <td><input type="checkbox" name="name1" />No &nbsp;
-                                        <input type="checkbox" name="name2" />Yes &nbsp;</td>
-                                    <h6>     If yes, please indicate below 
-                                    </h6><input style="margin: 2%" type="text" name="" value="">
-                                    <input style="margin: 2%" type="text" name="" value=""><br>
-                                    <br>
+                                   <h6>  3. Do you take medication at present? 
+                                    <div class="form-check">
+                                        <input style= "margin-left: 2%" type="radio" name="choices3c"  value="" checked>
+                                        <label style= "margin-left: 9%"class="form-check-label">
+                                          No
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input style= "margin-left: 2%" type="radio" name="choices3c"  value="">
+                                        <label style= "margin-left: 9%" class="form-check-label" >
+                                          Yes
+                                        </label>
+                                      </div>
+                                    <h6>     If yes, please indicate below</h6>
+                                    1.<input style="margin: 2%" type="text" name="" value=""><br>
+                                    2.<input style="margin: 2%" type="text" name="" value=""><br>     
+                                    3.<input style="margin: 2%" type="text" name="" value="">
                                 </div> 
                                     
                              </div> 
 
-                             <br><br><h3 class="register-heading text-left">D. PHYSICAL EXAMINATION</h3>
+                             <br><br><h3 class="register-heading text-left">D. PHYSICAL EXAMINATION </h3>
+                             <p class="register-heading text-left">(To be accomplished by physician)</p> 
                              <div class="row">
                                 <div class="col text-left">
-                                     <form action="">
-                                    <table>
+                                    <table class="table table-responsive">
                                         <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>Normal </th>
+                                                <th></th>
+                                                <th>Normal</th>
                                                 <th>Abnormal</th>
-                                                <th> Remarks</th>
+                                                <th></th>
+                                                <th>Remarks</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <form>
                                             <tr>
-                                                <td>Skin</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Skin</td>
+                                                <td><input  type="radio" name="d1" value=""></td>
+                                                <td><input type="radio" name="d1" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
+                                                
                                             </tr>
                                             <tr>
-                                                <td>Head/Neck/Scalp</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Head / Neck / Scalp</td>
+                                                <td><input  type="radio" name="d2" value=""></td>
+                                                <td><input type="radio" name="d2" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
+                                                
                                             </tr>
                                             <tr>
-                                                <td>Eyes</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Eyes</td>
+                                                <td><input  type="radio" name="d3" value=""></td>
+                                                <td><input type="radio" name="d3" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Ears/Nose/Throat</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Ears/Nose/Throat</td>
+                                                <td><input  type="radio" name="d4" value=""></td>
+                                                <td><input type="radio" name="d4" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Nose/Sinuses</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Nose/Sinuses</td>
+                                                <td><input  type="radio" name="d5" value=""></td>
+                                                <td><input type="radio" name="d5" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Mouth, Throat</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Mouth/Throat</td>
+                                                <td><input  type="radio" name="d6" value=""></td>
+                                                <td><input type="radio" name="d6" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Neck, LN, Thyroid</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Neck, LN, Thyroid</td>
+                                                <td><input  type="radio" name="d7" value=""></td>
+                                                <td><input type="radio" name="d7" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Chest-Breast-Axilla</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Chest-Breast-Axilla</td>
+                                                <td><input  type="radio" name="d8" value=""></td>
+                                                <td><input type="radio" name="d8" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Lungs</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Lungs</td>
+                                                <td><input  type="radio" name="d9" value=""></td>
+                                                <td><input type="radio" name="d9" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Heart</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Heart</td>
+                                                <td><input  type="radio" name="d10" value=""></td>
+                                                <td><input type="radio" name="d10" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Abdomen</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Abdomen</td>
+                                                <td><input  type="radio" name="d11" value=""></td>
+                                                <td><input type="radio" name="d12" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Back, Flank</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Back, Flank</td>
+                                                <td><input  type="radio" name="d13" value=""></td>
+                                                <td><input type="radio" name="d13" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Anus-rectum</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Anus-rectum</td>
+                                                <td><input  type="radio" name="d14" value=""></td>
+                                                <td><input type="radio" name="d14" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>GU system</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>GU system</td>
+                                                <td><input  type="radio" name="d15" value=""></td>
+                                                <td><input type="radio" name="d15" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Inguinals, Genitals</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Inguinals, Genitals</td>
+                                                <td><input  type="radio" name="d16" value=""></td>
+                                                <td><input type="radio" name="d16" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Reflexes</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Reflexes</td>
+                                                <td><input  type="radio" name="d17" value=""></td>
+                                                <td><input type="radio" name="d17" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Extremities</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Extremities</td>
+                                                <td><input  type="radio" name="d18" value=""></td>
+                                                <td><input type="radio" name="d18" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Neurologic</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Neurologic</td>
+                                                <td><input  type="radio" name="d19" value=""></td>
+                                                <td><input type="radio" name="d19" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Endocrine</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
+                                                <td>
+                                                    <td>Endocrine</td>
+                                                <td><input  type="radio" name="d20" value=""></td>
+                                                <td><input type="radio" name="d20" value=""></td>
+                                                <td></td>
                                                 <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Others</td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="checkbox" name="history" value=""></td>
-                                                <td><input type="text" name="" value="" style="margin-bottom: 5%"></td>
+                                                <td>
+                                                    <td>Others</td>
+                                                <td><input  type="radio" name="d21" value=""></td>
+                                                <td><input type="radio" name="d21" value=""></td>
+                                                <td></td>
+                                                <td><input type="text" name="" value=""></td>
+                                                </td>
                                             </tr>
-                                            <br>
-                                            
-                                        </tbody>
+                                            </form>
+                                            </tbody>
+                                     
                                     </table>               
 
                                 </div>
@@ -408,7 +527,7 @@
                                  </div>
                             </div>
 
-                            <br><br><h3 class="register-heading text-left">F. NURSING INVENTIONS</h3><br>
+                            <br><br><h3 class="register-heading text-left">F. NURSING INTERVENTIONS</h3><br>
                              <div class="row">
                                 <div class="col text-left">
                                     <form action="">
@@ -421,47 +540,41 @@
                                                 
                                             </tr>
                                         </thead>
-
                                         <tbody>
                                             <tr>
-                                                <td><input style="margin: 2%" type="text" name="" value=""></td>
-                                                <td><input type="time" name="" value=""></td>
-                                                <td><input type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%" type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="time" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="text" name="" value=""></td>
                                             </tr>
                                             <tr>
-                                                <td><input style="margin: 2%" type="text" name="" value=""></td>
-                                                <td><input type="time" name="" value=""></td>
-                                                <td><input type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%" type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="time" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="text" name="" value=""></td>
                                             </tr>
                                             <tr>
-                                                <td><input style="margin: 2%" type="text" name="" value=""></td>
-                                                <td><input type="time" name="" value=""></td>
-                                                <td><input type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%" type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="time" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="text" name="" value=""></td>
                                             </tr>
                                             <tr>
-                                                <td><input style="margin: 2%" type="text" name="" value=""></td>
-                                                <td><input type="time" name="" value=""></td>
-                                                <td><input type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%" type="text" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="time" name="" value=""></td>
+                                                <td><input style="margin: 4%"type="text" name="" value=""></td>
                                             </tr>
-                                            <tr>
-                                                <td><input style="margin: 2%" type="text" name="" value=""></td>
-                                                <td><input type="time" name="" value=""></td>
-                                                <td><input type="text" name="" value=""></td>
-                                            </tr>
+                                            
                                             </tbody>
                                         </table><br>
                                 </div>
                             </div>
 
-                            <br><h3 class="register-heading text-left">H. ASSESSMENT AND RECOMMENDATIONS</h3>
+                            <br><h3 class="register-heading text-left">G. ASSESSMENT AND RECOMMENDATIONS</h3>
                              <div class="row">
                                 <div class="col text-left">
                                     <form action="">
                                     <h6> <h6>
-                                    <td><input style="margin-left: 2%" type="checkbox" name="name1" />Physically Fit &nbsp;
-                                        <input type="checkbox" name="name2" />Not Physically Fit &nbsp;</td><br>
-
-                                        <input style="padding: 10%" type="text" name="" value=""><br>
+                                    <td><input style="margin-left: 2%" type="checkbox" name="name1" /> Physically Fit &nbsp;
+                                        <input type="checkbox" name="name2" /> Not Physically Fit &nbsp;</td><br><br>
+                                        <textarea class="form-control"></textarea><br>
                                         Date of Examination: <input type="date" name="" value="">
                                        
                                 </div>
@@ -469,9 +582,10 @@
                                 <div class="col text-left">
                                     <form action="">
                                     
-                                        <b>MEDICAL EXAMINER</b>
-                                        <p>By:<input type="text" name="" value=""><br>
-                                        Licence No.<input type="number" name="" value=""></p>    
+                                        <br><br>
+                                        <p>By:<input style="margin-left: 2%" type="text" name="" value="">,MD<br><br>
+                                        Licence No. <input type="number" name="" value=""></p>   
+                                        <b class="font-italic">MEDICAL EXAMINER</b> 
                                 </div>
                             </div>
                             

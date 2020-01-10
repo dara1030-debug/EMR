@@ -68,9 +68,9 @@
 
             <div class="chat-popup" id="myForm">
             <form action="/action_page.php" class="form-container">
-                <img src="/img/Picture1.png" alt="Avatar" class="avatar"> Anne Albiso <br>
-                <img src="/img/p1.png" alt="Avatar" class="avatar"> Isnaina Abdulazis<br>
-                <textarea  name="msg" required></textarea>
+                <img src="/img/Picture1.png" alt="Avatar" class="avatar2"> Anne Albiso <br><br>
+                <img src="/img/p1.png" alt="Avatar" class="avatar2"> Isnaina Abdulazis<br>
+               
                 <!--<label for="msg"><b>Message</b></label>
                      -->
 

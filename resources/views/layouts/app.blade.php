@@ -36,7 +36,7 @@
     });
     </script>
     <div class="footer">
-        <p>Electronic Medical Record @2020</p>
+        <p>Electronic Medical Record <i class="fa fa-copyright"> 2020</i></p>
     </div>
 </body>
 </html>
