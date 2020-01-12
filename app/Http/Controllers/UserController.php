@@ -46,11 +46,15 @@ class UserController extends Controller
             'last_name' => 'required|string',
             'email' => 'required|email',
             'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+            'civil_status' => 'required|string',
+            'age' => 'required',
+            'birthdate' => 'required', 
+            'present_address' => 'required',
             'gender' => 'required|string',
-            'role_id' => 'required|integer',
+            'role' => 'required|integer',
             'contact_number' => 'required',
             'license_number' => 'required',
-            'address' => 'required',
         ]);
 
         $user = User::create([
