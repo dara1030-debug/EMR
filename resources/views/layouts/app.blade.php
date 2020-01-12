@@ -20,7 +20,7 @@
     <div id="app">
         @include('includes.sidebar')
         <div class="container">
-        <main class="py-4">
+        <main class="py-5 my-5">
             @yield('content')
         </main>
         </div>

@@ -22,7 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('gender');
-            $table->string('address');
+            $table->string('civil_status');
+            $table->integer('age');
+            $table->string('birthdate');
+            $table->string('present_address');
             $table->string('contact_number');
             $table->string('license_number');
             $table->timestamp('last_activity')->nullable();

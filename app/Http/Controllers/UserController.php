@@ -63,11 +63,14 @@ class UserController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => $request->password,
+            'civil_status' => $request->civil_status,
+            'age' => $request->age,
+            'birthdate' => $request->birthdate, 
+            'present_address' => $request->present_address,
             'gender' => $request->gender,
-            'role_id' => $request->role_id,
+            'role_id' => $request->role,
             'contact_number' => $request->contact_number,
             'license_number' => $request->license_number,
-            'address' => $request->address,
         ]);
 
         return redirect()->back()->with('success', 'A user has been successfully added.');
