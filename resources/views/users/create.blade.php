@@ -12,10 +12,10 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-              <a class="nav-link" href="/users">Users</a>
+              <a class="nav-link" href="{{ route('users.index') }}">Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/users/create">Add New User</a>
+              <a class="nav-link active" href="{{ route('users.create') }}">Add New User</a>
             </li>
           </ul>
         </div>

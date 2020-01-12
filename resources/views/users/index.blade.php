@@ -32,7 +32,18 @@
           <tbody class="text-center">
             @foreach($users as $user)
             <tr>
-              <td>{{ $user->role->name }}</td>
+              <td>
+                <div class="badge 
+                @if($user->role->name == 'Administrator') 
+                  badge-danger 
+                @elseif($user->role->name == 'Doctor')  
+                  badge-success
+                @elseif($user->role->name == 'Nurse')
+                  badge-primary
+                @endif">
+                  {{ $user->role->name }}
+                </div>
+              </td>
               <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
               <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
               <td>{{ $user->email }}</td>
