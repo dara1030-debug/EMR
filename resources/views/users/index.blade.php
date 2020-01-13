@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+  @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
+        <strong>{{ $message }}</strong>
+    </div>
+  @endif
+
 <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
@@ -48,9 +55,13 @@
               <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
               <td>{{ $user->email }}</td>
               <td>
-                <a class="btn btn-primary" href="#">View</a>
-                <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                <a class="btn btn-primary" href="#">Delete</a>
+                <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                  @csrf
+                  @method('DELETE')
+                  <a class="btn btn-primary" href="#">View</a>
+                  <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                  <button class="btn btn-primary" type="submit" onclick="confirm('Are you sure you want to delete this user?')">Delete</button>
+                </form>
               </td>
             </tr>
             @endforeach
