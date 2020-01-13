@@ -55,12 +55,12 @@
               <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
               <td>{{ $user->email }}</td>
               <td>
-                <form action="{{ route('users.destroy', $user->id) }}" method="post">
+                <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                   @csrf
                   @method('DELETE')
                   <a class="btn btn-primary" href="#">View</a>
                   <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                  <button class="btn btn-primary" type="submit" onclick="confirm('Are you sure you want to delete this user?')">Delete</button>
+                  <button class="btn btn-primary" type="submit">Delete</button>
                 </form>
               </td>
             </tr>
@@ -70,5 +70,16 @@
         </table>
   </div>
 </div>
-
 @stop
+
+@push('js')
+<script>
+  const confirmDelete = () => {
+    if (confirm('Are you sure you want to delete this user?')) {
+      return true
+    } else {
+      return false
+    }
+  }
+</script>
+@endpush

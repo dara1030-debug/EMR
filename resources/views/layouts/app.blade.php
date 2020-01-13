@@ -58,5 +58,6 @@
         document.body.style.backgroundColor = "white";
     }
     </script>
+    @stack('js')
 </body>
 </html>
