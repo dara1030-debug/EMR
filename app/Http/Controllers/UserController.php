@@ -111,17 +111,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
+        
         $request->validate([
             'first_name' => 'required|string',
             'middle_name' => 'required|string',
             'last_name' => 'required|string',
             'email' => 'required|email',
-            'password' => 'required|confirmed',
-            'gender' => 'required|string',
-            'role_id' => 'required|integer',
+            'password' => 'confirmed',
+            'civil_status' => 'required|string',
+            'age' => 'required',
+            'birthdate' => 'required', 
+            'present_address' => 'required',
+            'role' => 'required|integer',
             'contact_number' => 'required',
             'license_number' => 'required',
-            'address' => 'required',
         ]);
 
         $user = User::findOrFail($id);
@@ -129,12 +133,19 @@ class UserController extends Controller
         $user->middle_name = $request->middle_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
-        $user->password = $request->password;
-        $user->gender = $request->gender;
-        $user->role_id = $request->role_id;
+        if ($request->password) {
+            $user->password = $request->password;
+        }
+        $user->civil_status = $request->civil_status;
+        $user->age = $request->age;
+        $user->birthdate = $request->birthdate;
+        $user->present_address = $request->present_address;
+        if ($request->gender) {
+            $user->gender = $request->gender;
+        }
+        $user->role_id = $request->role;
         $user->contact_number = $request->contact_number;
         $user->license_number = $request->license_number;
-        $user->address = $request->address;
         $user->save();
 
         return redirect()->back()->with('success', 'A user has been updated.');

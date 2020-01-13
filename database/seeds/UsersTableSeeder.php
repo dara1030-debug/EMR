@@ -20,11 +20,11 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('password'),
             'civil_status' => 'Single',
             'age' => 20,
-            'birthdate' => now(),
+            'birthdate' => today(),
             'present_address' => 'Earth',
             'gender' => 'Female',
             'role_id' => 1,
-            'contact_number' => '+639167784412',
+            'contact_number' => 9167784412,
             'license_number' => '123456',
         ]);
 
@@ -36,11 +36,11 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('password'),
             'civil_status' => 'Single',
             'age' => 20,
-            'birthdate' => now(),
+            'birthdate' => today(),
             'present_address' => 'Earth',
             'gender' => 'Female',
             'role_id' => 2,
-            'contact_number' => '+639167784412',
+            'contact_number' => 9167784412,
             'license_number' => '123456',
         ]);
 
@@ -52,11 +52,11 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('password'),
             'civil_status' => 'Single',
             'age' => 20,
-            'birthdate' => now(),
+            'birthdate' => today(),
             'present_address' => 'Earth',
             'gender' => 'Female',
             'role_id' => 3,
-            'contact_number' => '+639167784412',
+            'contact_number' => 9167784412,
             'license_number' => '123456',
         ]);
     }
