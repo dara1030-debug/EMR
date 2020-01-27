@@ -41,9 +41,9 @@
                 <td>Anne Hayathi</td>
                 <td>Sesaldo</td>
                 <td>
-                  <a class="btn btn-primary" href="#">View</a>
-                  <a class="btn btn-primary" href="#">Edit</a>
-                  <a class="btn btn-primary" href="#">Delete</a>
+                  <a class="btn btn-info" href="/patients/show">View</a>
+                  <a class="btn btn-info" href="#">Edit</a>
+                  <a class="btn btn-secondary" href="#">Delete</a>
                 </td>
               </tr>
             </tbody>

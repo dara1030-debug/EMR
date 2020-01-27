@@ -11406,8 +11406,8 @@ a.text-dark:focus {
 
 .avatar {
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 
@@ -11439,7 +11439,7 @@ a.text-dark:focus {
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 23px;
+  bottom: 1px;
   right: 28px;
   width: 280px;
 }
@@ -11448,7 +11448,7 @@ a.text-dark:focus {
 .chat-popup {
   display: none;
   position: fixed;
-  bottom: 23px;
+  bottom: 1px;
   right: 28px;
   width: 280px;
   padding: 16px 20px;
@@ -11462,7 +11462,7 @@ a.text-dark:focus {
 .form-container {
   
   position: fixed;
-  bottom: 23px;
+  bottom: 1px;
   right: 28px;
   width: 280px;
   padding: 16px 20px;
@@ -11498,7 +11498,8 @@ a.text-dark:focus {
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  bottom:1px;
+
   
 }
 
@@ -11509,7 +11510,7 @@ a.text-dark:focus {
   border: none;
   cursor: pointer;
   position: fixed;
-  bottom: 12px;
+  bottom: 1px;
   right: 28px;
   width: 280px;
 }
@@ -11539,3 +11540,24 @@ a.text-dark:focus {
 .radiotext {
   margin: 10px 10px 0px 0px;
 }
+
+.alert{
+
+  background-color: white;
+  border: none;
+}
+
+.create_avatar {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  
+}
+
+#inp {
+  width: 95px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+

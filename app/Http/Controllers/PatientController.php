@@ -46,11 +46,13 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $patient = Patient::findOrFail($id);
+        /**$patient = Patient::findOrFail($id);* gi edit ko muna para makita ko output pag e click ang view hihi
+         * 
+         * return view('patients.show', compact('patient'));**/
 
-        return view('patients.show', compact('patient'));
+        return view('patients.show');
     }
 
     /**

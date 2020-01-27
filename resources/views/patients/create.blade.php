@@ -15,8 +15,14 @@
       </ul>
     </div>
     <div class="card-body">
+        <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br>
+        <input id="inp" type="file" accept="image/*">
+        
         <div class="container register"  style="margin-left: 12%">
+            
             <div class="row">
+
+                
                     <div class="tab-content" id="myTabContent" >
                         <br>
                             <div class="row register-form" >
@@ -228,7 +234,7 @@
                                         <input style= "margin-left: 2%" type="text" name="" value="">
                                         <br>
                                     </div>
-                        </div>
+                                 </div>
                             
                         <h3 class="register-heading text-left"><br>C. SOCIAL HISTORY</h3><br>
                              <div class="row">
@@ -605,6 +611,6 @@
        
      
 </div>
-    
+
                         
 @stop
