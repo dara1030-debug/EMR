@@ -17,6 +17,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/users/create">Add New User</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Archive</a>
+      </li>
     </ul>
   </div>
   <div class="card-body">
@@ -60,7 +63,7 @@
                   @method('DELETE')
                   <a class="btn btn-primary" href="/users/show">View</a>
                   <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                  <button class="btn btn-primary" type="submit">Delete</button>
+                  <button class="btn btn-secondary" type="submit">Archive</button> {{--archive nalang daw instead of deleting the files of user--}}
                 </form>
               </td>
             </tr>

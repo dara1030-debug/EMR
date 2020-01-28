@@ -8,6 +8,34 @@
     </div>
     @endif
 
+    <div class="container " >
+        <div class="row">
+            <div class="card mt-3 tab-card" >
+              <div class="card-header tab-card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                      <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">Lab Report Urinalysis</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">Lab Report Hematology Sec</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">Lab Report Blood Chem</a>
+                  </li>
+                  
+                </ul>
+              </div>
+      
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+                    <h5 class="card-title">Tab Card One</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>              
+                  </div>
+
+                </div>
+
+                <br>
 
     <div class="card text-center mb-5">
         <div class="card-header">
@@ -17,167 +45,7 @@
         </div>
         
         <div class="card-body">
-            <center><h2 class="register-heading">LABORATORY REPORT</h2></center>
-            <center><h5> URINALYSIS <h5></center>
-
-            <p align="left"><medium>Lab ID#      :LR16010013</medium></p> 
-            <p align="left"><small>Patient Name :</small></p>
-            <p align="left"><small>Age          :</small></p>
-            <p align="left"><small>Sex          :</small></p>
-
-            <form action="/action_page.php" method="get" align="left"><small>
-             Requesting MD: </small><input type="text" name=""><br><small>
-             Date Requested: </small><input type="date" name="" size="10"><br><small>
-             Date Reported: </small><input type="date" name="" size="10"><small>
-             Time Reported: </small><input type="time" name="" size="10">
-             <br><br><br><br>
-
-                <head>
-                <style>
-                table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-                }
-
-                td, th {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-                }
-
-                tr:nth-child(even) {
-                background-color: ;
-                }
-                </style>
-                </head>
-                <body>
-                <table>
-                <tr>
-                    <th></th>
-                    <th>RESULTS</th>
-                    <th>MICROSCOPIC</th>
-                    <th>RESULTS</th>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>COLOR</medium></td>
-                    <td><medium>Yellow</medium></td>
-                    <td><medium>PUS CELLS</medium></td>
-                    <td><medium>1-4/HPF</medium></td>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>TRANSPARENCY</medium></td>
-                    <td><medium>Turbid</medium></td>
-                    <td><medium>RED BLOOD CELL</medium></td>
-                    <td><medium>0-2/HPF</medium></td>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>REACTION (pH)</medium></td>
-                    <td><medium>6.0</medium></td>
-                    <td><medium>BACTERIA</medium></td>
-                    <td><medium>Abundant</medium></td>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>SPECIFIC GRAVITY</medium></td>
-                    <td><medium>1.020</medium></td>
-                    <td><medium>EPITHELIAL CELLS</medium></td>
-                    <td><medium>Few</medium></td>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>SUGAR</medium></td>
-                    <td><medium>Negative</medium></td>
-                    <td><medium>CRYSTALS</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>PROTEIN</medium></td>
-                    <td><medium>Negative</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    
-                </tr>
-
-                <tr>
-                    <td><medium>SPECIAL TESTS</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium>CAST</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    
-                </tr>
-
-
-                <tr>
-                    <td><medium>BILE</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                   
-                </tr>
-
-                <tr>
-                    <td><medium>UROBILINOGEN</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium>OTHERS</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                   
-                </tr>
-
-                <tr>
-                    <td><medium>KETONE</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                   
-                </tr>
-
-                <tr>
-                    <td><medium>BLOOD</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                   
-                </tr>
-
-                <tr>
-                    <td><medium>LEUKOCYTES ESTERASE</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium>PREGNANCY TEST</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                   
-                </tr>
-
-                <tr>
-                    <td><medium>NITRITES</medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                    <td><medium><input type="text" name=""></medium></td>
-                   
-                </tr>
-
-                
-                </table>
-
-                <br><br><br><br>
- 
-
-                <div class="">
-                <div class="">
-                     <ul class="nav nav-tabs card-header-tabs">
            
-                     </ul>
-                 </div>
 
         <div class="card-body">
         <center><h2 class="register-heading">LABORATORY REPORT</h2></center>

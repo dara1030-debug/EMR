@@ -23,7 +23,7 @@
       <h6>ID No. 2015-8418</h6> 
       <h6>ADMIN</h6> <?ROLE?>
       
-      <div class="container register"  style="margin-left: 12%">
+      <div class="container register"  style="margin-left: 15%">
         <div class="row">           
             
                 <div class="tab-content" id="myTabContent" >
@@ -48,23 +48,28 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6 text-left">
-                              <div class="form-group">
-                                <h6><i>College/ Department:</i></h6>
-                                <p>College of Computer Studies</p>
+                            <div class="col-md-6 text-left" >
+                              <div class="form-group" >
+                                <h6><i>Email-Address:</i></h6>
+                                <p>annehayathi1@gmail.com</p>
                               </div>
                                 <div class="form-group">
                                   <h6><i>Phone Number:</i></h6>
                                   <p>+63 915 565 0790</p>   
                                 </div>
                                 <div class="form-group">
+                                  <h6><i>Age:</i></h6>
+                                  <p>22</p>
+                                </div>
+                                <div class="form-group">
                                   <h6><i>Birth Date/Month/Year:</i></h6>
                                   <p>29-04-1997</p>
                                 </div>
                                 <div class="form-group">
-                                  <h6><i>Age:</i></h6>
-                                  <p>22</p>
+                                  <h6><i>License Number:</i></h6>
+                                  <p>LP124242424</p>
                                 </div>
+                                
    
                         </div>
                   </div>

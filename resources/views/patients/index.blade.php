@@ -10,6 +10,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/patients/create">Add New Patient</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
+        </li>
       </ul>
       
     </div>
@@ -43,7 +46,7 @@
                 <td>
                   <a class="btn btn-info" href="/patients/show">View</a>
                   <a class="btn btn-info" href="#">Edit</a>
-                  <a class="btn btn-secondary" href="#">Delete</a>
+                  <a class="btn btn-secondary" href="#">Archive</a>
                 </td>
               </tr>
             </tbody>

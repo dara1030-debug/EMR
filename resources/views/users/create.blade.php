@@ -17,6 +17,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="{{ route('users.create') }}">Add New User</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Archive</a>
+              </li>
           </ul>
         </div>
         
