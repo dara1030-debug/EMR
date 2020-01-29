@@ -273,7 +273,7 @@
 
                 <tr>
                     <td><small>Blood Uric Acid</small></td>
-                    <td><small><right>5.3 mg/dL</right></small></td>
+                    <td><small><align="right">5.3 mg/dL></small></td>
                     <td><small><center>F2.6-6.0 M3.5-7</center></small></td>
                     <td><small>Lactic Dehydrogenase</small></td>
                     <td><small>check</small></td>
@@ -334,102 +334,7 @@
                     <td><small><input type="text" name="" size="10"></small></td>
                     <td><small><input type="text" name="" size="10"></small></td>
                 </tr>
-
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-
-                <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                </tr>
-                </table>
- 
-
-
-                
+     
                 </body>
             </form>
             <form action="{{ route('users.store') }}" method="post">
