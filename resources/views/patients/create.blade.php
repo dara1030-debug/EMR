@@ -19,7 +19,7 @@
     </div>
     <div class="card-body">
         <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br>
-        <input id="inp" type="file" accept="image/*">
+        <input id="inp" type="file" accept="image/*"><br>
         
         <div class="container register"  style="margin-left: 3%">
             

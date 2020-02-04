@@ -11,8 +11,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -55,8 +67,8 @@
             <p class="title" style="color:gray">Admin</p>
         </div>
         <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
-        <a href="#"><i class="fa fa-cogs"></i> Services</a>
-        <a href="#"><i class="fa fa-user"></i> Account</a>
+        <a href="#"><i class="fa fa-user"></i> Profile</a>
+     <!--   <a href="#"><i class="fa fa-cogs"></i></a>-->
         <a href="#"><i class="fa fa-phone"></i> Contact</a>
     </div>
     <!--end of side bar content-->
