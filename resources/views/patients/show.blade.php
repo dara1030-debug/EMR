@@ -25,7 +25,7 @@
       <h4>Anne Hayathi Sesaldo Albiso</h4>
       <h6>ID No. 2015-8418</h6> 
       <h6>Student</h6> <?ROLE?>
-      <a href="#" class="btn btn-info">Add New Consultation</a>
+      <a href="#" class="btn btn-info">Issues</a>
       <a href="#" class="btn btn-secondary">View Medical Record</a>
       <div class="container register"  style="margin-left: 5%">
         <div class="row">           

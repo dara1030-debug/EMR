@@ -20,6 +20,10 @@ Route::get('error', function () {
     return view('errors.admin');
 })->name('errors.admin');
 
+Route::get('/about', function(){
+return view('about');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
@@ -27,7 +31,8 @@ Route::middleware('auth')->group(function () {
 
 	Route::get('labreports', function () {
 		return view('patients.labreport');
-	});    
+    });    
+    
     Route::resource('users', 'UserController')->middleware('admin');
     Route::resource('patients', 'PatientController');
 });
