@@ -17,7 +17,7 @@
       
     </div>
     <div class="card-body">
-        <table class="table table-bordereds">
+        <table class="table table-bordereds table-responsive-md">
             <thead class="text-center thead-light">
               
 
@@ -45,7 +45,7 @@
                 <td>Sesaldo</td>
                 <td>
                   <a class="btn btn-info" href="/patients/show">View</a>
-                  <a class="btn btn-info" href="{{ route('patients.edit', $patients->id) }}">Edit</a> {{-- href="{{ route('users.edit', $user->id) }}" --}}
+                  <a class="btn btn-info" href="#">Edit</a> {{-- href="{{ route('users.edit', $user->id) }}" --}}
                   <a class="btn btn-secondary" href="#">Archive</a>
                 </td>
               </tr>

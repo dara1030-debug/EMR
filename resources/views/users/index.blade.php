@@ -23,7 +23,7 @@
     </ul>
   </div>
   <div class="card-body">
-      <table class="table table-bordereds">
+      <table class="table table-bordereds table-responsive-md">
         <div class="input-group mb-4" style="margin:auto;max-width:300px">
           <input type="search"  placeholder="Search for Users" aria-describedby="button-addon5" class="form-control">
           <div class="input-group-append">
