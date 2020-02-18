@@ -252,6 +252,7 @@
             <div class="row">
                 <div class="col">
                     <input type="submit" class="btn btn-primary btn-lg" value="Save"/>
+                    <a href="/users" class="btn btn-secondary btn-lg">Cancel</a>
                 </div>
             </div>
         </div>
