@@ -37,18 +37,19 @@
             </thead>
 
             <tbody class="text-center">
-              
-              <tr>
-                <td>2015-8418</td>
-                <td>Albiso</td>
-                <td>Anne Hayathi</td>
-                <td>Sesaldo</td>
-                <td>
-                  <a class="btn btn-info" href="/patients/show">View</a>
-                  <a class="btn btn-info" href="{{ route('patients.edit', $patients->id) }}">Edit</a> {{-- href="{{ route('users.edit', $user->id) }}" --}}
-                  <a class="btn btn-secondary" href="#">Archive</a>
-                </td>
-              </tr>
+	      	@foreach ($patients as $patient)
+		<tr>
+                	<td>2015-8418</td>
+               		<td>{{ $patient->last_name }}</td>
+                	<td>{{ $patient->first_name }}</td>
+                	<td>{{ $patient->middle_name }}</td>
+                	<td>
+                  		<a class="btn btn-info" href="/patients/show">View</a>
+                  		<a class="btn btn-info" href="{{ route('patients.edit', $patient->id) }}">Edit</a>
+                  		<a class="btn btn-secondary" href="#">Archive</a>
+                	</td>
+	      	</tr>
+		@endforeach
             </tbody>
         
           </table>

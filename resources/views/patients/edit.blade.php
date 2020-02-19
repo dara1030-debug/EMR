@@ -31,19 +31,19 @@
                                             <input type="number" class="form-control" placeholder="ID Number *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                            <input type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Middle Name *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Home Address *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Present Address *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="col-md-6">
                                     <div class="form-group">
-                                            <select class="form-control">
+                                            <select class="form-control" name="department">
                                                 <option class="hidden"  selected disabled>College/Department</option>
                                                 <option>OPD/DEPENDENT</option>
                                                 <option>SCHOOL OF GRADUATE STUDIES</option>
@@ -107,13 +107,13 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="number" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Phone Number *" value="" />
+                                            <input type="number" minlength="10" maxlength="10" name="phone_number" value="{{ $patient->phone_number }}" class="form-control" placeholder="Phone Number *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Age *" value="" />
+                                            <input type="number" class="form-control" placeholder="Age *" value="{{ $patient->age }}" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Birth Date *" value="" />
+                                            <input type="date" class="form-control" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
                                         </div>
                                         <div class="form-group">
                                             <select class="form-control">
@@ -134,7 +134,7 @@
                                                 <option>OPD/Dependent</option>
                                             </select>
                                         </div>
-                                        <button type ="button" class = "btn btn-info">Register</button>
+                                        <button type ="button" class = "btn btn-info">Save</button>
                                     </div>
                                 </div>
                             </div>
