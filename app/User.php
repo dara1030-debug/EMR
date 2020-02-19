@@ -44,4 +44,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Role');
     }
+
+    public function addedPatients()
+    {
+    	return $this->hasMany('App\Patient', 'auth_by');
+    }
+
+    public function updatedPatients()
+    {
+    	return $this->hasMany('App\Patient', 'updated_by');
+    }
 }
