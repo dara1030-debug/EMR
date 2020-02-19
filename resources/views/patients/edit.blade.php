@@ -134,34 +134,13 @@
                                                 <option>OPD/Dependent</option>
                                             </select>
                                         </div>
+                                        <br>
                                         <button type ="button" class = "btn btn-info">Save</button>
+                                        <a href="/patients" button type ="button" class = "btn btn-secondary">Cancel</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="number" class="form-control" placeholder="License Number *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Address *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option class="hidden"  selected disabled>Role</option>
-                                        <option>Admin</option>
-                                        <option>Nurse</option>
-                                        <option>Doctor</option>
-                                    </select>
-
-                                    </div>
-                        <input type="submit" class="btnRegister"  value="Save"/>
-                    </div>
+                        
                 </div>
             </div>
         </form>

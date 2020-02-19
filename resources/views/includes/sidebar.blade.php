@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <div id="main">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <span class="open-slide"style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
         <a class="navbar-brand" href="{{ url('/dashboard') }}">
             {{ config('app.name', 'EMR') }}
@@ -66,10 +66,14 @@
             <h4 style="color:white">Anne Hayathi Albiso</h4>
             <p class="title" style="color:gray">Admin</p>
         </div>
-        <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
-        <a href="#"><i class="fa fa-user"></i> Profile</a>
-     <!--   <a href="#"><i class="fa fa-cogs"></i></a>-->
-        <a href="#"><i class="fa fa-phone"></i> Contact</a>
+        <div class="row">
+            <div class="col text-left">
+                <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-user"></i> Profile</a>
+                <!--   <a href="#"><i class="fa fa-cogs"></i></a>-->
+                <a href="#"><i class="fa fa-question"></i> Help</a>
+            </div>
+        </div>
     </div>
     <!--end of side bar content-->
     
