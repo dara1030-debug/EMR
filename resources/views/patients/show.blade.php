@@ -22,7 +22,7 @@
     </div>
     <div class="card-body">
       <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar">
-      <h4>Anne Hayathi Sesaldo Albiso</h4>
+      <h4>{{ "$patient->first_name $patient->middle_name $patient->last_name" }}</h4>
       <h6>ID No. 2015-8418</h6> 
       <h6>Student</h6> <?ROLE?>
       <a href="#" class="btn btn-info">Issues</a>
@@ -36,11 +36,11 @@
                             <div class="col-md-6 text-left">
                                 <div class="form-group">
                                   <h6><i>Home Address:</h6></i>
-                                  <p>Tamontaka Datu Odin Sinsuat Province Cotabato City</p>
+                                  <p>{{ $patient->home_address }}</p>
                                 </div>
                                 <div class="form-group">
-                                  <h6><i>Present Address:</h6></i>
-                                  <p>Purok Sudlonon San Miguel, Iligan City, Lanao Del Norte</p>
+				  <h6><i>Present Address:</h6></i>
+				  <p>{{ $patient->present_address }}</p>
                                 </div>
                                 <div class="form-group">
                                   <h6><i>Civil Status:</i></h6>
@@ -48,7 +48,7 @@
                                 </div>
                                 <div clas s="form-group">
                                   <h6><i>Gender:</i></h6>
-                                  <p>Female</p>
+                                  <p>{{ $patient->gender }}</p>
                                 </div>
                             </div>
 
@@ -59,15 +59,15 @@
                               </div>
                                 <div class="form-group">
                                   <h6><i>Phone Number:</i></h6>
-                                  <p>+63 915 565 0790</p>   
+                                  <p>{{ $patient->phone_number }}</p>   
                                 </div>
                                 <div class="form-group">
                                   <h6><i>Birth Date/Month/Year:</i></h6>
-                                  <p>29-04-1997</p>
+                                  <p>{{ $patient->birthdate }}</p>
                                 </div>
                                 <div class="form-group">
                                   <h6><i>Age:</i></h6>
-                                  <p>22</p>
+                                  <p>{{ $patient->age }}</p>
                                 </div>
    
                         </div>

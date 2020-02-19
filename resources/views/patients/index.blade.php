@@ -44,7 +44,7 @@
                 	<td>{{ $patient->first_name }}</td>
                 	<td>{{ $patient->middle_name }}</td>
                 	<td>
-                  		<a class="btn btn-info" href="/patients/show">View</a>
+                  		<a class="btn btn-info" href="{{ route('patients.show', $patient->id) }}">View</a>
                   		<a class="btn btn-info" href="{{ route('patients.edit', $patient->id) }}">Edit</a>
                   		<a class="btn btn-secondary" href="#">Archive</a>
                 	</td>
