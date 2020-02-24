@@ -35,4 +35,5 @@ Route::middleware('auth')->group(function () {
     
     Route::resource('users', 'UserController')->middleware('admin');
     Route::resource('patients', 'PatientController');
+    Route::resource('services', 'ServiceController');
 });

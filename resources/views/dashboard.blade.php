@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <div class="card border-primary">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('services.index') }}" class="nav-link">
                         <img class="card-img-top" src="img/p3.png" alt="Card image">
                         <p class="card-body text-center">Manage Services</p>
                     </a>
