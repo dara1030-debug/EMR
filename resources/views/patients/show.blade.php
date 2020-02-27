@@ -25,7 +25,7 @@
       <h4>{{ "$patient->first_name $patient->middle_name $patient->last_name" }}</h4>
       <h6>ID No. 2015-8418</h6> 
       <h6>Student</h6> <?ROLE?>
-      <a href="#" class="btn btn-info">View Medical Record</a>
+      <a href="{{ route('medical-records.show', $patient->id) }}" class="btn btn-info">View Medical Record</a>
       <div class="container register"  style="margin-left: 5%">
         <div class="row">           
             

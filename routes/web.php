@@ -32,8 +32,10 @@ Route::middleware('auth')->group(function () {
 	Route::get('labreports', function () {
 		return view('patients.labreport');
     });    
-    
+
+    Route::get('help', 'HelpController@index')->name('help');
     Route::resource('users', 'UserController')->middleware('admin');
     Route::resource('patients', 'PatientController');
     Route::resource('services', 'ServiceController');
+    Route::resource('medical-records', 'MedicalRecordController');
 });
