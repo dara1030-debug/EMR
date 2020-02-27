@@ -593,6 +593,7 @@ pre code {
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+    #myForm {display: hidden;}
   }
 }
 
@@ -5271,6 +5272,7 @@ input[type=button].btn-block {
           flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  margin-right: 5;
 }
 
 .card-title {

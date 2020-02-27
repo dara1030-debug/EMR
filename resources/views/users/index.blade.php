@@ -23,7 +23,7 @@
     </ul>
   </div>
   <div class="card-body">
-      <table class="table table-bordereds table-responsive-md">
+      <table class="table table-bordereds table-responsive-sm">
         <div class="input-group mb-4" style="margin:auto;max-width:300px">
           <input type="search"  placeholder="Search for Users" aria-describedby="button-addon5" class="form-control">
           <div class="input-group-append">
@@ -61,9 +61,9 @@
                 <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                   @csrf
                   @method('DELETE')
-                  <a class="btn btn-primary" href="/users/show">View</a>
-                  <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                  <button class="btn btn-secondary" type="submit">Archive</button> {{--archive nalang daw instead of deleting the files of user--}}
+                  <a class="btn btn-info btn-sm btn-block" href="/users/show">View</a>
+                  <a class="btn btn-info btn-sm btn-block" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                  <button class=" btn btn-secondary btn-sm btn-block" type="submit">Archive</button> {{--archive nalang daw instead of deleting the files of user--}}
                 </form>
               </td>
             </tr>

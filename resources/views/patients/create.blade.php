@@ -21,8 +21,8 @@
         <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br>
         <input id="inp" type="file" accept="image/*"><br>
         
-        <div class="container register"  style="margin-left: 3%">
-            
+        <div class="container register"  style="margin-left: 0%">
+            <div class="row justify-content-center align-items-center">
             <div class="row">
 
                 
@@ -142,9 +142,9 @@
                             </div>
                         </div>
 
-                        <div class="container " >
+                        <div class="container" >
                             <div class="row">
-                                <div class="card mt-3 tab-card" >
+                                <div class="card mt-3 tab-card mr-10" >
                                   <div class="card-header tab-card-header">
                                     <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                       <li class="nav-item">
@@ -337,9 +337,10 @@
                                     </div><br>
                                      
                                     <div class="tab-pane fade p-3" id="four" role="tabpanel" aria-labelledby="three-tab">
+                                        <div class="table-responsive-md">
                                         <div class="row">
                                             
-                                            <div class="col text-left ">
+                                            <div class="col text-left table-responsive-md">
                                                 <p class="register-heading text-center">(To be accomplished by physician)</p>
                                                 <table class="table table-bordered ">
                                                     <thead>
@@ -521,6 +522,7 @@
                                                 </table>               
             
                                             </div>
+                                        </div>
                                          </div>          
                                       </div>
                                       <div class="tab-pane fade p-3" id="five" role="tabpanel" aria-labelledby="three-tab">
@@ -546,7 +548,7 @@
                                       </div>
                                       <div class="tab-pane fade p-3" id="six" role="tabpanel" aria-labelledby="three-tab">
                                         <div class="row">
-                                            <div class="col text-center">
+                                            <div class="col text-center col-responsive-md">
                                                 <form action="">
                                                 <table align="center">
                                                     <thead>

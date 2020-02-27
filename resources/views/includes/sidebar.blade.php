@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <div id="main">
-            <span class="open-slide"style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <span class="open-slide d-none d-sm-block"style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             </div>
         <a class="navbar-brand" href="{{ url('/dashboard') }}">
             {{ config('app.name', 'EMR') }}
@@ -11,7 +11,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
@@ -24,6 +24,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-xl-none" href="#">Active Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-xl-none d-md-none d-lg-none " href="#">Help</a>
               </li>
             </ul>
 
@@ -78,6 +84,7 @@
     <!--end of side bar content-->
     
     <!--Active Users-->
+    <div class="d-none d-sm-block d-md-none d-lg-block">
     <button class="open-button" onclick="openForm()"> <i class="fa fa-check"></i>Active Users</button>
     <div class="chat-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
@@ -91,5 +98,7 @@
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
+    </div>
+    
     <!--End for Active Users-->
 </nav>
