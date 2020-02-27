@@ -26,11 +26,12 @@
       <h6>ID No. 2015-8418</h6> 
       <h6>Student</h6> <?ROLE?>
       <a href="#" class="btn btn-info">View Medical Record</a>
-      <div class="container register"  style="margin-left: 5%">
+      <div class="container register" style="margin-left: 4%">
+        <div class="row justify-content-center align-items-center">
         <div class="row">           
             
                 <div class="tab-content" id="myTabContent" >
-                    <br><br>
+                    <br><br><div class="row justify-content-center align-items-center">
                         <div class="row register-form" >
                             <div class="col-md-6 text-left">
                                 <div class="form-group">
@@ -100,7 +101,7 @@
                             </li>
                             </ul>
                           </div>
-                  
+                            {{--must be disabled on the view patient and cannot be editable or clickable--}}
                           <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
                                 <div class="row">
@@ -537,20 +538,17 @@
                                 </div>
                             
                             </div>
-                    </div>
+                         </div>
                     
-                    
+                        </div>
                             
-                </div>               
-                              </div>
+                    </div>               
+                    </div>
                               <br><br><br>              
                       <br><br><br>
-                    </div>
-            </div>
-            
-                    
-        </div>    
-                 
+                </div>
+            </div>        
+        </div>                
     </div>  
-  </div>
+</div>
 @stop

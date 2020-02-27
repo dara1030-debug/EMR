@@ -23,7 +23,8 @@
       <h6>ID No. 2015-8418</h6> 
       <h6>ADMIN</h6> <?ROLE?>
       
-      <div class="container register"  style="margin-left: 15%">
+      <div class="container register"  style="margin-left: 4%">
+        <div class="row justify-content-center align-items-center">
         <div class="row">           
             
                 <div class="tab-content" id="myTabContent" >
