@@ -77,7 +77,7 @@
                 <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                 <a href="#"><i class="fa fa-user"></i> Profile</a>
                 <!--   <a href="#"><i class="fa fa-cogs"></i></a>-->
-                <a href="#"><i class="fa fa-question"></i> Help</a>
+                <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a>
             </div>
         </div>
     </div>

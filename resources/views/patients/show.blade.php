@@ -101,7 +101,7 @@
                             </li>
                             </ul>
                           </div>
-                            {{--must be disabled on the view patient and cannot be editable or clickable--}}
+                            {{--must be edit disabled on the view patient--}}
                           <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
                                 <div class="row">
