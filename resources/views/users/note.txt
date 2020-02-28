@@ -1,0 +1,14 @@
+search bar
+--filter username/fullname/info
+
+view
+--nagka bug, kasi diko ma call yung value ng user.
+
+edit
+--yung sa Upload profile Pic
+
+create
+--yung sa Upload Profile pic nalang, 
+
+archieve
+--

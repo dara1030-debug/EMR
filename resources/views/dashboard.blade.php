@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="d-block d-sm-none">
+<p>This module is available only on Tablet and Desktop View</p>
+</div>
+<div class="d-none d-sm-block d-sm-none d-md-block">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
@@ -33,7 +37,8 @@
             </div>
             
         </div>
-</div>     
+</div>  
+</div>   
 @endsection
 
 

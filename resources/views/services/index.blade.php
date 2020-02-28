@@ -37,8 +37,8 @@
                 <td>Checkup</td>
                 <td>Checkcup only description</td>
                 <td>
-                    <a class="btn btn-info" href="#">View</a>
-                  		<a class="btn btn-info" href="#">Edit</a>
+                    <a class="btn btn-info" href="/services/show">View</a>
+                  		<a class="btn btn-info" href="services/edit">Edit</a>
                   		<a class="btn btn-secondary" href="#">Archive</a>
                 </td>
             </tr>
@@ -46,7 +46,7 @@
                 <td>Consultation</td>
                 <td>Consultation only description</td>
                 <td>
-                    <a class="btn btn-info" href="#">View</a>
+                    <a class="btn btn-info" href="/services/show">View</a>
                   		<a class="btn btn-info" href="#">Edit</a>
                   		<a class="btn btn-secondary" href="#">Archive</a>
                 </td>
@@ -56,7 +56,7 @@
                 <td>Urine Lab Test</td>
                 <td>Checkcup only description</td>
                 <td>
-                    <a class="btn btn-info" href="#">View</a>
+                    <a class="btn btn-info" href="/services/show">View</a>
                   		<a class="btn btn-info" href="#">Edit</a>
                   		<a class="btn btn-secondary" href="#">Archive</a>
                 </td>
@@ -66,29 +66,13 @@
                 <td>Blood Test</td>
                 <td>Checkcup only description</td>
                 <td>
-                    <a class="btn btn-info" href="#">View</a>
+                    <a class="btn btn-info" href="/services/show">View</a>
                   		<a class="btn btn-info" href="#">Edit</a>
                   		<a class="btn btn-secondary" href="#">Archive</a>
                 </td>
 
             </tr>
             
-
-            {{--<tbody class="text-center">
-	      	@foreach ($patients as $patient)
-		<tr>
-                	<td>2015-8418</td>
-               		<td>{{ $patient->last_name }}</td>
-                	<td>{{ $patient->first_name }}</td>
-                	<td>{{ $patient->middle_name }}</td>
-                	<td>
-                  		<a class="btn btn-info" href="{{ route('patients.show', $patient->id) }}">View</a>
-                  		<a class="btn btn-info" href="{{ route('patients.edit', $patient->id) }}">Edit</a>
-                  		<a class="btn btn-secondary" href="#">Archive</a>
-                	</td>
-	      	</tr>
-        @endforeach
-        --}}
             </tbody>
         
           </table>
@@ -96,9 +80,7 @@
   </div>
 @stop
 
-
 {{--@extends('layouts.app')
-
 @section('content')
     Index
     <br>

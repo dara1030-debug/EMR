@@ -11438,12 +11438,12 @@ a.text-dark:focus {
 .open-button {
   background-color: #555;
   color: white;
-  padding: 16px 20px;
+  padding: 10px 12px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 1px;
+  bottom: 59px;
   right: 28px;
   width: 280px;
 }
@@ -11452,7 +11452,7 @@ a.text-dark:focus {
 .chat-popup {
   display: none;
   position: fixed;
-  bottom: 1px;
+  bottom: 59px;
   right: 28px;
   width: 280px;
   padding: 16px 20px;
@@ -11466,7 +11466,7 @@ a.text-dark:focus {
 .form-container {
   
   position: fixed;
-  bottom: 1px;
+  bottom: 59px;
   right: 28px;
   width: 280px;
   padding: 16px 20px;
@@ -11502,7 +11502,7 @@ a.text-dark:focus {
   border: none;
   cursor: pointer;
   width: 100%;
-  bottom:1px;
+  bottom:59px;
 
   
 }
@@ -11510,11 +11510,11 @@ a.text-dark:focus {
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: rgb(3, 5, 36);
-  padding: 16px 20px;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
   position: fixed;
-  bottom: 1px;
+  bottom: 59px;
   right: 28px;
   width: 280px;
 }

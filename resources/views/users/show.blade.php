@@ -11,6 +11,9 @@
           <a class="nav-link" href="/users/create">Add New User</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="#">Archive</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link active" href="/users">View User... 
             <button type="button" class="close" href="/patients">&times; </button> </a>
           </li>
@@ -18,8 +21,8 @@
       
     </div>
     <div class="card-body">
-      <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar">
-      <h4>Anne Hayathi Sesaldo Albiso</h4>
+      <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"> {{--Profile Uploaded--}}
+      <h4>{{ "$user->first_name $user->middle_name $user->last_name" }}</h4> {{--Paki Get yung values ng user sa show please. ga error pag pinapakelaman ko XD--}}
       <h6>ID No. 2015-8418</h6> 
       <h6>ADMIN</h6> <?ROLE?>
       

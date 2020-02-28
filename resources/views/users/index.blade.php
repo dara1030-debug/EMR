@@ -61,7 +61,7 @@
                 <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                   @csrf
                   @method('DELETE')
-                  <a class="btn btn-info btn-sm btn-block" href="/users/show">View</a>
+                  <a class="btn btn-info btn-sm btn-block" href="{{ route('users.show', $user->id) }}">View</a>
                   <a class="btn btn-info btn-sm btn-block" href="{{ route('users.edit', $user->id) }}">Edit</a>
                   <button class=" btn btn-secondary btn-sm btn-block" type="submit">Archive</button> {{--archive nalang daw instead of deleting the files of user--}}
                 </form>

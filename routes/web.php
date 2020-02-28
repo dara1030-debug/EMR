@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     });    
 
     Route::get('help', 'HelpController@index')->name('help');
+    Route::get('doctors', 'DoctorsController@index')->name('doctors');
+    Route::get('contact', 'ContactController@index')->name('contact');
     Route::resource('users', 'UserController')->middleware('admin');
     Route::resource('patients', 'PatientController');
     Route::resource('services', 'ServiceController');

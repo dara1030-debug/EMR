@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div class="card-body">
-        <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br>
+        <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br> {{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
         <input id="inp" type="file" accept="image/*"><br>
         
         <div class="container register"  style="margin-left: 0%">
@@ -614,7 +614,7 @@
                             
                                     
                         </div>               
-                                      </div>
+                        </div>
                                       <br><br><button style="postion: center" type ="button" class = "btn btn-info">Register</button>
                                       <br><br><br>
                                   </div>

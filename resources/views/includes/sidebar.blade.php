@@ -20,13 +20,13 @@
                 <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Doctors</a>
+                <a class="nav-link" href="/doctors">Doctors</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="/contact">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link d-xl-none" href="#">Active Users</a>
+                <a class="nav-link d-xl-none d-block d-sm-none" href="#">Active Users</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link d-xl-none d-md-none d-lg-none " href="#">Help</a>
@@ -75,8 +75,7 @@
         <div class="row">
             <div class="col text-left">
                 <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
-                <a href="#"><i class="fa fa-user"></i> Profile</a>
-                <!--   <a href="#"><i class="fa fa-cogs"></i></a>-->
+                <a href="#"><i class="fa fa-user"></i> Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
                 <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a>
             </div>
         </div>
@@ -84,7 +83,7 @@
     <!--end of side bar content-->
     
     <!--Active Users-->
-    <div class="d-none d-sm-block d-md-none d-lg-block">
+    <div class="d-none d-sm-block d-sm-none d-md-block">
     <button class="open-button" onclick="openForm()"> <i class="fa fa-check"></i>Active Users</button>
     <div class="chat-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
