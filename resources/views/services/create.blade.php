@@ -50,7 +50,7 @@
               </div>
             </div>
             
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <a href="#" button class="btn btn-primary" type="submit">Submit form</button></a>
           </form>
     </div>
   </div>

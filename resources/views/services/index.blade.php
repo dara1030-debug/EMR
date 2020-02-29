@@ -43,8 +43,8 @@
                 </td>
             </tr>
             <tr>
-                <td>Consultation</td>
-                <td>Consultation only description</td>
+                <td>Vaccine</td>
+                <td>Anti Tetano</td>
                 <td>
                     <a class="btn btn-info" href="/services/show">View</a>
                   		<a class="btn btn-info" href="#">Edit</a>
@@ -53,7 +53,25 @@
 
             </tr>
             <tr>
-                <td>Urine Lab Test</td>
+              <td>Dressing</td>
+              <td>After Injury, </td>
+              <td>
+                  <a class="btn btn-info" href="/services/show">View</a>
+                    <a class="btn btn-info" href="#">Edit</a>
+                    <a class="btn btn-secondary" href="#">Archive</a>
+              </td>
+          </tr>
+          <tr>
+            <td>Fist Aid</td>
+            <td>fdadfjhgaffsfdhfdhsfhfsdhsdfhh</td>
+            <td>
+                <a class="btn btn-info" href="/services/show">View</a>
+                  <a class="btn btn-info" href="#">Edit</a>
+                  <a class="btn btn-secondary" href="#">Archive</a>
+            </td>
+        </tr>
+            <tr>
+                <td>Urinary Lab Test</td>
                 <td>Checkcup only description</td>
                 <td>
                     <a class="btn btn-info" href="/services/show">View</a>
@@ -72,7 +90,24 @@
                 </td>
 
             </tr>
-            
+            <tr>
+              <td>Hematology Test</td>
+              <td>Checkcup only description</td>
+              <td>
+                  <a class="btn btn-info" href="/services/show">View</a>
+                    <a class="btn btn-info" href="#">Edit</a>
+                    <a class="btn btn-secondary" href="#">Archive</a>
+              </td>
+          </tr>
+          <tr>
+            <td>Follow Up Checkup</td>
+            <td>Anti Tetano</td>
+            <td>
+                <a class="btn btn-info" href="/services/show">View</a>
+                  <a class="btn btn-info" href="#">Edit</a>
+                  <a class="btn btn-secondary" href="#">Archive</a>
+            </td>
+        </tr>
             </tbody>
         
           </table>

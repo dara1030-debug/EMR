@@ -5,7 +5,7 @@ create
 --upload profile pic (restricted dapat img/png file only)
 --medical history (after input kay mabutang siya sa database sa patient, then if e view, kay same output)
 
-view
+view (Show)
 --gi disable ko yung sa lower portion na may mga check  button, para di maedit.
     pero yung values dun dapat same sa mga patients database sa hrecord nila.
 
@@ -22,7 +22,10 @@ edit
 --Upload Profile Pic 
 --
 
-Archieve
+Archieve (Store)
 --archieve button (Store sa Archive nga database once the patient is graduated. or ni transfer.)
 --same view sa index. pero action lang kay pwede nimu e restore ang patient data if nibalik sya sa iit.
 --action(View/Restore)
+
+LabReport
+--

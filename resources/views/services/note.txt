@@ -1,0 +1,12 @@
+Pahelp ko sa edit.
+--pag e link ko yung sa index>>action>>edit --mo direct siya sa view(show) 
+
+show
+--call function? sa mga values (i dont know the term haha) pero  naka disablee ang form para hindi ma edit
+
+create
+--
+
+Archieve
+--may laman na yung sa archieve na blade
+--actions(View/Restore)

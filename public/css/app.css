@@ -11444,79 +11444,37 @@ a.text-dark:focus {
   opacity: 0.8;
   position: fixed;
   bottom: 59px;
-  right: 28px;
-  width: 280px;
+  right: 10px;
+  width: 260px;
 }
 
-/* The popup chat - hidden by default */
+/* The Active Users - hidden by default */
 .chat-popup {
   display: none;
   position: fixed;
   bottom: 59px;
-  right: 28px;
-  width: 280px;
+  right: 10px;
+  width: 260px;
   padding: 16px 20px;
   cursor: pointer;
-  
-  border: 5px solid #28233a;
   z-index: 9;
 }
 
-/* Add styles to the form container */
-.form-container {
-  
-  position: fixed;
-  bottom: 59px;
-  right: 28px;
-  width: 280px;
-  padding: 16px 20px;
-  border: 5px solid #28233a;
-  background: #f1f1f1;
-  min-height: 300px;
-}
+/
 
-/* Full-width textarea 
-.form-container textarea {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-  resize: none;
-  min-height: 200px;
-} */
 
-/* When the textarea gets focus, do something */
-.form-container textarea:focus {
-  background-color: #ddd;
-  outline: none;
-  padding: 16px 20px;
-  
-}
 
-/* Set a style for the submit/send button */
-.form-container .btn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  bottom:59px;
-
-  
-}
-
-/* Add a red background color to the cancel button */
+/* Add a red background color to the Close button */
 .form-container .cancel {
   background-color: rgb(3, 5, 36);
+  color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   position: fixed;
   bottom: 59px;
-  right: 28px;
-  width: 280px;
+  right: 10px;
+  width: 260px;
 }
 
 /* Add some hover effects to buttons */
@@ -11565,3 +11523,67 @@ a.text-dark:focus {
   padding: 0;
   margin: 0;
 
+}
+
+/* About */
+ 
+.people-list {
+  list-style: none;
+  margin: 70px 0;
+  width: 100%;
+}
+.people-list li {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+.people-list li img {
+  width: auto;
+  height: 100%;
+  display: block;
+}
+ 
+.people-list .people-hover {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,.45);
+ 
+  opacity: 0;
+ 
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+ 
+.people-list .people-hover a {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+ 
+/*About Doctor people details */
+ 
+.people-list .people-detail {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+  color: white;
+}
+.people-list .people-detail h3 {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.people-list .people-detail p {
+  font-size: 16px;
+}
+ 
+.people-list li:hover .people-hover{
+  opacity: 1;
+  box-shadow: inset 0 0 0 5px #222;
+}

@@ -11,7 +11,7 @@
           <a class="nav-link" href="/patients/create">Add New Patient</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
+          <a class="nav-link" href="patients/store">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
         </li>
       </ul>
       
@@ -37,8 +37,8 @@
             </thead>
 
             <tbody class="text-center">
-	      	@foreach ($patients as $patient)
-		<tr>
+	          	@foreach ($patients as $patient)
+	          	<tr>
                 	<td>2015-8418</td>
                		<td>{{ $patient->last_name }}</td>
                 	<td>{{ $patient->first_name }}</td>
@@ -48,8 +48,8 @@
                   		<a class="btn btn-info" href="{{ route('patients.edit', $patient->id) }}">Edit</a>
                   		<a class="btn btn-secondary" href="#">Archive</a>
                 	</td>
-	      	</tr>
-		@endforeach
+	      	      </tr>
+		        @endforeach
             </tbody>
         
           </table>
