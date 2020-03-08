@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     
-  <link rel="stylesheet" href="css/skeleton.css">
+  
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     @stack('css')
 </head>
 <body>
@@ -39,39 +43,19 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-
-    function openForm() {
-    document.getElementById("myForm").style.display = "block";
-    }
-
-    function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-    }
-    
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    // document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-    
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "white";
-    }
-
-    function triggerClick(e) {
-     document.querySelector('#profileImage').click();
-    }
-    function displayImage(e) {
-        if (e.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e){
-        document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
+        /*Upload  Image*/
+        function triggerClick(e) {
+        document.querySelector('#profileImage').click();
         }
-        reader.readAsDataURL(e.files[0]);
-    }
-    }
+        function displayImage(e) {
+            if (e.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e){
+            document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(e.files[0]);
+        }
+         }
     </script>
     @stack('js')
 </body>

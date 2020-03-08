@@ -11,25 +11,25 @@
             <div class="card-deck" >
                 <div class="card border-info">       
                         <a href="/patients" class="nav-link">
-                            <img class="card-img-top" src="img/p1.png" alt="Card image">
+                            <img class="card-img-top" src="img/q1.png" alt="Card image">
                             <p class="card-body text-center">Manage Patients</p>
                         </a>
                 </div>
                 <div class="card border-info">
                     <a href="/users" class="nav-link">
-                        <img class="card-img-top" src="img/p2.png" alt="Card image">
+                        <img class="card-img-top" src="img/q4.png" alt="Card image">
                         <p class="card-body text-center">Manage Users</p>
                     </a>
                 </div>
                 <div class="card border-info">
                     <a href="{{ route('services.index') }}" class="nav-link">
-                        <img class="card-img-top" src="img/p3.png" alt="Card image">
+                        <img class="card-img-top" src="img/q2.png" alt="Card image">
                         <p class="card-body text-center">Manage Services</p>
                     </a>
                 </div>
                 <div class="card border-info">
                     <a href="/labreports" class="nav-link">
-                        <img class="card-img-top" src="img/p4.png" alt="Card image">
+                        <img class="card-img-top" src="img/q3.png" alt="Card image">
                         <p class="card-body text-center">Generate Report</p>
                     </a>
                 </div>

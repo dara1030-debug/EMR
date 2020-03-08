@@ -2,10 +2,10 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <div id="main">
-            <span class="open-slide d-none d-sm-block"style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <span class="open-slide d-none d-sm-block"style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
             </div>
         <a class="navbar-brand" href="{{ url('/dashboard') }}">
-            {{ config('app.name', 'EMR') }}
+            {{ config('app.name', ' EMR') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
                 <a class="nav-link" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/doctors">Doctors</a>
+                <a class="nav-link" href="/doctors">Clinic Staff</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/contact">Contact</a>
@@ -64,40 +64,96 @@
         </div>
     </div>
 
-    <!--sidebar content-->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>            
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="prof">
-            <img src="/img/Picture1.png" alt="Avatar" class="profile"><br>
+            <img src="/img/Picture1.png" alt="Avatar" class="user-panel"><br>
             <h4 style="color:white">Anne Hayathi Albiso</h4>
-            <p class="title" style="color:gray">Admin</p>
+            <p class="role" style="color:gray">Admin</p>
         </div>
         <div class="row">
             <div class="col text-left">
-                <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
-                <a href="#"><i class="fa fa-user"></i> Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
-                <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a>
+                <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard" style="padding-right:27px"></i>Dashboard</a>
+                <a href="#"><i class="fa fa-user" style="padding-right:32px"></i>Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
+                <a href="/patients"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Patients</a>
+                <a href="/users"><i class="fa fa-tasks"style="padding-right:27px"></i>Manage Users</a>
+                <a href="/services"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Services</a>
+                <a href="/services"><i class="fa fa-file" style="padding-right:29px"></i>Generate Report</a>
+                <a href="#"><i class="fa fa-power-off" style="padding-right:29px"></i>Logout</a>
+            
+                <!--   <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a> -->
             </div>
         </div>
-    </div>
+      
+
+
+
     <!--end of side bar content-->
     
     <!--Active Users-->
-    <div class="d-none d-sm-block d-sm-none d-md-block">
-    <button class="open-button" onclick="openForm()"> <i class="fa fa-check"></i>Active Users</button>
-    <div class="chat-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <img src="/img/Picture1.png" alt="Avatar" class="avatar2"> Anne Albiso <br><br>
-            <img src="/img/p1.png" alt="Avatar" class="avatar2"> Isnaina Abdulazis<br>
-        
-            <!--<label for="msg"><b>Message</b></label>
-                -->
+    
+    
+    <button class="open-button" onclick="openForm()">Online</button>
 
-            <!-- <button type="submit" class="btn">Send</button>-->
+        <div class="chat-popup" id="myForm">
+        <form action="/#" class="form-container">
+            <h6 style="text-align: center">Active Users</h6>
+            <table class="table table-bordered table-responsive-sm">
+                <thead class="a">
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody class="b">
+                    <tr>
+                        <td>Anne Hayathi Albiso</td>
+                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Anne Hayathi Albiso</td>
+                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Anne Hayathi Albiso</td>
+                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Anne Hayathi Albiso</td>
+                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Anne Hayathi Albiso</td>
+                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Anne Hayathi Albiso</td>
+                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
+                    </tr>
+                </tbody>
+            </table>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
-    </div>
-    </div>
-    
+        </div>
     <!--End for Active Users-->
 </nav>
+    <script>
+
+        /*Sidebar*/
+    function openNav() {
+      document.getElementById("mySidepanel").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidepanel").style.width = "0";
+    }
+
+        /*OnlineButton*/
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+        }
+    
+    </script>

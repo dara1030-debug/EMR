@@ -17,16 +17,14 @@
       
     </div>
     <div class="card-body">
-        <table class="table table-bordereds table-responsive-md">
+      <div class="input-group mb-4" style="margin:auto;max-width:300px">
+        <input type="search" id="myInput" placeholder="Search for Patient " aria-describedby="button-addon5" class="form-control">
+      {{--<i class="fa fa-search"></i>--}}
+        
+      </div>
+        <table class="table table-bordered table-responsive-md">
             <thead class="text-center thead-light">
               
-
-              <div class="input-group mb-4" style="margin:auto;max-width:300px">
-                <input type="search"  placeholder="Search for Patient" aria-describedby="button-addon5" class="form-control">
-                <div class="input-group-append">
-                  <button id="button-addon5" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                </div>
-              </div>
               <tr>
                 <th scope="col">OPD/Id Number</th>
                 <th scope="col">Last Name</th>
@@ -36,7 +34,7 @@
               </tr>
             </thead>
 
-            <tbody class="text-center">
+            <tbody class="p2 text-center" id="myTable">
 	          	@foreach ($patients as $patient)
 	          	<tr>
                 	<td>2015-8418</td>
@@ -44,15 +42,48 @@
                 	<td>{{ $patient->first_name }}</td>
                 	<td>{{ $patient->middle_name }}</td>
                 	<td>
-                  		<a class="btn btn-info" href="{{ route('patients.show', $patient->id) }}">View</a>
-                  		<a class="btn btn-info" href="{{ route('patients.edit', $patient->id) }}">Edit</a>
-                  		<a class="btn btn-secondary" href="#">Archive</a>
+                  		<a href="{{ route('patients.show', $patient->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                  		<a href="{{ route('patients.edit', $patient->id) }}"><i class="fa fa-edit" style="padding-right:20px" aria-hidden="true"></a></i>
+                  		<a href="#"><i class="fa fa-archive" style="padding-right:10px" aria-hidden="true"></a></i>
+                  	
                 	</td>
 	      	      </tr>
-		        @endforeach
+            @endforeach
             </tbody>
-        
           </table>
+          <nav aria-label="Paging">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="previous">
+                  <span aria-hiddden="true">&laquo; </span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="previous">
+                  <span aria-hiddden="true">&raquo; </span>
+                  <span class="sr-only">Next </span>
+                </a>
+              </li>
+            </ul> 
+          </nav>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
 @stop

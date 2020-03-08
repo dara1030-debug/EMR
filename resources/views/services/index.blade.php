@@ -17,38 +17,34 @@
       
     </div>
     <div class="card-body">
+      <div class="input-group mb-4" style="margin:auto;max-width:300px">
+        <input type="search"  id="myInput"  placeholder="Search for Services" aria-describedby="button-addon5" class="form-control">
+      </div>
         <table class="table table-bordereds table-responsive-md">
             <thead class="text-center thead-light">
-              
-
-              <div class="input-group mb-4" style="margin:auto;max-width:300px">
-                <input type="search"  placeholder="Search for Services" aria-describedby="button-addon5" class="form-control">
-                <div class="input-group-append">
-                  <button id="button-addon5" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                </div>
-              </div>
               <tr>
                 <th scope="col">Name of Service</th>
                 <th scope="col">Description</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
+            <tbody id="myTable">
             <tr>
                 <td>Checkup</td>
                 <td>Checkcup only description</td>
                 <td>
-                    <a class="btn btn-info" href="/services/show">View</a>
-                  		<a class="btn btn-info" href="services/edit">Edit</a>
-                  		<a class="btn btn-secondary" href="#">Archive</a>
+                    <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                  		<a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                  		<a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
                 </td>
             </tr>
             <tr>
                 <td>Vaccine</td>
                 <td>Anti Tetano</td>
                 <td>
-                    <a class="btn btn-info" href="/services/show">View</a>
-                  		<a class="btn btn-info" href="#">Edit</a>
-                  		<a class="btn btn-secondary" href="#">Archive</a>
+                  <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                  <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                  <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
                 </td>
 
             </tr>
@@ -56,27 +52,27 @@
               <td>Dressing</td>
               <td>After Injury, </td>
               <td>
-                  <a class="btn btn-info" href="/services/show">View</a>
-                    <a class="btn btn-info" href="#">Edit</a>
-                    <a class="btn btn-secondary" href="#">Archive</a>
+                <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
               </td>
           </tr>
           <tr>
             <td>Fist Aid</td>
             <td>fdadfjhgaffsfdhfdhsfhfsdhsdfhh</td>
             <td>
-                <a class="btn btn-info" href="/services/show">View</a>
-                  <a class="btn btn-info" href="#">Edit</a>
-                  <a class="btn btn-secondary" href="#">Archive</a>
+              <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+              <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+              <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
             </td>
         </tr>
             <tr>
                 <td>Urinary Lab Test</td>
                 <td>Checkcup only description</td>
                 <td>
-                    <a class="btn btn-info" href="/services/show">View</a>
-                  		<a class="btn btn-info" href="#">Edit</a>
-                  		<a class="btn btn-secondary" href="#">Archive</a>
+                  <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                  <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                  <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
                 </td>
 
             </tr>
@@ -84,9 +80,9 @@
                 <td>Blood Test</td>
                 <td>Checkcup only description</td>
                 <td>
-                    <a class="btn btn-info" href="/services/show">View</a>
-                  		<a class="btn btn-info" href="#">Edit</a>
-                  		<a class="btn btn-secondary" href="#">Archive</a>
+                  <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                  <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                  <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
                 </td>
 
             </tr>
@@ -94,18 +90,18 @@
               <td>Hematology Test</td>
               <td>Checkcup only description</td>
               <td>
-                  <a class="btn btn-info" href="/services/show">View</a>
-                    <a class="btn btn-info" href="#">Edit</a>
-                    <a class="btn btn-secondary" href="#">Archive</a>
+                <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
               </td>
           </tr>
           <tr>
             <td>Follow Up Checkup</td>
             <td>Anti Tetano</td>
             <td>
-                <a class="btn btn-info" href="/services/show">View</a>
-                  <a class="btn btn-info" href="#">Edit</a>
-                  <a class="btn btn-secondary" href="#">Archive</a>
+              <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+              <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+              <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
             </td>
         </tr>
             </tbody>
@@ -113,6 +109,17 @@
           </table>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
 @stop
 
 {{--@extends('layouts.app')

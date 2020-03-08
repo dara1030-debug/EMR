@@ -23,13 +23,12 @@
     </ul>
   </div>
   <div class="card-body">
-      <table class="table table-bordereds table-responsive-sm">
-        <div class="input-group mb-4" style="margin:auto;max-width:300px">
-          <input type="search"  placeholder="Search for Users" aria-describedby="button-addon5" class="form-control">
-          <div class="input-group-append">
-            <button id="button-addon5" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-          </div>
-        </div>
+      <div class="input-group mb-4" style="margin:auto; max-width:300px">
+        <input type="search" id="myInput" placeholder="Search for Users" aria-describedby="button-addon5" class="form-control">
+        
+      </div>
+      <table class="table table-responsive-md">
+          
           <thead class="text-center thead-light">
             <tr>
               <th scope="col">Role</th>
@@ -39,43 +38,54 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody class="text-center">
-            @foreach($users as $user)
-            <tr>
-              <td>
-                <div class="badge 
-                @if($user->role->name == 'Administrator') 
-                  badge-danger 
-                @elseif($user->role->name == 'Doctor')  
-                  badge-success
-                @elseif($user->role->name == 'Nurse')
-                  badge-primary
-                @endif">
-                  {{ $user->role->name }}
-                </div>
-              </td>
-              <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
-              <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
-              <td>{{ $user->email }}</td>
-              <td>
-                <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <a class="btn btn-info btn-sm btn-block" href="{{ route('users.show', $user->id) }}">View</a>
-                  <a class="btn btn-info btn-sm btn-block" href="{{ route('users.edit', $user->id) }}">Edit</a>
-                  <button class=" btn btn-secondary btn-sm btn-block" type="submit">Archive</button> {{--archive nalang daw instead of deleting the files of user--}}
-                </form>
-              </td>
-            </tr>
-            @endforeach
+          <tbody class="text-center" id="myTable">
+                @foreach($users as $user)
+                <tr>
+                  <td>
+                    <div class="badge 
+                    @if($user->role->name == 'Administrator') 
+                      badge-danger 
+                    @elseif($user->role->name == 'Doctor')  
+                      badge-success
+                    @elseif($user->role->name == 'Nurse')
+                      badge-primary
+                    @endif">
+                      {{ $user->role->name }}
+                    </div>
+                  </td>
+                  <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
+                  <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
+                  <td>{{ $user->email }}</td>
+                  <td>
+                    <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <a  href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                      <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                      <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i> {{--archive nalang daw instead of deleting the files of user--}}
+                    </form>
+                  </td>
+                </tr>
+                @endforeach
           </tbody>
       
         </table>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+  </script>
 @stop
 
 @push('js')
+
 <script>
   const confirmDelete = () => {
     if (confirm('Are you sure you want to delete this user?')) {

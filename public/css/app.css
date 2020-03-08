@@ -11376,16 +11376,19 @@ a.text-dark:focus {
   transition: 0.3s;
   width: 40%;
   display: flex;
+  
   }
 }
 
 .card:hover {
   box-shadow: 0px 10px 20px 0 rgba(4, 0, 41, 0.2);
-  display: flex
+  display: flex;
+  
 }
 
 #container {
   min-height: 100%;
+  
 
 }
 .footer {
@@ -11415,12 +11418,16 @@ a.text-dark:focus {
   border-radius: 50%;
 }
 
-.profile {
+.user-panel {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
   border-radius: 50%;
+}
+
+.role{
+  white-space: nowrap;
 }
 
 .avatar2 {
@@ -11432,8 +11439,20 @@ a.text-dark:focus {
 
 .prof {
   text-align: center;
+  white-space: nowrap;
 }
 
+/*Online Button */
+
+* {box-sizing: border-box;}
+
+.form-container thead.a, tbody.b { 
+  display: block; }
+.form-container tbody.b {
+            height: 200px;       /* Just for the demo          */
+            overflow-y: auto;    /* Trigger vertical scroll    */
+            overflow-x: hidden;  /* Hide the horizontal scroll */
+        }
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
@@ -11443,38 +11462,69 @@ a.text-dark:focus {
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 59px;
+  bottom: 60px;
   right: 10px;
   width: 260px;
 }
 
-/* The Active Users - hidden by default */
+/* The popup chat - hidden by default */
 .chat-popup {
+  
   display: none;
   position: fixed;
-  bottom: 59px;
+  padding: 10px 12px;
+  bottom: 60px;
   right: 10px;
   width: 260px;
-  padding: 16px 20px;
-  cursor: pointer;
+  border: 3px solid #f1f1f1;
   z-index: 9;
 }
 
-/
+/* Add styles to the form container */
+.form-container {
+  font-size: small;
+
+  position: fixed;
+  padding: 10px 12px;
+  bottom: 100px;
+  right: 10px;
+  width: 260px;
+  background-color: white;
+  border: 3px solid #082338;
+}
+
+/* Full-width textarea */
+.form-container table {
+  width: 100%;
+  padding: 20px 5px;
+  margin: 5px 0 22px 0;
+  border-color: rgb(236, 235, 236);
+  background: #f1f1f1;
+  resize: none;
+  min-height: 210px;
+  bottom: 60px;
+  font-size: small;
+}
 
 
-
-/* Add a red background color to the Close button */
-.form-container .cancel {
-  background-color: rgb(3, 5, 36);
+/* Set a style for the submit/send button */
+.form-container .btn {
   color: white;
-  padding: 10px 20px;
+  padding: 10px 12px;
   border: none;
   cursor: pointer;
   position: fixed;
-  bottom: 59px;
+  bottom: 60px;
   right: 10px;
   width: 260px;
+
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #0f2d44;
+  
+  
 }
 
 /* Add some hover effects to buttons */
@@ -11482,14 +11532,16 @@ a.text-dark:focus {
   opacity: 1;
 }
 
+/*End of Online Button */
+
 /* When the radio button is checked, add a blue background */
 .checkbox1 input:checked ~ .checkmark {
-  background-color: #2196F3;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
   content: "";
+  background-color: #2196F3;
   position: absolute;
   display: none;
 }
@@ -11525,22 +11577,32 @@ a.text-dark:focus {
 
 }
 
-/* About */
+/* Clinic Staff */
  
+.clinic{
+
+  padding: 5px;
+}
 .people-list {
   list-style: none;
-  margin: 70px 0;
+  margin: 30px 0;
   width: 100%;
 }
 .people-list li {
   position: relative;
-  height: 300px;
   overflow: hidden;
+  vertical-align: middle;
+  width: 250px;
+  height: 250px;
 }
 .people-list li img {
-  width: auto;
-  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  overflow: hidden;
   display: block;
+  width: 250px;
+  height: 250px;
+  text-align: center;
 }
  
 .people-list .people-hover {
@@ -11562,28 +11624,40 @@ a.text-dark:focus {
   top: 10px;
   right: 10px;
   color: white;
+  border-radius: 50%;
+ 
 }
  
 /*About Doctor people details */
- 
+
+.staff {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 5px;
+}
 .people-list .people-detail {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0 20px;
-  z-index: 1;
+  
   color: white;
+  border-radius: 50%;
 }
 .people-list .people-detail h3 {
-  font-size: 22px;
-  margin-bottom: 0;
+  font-size: 18px;
+  text-align: center;
+  
 }
 .people-list .people-detail p {
-  font-size: 16px;
+  font-size: 13px;
+  border-radius: 50%;
+ 
 }
  
 .people-list li:hover .people-hover{
   opacity: 1;
   box-shadow: inset 0 0 0 5px #222;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
 }
+
