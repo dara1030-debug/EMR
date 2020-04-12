@@ -250,15 +250,17 @@
                         </div>
                         <div class="form-group">
                             <select 
-                            name="role"
-                            class="form-control @error('role') is-invalid @enderror">
-                                <option class="hidden" @if(!$user->role) selected @endif disabled>Role</option>
-                                <option value="1" @if($user->role == '1') selected @endif>Admin</option>
-                                <option value="2" @if($user->role == '2') selected @endif>Doctor</option>
-                                <option value="3" @if($user->role == '3') selected @endif>Nurse</option>
+                            name="role_id"
+                            class="form-control @error('role_id') is-invalid @enderror">
+                                <option class="hidden" @if(!$user->role_id) selected @endif disabled>Role</option>
+                                @foreach(\App\Role::get() as $role)
+                                    <option value="{{ $role->id }}" @if($user->role_id == $role->id) selected @endif>{{ $role->name }}</option>
+                                @endforeach
+                                {{-- <option value="2" @if($user->role_id == '2') selected @endif>Doctor</option>
+                                <option value="3" @if($user->role_id == '3') selected @endif>Nurse</option> --}}
                             </select>
     
-                            @error('role')
+                            @error('role_id')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

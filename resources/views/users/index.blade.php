@@ -62,7 +62,9 @@
                       @method('DELETE')
                       <a  href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
                       <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                      <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i> {{--archive nalang daw instead of deleting the files of user--}}
+                      <button type="submit">
+                        <i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></i> 
+                      </button>{{--archive nalang daw instead of deleting the files of user--}}
                     </form>
                   </td>
                 </tr>

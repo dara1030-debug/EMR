@@ -41,36 +41,38 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'required|string',
-            'middle_name' => 'required|string',
-            'last_name' => 'required|string',
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed',
             'password_confirmation' => 'required',
-            'civil_status' => 'required|string',
+            'civil_status' => 'required',
             'age' => 'required',
             'birthdate' => 'required', 
             'present_address' => 'required',
-            'gender' => 'required|string',
-            'role' => 'required|integer',
+            'gender' => 'required',
+            'role_id' => 'required',
             'contact_number' => 'required',
             'license_number' => 'required',
         ]);
 
         $user = User::create([
+            'role_id' => $request->role_id,
+            'email' => $request->email,
+            'password' => $request->password,
             'first_name' => $request->first_name,
             'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => $request->password,
+            'gender' => $request->gender,
             'civil_status' => $request->civil_status,
             'age' => $request->age,
-            'birthdate' => $request->birthdate, 
+            'birthdate' => $request->birthdate,
             'present_address' => $request->present_address,
-            'gender' => $request->gender,
-            'role_id' => $request->role,
+            'home_address' => $request->home_address,
             'contact_number' => $request->contact_number,
             'license_number' => $request->license_number,
+            'last_activity' => $request->last_activity,
         ]);
 
         return redirect()->back()->with('success', 'A user has been successfully added.');
@@ -89,9 +91,9 @@ class UserController extends Controller
       *  return view('users.show', compact('user'));
     *}*/
 
-    public function show()
+    public function show(User $user)
     {
-        return view('users.show');
+        return view('users.show')->with('user', $user);
     }
     
     /**
@@ -116,41 +118,48 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->all());
-        
         $request->validate([
-            'first_name' => 'required|string',
-            'middle_name' => 'required|string',
-            'last_name' => 'required|string',
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
-            'password' => 'confirmed',
-            'civil_status' => 'required|string',
+            'civil_status' => 'required',
             'age' => 'required',
             'birthdate' => 'required', 
             'present_address' => 'required',
-            'role' => 'required|integer',
+            'role_id' => 'required',
             'contact_number' => 'required',
             'license_number' => 'required',
         ]);
 
         $user = User::findOrFail($id);
+        $user->role_id = $request->role_id;
+        $user->email = $request->email;
         $user->first_name = $request->first_name;
         $user->middle_name = $request->middle_name;
         $user->last_name = $request->last_name;
-        $user->email = $request->email;
-        if ($request->password) {
-            $user->password = $request->password;
-        }
         $user->civil_status = $request->civil_status;
         $user->age = $request->age;
         $user->birthdate = $request->birthdate;
         $user->present_address = $request->present_address;
-        if ($request->gender) {
-            $user->gender = $request->gender;
-        }
-        $user->role_id = $request->role;
+        $user->home_address = $request->home_address;
         $user->contact_number = $request->contact_number;
         $user->license_number = $request->license_number;
+        $user->last_activity = $request->last_activity;
+        
+        if ($request->get('gender') != null) {
+            $user->gender = $request->gender;
+        }
+
+        
+        if ($request->get('password') != null) {
+            $user->password = $request->password;
+        }
+
+        if ($request->get('gender') != null) {
+            $user->gender = $request->gender;
+        }
+
         $user->save();
 
         return redirect()->back()->with('success', 'A user has been updated.');
@@ -169,5 +178,31 @@ class UserController extends Controller
         if($user->delete()) {
             return redirect()->back()->with('success', 'A user has been deleted successfully!');
         }
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::withTrashed()->where('id', $id)->first();
+
+        if(!isset($user)) {
+            return redirect()->back()->with('error', 'The system was unable to delete the user permanently.');
+        }
+
+        $user->forceDelete();
+        
+        return redirect()->back()->with('success', 'A user has been deleted permanently.');
+    }
+
+    public function restoreUser($id)
+    {
+        $user = User::withTrashed()->where('id', $id)->first();
+
+        if(!isset($user)) {
+            return redirect()->back()->with('error', 'The system was unable to restore the user.');
+        }
+
+        $user->restore();
+        
+        return redirect()->back()->with('success', 'A user has been restored successfully!');
     }
 }

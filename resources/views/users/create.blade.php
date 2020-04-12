@@ -8,6 +8,16 @@
     </div>
     @endif
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="card text-center">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
@@ -33,28 +43,30 @@
         <div class="row">
             <div class="tab-content input-center" id="myTabContent" >
                 <br>
+                <form action="{{ route('users.store') }}" method="POST">
+                    @csrf
                     <div class="row register-form" >
                         <div class="col-md-6">
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <input type="number" class="form-control" placeholder="ID Number *" value="" />
+                            </div> --}}
+                            <div class="form-group">
+                                <input name="first_name" type="text" class="form-control" placeholder="First Name *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                <input name="middle_name" type="text" class="form-control" placeholder="Middle Name *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Middle Name *" value="" />
+                                <input name="last_name" type="text" class="form-control"  placeholder="Last Name *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control"  placeholder="Last Name *" value="" />
+                                <input name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control"  placeholder="Home Address *" value="" />
+                                <input name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control"  placeholder="Present Address *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <select class="form-control">
+                                <select name="civil_status" class="form-control">
                                     <option class="hidden"  selected disabled>Civil Status</option>
                                     <option>Single</option>
                                     <option>Married</option>
@@ -63,10 +75,6 @@
                                     <option>In certain cases</option>
                                 </select>
                             </div>
-                            
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-group">
                             <div class="form-group">
                                 <div class="maxl">
                                     <label class="radio inline"> 
@@ -79,6 +87,10 @@
                                     </label>
                                 </div>
                             </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
                             <div class="form-group">
                                 <input 
                                 name="email" 
@@ -93,15 +105,45 @@
                                     </span>
                                 @enderror
                             </div>
+
+                            <div class="form-group">
+                                <input 
+                                name="password" 
+                                type="password" 
+                                class="form-control @error('password') is-invalid @enderror" 
+                                placeholder="Password *" 
+                                value="{{ old('password') }}" />
+    
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <input 
+                                name="password_confirmation" 
+                                type="password" 
+                                class="form-control @error('password_confirmation') is-invalid @enderror" 
+                                placeholder="Password Confirmation *" 
+                                value="{{ old('password') }}" />
+    
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             
                             <div class="form-group">
-                                <input type="number" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Phone Number *" value="" />
+                                <input type="number" minlength="10" maxlength="10" name="contact_number" class="form-control" placeholder="Phone Number *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" placeholder="Age *" value="" />
+                                <input name="age" type="number" class="form-control" placeholder="Age *" value="" />
                             </div>
                             <div class="form-group">
-                                <input type="date" class="form-control" placeholder="Birth Date *" value="" />
+                                <input name="birthdate" type="date" class="form-control" placeholder="Birth Date *" value="" />
                             </div>
                             <div class="form-group">
                                 <input 
@@ -118,25 +160,26 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <select class="form-control">
+                                <select name="role_id" class="form-control">
                                     <option class="hidden"  selected disabled>Role</option>
-                                    <option>Student</option>
-                                    <option>Faculty</option>
-                                    <option>Staff</option>
-                                    <option>OPD/Dependent</option>
+                                    @foreach(\App\Role::get() as $role)
+                                        <option value="{{ $role->id }}">
+                                            {{ $role->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
-                            <br><button style="postion: center" type ="button" class = "btn btn-info">Register</button>
+                            <br><button style="postion: center" type ="submit" class = "btn btn-info">Register</button>
                             <button style="postion: center" type ="button" class = "btn btn-secondary">Cancel</button>
+                        </div>
                     </div>
-                </div>
+                </form>
 
                 
 
        
-            </form>
             </div>
-            </div>
+        </div>
     </div>
 </div>
 @stop
