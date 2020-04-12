@@ -23,5 +23,9 @@ class RolesTableSeeder extends Seeder
         Role::create([
             'name' => 'Nurse',
         ]);
+
+        Role::create([
+            'name' => 'OPD/Dependent',
+        ]);
     }
 }
