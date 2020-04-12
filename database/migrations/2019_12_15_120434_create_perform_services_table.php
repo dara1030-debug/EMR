@@ -21,14 +21,15 @@ class CreatePerformServicesTable extends Migration
             $table->string('name');
             $table->date('service_date');
             $table->string('remarks');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('perform_services', function (Blueprint $table) {
-            $table->foreign('health_examination_record_id')->references('id')->on('health_examination_records');
-            $table->foreign('patient_id')->references('id')->on('patients');
-            $table->foreign('user_id')->references('id')->on('users');
-        });
+        // Schema::table('perform_services', function (Blueprint $table) {
+        //     $table->foreign('health_examination_record_id')->references('id')->on('health_examination_records');
+        //     $table->foreign('patient_id')->references('id')->on('patients');
+        //     $table->foreign('user_id')->references('id')->on('users');
+        // });
     }
 
     /**

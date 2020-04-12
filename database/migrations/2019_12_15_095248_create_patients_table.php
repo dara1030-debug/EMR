@@ -30,11 +30,12 @@ class CreatePatientsTable extends Migration
             $table->date('birthdate');
             $table->unsignedBigInteger('added_by');
             $table->unsignedBigInteger('updated_by');
-	    $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
+            $table->timestamps();
 
-	    $table->foreign('added_by')->references('id')->on('users');
-	    $table->foreign('updated_by')->references('id')->on('users');
-	});
+            $table->foreign('added_by')->references('id')->on('users');
+            $table->foreign('updated_by')->references('id')->on('users');
+	    });
     }
 
     /**

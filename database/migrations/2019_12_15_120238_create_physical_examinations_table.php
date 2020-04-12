@@ -17,6 +17,7 @@ class CreatePhysicalExaminationsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('remarks');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

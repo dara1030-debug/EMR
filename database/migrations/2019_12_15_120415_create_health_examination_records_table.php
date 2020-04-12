@@ -27,12 +27,13 @@ class CreateHealthExaminationRecordsTable extends Migration
             $table->string('assessment');
             $table->string('reccommendation');
             $table->date('examination_date');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
 
-        Schema::table('health_examination_records', function (Blueprint $table) {
-            $table->foreign('physical_examination_id')->references('id')->on('physical_examinations');
-        });
+        // Schema::table('health_examination_records', function (Blueprint $table) {
+        //     $table->foreign('physical_examination_id')->references('id')->on('physical_examinations');
+        // });
     }
 
     /**

@@ -21,20 +21,23 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
-            $table->string('gender');
-            $table->string('civil_status');
-            $table->integer('age');
-            $table->string('birthdate');
-            $table->string('present_address');
-            $table->string('contact_number');
-            $table->string('license_number');
+            $table->string('gender')->nullable();
+            $table->string('civil_status')->nullable();
+            $table->integer('age')->nullable();
+            $table->string('birthdate')->nullable();
+            $table->string('present_address')->nullable();
+            $table->string('home_address')->nullable();
+            $table->string('contact_number')->nullable();
+            $table->string('license_number')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamp('last_activity')->nullable();
             $table->timestamps();
+            // $table->foreign('role_id')->references('id')->on('roles');
         });
 
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('role_id')->references('id')->on('roles');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->foreign('role_id')->references('id')->on('roles');
+        // });
     }
 
     /**
