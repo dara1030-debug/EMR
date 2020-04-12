@@ -12,13 +12,13 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="/users">Users</a>
+        <a class="nav-link" href="/users">Users</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/users/create">Add New User</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('users.archive') }}">Archive</a>
+        <a class="nav-link active" href="{{ route('users.archive') }}">Archive</a>
       </li>
     </ul>
   </div>
@@ -40,7 +40,7 @@
           </thead>
           <tbody class="text-center" id="myTable">
                 @foreach($users as $user)
-                  @if(!$user->deleted_at)
+                  @if($user->deleted_at)
                     <tr>
                       <td>
                         <div class="badge 
@@ -58,13 +58,12 @@
                       <td>{{ $user->first_name }} {{ $user->middle_name }} {{ $user->last_name }}</td>
                       <td>{{ $user->email }}</td>
                       <td>
-                        <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                        <form action="{{ route('users.delete', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                           @csrf
                           @method('DELETE')
-                          <a  href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                          <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                          <button class="btn" type="submit">
-                            <i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></i> 
+                          <a href="{{ route('users.restore', $user->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
+                          <button type="submit" class="btn">
+                            <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
                           </button>{{--archive nalang daw instead of deleting the files of user--}}
                         </form>
                       </td>

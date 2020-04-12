@@ -16,7 +16,3 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::resource('users', 'UserController');
-Route::delete('users/force-delete/{id}', 'UserController@deleteUser')->name('users.delete');
-Route::get('users/restore/{id}', 'UserController@restoreUser')->name('users.restore');

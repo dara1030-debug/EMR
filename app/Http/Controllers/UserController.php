@@ -15,11 +15,23 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::with('role')->get();
 
         return view('users.index', compact('users'));
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function archive()
+    {
+        $users = User::with('role')->withTrashed()->get();
+
+        return view('users.archive', compact('users'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *

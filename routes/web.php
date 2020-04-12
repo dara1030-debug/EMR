@@ -33,11 +33,18 @@ Route::middleware('auth')->group(function () {
 		return view('patients.labreport');
     });    
 
+    Route::middleware('admin')->group(function () {
+        Route::resource('users', 'UserController');
+        Route::get('users/archive/index', 'UserController@archive')->name('users.archive');
+        Route::delete('users/force-delete/{id}', 'UserController@deleteUser')->name('users.delete');
+        Route::get('users/restore/{id}', 'UserController@restoreUser')->name('users.restore');
+    });
+    
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');
     Route::get('contact', 'ContactController@index')->name('contact');
-    Route::resource('users', 'UserController')->middleware('admin');
     Route::resource('patients', 'PatientController');
     Route::resource('services', 'ServiceController');
     Route::resource('medical-records', 'MedicalRecordController');
 });
+
