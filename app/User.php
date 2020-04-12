@@ -2,34 +2,22 @@
 
 namespace App;
 
+use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
-     * The attributes that are mass assignable.
+     * The attributes that are not mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'first_name',
-        'middle_name',
-        'last_name',
-        'email',
-        'password',
-        'civil_status',
-        'age',
-        'birthdate',
-        'present_address',
-        'gender',
-        'role_id',
-        'contact_number',
-        'license_number',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -53,5 +41,20 @@ class User extends Authenticatable
     public function updatedPatients()
     {
     	return $this->hasMany('App\Patient', 'updated_by');
+    }
+
+    public function getRole()
+    {
+        return $this->role->name;
+    }
+
+    public function getAddedPatients()
+    {
+        return $this->addedPatients;
+    }
+
+    public function getUpdatedPatients()
+    {
+        return $this->updatedPatients;
     }
 }
