@@ -17,11 +17,11 @@ class CreateHealthExaminationRecordsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('physical_examination_id');
             $table->text('past_medical_history');
-            $table->date('last_menstrual_period')->nullable();
-            $table->string('menstrual_pattern');
             $table->text('family_history');
             $table->text('social_history');
             $table->string('vital_signs');
+            $table->date('last_menstrual_period')->nullable();
+            $table->string('menstrual_pattern');
             $table->string('added_by');
             $table->string('updated_by');
             $table->string('assessment');
