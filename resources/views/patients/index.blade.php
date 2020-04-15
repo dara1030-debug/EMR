@@ -15,7 +15,7 @@
         </li>
       </ul>
       
-    </div>
+</div>
     <div class="card-body">
       <div class="input-group mb-4" style="margin:auto;max-width:300px">
         <input type="search" id="myInput" placeholder="Search for Patient " aria-describedby="button-addon5" class="form-control">
@@ -51,29 +51,9 @@
             @endforeach
             </tbody>
           </table>
-          <nav aria-label="Paging">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="previous">
-                  <span aria-hiddden="true">&laquo; </span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">6</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="previous">
-                  <span aria-hiddden="true">&raquo; </span>
-                  <span class="sr-only">Next </span>
-                </a>
-              </li>
-            </ul> 
-          </nav>
-    </div>
+          <div class="pagination justify-content-center">
+            {{$patients->links()}}
+            </div>
   </div>
 
   <script>
