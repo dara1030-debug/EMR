@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfd2cbc0d8f7066ad9714ebe3fad0c20",
+    "content-hash": "1cde091ffae9929e07c17ddb7a3b15fa",
     "packages": [
         {
             "name": "askedio/laravel-soft-cascade",
@@ -466,6 +466,56 @@
             "description": "Highlight PHP code in terminal",
             "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "joshrainwater/active-users",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/joshrainwater/active-users.git",
+                "reference": "5c5904162238d0d989728fcf5c63cfe0f9449608"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/joshrainwater/active-users/zipball/5c5904162238d0d989728fcf5c63cfe0f9449608",
+                "reference": "5c5904162238d0d989728fcf5c63cfe0f9449608",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.6|~5.7|~5.8|~6.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "^1.7",
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rainwater\\Active\\ActiveServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rainwater\\Active\\": "src/Active"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Package for easily retrieving a list of active users and guests that are currently online.",
+            "homepage": "https://github.com/joshrainwater/active-users",
+            "keywords": [
+                "active uesrs",
+                "laravel",
+                "online activity",
+                "php"
+            ],
+            "time": "2019-09-11T15:06:47+00:00"
         },
         {
             "name": "laravel/framework",

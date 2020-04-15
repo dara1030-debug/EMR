@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Rainwater\Active\Active;
 
 class User extends Authenticatable
 {
@@ -56,5 +57,12 @@ class User extends Authenticatable
     public function getUpdatedPatients()
     {
         return $this->updatedPatients;
+    }
+
+    protected function getActive()
+    {
+        return Active::users()->get()->map(function ($data) {
+            return $data->user;
+        });
     }
 }

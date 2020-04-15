@@ -31,7 +31,7 @@ class UserController extends Controller
 
         return view('users.archive', compact('users'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,4 +1,7 @@
-<?php $auth = Auth::user(); ?>
+@php
+$auth = Auth::user(); 
+$activeUsers = \App\User::getActive();
+@endphp
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
         <div id="main">
@@ -105,30 +108,12 @@
                     </tr>
                 </thead>
                 <tbody class="b">
+                    @foreach($activeUsers as $user)
                     <tr>
-                        <td>Anne Hayathi Albiso</td>
+                        <td>{{ $user->first_name . " " . $user->last_name }}</td>
                         <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
                     </tr>
-                    <tr>
-                        <td>Anne Hayathi Albiso</td>
-                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Anne Hayathi Albiso</td>
-                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Anne Hayathi Albiso</td>
-                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Anne Hayathi Albiso</td>
-                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
-                    </tr>
-                    <tr>
-                        <td>Anne Hayathi Albiso</td>
-                        <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
