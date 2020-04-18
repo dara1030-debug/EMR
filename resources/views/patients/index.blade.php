@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!--DATA TABLES-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
 <div class="card text-center">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
@@ -22,7 +26,7 @@
       {{--<i class="fa fa-search"></i>--}}
         
       </div>
-        <table class="table table-bordered table-responsive-md">
+        <table class="display dataTable table table-bordered table-responsive-md">
             <thead class="text-center thead-light">
               
               <tr>
@@ -50,7 +54,7 @@
 	      	      </tr>
             @endforeach
             </tbody>
-          </table>
+          </table><br>
           <div class="pagination justify-content-center">
             {{$patients->links()}}
             </div>
