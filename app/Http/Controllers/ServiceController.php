@@ -23,8 +23,38 @@ class ServiceController extends Controller
         return view('services.create');
     }
 
+    public function store(Request $request)
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+        
+        return dd($request->all());
+    }
+
     public function edit()
     {
         return view('services.edit');
+    }
+
+    public function update(Request $request, $id)
+    {
+        return dd($request->all());
+    }
+
+    public function destroy($id)
+    {
+        return $id;
+    }
+
+    public function forceDestroy($id)
+    {
+        return $id;
+    }
+
+    public function restore($id)
+    {
+        return $id;
     }
 }
