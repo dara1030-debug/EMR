@@ -20,8 +20,8 @@ class CreatePatientsTable extends Migration
             $table->string('last_name');
             $table->string('gender');
             $table->string('address');
-            $table->string('contact_number');
-            $table->string('department');
+            $table->string('phone_number');
+            $table->string('college_department');
             $table->string('type');
             $table->string('status');
             $table->string('home_address');

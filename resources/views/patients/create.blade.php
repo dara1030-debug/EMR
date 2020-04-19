@@ -42,31 +42,31 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="idnum">ID Number:</label>
-                                            <input type="number" class="form-control" placeholder="ID Number *" id="idnum">
+                                            <input name="id_number" type="number" class="form-control" placeholder="ID Number *" id="idnum">
                                         </div>
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
-                                            <input type="text" class="form-control" placeholder="First Name *" id="fname">
+                                            <input name="first_name" type="text" class="form-control" placeholder="First Name *" id="fname">
                                         </div>
                                         <div class="form-group">
                                             <label for="lname">Last Name:</label>
-                                            <input type="text" class="form-control" placeholder="Last Name *" id="lname">
+                                            <input name="last_name" type="text" class="form-control" placeholder="Last Name *" id="lname">
                                         </div>
                                         <div class="form-group">
                                             <label for="mname">Middle Name:</label>
-                                            <input type="text" class="form-control"  placeholder="Middle Name *" id="mname" />
+                                            <input name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" id="mname" />
                                         </div>
                                         <div class="form-group">
                                             <label for="hadd">Home Address:</label>
-                                            <input type="text" class="form-control"  placeholder="Home Address *" id="hadd" />
+                                            <input name="home_address" type="text" class="form-control"  placeholder="Home Address *" id="hadd" />
                                         </div>
                                         <div class="form-group">
                                             <label for="padd">Present Address:</label>
-                                            <input type="text" class="form-control"  placeholder="Present Address *" id="padd" />
+                                            <input name="present_address" type="text" class="form-control"  placeholder="Present Address *" id="padd" />
                                         </div>
                                         <div class="form-group">
                                             <label for="civilstat">Civil Status:</label>
-                                            <select class="form-control" id="civilstat">
+                                            <select name="civil_status" class="form-control" id="civilstat">
                                                 <option class="hidden"  selected disabled>Civil Status</option>
                                                 <option>Single</option>
                                                 <option>Married</option>
@@ -97,16 +97,16 @@
 
                                         <div class="form-group">
                                             <label for="age">Age:</label>
-                                            <input type="number" class="form-control" placeholder="Age *" id="age" value="" />
+                                            <input name="age" type="number" class="form-control" placeholder="Age *" id="age" value="" />
                                         </div>
                                         <div class="form-group">
                                             <label for="bdate">Birth Date:</label>
-                                            <input type="date" class="form-control" placeholder="Birth Date *" id="bdate" value="" />
+                                            <input name="birthdate" type="date" class="form-control" placeholder="Birth Date *" id="bdate" value="" />
                                         </div>
 
                                         <div class="form-group">
                                             <label for="cd">College/Department:</label>
-                                                <select class="form-control" id="cd">
+                                                <select name="college_department" class="form-control" id="cd">
                                                     <option class="hidden"  selected disabled>Chose College/Department</option>
                                                     <option>OPD/DEPENDENT</option>
                                                     <option>SCHOOL OF GRADUATE STUDIES</option>
@@ -156,11 +156,11 @@
 
                                         <div class="form-group">
                                             <label for="phonenum">Phone Number:</label>
-                                            <input type="number" minlength="10" maxlength="10" id="phonenum" class="form-control" placeholder="Phone Number *" />
+                                            <input name="phone_number" type="number" minlength="10" maxlength="10" id="phonenum" class="form-control" placeholder="Phone Number *" />
                                         </div>
                                         
                                 
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="role">Role:</label>
                                             <select class="form-control" id="role">
                                                 <option class="hidden"  selected disabled>Role</option>
@@ -169,7 +169,7 @@
                                                 <option>Staff</option>
                                                 <option>OPD/Dependent</option>
                                             </select>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div> {{--end /div 1 row--}}
 
@@ -272,11 +272,11 @@
                                                         <div class="col text-center">
                                                             <h6><br><br><br><b>Menstrual Pattern:</b><h6>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="male">
+                                                                    <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="regular">
                                                                     <label class="custom-control-label" for="mp1">Regular</label>
                                                                   </div>   
                                                                   <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="female">
+                                                                    <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="irregular">
                                                                     <label class="custom-control-label" for="mp2">Irregular</label>
                                                                     <br>
                                                                 </div> 
@@ -660,7 +660,7 @@
                                                                 <label class="custom-control-label" for="customRadio">Physically Fit</label>
                                                               </div>   
                                                               <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="customRadio1" name="physically_not_fit" value="No">
+                                                                <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" value="No">
                                                                 <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
                                                                 <br>
                                                             </div> 
@@ -675,7 +675,7 @@
                                                                 <label>By: </label>
                                                                 <input style="margin-left: 2%" type="text" name="by" value=""> ,MD<br><br>
                                                                 <label>License No. </label>
-                                                                <input type="number" name="license_no" value=""></p>   
+                                                                <input name="license_no" value=""></p>   
                                                                 <b class="font-italic">MEDICAL EXAMINER</b> 
                                                         </div>
                                                     </div>
