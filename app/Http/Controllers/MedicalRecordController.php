@@ -18,7 +18,7 @@ class MedicalRecordController extends Controller
 
 	public function show($id)
 	{
-		return view('medicalreport.show');
+		return view('medicalreport.show')->with('id', $id);
 	}
 
 	public function create()
