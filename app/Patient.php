@@ -104,12 +104,19 @@ class Patient extends Model
 	 */
 	public function hasFamilyHistory($data)
 	{
-		return in_array($data, 
-			$this->healthExaminationRecord
-				->family_history['family_history']
-		);
+		return in_array($data, $this->getFamilyHistoryAttr('family_history'));
 	}
 
+	/**
+	 * Gets the social history information of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getFamilyHistory()
+	{
+		return $this->healthExaminationRecord->family_history;
+	}
+	
 	/**
 	 * Gets the social history information of Patient.
 	 * 
@@ -208,5 +215,17 @@ class Patient extends Model
 	{
 		return isset($this->getSocialHistory()[$key]) ?
 			($this->getSocialHistory()[$key]) : '';
+	}
+
+	/**
+	 * Gets the Social History attribute.
+	 * 
+	 * @param String
+	 * @return String
+	 */
+	public function getFamilyHistoryAttr($key) 
+	{
+		return isset($this->getFamilyHistory()[$key]) ?
+			($this->getFamilyHistory()[$key]) : '';
 	}
 }
