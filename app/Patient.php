@@ -91,4 +91,106 @@ class Patient extends Model
 		return $this->healthExaminationRecord
 			->past_medical_history['last_menstrual_period'];
 	}
+
+	/**
+	 * Checks if patient has this past medical history.
+	 * 
+	 * @param String $data
+	 * @return Boolean
+	 */
+	public function hasFamilyHistory($data)
+	{
+		return in_array($data, 
+			$this->healthExaminationRecord
+				->family_history['family_history']
+		);
+	}
+
+	/**
+	 * Gets the social history information of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getSocialHistory()
+	{
+		return $this->healthExaminationRecord->social_history;
+	}
+
+	/**
+	 * Gets the physical examination of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getPhysicalExamination()
+	{
+		return $this->healthExaminationRecord->phyiscal_examination;
+	}
+
+	/**
+	 * Gets the vital signs of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getVitalSigns()
+	{
+		return $this->healthExaminationRecord->vital_signs;
+	}
+
+	/**
+	 * Gets the assessment of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getAssessment()
+	{
+		return $this->healthExaminationRecord->assessment;
+	}
+
+	/**
+	 * Gets the PE attribute.
+	 * 
+	 * @param String
+	 * @return String
+	 */
+	public function getPEAttr($key) 
+	{
+		return isset($this->getPhysicalExamination()[$key]) ?
+			($this->getPhysicalExamination()[$key]) : '';
+	}
+	
+	/**
+	 * Gets the Assessment attribute.
+	 * 
+	 * @param String
+	 * @return String
+	 */
+	public function getAssessmentAttr($key) 
+	{
+		return isset($this->getAssessment()[$key]) ?
+			($this->getAssessment()[$key]) : '';
+	}
+
+	/**
+	 * Gets the Vital Sign attribute.
+	 * 
+	 * @param String
+	 * @return String
+	 */
+	public function getVitalSignAttr($key) 
+	{
+		return isset($this->getVitalSigns()[$key]) ?
+			($this->getVitalSigns()[$key]) : '';
+	}
+
+	/**
+	 * Gets the Social History attribute.
+	 * 
+	 * @param String
+	 * @return String
+	 */
+	public function getSocialHistoryAttr($key) 
+	{
+		return isset($this->getSocialHistory()[$key]) ?
+			($this->getSocialHistory()[$key]) : '';
+	}
 }

@@ -182,10 +182,10 @@
                                                         <div class="form-check">
                                                             <p>Do you have a close relative (parent/grandparents/siblings) who have been diagnosed of:</p>
                                                     
-                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="High Blood Pressure"> High Blood Pressure<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Tuberculosis"> Tuberculosis<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Heart Disease"> Heart Disease<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Asthma"> Asthma<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('High Blood Pressure') ? 'checked' : '' }} value="High Blood Pressure"> High Blood Pressure<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Tuberculosis') ? 'checked' : '' }} value="Tuberculosis"> Tuberculosis<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Heart') ? 'checked' : '' }} value="Heart Disease"> Heart Disease<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Asthma') ? 'checked' : '' }} value="Asthma"> Asthma<br>
                                                                 <br>
                                                         </div> 
                                                     </div>       
@@ -194,9 +194,9 @@
                                                     <div class="form-group">
                                                         <div class="form-check">
                                                             <br><br><br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Diabetes"> Diabetes<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Allergies"> Allergies<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Cancer"> Cancer<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Diabetes') ? 'checked' : '' }} value="Diabetes"> Diabetes<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Allergies') ? 'checked' : '' }} value="Allergies"> Allergies<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Cancer') ? 'checked' : '' }} value="Cancer"> Cancer<br>
                                                             <input style= "margin-left: 2%" type="checkbox"> Other:
                                                             <input style= "margin-left: 2%" type="text" name="family_history[]">
                                                             <br>
@@ -214,13 +214,13 @@
                                                         <h6><br>1. Do you Smoke? </h6>
                                                         <div class="form-check">
                                                             <div class="custom-control custom-radio ">
-                                                                <input type="radio" class="custom-control-input" id="choice1" name="is_smoking" value="No">
+                                                                <input type="radio" class="custom-control-input" id="choice1" name="is_smoking" {{ $patient->getSocialHistoryAttr('is_smoking') == 'No' ? 'checked' : '' }} value="No">
                                                                 <label class="custom-control-label" for="choice1">No</label>
                                                               </div>
                                                         </div>
                                                         <div class="form-check">   
                                                             <div class="custom-control custom-radio ">
-                                                                <input style= "margin-left: 9%"type="radio" class="custom-control-input" id="choice2" name="is_smoking" value="Yes">
+                                                                <input style= "margin-left: 9%"type="radio" class="custom-control-input" id="choice2" name="is_smoking" {{ $patient->getSocialHistoryAttr('is_smoking') == 'Yes' ? 'checked' : '' }} value="Yes">
                                                                 <label class="custom-control-label" for="choice2">Yes</label>
                                                                 <br>
                                                              </div>
@@ -228,17 +228,17 @@
                                                     
                                                         
                                                         <h6><br>If yes, how many packs?</h6>
-                                                        <input class="form-control mb-3 col-sm-8 type="number" name="packs_smoked">
+                                                        <input class="form-control mb-3 col-sm-8" type="number" value="{{ $patient->getSocialHistoryAttr('packs_smoked') }}"  name="packs_smoked">
                                                         <h6> <br> 2. Do you drink alcohol (beer/liquer)? </h6>
                                                         <div class="form-check">
                                                             <div class="custom-control custom-radio ">
-                                                                <input type="radio" class="custom-control-input" id="choice1a" name="is_drinking_beer" value="No">
+                                                                <input type="radio" class="custom-control-input" id="choice1a" name="is_drinking_beer" {{ $patient->getSocialHistoryAttr('is_drinking_beer') == 'No' ? 'checked' : '' }} value="No">
                                                                 <label class="custom-control-label" for="choice1a">No</label>
                                                             </div> 
                                                         </div>
                                                         <div class="form-check">
                                                             <div class="custom-control custom-radio ">
-                                                                <input type="radio" class="custom-control-input" id="choice2a" name="is_drinking_beer" value="Yes">
+                                                                <input type="radio" class="custom-control-input" id="choice2a" name="is_drinking_beer" {{ $patient->getSocialHistoryAttr('is_drinking_beer') == 'Yes' ? 'checked' : '' }} value="Yes">
                                                                 <label class="custom-control-label" for="choice2a">Yes</label>
                                                             </div> 
                                                         </div>
@@ -246,8 +246,8 @@
                                                             <label for="sel1"><h6><br>If yes, how frequent?</h6></label>
                                                             <select class="form-control col-sm-8" id="sel1" name="howfrequent">
                                                             <option class="hidden"  selected disabled>Please Choose:</option>
-                                                              <option>Seldom</option>
-                                                              <option>Occasional</option>
+                                                              <option {{ $patient->getSocialHistoryAttr('drinking_frequency') == 'Seldom' ? 'selected' : '' }}>Seldom</option>
+                                                              <option {{ $patient->getSocialHistoryAttr('drinking_frequency') == 'Occasional' ? 'selected' : '' }}>Occasional</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -258,29 +258,22 @@
                                                          <h6> <br> 3. Do you take medication at present? </h6>
                                                         <div class="form-check">
                                                             <div class="custom-control custom-radio ">
-                                                                <input type="radio" class="custom-control-input" id="choice3a" name="is_taking_medication" value="No">
+                                                                <input type="radio" class="custom-control-input" id="choice3a" name="is_taking_medication" {{ $patient->getSocialHistoryAttr('is_taking_medication') == 'No' ? 'selected' : '' }} value="No">
                                                                 <label class="custom-control-label" for="choice3a">No</label>
                                                             </div> 
                                                         </div>
                                                             <div class="form-check">
                                                                 <div class="custom-control custom-radio ">
-                                                                    <input type="radio" class="custom-control-input" id="choice3b" name="is_taking_medication" value="Yes">
+                                                                    <input type="radio" class="custom-control-input" id="choice3b" name="is_taking_medication" {{ $patient->getSocialHistoryAttr('is_taking_medication') == 'Yes' ? 'selected' : '' }} value="Yes">
                                                                     <label class="custom-control-label" for="choice3b">Yes</label>
                                                                 </div>
                                                             </div>
                                                             <h6> <br> If yes, please indicate below</h6>
-                                                            <div class="form-check-inline">
-                                                            <label for="if_yes1" class="mr-2"> 1.</label>
-                                                            <input id="if_yes1" class="form-control mb-3 col-sm-15" type="text" name="medications[]"><br>
-                                                            </div>
-                                                            <div class="form-check-inline">
-                                                                <label for="if_yes2" class="mr-2"> 2.</label>
-                                                                <input id="if_yes2" class="form-control mb-3 col-sm-15" type="text" name="medications[]"><br>
-                                                            </div>
-                                                            <div class="form-check-inline">
-                                                                <label for="if_yes3" class="mr-2"> 3.</label>
-                                                                <input id="if_yes3" class="form-control mb-3 col-sm-15" type="text" name="medications[]"><br>
-                                                            </div>
+                                                            <ol>
+                                                                @foreach($patient->getSocialHistoryAttr('medications') as $medication)
+                                                                    <li>{{ $medication }}</li>
+                                                                @endforeach
+                                                            </ol>
                                                            
                                                         </div>
                                                     </div>     
@@ -309,163 +302,163 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Skin</td>
-                                                                            <td><input type="radio" name="skin_status" value="normal"></td>
-                                                                            <td><input type="radio" name="skin_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="skin_remarks"></td>
+                                                                            <td><input type="radio" name="skin_status" {{ $patient->getPEAttr('skin_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="skin_status" {{ $patient->getPEAttr('skin_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('skin_remarks') }}" name="skin_remarks"></td>
                                                                             </td>
                                                                             
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Head / Neck / Scalp</td>
-                                                                            <td><input  type="radio" name="head_status" value="normal"></td>
-                                                                            <td><input type="radio" name="head_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="head_remarks"></td>
+                                                                            <td><input  type="radio" name="head_status" {{ $patient->getPEAttr('head_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="head_status" {{ $patient->getPEAttr('head_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('head_remarks') }}" name="head_remarks"></td>
                                                                             </td>
                                                                             
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Eyes</td>
-                                                                            <td><input  type="radio" name="eyes_status" value="normal"></td>
-                                                                            <td><input type="radio" name="eyes_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="eyes_remarks"></td>
+                                                                            <td><input  type="radio" name="eyes_status" {{ $patient->getPEAttr('eyes_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="eyes_status" {{ $patient->getPEAttr('eyes_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('eyes_remarks') }}" name="eyes_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Ears/Nose/Throat</td>
-                                                                            <td><input  type="radio" name="ears_status" value="normal"></td>
-                                                                            <td><input type="radio" name="ears_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="ears_remarks"></td>
+                                                                            <td><input  type="radio" name="ears_status" {{ $patient->getPEAttr('ears_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="ears_status" {{ $patient->getPEAttr('ears_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('ears_remarks') }}" name="ears_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Nose/Sinuses</td>
-                                                                            <td><input  type="radio" name="nose_status" value="normal"></td>
-                                                                            <td><input type="radio" name="nose_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="nose_remarks"></td>
+                                                                            <td><input  type="radio" name="nose_status" {{ $patient->getPEAttr('nose_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="nose_status" {{ $patient->getPEAttr('nose_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('nose_remarks') }}" name="nose_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Mouth/Throat</td>
-                                                                            <td><input  type="radio" name="mouth_status" value="normal"></td>
-                                                                            <td><input type="radio" name="mouth_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="mouth_remarks"></td>
+                                                                            <td><input  type="radio" name="mouth_status" {{ $patient->getPEAttr('mouth_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="mouth_status" {{ $patient->getPEAttr('mouth_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('mouth_remarks') }}" name="mouth_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Neck, LN, Thyroid</td>
-                                                                            <td><input  type="radio" name="neck_status" value="normal"></td>
-                                                                            <td><input type="radio" name="neck_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="neck_remarks"></td>
+                                                                            <td><input  type="radio" name="neck_status" {{ $patient->getPEAttr('neck_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="neck_status" {{ $patient->getPEAttr('neck_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('neck_remarks') }}" name="neck_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Chest-Breast-Axilla</td>
-                                                                            <td><input  type="radio" name="chest_status" value="normal"></td>
-                                                                            <td><input type="radio" name="chest_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="chest_remarks"></td>
+                                                                            <td><input  type="radio" name="chest_status" {{ $patient->getPEAttr('chest_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="chest_status" {{ $patient->getPEAttr('chest_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('chest_remarks') }}" name="chest_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Lungs</td>
-                                                                            <td><input  type="radio" name="lungs_normal" value="normal"></td>
-                                                                            <td><input type="radio" name="lungs_normal" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="lungs_remarks"></td>
+                                                                            <td><input  type="radio" name="lungs_normal" {{ $patient->getPEAttr('lungs_normal') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="lungs_normal" {{ $patient->getPEAttr('lungs_normal') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('lungs_remarks') }}" name="lungs_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Heart</td>
-                                                                            <td><input  type="radio" name="heart_status" value="normal"></td>
-                                                                            <td><input type="radio" name="heart_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="heart_remarks"></td>
+                                                                            <td><input  type="radio" name="heart_status" {{ $patient->getPEAttr('heart_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="heart_status" {{ $patient->getPEAttr('heart_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('heart_remarks') }}" name="heart_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Abdomen</td>
-                                                                            <td><input  type="radio" name="abdomen_status" value="normal"></td>
-                                                                            <td><input type="radio" name="abdomen_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="abdomen_remarks"></td>
+                                                                            <td><input  type="radio" name="abdomen_status" {{ $patient->getPEAttr('abdomen_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="abdomen_status" {{ $patient->getPEAttr('abdomen_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('abdomen_remarks') }}" name="abdomen_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Back, Flank</td>
-                                                                            <td><input  type="radio" name="back_status" value="normal"></td>
-                                                                            <td><input type="radio" name="back_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="back_remarks"></td>
+                                                                            <td><input  type="radio" name="back_status" {{ $patient->getPEAttr('back_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="back_status" {{ $patient->getPEAttr('back_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('back_remarks') }}" name="back_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Anus-rectum</td>
-                                                                            <td><input  type="radio" name="anus_status" value="normal"></td>
-                                                                            <td><input type="radio" name="anus_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="anus_remarks"></td>
+                                                                            <td><input  type="radio" name="anus_status" {{ $patient->getPEAttr('anus_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="anus_status" {{ $patient->getPEAttr('anus_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('anus_remarks') }}" name="anus_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>GU system</td>
-                                                                            <td><input  type="radio" name="gu_system_status" value="normal"></td>
-                                                                            <td><input type="radio" name="gu_system_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="gu_system_remarks"></td>
+                                                                            <td><input  type="radio" name="gu_system_status" {{ $patient->getPEAttr('gu_system_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="gu_system_status" {{ $patient->getPEAttr('gu_system_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('gu_system_remarks') }}" name="gu_system_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Inguinals, Genitals</td>
-                                                                            <td><input  type="radio" name="genitals_status" value="normal"></td>
-                                                                            <td><input type="radio" name="genitals_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="genitals_remarks"></td>
+                                                                            <td><input  type="radio" name="genitals_status" {{ $patient->getPEAttr('genitals_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="genitals_status" {{ $patient->getPEAttr('genitals_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('genitals_remarks') }}" name="genitals_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Reflexes</td>
-                                                                            <td><input  type="radio" name="reflexes_status" value="normal"></td>
-                                                                            <td><input type="radio" name="reflexes_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="reflexes_remarks"></td>
+                                                                            <td><input  type="radio" name="reflexes_status" {{ $patient->getPEAttr('reflexes_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="reflexes_status" {{ $patient->getPEAttr('reflexes_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('reflexes_remarks') }}" name="reflexes_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Extremities</td>
-                                                                            <td><input  type="radio" name="extermities_status" value="normal"></td>
-                                                                            <td><input type="radio" name="extermities_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="extremities_remarks"></td>
+                                                                            <td><input  type="radio" name="extermities_status" {{ $patient->getPEAttr('extermities_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="extermities_status" {{ $patient->getPEAttr('extermities_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('extremities_remarks') }}" name="extremities_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Neurologic</td>
-                                                                            <td><input  type="radio" name="neurologic_status" value="normal"></td>
-                                                                            <td><input type="radio" name="neurologic_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="neurologic_remarks"></td>
+                                                                            <td><input  type="radio" name="neurologic_status" {{ $patient->getPEAttr('neurologic_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="neurologic_status" {{ $patient->getPEAttr('neurologic_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('neurologic_remarks') }}" name="neurologic_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Endocrine</td>
-                                                                            <td><input  type="radio" name="endocrine_status" value="normal"></td>
-                                                                            <td><input type="radio" name="endocrine_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="endocrine_remarks"></td>
+                                                                            <td><input  type="radio" name="endocrine_status" {{ $patient->getPEAttr('endocrine_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="endocrine_status" {{ $patient->getPEAttr('endocrine_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('endocrine_remarks') }}" name="endocrine_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Others</td>
-                                                                            <td><input  type="radio" name="others_status" value="normal"></td>
-                                                                            <td><input type="radio" name="others_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" type="text" name="others_remarks" value=""></td>
+                                                                            <td><input  type="radio" name="others_status" {{ $patient->getPEAttr('others_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="others_status" {{ $patient->getPEAttr('others_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('others_remarks') }}" name="others_remarks" value=""></td>
                                                                             </td>
                                                                         </tr>
                                                                         </form>
@@ -484,10 +477,10 @@
                                                         <div class="form-inline ">
                                                             
                                                                 <label for="temp" class="mr-sm-2">Temperature :</label>
-                                                                <input type="number" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
+                                                                <input type="number" value="{{ $patient->getVitalSignAttr('temperature') }}" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>°C</i></label>
                                                                 <label for="pulse_rate" class="col-sm-2 ml-5 ">Pulse Rate :</label> 
-                                                                <input type="number" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
+                                                                <input type="number" value="{{ $patient->getVitalSignAttr('pulse_rate') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                         </div>
                                                     </div>
@@ -495,10 +488,10 @@
                                                         <div class="form-inline ">
                                                             
                                                                 <label for="r_r" class="mr-sm-2">Respiratory Rate:</label>
-                                                                <input type="number" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
+                                                                <input type="number" value="{{ $patient->getVitalSignAttr('respiratory_rate') }}" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                                 <label for="bp" class="ml-sm-5 ">Blood Pressure :</label> 
-                                                                <input type="number" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
+                                                                <input type="number" value="{{ $patient->getVitalSignAttr('blood_pressure') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>mmhg</i></label>
                                                         </div>
                                                     </div>
@@ -506,7 +499,7 @@
                                                     <div class="row justify-content-center ">
                                                         <div class="form-inline">
                                                             <label for="weight" class="mr-sm-2 mt-4 mb-4"> Weight : </label>
-                                                            <input type="number" class="form-control col-sm-5 mt-4 mb-4" name="weight" id="weight" value="">
+                                                            <input type="number" value="{{ $patient->getVitalSignAttr('weight') }}" class="form-control col-sm-5 mt-4 mb-4" name="weight" id="weight" value="">
                                                             <label class="form-control-label ml-1"><i>kg</i></label>
                                                         </div>
                                                      </div>               
@@ -564,38 +557,38 @@
                                                             <p class="register-heading text-center"><b>ASSESSMENT AND RECOMMENDATION</b></p>
                                                             
                                                             <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" value="Yes">
+                                                                <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" {{ $patient->getAssessmentAttr('physically_fit') == 'Yes' ? 'checked' : '' }} value="Yes">
                                                                 <label class="custom-control-label mb-3" for="customRadio">Physically Fit</label>
                                                               </div>   
                                                               <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" value="No">
+                                                                <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" {{ $patient->getAssessmentAttr('physically_fit') == 'No' ? 'checked' : '' }} value="No">
                                                                 <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
                                                                 <br>
                                                             </div> 
                                                               
                                                                 <textarea class="form-control"></textarea><br>
                                                                 <label >Date of Examination: </label>
-                                                                <input class="form-control" type="date" name="date_examined" value="">
+                                                                <input class="form-control" type="date" name="date_examined" value="{{ $patient->getAssessmentAttr('date_examined') }}">
                                                                 
                                                        
             
                                                                 <br><br>
                                                                 <div class="form-check-inline">
                                                                     <label class="form-control-label mr-2 mb-2">By: </label>
-                                                                    <input class="form-control col-sm-12" type="text" name="by" value="">
+                                                                    <input class="form-control col-sm-12" type="text" name="by" value="{{ $patient->getAssessmentAttr('by') }}">
                                                                     <label class="form-control-label ml-1"> ,MD</label>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="form-check-inline">
                                                                         <label class="form-control-label mr-2 "><br>License No.</label>
-                                                                        <input class="form-control col-sm-8" type="number" name="license_no" value="">
+                                                                        <input class="form-control col-sm-8" type="number" name="license_no" value="{{ $patient->getAssessmentAttr('license_no') }}">
                                                                     </div>
                                                                 </div> 
                                                                 <b class="font-italic">MEDICAL EXAMINER</b> 
                                                         </div>
                                                     </div>
                                                 </div> {{--end /div tab7--}}
-                                            </fieldset>
+                                </fieldset>
 {{----------------------------------------------------------------------------}}
                                     </div>{{--end of all tab content--}}
   {{------------------------------------------------------------------------}}                                  
