@@ -4,42 +4,41 @@
 @section('content')
     
 
-    <div class="card">
+ <div class="card">
         <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-            <a class="nav-link" href="/patients">Patients</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link active" href="/patients/create">Add New Patient</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Archive</a>
-            </li>
-        </ul>
-    </div>
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                <a class="nav-link" href="/patients">Patients</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="/patients/create">Add New Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Archive</a>
+                </li>
+            </ul>
+         </div>
 
     {{--BOdy--}}
     <div class="card-body">
-            <div class="row justify-content-center">
-                        <div class="col-md-2">
-                         <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
-                            <div class="col-xs-2"><br>
-                            <input type="file" class="form-control-file border" accept="image/*">
-                            </div>
-                        </div>
-            </div> 
-            
-            <div class="container"><br>
+        <form action="{{ route('patients.store') }}" method="POST">
+            <div class="form-group text-center">
+                <div class="col" style=" margin-top: 3%">
+                    <img src="/img/no_avatar.jpg"  alt="create_avatar" class="create_avatar "><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <div class="col"><br>
+                <input type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
+                </div>
+            </div>
+                
+                <div class="container"><br>
 
-                <div class="row justify-content-center align-items-center">
-                    <div class="row">
-                        <div class="tab-content input-center" id="myTabContent" >
-                        <form action="{{ route('patients.store') }}" method="POST">
-                            
+                        
                                     {{--1--}} 
                                 <div class="row " >
-                                    <div class="col-md-6">
+                                    <div class="col">
                                         <div class="form-group">
                                             <label for="idnum">ID Number:</label>
                                             <input name="id_number" type="number" class="form-control" placeholder="ID Number *" id="idnum">
@@ -49,12 +48,12 @@
                                             <input name="first_name" type="text" class="form-control" placeholder="First Name *" id="fname">
                                         </div>
                                         <div class="form-group">
-                                            <label for="lname">Last Name:</label>
-                                            <input name="last_name" type="text" class="form-control" placeholder="Last Name *" id="lname">
-                                        </div>
-                                        <div class="form-group">
                                             <label for="mname">Middle Name:</label>
                                             <input name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" id="mname" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lname">Last Name:</label>
+                                            <input name="last_name" type="text" class="form-control" placeholder="Last Name *" id="lname">
                                         </div>
                                         <div class="form-group">
                                             <label for="hadd">Home Address:</label>
@@ -77,17 +76,17 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col">
                                         <div class="form-group">
-                                            <label for="mname">Gender:</label>
+                                            <label class="mt-3">Gender:</label>
                                             <div class="form-check">
 
                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="malegender" name="gender" value="male">
+                                                    <input type="radio" class="custom-control-input"  id="malegender" name="gender" value="male">
                                                     <label class="custom-control-label" for="malegender">Male</label>
                                                   </div>   
                                                   <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="femalegender" name="gender" value="female">
+                                                    <input type="radio" class="custom-control-input mt-4 " id="femalegender" name="gender" value="female">
                                                     <label class="custom-control-label" for="femalegender">Female</label>
                                                     <br>
                                                 </div> 
@@ -173,10 +172,10 @@
                                     </div>
                                 </div> {{--end /div 1 row--}}
 
-
-                                <div class="row register-form ">
+                                {{--row2--}}
+                                <div class="row justify-content-center align-items-center">
                                     <div class="form-group">
-                                        <div class="card mt-3 tab-card mr-10" >
+                                        <div class="border mt-3 tab-card mr-10" >
                                             <div class="card-header tab-card-header">
                                                 <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                                     <li class="nav-item">
@@ -267,16 +266,16 @@
                                                 
                                                     <div class="row">
                                                         <div class="col text-center">
-                                                            <b><br><br>For Women:<br> Last Menstrual Period(LMP) </b><br><input type="date" name="last_menstrual_period">
+                                                            <b><br><br>For Women:<br> Last Menstrual Period(LMP) </b><br><input class="ml-auto mr-auto mt-2 form-control mb-5 col-sm-5" type="date" name="last_menstrual_period">
                                                         </div>
                                                         <div class="col text-center">
                                                             <h6><br><br><br><b>Menstrual Pattern:</b><h6>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="regular">
-                                                                    <label class="custom-control-label" for="mp1">Regular</label>
+                                                                    <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="male">
+                                                                    <label class="custom-control-label mt-2" for="mp1">Regular</label>
                                                                   </div>   
                                                                   <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="irregular">
+                                                                    <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="female">
                                                                     <label class="custom-control-label" for="mp2">Irregular</label>
                                                                     <br>
                                                                 </div> 
@@ -323,63 +322,77 @@
                                                     <div class="row">
                                                         <div class="col text-left" style= "margin-left: 14%">
                                                             <div class="form-group">
-                                                                <h6>  1. Do you Smoke? </h6>
+                                                                <h6><br>1. Do you Smoke? </h6>
                                                                 <div class="form-check">
-                                                                    <input style= "margin-left: 2%" class="form-check-input" type="radio" name="is_smoking" id="choice1" value="No">
-                                                                    <label style= "margin-left: 9%"class="form-check-label" for="choice1" >
-                                                                        No
-                                                                    </label>
+                                                                    <div class="custom-control custom-radio ">
+                                                                        <input type="radio" class="custom-control-input" id="choice1" name="is_smoking" value="No">
+                                                                        <label class="custom-control-label" for="choice1">No</label>
+                                                                      </div>
+                                                                </div>
+                                                                <div class="form-check">   
+                                                                    <div class="custom-control custom-radio ">
+                                                                        <input style= "margin-left: 9%"type="radio" class="custom-control-input" id="choice2" name="is_smoking" value="Yes">
+                                                                        <label class="custom-control-label" for="choice2">Yes</label>
+                                                                        <br>
+                                                                     </div>
+                                                                </div> 
+                                                            
+                                                                
+                                                                <h6><br>If yes, how many packs?</h6>
+                                                                <input class="form-control mb-3 col-sm-8 type="number" name="packs_smoked">
+                                                                <h6> <br> 2. Do you drink alcohol (beer/liquer)? </h6>
+                                                                <div class="form-check">
+                                                                    <div class="custom-control custom-radio ">
+                                                                        <input type="radio" class="custom-control-input" id="choice1a" name="is_drinking_beer" value="No">
+                                                                        <label class="custom-control-label" for="choice1a">No</label>
+                                                                    </div> 
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input style= "margin-left: 2%" class="form-check-input" type="radio" name="is_smoking" id="choice2" value="Yes">
-                                                                    <label style= "margin-left: 9%" class="form-check-label" for="choice2">
-                                                                        Yes
-                                                                    </label>
-                                                                </div>
-                                                                <h6>     If yes, how many packs?</h6><input style="margin: 2%" type="number" name="packs_smoked">
-                                                                <h6> <br> 2. Do you drink alcohol (beer/liquer)? 
-                                                                <div class="form-check">
-                                                                    <input style= "margin-left: 2%" class="form-check-input" type="radio" name="is_drinking_beer" id="choice1a" value="No">
-                                                                    <label style= "margin-left: 9%"class="form-check-label" for="choice1a">
-                                                                        No
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-check">
-                                                                    <input style= "margin-left: 2%" class="form-check-input" type="radio" name="is_drinking_beer" id="choice2a" value="Yes">
-                                                                    <label style= "margin-left: 9%" class="form-check-label" for="choice2a">
-                                                                        Yes
-                                                                    </label>
+                                                                    <div class="custom-control custom-radio ">
+                                                                        <input type="radio" class="custom-control-input" id="choice2a" name="is_drinking_beer" value="Yes">
+                                                                        <label class="custom-control-label" for="choice2a">Yes</label>
+                                                                    </div> 
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="sel1">If yes, how frequent?</label>
-                                                                    <select class="form-control" id="sel1" name="howfrequent">
+                                                                    <label for="sel1"><h6><br>If yes, how frequent?</h6></label>
+                                                                    <select class="form-control col-sm-8" id="sel1" name="howfrequent">
                                                                     <option class="hidden"  selected disabled>Please Choose:</option>
                                                                       <option>Seldom</option>
                                                                       <option>Occasional</option>
                                                                     </select>
-                                                                  </div>
+                                                                </div>
                                                             </div>
                                                         </div>   
 
                                                         <div class="col text-left">
                                                             <div class="form-group">
-                                                                 <h6>  3. Do you take medication at present? </h6>
+                                                                 <h6> <br> 3. Do you take medication at present? </h6>
                                                                 <div class="form-check">
-                                                                        <input style= "margin-left: 2%" type="radio" name="is_taking_medication"  value="No" >
-                                                                        <label style= "margin-left: 9%"class="form-check-label">
-                                                                            No
-                                                                        </label>
-                                                                    </div>
+                                                                    <div class="custom-control custom-radio ">
+                                                                        <input type="radio" class="custom-control-input" id="choice3a" name="is_taking_medication" value="No">
+                                                                        <label class="custom-control-label" for="choice3a">No</label>
+                                                                    </div> 
+                                                                </div>
                                                                     <div class="form-check">
-                                                                        <input style= "margin-left: 2%" type="radio" name="is_taking_medication"  value="Yes">
-                                                                        <label style= "margin-left: 9%" class="form-check-label" >
-                                                                            Yes
-                                                                        </label>
+                                                                        <div class="custom-control custom-radio ">
+                                                                            <input type="radio" class="custom-control-input" id="choice3b" name="is_taking_medication" value="Yes">
+                                                                            <label class="custom-control-label" for="choice3b">Yes</label>
+                                                                        </div>
                                                                     </div>
-                                                                    <h6>     If yes, please indicate below</h6>
-                                                                    1.<input style="margin: 2%" type="text" name="medications[]"><br>
-                                                                    2.<input style="margin: 2%" type="text" name="medications[]"><br>     
-                                                                    3.<input style="margin: 2%" type="text" name="medications[]">
+                                                                    <h6> <br> If yes, please indicate below</h6>
+                                                                    <div class="form-check-inline">
+                                                                    <label for="if_yes1" class="mr-2"> 1.</label>
+                                                                    <input id="if_yes1" class="form-control mb-3 col-sm-15" type="text" name="medications[]"><br>
+                                                                    </div>
+                                                                    <div class="form-check-inline">
+                                                                        <label for="if_yes2" class="mr-2"> 2.</label>
+                                                                        <input id="if_yes2" class="form-control mb-3 col-sm-15" type="text" name="medications[]"><br>
+                                                                    </div>
+                                                                    <div class="form-check-inline">
+                                                                        <label for="if_yes3" class="mr-2"> 3.</label>
+                                                                        <input id="if_yes3" class="form-control mb-3 col-sm-15" type="text" name="medications[]"><br>
+                                                                    </div>
+                                                                   
                                                                 </div>
                                                             </div>     
                                                         </div>             
@@ -406,9 +419,9 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Skin</td>
-                                                                            <td><input  type="radio" name="skin_status" value="normal"></td>
+                                                                            <td><input type="radio" name="skin_status" value="normal"></td>
                                                                             <td><input type="radio" name="skin_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="skin_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="skin_remarks"></td>
                                                                             </td>
                                                                             
                                                                         </tr>
@@ -417,7 +430,7 @@
                                                                                 <td>Head / Neck / Scalp</td>
                                                                             <td><input  type="radio" name="head_status" value="normal"></td>
                                                                             <td><input type="radio" name="head_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="head_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="head_remarks"></td>
                                                                             </td>
                                                                             
                                                                         </tr>
@@ -426,7 +439,7 @@
                                                                                 <td>Eyes</td>
                                                                             <td><input  type="radio" name="eyes_status" value="normal"></td>
                                                                             <td><input type="radio" name="eyes_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="eyes_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="eyes_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -434,7 +447,7 @@
                                                                                 <td>Ears/Nose/Throat</td>
                                                                             <td><input  type="radio" name="ears_status" value="normal"></td>
                                                                             <td><input type="radio" name="ears_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="ears_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="ears_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -442,7 +455,7 @@
                                                                                 <td>Nose/Sinuses</td>
                                                                             <td><input  type="radio" name="nose_status" value="normal"></td>
                                                                             <td><input type="radio" name="nose_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="nose_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="nose_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -450,7 +463,7 @@
                                                                                 <td>Mouth/Throat</td>
                                                                             <td><input  type="radio" name="mouth_status" value="normal"></td>
                                                                             <td><input type="radio" name="mouth_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="mouth_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="mouth_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -458,7 +471,7 @@
                                                                                 <td>Neck, LN, Thyroid</td>
                                                                             <td><input  type="radio" name="neck_status" value="normal"></td>
                                                                             <td><input type="radio" name="neck_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="neck_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="neck_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -466,7 +479,7 @@
                                                                                 <td>Chest-Breast-Axilla</td>
                                                                             <td><input  type="radio" name="chest_status" value="normal"></td>
                                                                             <td><input type="radio" name="chest_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="chest_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="chest_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -474,7 +487,7 @@
                                                                                 <td>Lungs</td>
                                                                             <td><input  type="radio" name="lungs_normal" value="normal"></td>
                                                                             <td><input type="radio" name="lungs_normal" value="abnormal"></td>
-                                                                            <td><input type="text" name="lungs_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="lungs_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -482,7 +495,7 @@
                                                                                 <td>Heart</td>
                                                                             <td><input  type="radio" name="heart_status" value="normal"></td>
                                                                             <td><input type="radio" name="heart_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="heart_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="heart_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -490,7 +503,7 @@
                                                                                 <td>Abdomen</td>
                                                                             <td><input  type="radio" name="abdomen_status" value="normal"></td>
                                                                             <td><input type="radio" name="abdomen_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="abdomen_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="abdomen_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -498,7 +511,7 @@
                                                                                 <td>Back, Flank</td>
                                                                             <td><input  type="radio" name="back_status" value="normal"></td>
                                                                             <td><input type="radio" name="back_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="back_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="back_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -506,7 +519,7 @@
                                                                                 <td>Anus-rectum</td>
                                                                             <td><input  type="radio" name="anus_status" value="normal"></td>
                                                                             <td><input type="radio" name="anus_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="anus_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="anus_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -514,7 +527,7 @@
                                                                                 <td>GU system</td>
                                                                             <td><input  type="radio" name="gu_system_status" value="normal"></td>
                                                                             <td><input type="radio" name="gu_system_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="gu_system_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="gu_system_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -522,7 +535,7 @@
                                                                                 <td>Inguinals, Genitals</td>
                                                                             <td><input  type="radio" name="genitals_status" value="normal"></td>
                                                                             <td><input type="radio" name="genitals_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="genitals_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="genitals_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -530,7 +543,7 @@
                                                                                 <td>Reflexes</td>
                                                                             <td><input  type="radio" name="reflexes_status" value="normal"></td>
                                                                             <td><input type="radio" name="reflexes_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="reflexes_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="reflexes_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -538,7 +551,7 @@
                                                                                 <td>Extremities</td>
                                                                             <td><input  type="radio" name="extermities_status" value="normal"></td>
                                                                             <td><input type="radio" name="extermities_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="extremities_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="extremities_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -546,7 +559,7 @@
                                                                                 <td>Neurologic</td>
                                                                             <td><input  type="radio" name="neurologic_status" value="normal"></td>
                                                                             <td><input type="radio" name="neurologic_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="neurologic_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="neurologic_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -554,7 +567,7 @@
                                                                                 <td>Endocrine</td>
                                                                             <td><input  type="radio" name="endocrine_status" value="normal"></td>
                                                                             <td><input type="radio" name="endocrine_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="endocrine_remarks"></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="endocrine_remarks"></td>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
@@ -562,7 +575,7 @@
                                                                                 <td>Others</td>
                                                                             <td><input  type="radio" name="others_status" value="normal"></td>
                                                                             <td><input type="radio" name="others_status" value="abnormal"></td>
-                                                                            <td><input type="text" name="others_remarks" value=""></td>
+                                                                            <td><input class="form-control  col-sm-10" type="text" name="others_remarks" value=""></td>
                                                                             </td>
                                                                         </tr>
                                                                         </form>
@@ -580,27 +593,30 @@
                                                         <div class="form-inline ">
                                                             
                                                                 <label for="temp" class="mr-sm-2">Temperature :</label>
-                                                                <input type="text" class="form-control mb-4 mr-sm-4" placeholder="°C" name="temperature" id="temp" value="">
-                                                                <label for="pulse_rate" class="mr-sm-2">Pulse Rate :</label> 
-                                                                <input type="text" class="form-control mb-4 mr-sm-4" placeholder="bpm" name="pulse_rate" id="pulse_rate" value="">
-                                                                
+                                                                <input type="number" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
+                                                                <label class="form-control-label ml-1 mr-2"><i>°C</i></label>
+                                                                <label for="pulse_rate" class="col-sm-2 ml-5 ">Pulse Rate :</label> 
+                                                                <input type="number" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
+                                                                <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                         </div>
                                                     </div>
-                                                                
                                                     <div class="row justify-content-center ">
-                                                        <div class="form-inline">
-                                                            <label for="respiratory_rate" class="mr-sm-2">Respiratory Rate : </label> 
-                                                                <input type="text" class="form-control mb-4 mr-sm-4" placeholder="bpm"  name="respiratory_rate" id="respiratory_rate" value="">
-                                                                <label for="blodd_pressure" class="mr-sm-2"> Blood Pressure : </label>
-                                                                <input type="text" class="form-control mb-4 mr-sm-4" placeholder="mmhg" name="blood_pressure" id="blood_pressure" value="">
+                                                        <div class="form-inline ">
+                                                            
+                                                                <label for="r_r" class="mr-sm-2">Respiratory Rate:</label>
+                                                                <input type="number" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
+                                                                <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
+                                                                <label for="bp" class="ml-sm-5 ">Blood Pressure :</label> 
+                                                                <input type="number" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
+                                                                <label class="form-control-label ml-1 mr-2"><i>mmhg</i></label>
                                                         </div>
-                                                    </div>  
+                                                    </div>
 
                                                     <div class="row justify-content-center ">
                                                         <div class="form-inline">
-                                                            <label for="weight" class="mr-sm-2"> Weight : </label>
-                                                            <input type="text" class="form-control mb-4 mr-sm-4" placeholder="kg" name="weight" id="weight" value="">
-                                                    
+                                                            <label for="weight" class="mr-sm-2 mt-4 mb-4"> Weight : </label>
+                                                            <input type="number" class="form-control col-sm-5 mt-4 mb-4" name="weight" id="weight" value="">
+                                                            <label class="form-control-label ml-1"><i>kg</i></label>
                                                         </div>
                                                      </div>               
                                                 </div> {{--end /div tab5--}}
@@ -608,56 +624,54 @@
                                                 {{--tab6--}}
                                                 <div class="tab-pane fade p-3" id="six" role="tabpanel" aria-labelledby="three-tab">
                                                             
-                                                        <div class="row justify-content-center">
-                                                             <div class="form-group ">
-                                                                <p class="register-heading text-center">(Nursing Intervention)</p>
-                                                                <table>
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th>Nurse Intervention:</th>
-                                                                            <th>Time:</th>
-                                                                            <th>By:</th>
-                                                                            
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td><input  type="text" name="nursing_intervent" value=""></td>
-                                                                            <td><input type="time" name="time" value=""></td>
-                                                                            <td><input type="text" name="by" value=""></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><input type="text" name="nursing_intervent" value=""></td>
-                                                                            <td><input type="time" name="time" value=""></td>
-                                                                            <td><input type="text" name="by" value=""></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><input  type="text" name="" value=""></td>
-                                                                            <td><input type="time" name="" value=""></td>
-                                                                            <td><input type="text" name="" value=""></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><input type="text" name="" value=""></td>
-                                                                            <td><input type="time" name="" value=""></td>
-                                                                            <td><input type="text" name="" value=""></td>
-                                                                        </tr>
+                                                    <div class="row justify-content-center">
+                                                         <div class="form-group ">
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Nurse Intervention:</th>
+                                                                        <th>Time: <small>(12:59 am/pm)</small></th>
+                                                                        <th class="pl-3">By:</th>
                                                                         
-                                                                    </tbody>
-                                                                </table><br>
-                                                            </div>
-                                                        </div>            
-                                                </div> {{--end /div tab6--}}
-
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td><input class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervent" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value=""></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervent" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                    </tr>
+                                                                    
+                                                                </tbody>
+                                                            </table><br>
+                                                        </div>
+                                                    </div>            
+                                                 </div> {{--end /div tab6--}}
 
                                                 {{--tab7--}}
                                                 <div class="tab-pane fade p-3" id="seven" role="tabpanel" aria-labelledby="three-tab">
                                                     <div class="row justify-content-center">
                                                         <div class="form-group">
-                                                            <p class="register-heading text-center">ASSESSMENT AND RECOMMENDATION</p>
+                                                            <p class="register-heading text-center"><b>ASSESSMENT AND RECOMMENDATION</b></p>
                                                             
                                                             <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="customRadio" name="physically_fit" value="Yes">
-                                                                <label class="custom-control-label" for="customRadio">Physically Fit</label>
+                                                                <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" value="Yes">
+                                                                <label class="custom-control-label mb-3" for="customRadio">Physically Fit</label>
                                                               </div>   
                                                               <div class="custom-control custom-radio custom-control-inline">
                                                                 <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" value="No">
@@ -666,16 +680,23 @@
                                                             </div> 
                                                               
                                                                 <textarea class="form-control"></textarea><br>
-                                                                <label>Date of Examination: </label>
-                                                                <input type="date" name="date_examined" value="">
+                                                                <label >Date of Examination: </label>
+                                                                <input class="form-control" type="date" name="date_examined" value="">
                                                                 
                                                        
             
                                                                 <br><br>
-                                                                <label>By: </label>
-                                                                <input style="margin-left: 2%" type="text" name="by" value=""> ,MD<br><br>
-                                                                <label>License No. </label>
-                                                                <input name="license_no" value=""></p>   
+                                                                <div class="form-check-inline">
+                                                                    <label class="form-control-label mr-2 mb-2">By: </label>
+                                                                    <input class="form-control col-sm-12" type="text" name="by" value="">
+                                                                    <label class="form-control-label ml-1"> ,MD</label>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="form-check-inline">
+                                                                        <label class="form-control-label mr-2 "><br>License No.</label>
+                                                                        <input class="form-control col-sm-8" type="number" name="license_no" value="">
+                                                                    </div>
+                                                                </div> 
                                                                 <b class="font-italic">MEDICAL EXAMINER</b> 
                                                         </div>
                                                     </div>
@@ -683,25 +704,34 @@
 
 {{-------------------------------------------------------------------------------------------------}}
 
-                                            </div>
+                                            </div>{{--end of tab content--}}
 
 {{------------------------------------------------------------------------------------------}}                                           
                                         </div>
                                     </div>
-                                </div>
+                                </div> {{--end of second row--}}
 {{--------------------------------------------------------------------------------------------}}
 
 
 
                                 
                                 @csrf
-                     
-                                        <br><button  type ="submit" class = "btn btn-info">Register</button>
-                                        <a href="/patients" type ="button" class = "btn btn-secondary">Cancel</button></a>
-                        </form>
+                                <div class="mx-auto" style="width: 200px;">
+                                    <br><button  type ="submit" class = "btn btn-info">Register</button>
+                                    <a href="/patients" type ="button" class = "btn btn-secondary">Cancel</button></a>
+                                </div><br>
+                            
                     
                     </div>
+                </form>
             </div>
     </div>
-                                        
+      
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+    </style> 
 @stop
