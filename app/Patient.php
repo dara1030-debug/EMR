@@ -18,6 +18,15 @@ class Patient extends Model
 	];
 
 	/**
+	 * Relationships always get called in Model.
+	 * 
+	 * @var Array
+	 */
+	protected $with = [
+		'healthExaminationRecord',
+	];
+
+	/**
 	 * This patient was added by this user.
 	 * 
 	 * @return BelongsTo
@@ -45,5 +54,41 @@ class Patient extends Model
 	public function healthExaminationRecord()
 	{
 		return $this->hasOne('App\HealthExaminationRecord');
+	}
+
+	/**
+	 * Checks if patient has this past medical history.
+	 * 
+	 * @param String $data
+	 * @return Boolean
+	 */
+	public function hasPastMedicalHistory($data)
+	{
+		return in_array($data, 
+			$this->healthExaminationRecord
+				->past_medical_history['pastmedical_history']
+		);
+	}
+
+	/**
+	 * Gets the menstrual pattern of a patient.
+	 * 
+	 * @return String
+	 */
+	public function getMenstrualPattern()
+	{
+		return $this->healthExaminationRecord
+			->past_medical_history['menstrual_pattern'];
+	}
+
+	/**
+	 * Gets the last menstrual period of a patient.
+	 * 
+	 * @return String
+	 */
+	public function getLastMenstrualPeriod()
+	{
+		return $this->healthExaminationRecord
+			->past_medical_history['last_menstrual_period'];
 	}
 }

@@ -21,6 +21,7 @@ class CreateHealthExaminationRecordsTable extends Migration
             $table->json('past_medical_history')->nullable();
             $table->json('family_history')->nullable();
             $table->json('social_history')->nullable();
+            $table->json('phyiscal_examination')->nullable();
             $table->json('vital_signs')->nullable();
             $table->json('assessment')->nullable();
             $table->string('reccommendation')->nullable();  

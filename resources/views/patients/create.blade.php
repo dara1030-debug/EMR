@@ -271,11 +271,11 @@
                                                         <div class="col text-center">
                                                             <h6><br><br><br><b>Menstrual Pattern:</b><h6>
                                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="male">
+                                                                    <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="regular">
                                                                     <label class="custom-control-label mt-2" for="mp1">Regular</label>
                                                                   </div>   
                                                                   <div class="custom-control custom-radio custom-control-inline">
-                                                                    <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="female">
+                                                                    <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="irregular">
                                                                     <label class="custom-control-label" for="mp2">Irregular</label>
                                                                     <br>
                                                                 </div> 
@@ -355,7 +355,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="sel1"><h6><br>If yes, how frequent?</h6></label>
-                                                                    <select class="form-control col-sm-8" id="sel1" name="howfrequent">
+                                                                    <select class="form-control col-sm-8" id="sel1" name="drinking_frequency">
                                                                     <option class="hidden"  selected disabled>Please Choose:</option>
                                                                       <option>Seldom</option>
                                                                       <option>Occasional</option>

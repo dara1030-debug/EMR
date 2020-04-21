@@ -25,6 +25,7 @@ class HealthExaminationRecord extends Model
         'past_medical_history' => 'array',
         'family_history' => 'array',
         'social_history' => 'array',
+        'phyiscal_examination' => 'array',
         'vital_signs' => 'array',
         'assessment' => 'array',
     ];

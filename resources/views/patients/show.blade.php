@@ -100,53 +100,53 @@
                                                      <div class="col text-left">
                                                         <div class="form-group">
                                                             <div class="form-check">
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Allergies"> Allergies<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Amoebiasis"> Amoebiasis<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Anemia"> Anemia<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Arthritis"> Arthritis<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Back and Joints Pains"> Back and Joints Pains<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Bone Fracture"> Bone Fracture<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Breast mass/lump"> Breast mass/lump<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Chest Pains"> Chest Pains<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Chicken Pox"> Chicken Pox<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Diabetes Mellitus"> Diabetes Mellitus<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Epilepsy"> Epilepsy<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Eye or Ear Problem"> Eye or Ear Problem<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Gallbladder Stone"> Gallbladder Stone<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Allergies') ? 'checked' : '' }} value="Allergies"> Allergies<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Amoebiasis') ? 'checked' : '' }} value="Amoebiasis"> Amoebiasis<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Anemia') ? 'checked' : '' }} value="Anemia"> Anemia<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Arthritis') ? 'checked' : '' }} value="Arthritis"> Arthritis<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Back and Joints Pains') ? 'checked' : '' }} value="Back and Joints Pains"> Back and Joints Pains<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Bone Fracture') ? 'checked' : '' }} value="Bone Fracture"> Bone Fracture<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Breast mass/lump') ? 'checked' : '' }} value="Breast mass/lump"> Breast mass/lump<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Chest Pains') ? 'checked' : '' }} value="Chest Pains"> Chest Pains<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Chicken Pox') ? 'checked' : '' }} value="Chicken Pox"> Chicken Pox<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Diabetes Mellitus') ? 'checked' : '' }} value="Diabetes Mellitus"> Diabetes Mellitus<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Epilepsy') ? 'checked' : '' }} value="Epilepsy"> Epilepsy<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Eye or Ear Problem') ? 'checked' : '' }} value="Eye or Ear Problem"> Eye or Ear Problem<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Gallbladder Stone') ? 'checked' : '' }} value="Gallbladder Stone"> Gallbladder Stone<br>
                                                             </div>   
                                                         </div>
                                                     </div>
                                                     <div class="col text-left">
                                                         <div class="form-group">
                                                             <div class="form-check">
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Goiter"> Goiter<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Gout"> Gout<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Hemorrhoids"> Hemorrhoids<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Hepatitis: A/B/C"> Hepatitis: A/B/C<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Hyperacidity/Ulcer"> Hyperacidity/Ulcer<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Hypertension"> Hypertension<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Kidney/Bladder Stones"> Kidney/Bladder Stones<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Loss of Conciousness"> Loss of Conciousness<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Measles"> Measles<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Mumps"> Mumps<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Pneumonia"> Pneumonia<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Prostate Problems"> Prostate Problems<br>
-                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Seizure"> Seizure<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Goiter') ? 'checked' : '' }} value="Goiter"> Goiter<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Gout') ? 'checked' : '' }} value="Gout"> Gout<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Hemorrhoids') ? 'checked' : '' }} value="Hemorrhoids"> Hemorrhoids<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Hepatitis: A/B/C') ? 'checked' : '' }} value="Hepatitis: A/B/C"> Hepatitis: A/B/C<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Hyperacidity/Ulcer') ? 'checked' : '' }} value="Hyperacidity/Ulcer"> Hyperacidity/Ulcer<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Hypertension') ? 'checked' : '' }} value="Hypertension"> Hypertension<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Kidney/Bladder Stones') ? 'checked' : '' }} value="Kidney/Bladder Stones"> Kidney/Bladder Stones<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Loss of Conciousness') ? 'checked' : '' }} value="Loss of Conciousness"> Loss of Conciousness<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Measles') ? 'checked' : '' }} value="Measles"> Measles<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Mumps') ? 'checked' : '' }} value="Mumps"> Mumps<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Pneumonia') ? 'checked' : '' }} value="Pneumonia"> Pneumonia<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Prostate Problems') ? 'checked' : '' }} value="Prostate Problems"> Prostate Problems<br>
+                                                                <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Seizure') ? 'checked' : '' }} value="Seizure"> Seizure<br>
                                                             </div>
                                                         </div>
                                                     </div>    
                                                 <div class="col text-left">
                                                     <div class="form-group">
                                                         <div class="form-check">
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Sinusitis/Allergic rhinitis"> Sinusitis/Allergic rhinitis<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Skin Disorders"> Skin Disorders<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="STI/HIV"> STI/HIV<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" nname="pastmedical_history[]" value="Stroke"> Stroke<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Surgery/Injury"> Surgery/Injury<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Thyroid Problems"> Thyroid Problems<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tonsillitis"> Tonsillitis<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tuberculosis"> Tuberculosis<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="UTI"> UTI<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Sinusitis/Allergic rhinitis') ? 'checked' : '' }} value="Sinusitis/Allergic rhinitis"> Sinusitis/Allergic rhinitis<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Skin') ? 'checked' : '' }} value="Skin Disorders"> Skin Disorders<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('STI') ? 'checked' : '' }} value="STI/HIV"> STI/HIV<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" nname="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Stroke') ? 'checked' : '' }} value="Stroke"> Stroke<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Surgery/Injury') ? 'checked' : '' }} value="Surgery/Injury"> Surgery/Injury<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Thyroid Problems') ? 'checked' : '' }} value="Thyroid Problems"> Thyroid Problems<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Tonsillitis') ? 'checked' : '' }} value="Tonsillitis"> Tonsillitis<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Tuberculosis') ? 'checked' : '' }} value="Tuberculosis"> Tuberculosis<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('UTI') ? 'checked' : '' }} value="UTI"> UTI<br>
                                                             <input style= "margin-left: 2%" type="checkbox"> Others: 
                                                             <input style= "margin-left: 2%" type="text" name="family_history[]">
                                                             <br><br>    
@@ -157,16 +157,16 @@
                                         
                                             <div class="row">
                                                 <div class="col text-center">
-                                                    <b><br><br>For Women:<br> Last Menstrual Period(LMP) </b><br><input class="ml-auto mr-auto mt-2 form-control mb-5 col-sm-5" type="date" name="last_menstrual_period">
+                                                    <b><br><br>For Women:<br> Last Menstrual Period(LMP) </b><br><input class="ml-auto mr-auto mt-2 form-control mb-5 col-sm-5" value="{{ $patient->getLastMenstrualPeriod() }}" type="date" name="last_menstrual_period">
                                                 </div>
                                                 <div class="col text-center">
                                                     <h6><br><br><br><b>Menstrual Pattern:</b><h6>
                                                         <div class="custom-control custom-radio custom-control-inline">
-                                                            <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" value="male">
+                                                            <input type="radio" class="custom-control-input" id="mp1" name="menstrual_pattern" {{ $patient->getMenstrualPattern() == 'regular' ? 'checked' : '' }} value="regular">
                                                             <label class="custom-control-label mt-2" for="mp1">Regular</label>
                                                           </div>   
                                                           <div class="custom-control custom-radio custom-control-inline">
-                                                            <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" value="female">
+                                                            <input type="radio" class="custom-control-input" id="mp2" name="menstrual_pattern" {{ $patient->getMenstrualPattern() == 'irregular' ? 'checked' : '' }} value="irregular">
                                                             <label class="custom-control-label" for="mp2">Irregular</label>
                                                             <br>
                                                         </div> 
