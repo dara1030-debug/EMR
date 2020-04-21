@@ -56,6 +56,15 @@ class Patient extends Model
 		return $this->hasOne('App\HealthExaminationRecord');
 	}
 
+	public function getPastMedicalHistory()
+	{
+		return isset($this->healthExaminationRecord
+		->past_medical_history['pastmedical_history']) ?
+		$this->healthExaminationRecord
+			->past_medical_history['pastmedical_history']
+			: [];
+	}
+	
 	/**
 	 * Checks if patient has this past medical history.
 	 * 
@@ -64,10 +73,7 @@ class Patient extends Model
 	 */
 	public function hasPastMedicalHistory($data)
 	{
-		return in_array($data, 
-			$this->healthExaminationRecord
-				->past_medical_history['pastmedical_history']
-		);
+		return in_array($data, $this->getPastMedicalHistory());
 	}
 
 	/**
@@ -77,8 +83,7 @@ class Patient extends Model
 	 */
 	public function getMenstrualPattern()
 	{
-		return $this->healthExaminationRecord
-			->past_medical_history['menstrual_pattern'];
+		return $this->getPastMedicalHistoryAttr('menstrual_pattern');
 	}
 
 	/**
@@ -88,8 +93,7 @@ class Patient extends Model
 	 */
 	public function getLastMenstrualPeriod()
 	{
-		return $this->healthExaminationRecord
-			->past_medical_history['last_menstrual_period'];
+		return $this->getPastMedicalHistoryAttr('last_menstrual_period');
 	}
 
 	/**
@@ -146,6 +150,18 @@ class Patient extends Model
 		return $this->healthExaminationRecord->assessment;
 	}
 
+	/**
+	 * Gets the PE attribute.
+	 * 
+	 * @param String
+	 * @return String
+	 */
+	public function getPastMedicalHistoryAttr($key) 
+	{
+		return isset($this->healthExaminationRecord->past_medical_history[$key]) ?
+			($this->healthExaminationRecord->past_medical_history[$key]) : '';
+	}
+	
 	/**
 	 * Gets the PE attribute.
 	 * 
