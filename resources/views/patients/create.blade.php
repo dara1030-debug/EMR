@@ -41,7 +41,7 @@
                                     <div class="col">
                                         <div class="form-group">
                                             <label for="idnum">ID Number:</label>
-                                            <input name="id_number" type="number" class="form-control" placeholder="ID Number *" id="idnum">
+                                            <input name="id_number" type="text" class="form-control" placeholder="ID Number *" id="idnum">
                                         </div>
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>

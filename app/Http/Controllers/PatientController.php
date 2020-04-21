@@ -39,6 +39,7 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         $data = $request->only([
+            'id_number',
             'first_name',
             'middle_name',
             'last_name',
@@ -178,6 +179,7 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->only([
+            'id_number',
             'first_name',
             'middle_name',
             'last_name',

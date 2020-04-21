@@ -67,32 +67,35 @@
 <div class="col">
 <div class="form-group">
 <label for="idnum">ID Number:</label>
-<input type="number" class="form-control" id="idnum" placeholder="ID Number *" value="" />
+<input type="text" name="id_number" class="form-control" id="idnum" placeholder="ID Number *" value="" />
 </div>
 <div class="form-group">
 <label for="fname">First Name:</label>
-<input id="fname" type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
+<input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
 </div>
 <div class="form-group">
 <label for="mname">Middle Name:</label>
-<input id="mname" type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
+<input id="middle_name" name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
 </div>
 <div class="form-group">
 <label for="lname">Last Name:</label>
-<input id="lname" type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
+<input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
 </div>
 <div class="form-group">
 <label for="hadd">Home Address:</label>
-<input id="hadd" type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
+<input id="home_address" name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
 </div>
 <div class="form-group">
 <label for="padd">Present Address:</label>
-<input id="padd" type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
+<input id="present_address" name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
 </div>
 <div class="form-group">
 <label for="civilstat">Civil Status:</label>
-<select id="civilstat" class="form-control">
+<select name="civil_status" id="civilstat" class="form-control">
 <option class="hidden"  selected disabled>Civil Status</option>
+@if(isset($patient->civil_status))
+<option selected>{{ $patient->civil_status }}</option>
+@endif
 <option>Single</option>
 <option>Married</option>
 <option>Widowed</option>
@@ -119,16 +122,19 @@
 </div>
 <div class="form-group">
 <label for="age">Age:</label>
-<input id="age" type="number" class="form-control" placeholder="Age *" value="{{ $patient->age }}" />
+<input id="age" type="number" name="age" class="form-control" placeholder="Age *" value="{{ $patient->age }}" />
 </div>
 <div class="form-group">
 <label for="bdate">Birth Date:</label>
-<input id="bdate" type="date" class="form-control" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
+<input id="bdate" type="date" class="form-control" name="birthdate" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
 </div>
 <div class="form-group">
 <label for="cd">College/Department:</label>
-<select id="cd" class="form-control" name="department">
+<select id="cd" class="form-control" name="college_department">
 <option class="hidden"  selected disabled>College/Department</option>
+@if(isset($patient->college_department))
+<option selected>{{ $patient->college_department }}</option>
+@endif
 <option>OPD/DEPENDENT</option>
 <option>SCHOOL OF GRADUATE STUDIES</option>
 <option>COLLEGE OF EDUCATION</option>
@@ -178,14 +184,14 @@
 <input id="phonenum" type="text"  class="form-control" name="phone_number" value="{{ $patient->contact_number }}" />
 </div>
 <div class="form-group">
-<label for="role">Role:</label>
-<select id="role" class="form-control">
-<option class="hidden"  selected disabled>Role</option>
+{{-- <label for="role">Role:</label> --}}
+{{-- <select id="role" class="form-control">
+<option class="hidden" name="role_id"  selected disabled>Role</option>
 <option>Student</option>
 <option>Faculty</option>
 <option>Staff</option>
 <option>OPD/Dependent</option>
-</select>
+</select> --}}
 </div>
 </div>               
 </div>{{--end row1--}}

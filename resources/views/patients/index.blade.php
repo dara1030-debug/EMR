@@ -41,7 +41,7 @@
             <tbody class="p2 text-center" id="myTable">
 	          	@foreach ($patients as $patient)
 	          	<tr>
-                	<td>2015-8418</td>
+                	<td>{{ $patient->id_number }}</td>
                		<td>{{ $patient->last_name }}</td>
                 	<td>{{ $patient->first_name }}</td>
                 	<td>{{ $patient->middle_name }}</td>
