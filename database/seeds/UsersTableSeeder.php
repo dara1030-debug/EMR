@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
             'present_address' => 'Earth',
             'gender' => 'Female',
             'role_id' => 1,
-            'contact_number' => 9167784412,
+            'phone_number' => 9167784412,
             'license_number' => '123456',
         ]);
 
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
             'present_address' => 'Earth',
             'gender' => 'Female',
             'role_id' => 2,
-            'contact_number' => 9167784412,
+            'phone_number' => 9167784412,
             'license_number' => '123456',
         ]);
 
@@ -56,7 +56,7 @@ class UsersTableSeeder extends Seeder
             'present_address' => 'Earth',
             'gender' => 'Female',
             'role_id' => 3,
-            'contact_number' => 9167784412,
+            'phone_number' => 9167784412,
             'license_number' => '123456',
         ]);
     }

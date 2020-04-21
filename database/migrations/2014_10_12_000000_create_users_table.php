@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('birthdate')->nullable();
             $table->string('present_address')->nullable();
             $table->string('home_address')->nullable();
-            $table->string('contact_number')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('license_number')->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('last_activity')->nullable();

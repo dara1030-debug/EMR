@@ -15,18 +15,18 @@ class CreateHealthExaminationRecordsTable extends Migration
     {
         Schema::create('health_examination_records', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('physical_examination_id');
-            $table->text('past_medical_history');
-            $table->text('family_history');
-            $table->text('social_history');
-            $table->string('vital_signs');
+            $table->unsignedBigInteger('patient_id');
             $table->date('last_menstrual_period')->nullable();
-            $table->string('menstrual_pattern');
-            $table->string('added_by');
-            $table->string('updated_by');
-            $table->string('assessment');
-            $table->string('reccommendation');
-            $table->date('examination_date');
+            $table->string('menstrual_pattern')->nullable();
+            $table->json('past_medical_history')->nullable();
+            $table->json('family_history')->nullable();
+            $table->json('social_history')->nullable();
+            $table->json('vital_signs')->nullable();
+            $table->json('assessment')->nullable();
+            $table->string('reccommendation')->nullable();  
+            $table->date('examination_date')->nullable();
+            $table->unsignedBigInteger('added_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });

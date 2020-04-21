@@ -37,7 +37,28 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        return dd($request->all());
+        $data = $request->only([
+            'first_name',
+            'middle_name',
+            'last_name',
+            'gender',
+            'address',
+            'phone_number',
+            'college_department',
+            'type',
+            'status',
+            'home_address',
+            'present_address',
+            'age',
+            'birthdate',
+        ]);
+
+        $data['added_by'] = auth()->user()->id;
+        
+        $patient = Patient::create($data);
+        
+        return dd($data);
+        // return dd($request->all());
     }
 
     /**

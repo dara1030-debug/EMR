@@ -15,21 +15,20 @@ class CreatePatientsTable extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
-            $table->string('gender');
-            $table->string('address');
-            $table->string('phone_number');
-            $table->string('college_department');
-            $table->string('type');
-            $table->string('status');
-            $table->string('home_address');
-            $table->string('present_address');
-            $table->integer('age');
-            $table->date('birthdate');
-            $table->unsignedBigInteger('added_by');
-            $table->unsignedBigInteger('updated_by');
+            $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('college_department')->nullable();
+            $table->string('type')->nullable();
+            $table->string('status')->nullable();
+            $table->string('home_address')->nullable();
+            $table->string('present_address')->nullable();
+            $table->integer('age')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->unsignedBigInteger('added_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
 
