@@ -45,7 +45,7 @@
                 </div>
             @endif
 
-        <form action="{{ route('patients.update', $patient->id) }}" method="post">
+        <form action="{{ route('patients.update', $patient->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -57,7 +57,7 @@
                 </div>
                     <div class="form-group text-center">
                     <div class="col"><br>
-                    <input type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
+                    <input name="avatar" type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
                 </div>
             </div> {{--end of profile--}}
 

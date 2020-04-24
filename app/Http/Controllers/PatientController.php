@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\HealthExaminationRecord;
 use App\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class PatientController extends Controller
 {
@@ -38,6 +40,23 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        $imagePath = null;
+        
+        if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
+            $request->validate([
+                'avatar' => 'image|max:2048|mimes: jpg,jpeg,png',
+            ]);
+
+            /** Variables. */
+            $avatar = $request->file('avatar');
+            $host = $request->getSchemeAndHttpHost();
+
+            /** Uploading the image. */
+            $storage = Storage::disk('public');
+            $filePath = $storage->putFile('avatars', new File($avatar), 'public');
+            $imagePath = $host.'/storage/'.$filePath;
+        }
+        
         $data = $request->only([
             'id_number',
             'first_name',
@@ -56,6 +75,7 @@ class PatientController extends Controller
         ]);
 
         $data['added_by'] = auth()->user()->id;
+        $data['avatar'] = $imagePath;
         
         $patient = Patient::create($data);
         
@@ -178,6 +198,23 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $imagePath = null;
+        
+        if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
+            $request->validate([
+                'avatar' => 'image|max:2048|mimes: jpg,jpeg,png',
+            ]);
+
+            /** Variables. */
+            $avatar = $request->file('avatar');
+            $host = $request->getSchemeAndHttpHost();
+
+            /** Uploading the image. */
+            $storage = Storage::disk('public');
+            $filePath = $storage->putFile('avatars', new File($avatar), 'public');
+            $imagePath = $host.'/storage/'.$filePath;
+        }
+        
         $data = $request->only([
             'id_number',
             'first_name',
@@ -196,6 +233,7 @@ class PatientController extends Controller
         ]);
 
         $data['updated_by'] = auth()->user()->id;
+        $data['avatar'] = $imagePath;
         
         $patient = Patient::find($id);
         $patient->update($data);

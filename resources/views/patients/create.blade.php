@@ -21,7 +21,7 @@
 
     {{--BOdy--}}
     <div class="card-body">
-        <form action="{{ route('patients.store') }}" method="POST">
+        <form action="{{ route('patients.store') }}" method="POST" enctype="multipart/form-data">
             <div class="form-group text-center">
                 <div class="col" style=" margin-top: 3%">
                     <img src="/img/no_avatar.jpg"  alt="create_avatar" class="create_avatar "><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
@@ -29,7 +29,7 @@
             </div>
             <div class="form-group text-center">
                 <div class="col"><br>
-                <input type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
+                <input name="avatar" type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
                 </div>
             </div>
                 
