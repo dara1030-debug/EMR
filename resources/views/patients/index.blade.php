@@ -2,8 +2,6 @@
 
 @section('content')
 
-<!--DATA TABLES-->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
 <div class="card text-center">
     <div class="card-header">
@@ -26,7 +24,7 @@
       {{--<i class="fa fa-search"></i>--}}
         
       </div>
-        <table class="display dataTable table table-bordered table-responsive-md">
+        <table class="table table-bordered table-responsive-md table-hover">
             <thead class="text-center thead-light">
               
               <tr>
