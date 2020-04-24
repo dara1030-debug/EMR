@@ -155,7 +155,7 @@
 
                                         <div class="form-group">
                                             <label for="phonenum">Phone Number:</label>
-                                            <input name="phone_number" type="number" minlength="10" maxlength="10" id="phonenum" class="form-control" placeholder="Phone Number *" />
+                                            <input name="phone_number" type="number" minlength="10" maxlength="13" id="phonenum" class="form-control" placeholder="Phone Number *" />
                                         </div>
                                         
                                 

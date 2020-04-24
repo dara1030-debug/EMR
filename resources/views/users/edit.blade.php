@@ -18,7 +18,7 @@
         <a class="nav-link" href="/users/create">Add New User</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Archive</a>
+        <a class="nav-link" href="{{ route('users.archive') }}">Archive</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="/users">Edit User... 

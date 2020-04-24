@@ -20,7 +20,7 @@
       <div class="input-group mb-4" style="margin:auto;max-width:300px">
         <input type="search"  id="myInput"  placeholder="Search for Services" aria-describedby="button-addon5" class="form-control">
       </div>
-        <table class="table table-bordereds table-responsive-md">
+        <table class="table table-bordereds table-responsive-md table-hover">
             <thead class="text-center thead-light">
               <tr>
                 <th scope="col">Name of Service</th>

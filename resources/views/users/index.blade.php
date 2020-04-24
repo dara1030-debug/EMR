@@ -27,7 +27,7 @@
         <input type="search" id="myInput" placeholder="Search for Users" aria-describedby="button-addon5" class="form-control">
         
       </div>
-      <table class="table table-responsive-md">
+      <table class="table table-responsive-md table-hover">
           
           <thead class="text-center thead-light">
             <tr>
@@ -38,7 +38,7 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody class="text-center" id="myTable">
+          <tbody class="text-center " id="myTable">
                 @foreach($users as $user)
                   @if(!$user->deleted_at)
                     <tr>
@@ -61,10 +61,10 @@
                         <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                           @csrf
                           @method('DELETE')
-                          <a  href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                          <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                          <a  href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
+                          <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="edit" style="padding-right:20px"aria-hidden="true"></a></i>
                           <button class="btn" type="submit">
-                            <i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></i> 
+                            <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
                           </button>{{--archive nalang daw instead of deleting the files of user--}}
                         </form>
                       </td>
@@ -99,4 +99,10 @@
     }
   }
 </script>
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+  </script>
 @endpush

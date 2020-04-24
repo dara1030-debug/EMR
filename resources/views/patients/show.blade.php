@@ -55,7 +55,7 @@
                                         <h6><i>College/ Department:</i></h6>
                                         <p>College of Computer Studies</p>
                                         <h6><i>Phone Number:</i></h6>
-                                        <p>{{ $patient->contact_number }}</p>   
+                                        <p>{{ $patient->phone_number }}</p>   
                                         <h6><i>Birth Date/Month/Year:</i></h6>
                                         <p>{{ $patient->birthdate }}</p>
                                         <h6><i>Age:</i></h6>

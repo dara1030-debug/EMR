@@ -46,9 +46,9 @@
                 	<td>{{ $patient->first_name }}</td>
                 	<td>{{ $patient->middle_name }}</td>
                 	<td>
-                  		<a href="{{ route('patients.show', $patient->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                  		<a href="{{ route('patients.edit', $patient->id) }}"><i class="fa fa-edit" style="padding-right:20px" aria-hidden="true"></a></i>
-                  		<a href="#"><i class="fa fa-archive" style="padding-right:10px" aria-hidden="true"></a></i>
+                  		<a href="{{ route('patients.show', $patient->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
+                  		<a href="{{ route('patients.edit', $patient->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="edit" style="padding-right:20px" aria-hidden="true"></a></i>
+                  		<a href="#"><i class="fa fa-archive" style="padding-right:10px" data-toggle="tooltip" data-placement="top" title="archive" aria-hidden="true"></a></i>
                   	
                 	</td>
 	      	      </tr>
@@ -70,4 +70,10 @@
       });
     });
     </script>
+
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+  </script>
 @stop
