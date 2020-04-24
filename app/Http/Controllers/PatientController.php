@@ -23,6 +23,21 @@ class PatientController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function archive()
+    {
+        $patients = Patient::withTrashed()
+            ->where('deleted_at', '!=', null)
+            ->orderBy('last_name','asc')
+            ->paginate(20);
+
+        return view('patients.archive', compact('patients'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -331,6 +346,35 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $patient = Patient::findOrFail($id);
+        $patient->delete();
+
+        return redirect()->back()->with('success', 'A patient has been archived.');
+    }
+
+    public function deletePatient($id)
+    {
+        $patient = Patient::withTrashed()->where('id', $id)->first();
+
+        if(!isset($patient)) {
+            return redirect()->back()->with('error', 'The system was unable to delete the patient permanently.');
+        }
+
+        $patient->forceDelete();
+        
+        return redirect()->back()->with('success', 'A patient has been deleted permanently.');
+    }
+
+    public function restorePatient($id)
+    {
+        $patient = Patient::withTrashed()->where('id', $id)->first();
+
+        if(!isset($patient)) {
+            return redirect()->back()->with('error', 'The system was unable to restore the patient.');
+        }
+
+        $patient->restore();
+        
+        return redirect()->back()->with('success', 'A patient has been restored successfully!');
     }
 }

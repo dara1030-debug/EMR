@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class HealthExaminationRecord extends Model
 {
+    use SoftDeletes;
+    
     /**
      * The fields that are not mass-asssignable.
      * 

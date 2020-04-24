@@ -8,13 +8,13 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                <a class="nav-link" href="/patients">Patients</a>
+                <a class="nav-link" href="{{ route('patients.index') }}">Patients</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" href="/patients/create">Add New Patient</a>
+                <a class="nav-link active" href="{{ route('patients.create') }}">Add New Patient</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Archive</a>
+                    <a class="nav-link" href="{{ route('patients.archive') }}">Archive</a>
                 </li>
             </ul>
          </div>

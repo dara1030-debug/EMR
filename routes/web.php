@@ -40,10 +40,15 @@ Route::middleware('auth')->group(function () {
         Route::get('users/restore/{id}', 'UserController@restoreUser')->name('users.restore');
     });
     
+    // Patients
+    Route::resource('patients', 'PatientController');
+    Route::get('patients/archive/index', 'PatientController@archive')->name('patients.archive');
+    Route::delete('patients/force-delete/{id}', 'PatientController@deletePatient')->name('patients.delete');
+    Route::get('patients/restore/{id}', 'PatientController@restorePatient')->name('patients.restore');
+    
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');
     Route::get('contact', 'ContactController@index')->name('contact');
-    Route::resource('patients', 'PatientController');
     Route::resource('services', 'ServiceController');
     Route::resource('medical-records', 'MedicalRecordController');
 });

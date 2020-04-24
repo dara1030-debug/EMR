@@ -27,7 +27,10 @@ class UserController extends Controller
      */
     public function archive()
     {
-        $users = User::with('role')->withTrashed()->get();
+        $users = User::with('role')
+            ->withTrashed()
+            ->where('deleted_at', '!=', null)
+            ->get();
 
         return view('users.archive', compact('users'));
     }

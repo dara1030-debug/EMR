@@ -2,10 +2,23 @@
 
 namespace App;
 
+use Askedio\SoftCascade\Traits\SoftCascadeTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Patient extends Model
 {
+	use SoftDeletes, SoftCascadeTrait;
+
+	/**
+	 * Fields that get deleted with.
+	 * 
+	 * @var Array
+	 */
+	protected $softCascade = [
+		'healthExaminationRecord',
+	];
+
 	/**
 	 * Fields that aren't mass assignable.
 	 * 
