@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -55,6 +57,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $imagePath = null;
+        
+        if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
+            $request->validate([
+                'avatar' => 'image|max:2048|mimes: jpg,jpeg,png',
+            ]);
+
+            /** Variables. */
+            $avatar = $request->file('avatar');
+            $host = $request->getSchemeAndHttpHost();
+
+            /** Uploading the image. */
+            $storage = Storage::disk('public');
+            $filePath = $storage->putFile('avatars', new File($avatar), 'public');
+            $imagePath = $host.'/storage/'.$filePath;
+        }
+        
         $request->validate([
             'first_name' => 'required',
             'middle_name' => 'required',
@@ -68,12 +87,13 @@ class UserController extends Controller
             'present_address' => 'required',
             'gender' => 'required',
             'role_id' => 'required',
-            'contact_number' => 'required',
+            'phone_number' => 'required',
             'license_number' => 'required',
         ]);
 
         $user = User::create([
             'role_id' => $request->role_id,
+            'avatar' => $imagePath,
             'email' => $request->email,
             'password' => $request->password,
             'first_name' => $request->first_name,
@@ -85,7 +105,7 @@ class UserController extends Controller
             'birthdate' => $request->birthdate,
             'present_address' => $request->present_address,
             'home_address' => $request->home_address,
-            'contact_number' => $request->contact_number,
+            'phone_number' => $request->phone_number,
             'license_number' => $request->license_number,
             'last_activity' => $request->last_activity,
         ]);
@@ -133,6 +153,23 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $imagePath = null;
+        
+        if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
+            $request->validate([
+                'avatar' => 'image|max:2048|mimes: jpg,jpeg,png',
+            ]);
+
+            /** Variables. */
+            $avatar = $request->file('avatar');
+            $host = $request->getSchemeAndHttpHost();
+
+            /** Uploading the image. */
+            $storage = Storage::disk('public');
+            $filePath = $storage->putFile('avatars', new File($avatar), 'public');
+            $imagePath = $host.'/storage/'.$filePath;
+        }
+        
         $request->validate([
             'first_name' => 'required',
             'middle_name' => 'required',
@@ -143,11 +180,12 @@ class UserController extends Controller
             'birthdate' => 'required', 
             'present_address' => 'required',
             'role_id' => 'required',
-            'contact_number' => 'required',
+            'phone_number' => 'required',
             'license_number' => 'required',
         ]);
 
         $user = User::findOrFail($id);
+        $user->avatar = $imagePath;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
         $user->first_name = $request->first_name;
@@ -158,7 +196,7 @@ class UserController extends Controller
         $user->birthdate = $request->birthdate;
         $user->present_address = $request->present_address;
         $user->home_address = $request->home_address;
-        $user->contact_number = $request->contact_number;
+        $user->phone_number = $request->phone_number;
         $user->license_number = $request->license_number;
         $user->last_activity = $request->last_activity;
         

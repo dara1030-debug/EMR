@@ -21,7 +21,7 @@
       
     </div>
     <div class="card-body">
-      <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"> {{--Profile Uploaded--}}
+      <img src="{{ $user->avatar ?? '/img/Picture1.png' }}" alt="create_avatar" class="create_avatar"> {{--Profile Uploaded--}}
       <h4>{{ "$user->first_name $user->middle_name $user->last_name" }}</h4> {{--Paki Get yung values ng user sa show please. ga error pag pinapakelaman ko XD--}}
       <h6>ID No. 2015-8418</h6> 
       <h6>ADMIN</h6> <?ROLE?>

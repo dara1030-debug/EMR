@@ -44,10 +44,13 @@
             </div>
         @endif
         
-        <form action="{{ route('users.update', $user->id) }}" method="post">
+        <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"> {{--Update Profile Uploaded (Restrict user thaht only img/png file can be uploaded )--}}
+            <img src="{{ $user->avatar ?? '/img/Picture1.png' }}" alt="create_avatar" class="create_avatar"> {{--Update Profile Uploaded (Restrict user thaht only img/png file can be uploaded )--}}
+            <div>
+                <input name="avatar" id="inp" type="file" accept="image/*">
+            </div>
             <div class="tab-content" id="myTabContent" >
                 <h3 class="register-heading">Edit User</h3>
                 <div class="row register-form">
@@ -176,15 +179,15 @@
                         </div>
                         <div class="form-group">
                             <input 
-                            name="contact_number" 
+                            name="phone_number" 
                             type="number" 
                             minlength="10" 
                             maxlength="10" 
-                            class="form-control @error('contact_number') is-invalid @enderror" 
+                            class="form-control @error('phone_number') is-invalid @enderror" 
                             placeholder="Phone Number *" 
-                            value="{{ $user->contact_number }}" />
+                            value="{{ $user->phone_number }}" />
     
-                            @error('contact_number')
+                            @error('phone_number')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -444,15 +447,15 @@
                     </div>
                     <div class="form-group">
                         <input 
-                        name="contact_number" 
+                        name="phone_number" 
                         type="number" 
                         minlength="10" 
                         maxlength="10" 
-                        class="form-control @error('contact_number') is-invalid @enderror" 
+                        class="form-control @error('phone_number') is-invalid @enderror" 
                         placeholder="Phone Number *" 
-                        value="{{ $user->contact_number }}" />
+                        value="{{ $user->phone_number }}" />
 
-                        @error('contact_number')
+                        @error('phone_number')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

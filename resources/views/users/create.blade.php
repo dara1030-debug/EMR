@@ -33,9 +33,10 @@
           </ul>
         </div>
         
-        <div class="card-body">
+        <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
+            <div class="card-body">
             <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br> {{--Upload Profile Pic (Restrict user thaht only img/png file can be uploaded--}}
-            <input id="inp" type="file" accept="image/*">
+            <input name="avatar" id="inp" type="file" accept="image/*">
         
         <div class="container register"  style="margin-left: 0%;"><br>
 
@@ -43,7 +44,6 @@
         <div class="row">
             <div class="tab-content input-center" id="myTabContent" >
                 <br>
-                <form action="{{ route('users.store') }}" method="POST">
                     @csrf
                     <div class="row register-form" >
                         <div class="col-md-6">
@@ -137,7 +137,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <input type="number" minlength="10" maxlength="10" name="contact_number" class="form-control" placeholder="Phone Number *" value="" />
+                                <input type="number" minlength="10" maxlength="10" name="phone_number" class="form-control" placeholder="Phone Number *" value="" />
                             </div>
                             <div class="form-group">
                                 <input name="age" type="number" class="form-control" placeholder="Age *" value="" />
