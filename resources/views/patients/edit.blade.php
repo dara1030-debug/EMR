@@ -1,199 +1,199 @@
 @extends('layouts.app')
 
 @section('content')
-@if ($message = Session::get('success'))
-<div class="alert alert-success alert-block">
-<button type="button" class="close" data-dismiss="alert">×</button>	
-<strong>{{ $message }}</strong>
-</div>
-@endif
+    @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
+        <strong>{{ $message }}</strong>
+    </div>
+    @endif
 
-<div class="card">
-<div class="card-header">
-<ul class="nav nav-tabs card-header-tabs">
-<li class="nav-item">
-<a class="nav-link" href="/patients">Patients</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="/patients/create">Add New Patient</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Archive</a>
-</li>
-<li class="nav-item">
-<a class="nav-link active" href="/patients">Edit Patient... 
-<button type="button" class="close" href="/users">&times; </button> </a>
-</li>
-</ul>
-</div>
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="/patients">Patients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/patients/create">Add New Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Archive</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/patients">Edit Patient... 
+                    <button type="button" class="close" href="/users">&times; </button> </a>
+                </li>
+            </ul>
+        </div>
 
-<div class="card-body">
-<div class="container px-10">
-@if ($errors->any())
-<div class="alert alert-danger">
-<ul>
-@foreach ($errors->all() as $error)
-<li>{{ $error }}</li>
-@endforeach
-</ul>
-</div>
-@endif
+        <div class="card-body">
+            <div class="container px-10">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+                </ul>
+            </div>
+            @endif
 
-@if (session('success'))
-<div class="alert alert-success">
-{{ session('success') }}
-</div>
-@endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                {{ session('success') }}
+                </div>
+            @endif
 
-<form action="{{ route('patients.update', $patient->id) }}" method="post">
-@csrf
-@method('PUT')
+        <form action="{{ route('patients.update', $patient->id) }}" method="post">
+            @csrf
+            @method('PUT')
 
-{{--Profile--}}
-<div class="form-group text-center">
-<div class="col" style=" margin-top: 3%">
-<img src="/img/no_avatar.jpg"  alt="create_avatar" class="create_avatar "><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
-</div>
-</div>
-<div class="form-group text-center">
-<div class="col"><br>
-<input type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
-</div>
-</div> {{--end of profile--}}
+            {{--Profile--}}
+            <div class="form-group text-center">
+                <div class="col" style=" margin-top: 3%">
+                    <img src="/img/no_avatar.jpg"  alt="create_avatar" class="create_avatar "><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
+                </div>
+                </div>
+                    <div class="form-group text-center">
+                    <div class="col"><br>
+                    <input type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
+                </div>
+            </div> {{--end of profile--}}
 
-<br>
-{{--row1--}}
-<div class="row">
-<div class="col">
-<div class="form-group">
-<label for="idnum">ID Number:</label>
-<input type="text" name="id_number" class="form-control" id="idnum" placeholder="ID Number *" value="{{ $patient->id_number }}" />
-</div>
-<div class="form-group">
-<label for="fname">First Name:</label>
-<input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
-</div>
-<div class="form-group">
-<label for="mname">Middle Name:</label>
-<input id="middle_name" name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
-</div>
-<div class="form-group">
-<label for="lname">Last Name:</label>
-<input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
-</div>
-<div class="form-group">
-<label for="hadd">Home Address:</label>
-<input id="home_address" name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
-</div>
-<div class="form-group">
-<label for="padd">Present Address:</label>
-<input id="present_address" name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
-</div>
-<div class="form-group">
-<label for="civilstat">Civil Status:</label>
-<select name="civil_status" id="civilstat" class="form-control">
-<option class="hidden"  selected disabled>Civil Status</option>
-@if(isset($patient->civil_status))
-<option selected>{{ $patient->civil_status }}</option>
-@endif
-<option>Single</option>
-<option>Married</option>
-<option>Widowed</option>
-<option>Separated</option>
-<option>In certain cases</option>
-</select>
-</div>
-</div>
+        <br>
+        {{--row1--}}
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="idnum">ID Number:</label>
+                    <input type="text" name="id_number" class="form-control" id="idnum" placeholder="ID Number *" value="{{ $patient->id_number }}" />
+                </div>
+                <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
+                </div>
+                <div class="form-group">
+                    <label for="mname">Middle Name:</label>
+                    <input id="middle_name" name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
+                </div>
+                <div class="form-group">
+                    <label for="hadd">Home Address:</label>
+                    <input id="home_address" name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
+                </div>
+                <div class="form-group">
+                    <label for="padd">Present Address:</label>
+                    <input id="present_address" name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
+                </div>
+                <div class="form-group">
+                    <label for="civilstat">Civil Status:</label>
+                    <select name="civil_status" id="civilstat" class="form-control">
+                        <option class="hidden"  selected disabled>Civil Status</option>
+                        @if(isset($patient->civil_status))
+                        <option selected>{{ $patient->civil_status }}</option>
+                        @endif
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Widowed</option>
+                        <option>Separated</option>
+                        <option>In certain cases</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="mt-3">Gender:</label>
+                    <div class="form-check">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input"  id="malegender" name="gender" value="male">
+                    <label class="custom-control-label" for="malegender">Male</label>
+                </div>   
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input mt-4 " id="femalegender" name="gender" value="female">
+                    <label class="custom-control-label" for="femalegender">Female</label>
+                    <br>
+                </div> 
+            </div>
+    </div>
 
-<div class="col">
-<div class="form-group">
-<label class="mt-3">Gender:</label>
-<div class="form-check">
-<div class="custom-control custom-radio custom-control-inline">
-<input type="radio" class="custom-control-input"  id="malegender" name="gender" value="male">
-<label class="custom-control-label" for="malegender">Male</label>
-</div>   
-<div class="custom-control custom-radio custom-control-inline">
-<input type="radio" class="custom-control-input mt-4 " id="femalegender" name="gender" value="female">
-<label class="custom-control-label" for="femalegender">Female</label>
-<br>
-</div> 
-</div>
-</div>
-<div class="form-group">
-<label for="age">Age:</label>
-<input id="age" type="number" name="age" class="form-control" placeholder="Age *" value="{{ $patient->age }}" />
-</div>
-<div class="form-group">
-<label for="bdate">Birth Date:</label>
-<input id="bdate" type="date" class="form-control" name="birthdate" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
-</div>
-<div class="form-group">
-<label for="cd">College/Department:</label>
-<select id="cd" class="form-control" name="college_department">
-<option class="hidden"  selected disabled>College/Department</option>
-@if(isset($patient->college_department))
-<option selected>{{ $patient->college_department }}</option>
-@endif
-<option>OPD/DEPENDENT</option>
-<option>SCHOOL OF GRADUATE STUDIES</option>
-<option>COLLEGE OF EDUCATION</option>
-<option>COLLEGE OF NURSING</option>
-<option>CSM GRADUATE PROGRAMS</option>
-<option>COLLEGE OF BUSINESS ADMINISTRATION AND ACCOUNTANCY</option>
-<option>COLLEGE OF SCIENCE AND MATHEMATICS</option>
-<option>COLLEGE OF ARTS AND SOCIAL SCIENCE</option>
-<option>SCHOOL OF ENGINEERING TECHNOLOGY</option>
-<option>COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
-<option>COLLEGE OF COMPUTER STUDIES</option>
-<option>ACCOUNTING SECTION</option>
-<option>ADMISSION OFFICE</option>
-<option>BUDGET OFFICE</option>
-<option>CASHIERING SECTION</option>
-<option>CULTURAL DEVELOPMENT OFFICE</option>
-<option>DEPARTMENT OF STUDENTS AFFAIRS</option>
-<option>DEPARTMENT OF TECHNOLOGY APPLICATION AND PROMOTION</option>
-<option>GUIDANCE OFFICE</option>
-<option>HUMAN RESOURCE MNGT. DIVISION</option>
-<option>ICTC-COMPUTER FACILITIES ANS SUPPORT SERVICES/option>
-<option>INSTITUTE LIBRARY</option>
-<option>INSTITUTE SECRETARY</option>
-<option>INTEGRATED DEVELOPMENTAL SCHOOL</option>
-<option>INTERNAL AUDIT SERVICES UNIT</option>
-<option>MANILA INFORMATION AND LIAISON OFFICE</option>
-<option>MEDICAL SERVICES</option>
-<option>MSU-IIT CENTER FOR eLEARNING</option>
-<option>NSTP UNIT</option>
-<option>OFFICE FOR ALUMNI RELATIONS AND REPLACEMENT</option>
-<option>OFFICE OF THE BAC SECRETARIAT</option>
-<option>OFFICE OF THE CHANCELLOR</option>
-<option>OFFICE OF THE VICE CHANCELLOR</option>
-<option>OFFICE OF THE VICE CHANCELLOR FOR ADMINISTRATION AND FINANCE</option>
-<option>OFFICE OF THE VICE CHANCELLOR FOR PLANNING AND DEVELOPMENT</option>
-<option>OFFICE OF THE VICE CHANCELLOR FOR RESEARCH AND EXTENSION</option>
-<option>PHYSICAL PLANT DIVISION</option>
-<option>PROPERTY AND SUPPLY OFFICE</option>
-<option>PURCHASING OFFICE</option>
-<option>REGISTRAR OFFICE</option>
-<option>SPORTS DEVELOPMENT OFFICE</option>
-<option>N/A</option>
-</select>
-</div>
-<div class="form-group">
-<label for="phonenum">Phone Number:</label>
-<input id="phonenum" type="text"  class="form-control" name="phone_number" value="{{ $patient->contact_number }}" />
-</div>
-<div class="form-group">
-{{-- <label for="role">Role:</label> --}}
-{{-- <select id="role" class="form-control">
-<option class="hidden" name="role_id"  selected disabled>Role</option>
-<option>Student</option>
-<option>Faculty</option>
-<option>Staff</option>
-<option>OPD/Dependent</option>
-</select> --}}
-</div>
-</div>               
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input id="age" type="number" name="age" class="form-control" placeholder="Age *" value="{{ $patient->age }}" />
+        </div>
+        <div class="form-group">
+            <label for="bdate">Birth Date:</label>
+            <input id="bdate" type="date" class="form-control" name="birthdate" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
+        </div>
+        <div class="form-group">
+            <label for="cd">College/Department:</label>
+            <select id="cd" class="form-control" name="college_department">
+            <option class="hidden"  selected disabled>College/Department</option>
+            @if(isset($patient->college_department))
+            <option selected>{{ $patient->college_department }}</option>
+            @endif
+            <option>OPD/DEPENDENT</option>
+            <option>SCHOOL OF GRADUATE STUDIES</option>
+            <option>COLLEGE OF EDUCATION</option>
+            <option>COLLEGE OF NURSING</option>
+            <option>CSM GRADUATE PROGRAMS</option>
+            <option>COLLEGE OF BUSINESS ADMINISTRATION AND ACCOUNTANCY</option>
+            <option>COLLEGE OF SCIENCE AND MATHEMATICS</option>
+            <option>COLLEGE OF ARTS AND SOCIAL SCIENCE</option>
+            <option>SCHOOL OF ENGINEERING TECHNOLOGY</option>
+            <option>COLLEGE OF ENGINEERING AND TECHNOLOGY</option>
+            <option>COLLEGE OF COMPUTER STUDIES</option>
+            <option>ACCOUNTING SECTION</option>
+            <option>ADMISSION OFFICE</option>
+            <option>BUDGET OFFICE</option>
+            <option>CASHIERING SECTION</option>
+            <option>CULTURAL DEVELOPMENT OFFICE</option>
+            <option>DEPARTMENT OF STUDENTS AFFAIRS</option>
+            <option>DEPARTMENT OF TECHNOLOGY APPLICATION AND PROMOTION</option>
+            <option>GUIDANCE OFFICE</option>
+            <option>HUMAN RESOURCE MNGT. DIVISION</option>
+            <option>ICTC-COMPUTER FACILITIES ANS SUPPORT SERVICES/option>
+            <option>INSTITUTE LIBRARY</option>
+            <option>INSTITUTE SECRETARY</option>
+            <option>INTEGRATED DEVELOPMENTAL SCHOOL</option>
+            <option>INTERNAL AUDIT SERVICES UNIT</option>
+            <option>MANILA INFORMATION AND LIAISON OFFICE</option>
+            <option>MEDICAL SERVICES</option>
+            <option>MSU-IIT CENTER FOR eLEARNING</option>
+            <option>NSTP UNIT</option>
+            <option>OFFICE FOR ALUMNI RELATIONS AND REPLACEMENT</option>
+            <option>OFFICE OF THE BAC SECRETARIAT</option>
+            <option>OFFICE OF THE CHANCELLOR</option>
+            <option>OFFICE OF THE VICE CHANCELLOR</option>
+            <option>OFFICE OF THE VICE CHANCELLOR FOR ADMINISTRATION AND FINANCE</option>
+            <option>OFFICE OF THE VICE CHANCELLOR FOR PLANNING AND DEVELOPMENT</option>
+            <option>OFFICE OF THE VICE CHANCELLOR FOR RESEARCH AND EXTENSION</option>
+            <option>PHYSICAL PLANT DIVISION</option>
+            <option>PROPERTY AND SUPPLY OFFICE</option>
+            <option>PURCHASING OFFICE</option>
+            <option>REGISTRAR OFFICE</option>
+            <option>SPORTS DEVELOPMENT OFFICE</option>
+            <option>N/A</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="phonenum">Phone Number:</label>
+            <input id="phonenum" type="text"  class="form-control" name="phone_number" value="{{ $patient->contact_number }}" />
+        </div>
+        <div class="form-group">
+        {{-- <label for="role">Role:</label> --}}
+        {{-- <select id="role" class="form-control">
+        <option class="hidden" name="role_id"  selected disabled>Role</option>
+        <option>Student</option>
+        <option>Faculty</option>
+        <option>Staff</option>
+        <option>OPD/Dependent</option>
+        </select> --}}
+        </div>
+    </div>               
 </div>{{--end row1--}}
 
 
