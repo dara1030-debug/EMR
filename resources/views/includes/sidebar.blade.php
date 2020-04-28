@@ -16,7 +16,7 @@ $activeUsers = \App\User::getActive();
 
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
@@ -101,16 +101,18 @@ $activeUsers = \App\User::getActive();
         <div class="chat-popup" id="myForm">
         <form action="/#" class="form-container">
             <h6 style="text-align: center">Active Users</h6>
-            <table class="table table-bordered table-responsive-sm">
+            <table class="table  table-responsive-sm">
                 <thead class="a">
                     <tr>
                         
+                    </tr>
+                    <tr>
                     </tr>
                 </thead>
                 <tbody class="b">
                     @foreach($activeUsers as $user)
                     <tr>
-                        <td>{{ $user->first_name . " " . $user->last_name }}</td>
+                        <td class="col-sm-4">{{ $user->first_name . " " . $user->last_name }}</td>
                         <td><i class="fa fa-circle" style="color: green" aria-hidden="true"></i></td>
                     </tr>
                     @endforeach

@@ -11465,6 +11465,7 @@ a.text-dark:focus {
   bottom: 60px;
   right: 10px;
   width: 260px;
+  position: fixed;
 }
 
 /* The popup chat - hidden by default */
@@ -11496,7 +11497,7 @@ a.text-dark:focus {
 /* Full-width textarea */
 .form-container table {
   width: 100%;
-  padding: 20px 5px;
+  padding: 20px 6px;
   margin: 5px 0 22px 0;
   border-color: rgb(236, 235, 236);
   background: #f1f1f1;
@@ -11523,13 +11524,14 @@ a.text-dark:focus {
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: #0f2d44;
-  
+  position: fixed;
   
 }
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+  position: fixed;
 }
 
 /*End of Online Button */

@@ -27,12 +27,7 @@
                         <p class="card-body text-center">Manage Services</p>
                     </a>
                 </div>
-                <div class="card border-info">
-                    <a href="/labreports" class="nav-link">
-                        <img class="card-img-top" src="img/q3.png" alt="Card image">
-                        <p class="card-body text-center">Generate Report</p>
-                    </a>
-                </div>
+               
              </div>
             </div>
             

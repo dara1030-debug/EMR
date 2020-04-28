@@ -31,7 +31,7 @@
             <div class="col">
                 <h4 >{{ "$patient->first_name $patient->middle_name $patient->last_name" }}</h4>
                 <h6>ID No. {{ $patient->id_number }}</h6> 
-                <h6>Student</h6> {{--Patient Role must Reflect/ Student/ Faculty/Staff--}} 
+                
                 <a href="{{ route('medical-records.show', $patient->id) }}" class="btn btn-info">View Medical Record</a>
                 <br><br>
             </div>
