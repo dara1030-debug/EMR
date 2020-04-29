@@ -47,10 +47,14 @@ Route::middleware('auth')->group(function () {
     Route::get('patients/restore/{id}', 'PatientController@restorePatient')->name('patients.restore');
     Route::post('patients/search', 'PatientController@search')->name('patients.search');
     
+    Route::resource('services', 'ServiceController');
+    Route::get('services/archive/index', 'ServiceController@archive')->name('services.archive');
+    Route::delete('services/force-delete/{id}', 'ServiceController@forceDestroy')->name('services.delete');
+    Route::get('services/restore/{id}', 'ServiceController@restore')->name('services.restore');
+    
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');
     Route::get('contact', 'ContactController@index')->name('contact');
-    Route::resource('services', 'ServiceController');
     Route::resource('medical-records', 'MedicalRecordController');
 });
 

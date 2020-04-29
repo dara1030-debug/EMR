@@ -22,13 +22,13 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="/services">Clinic Services</a>
+          <a class="nav-link" href="{{ route('services.index') }}">Clinic Services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('services.create') }}">Add New Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
+          <a class="nav-link" href="{{ route('services.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
         </li>
       </ul>
       

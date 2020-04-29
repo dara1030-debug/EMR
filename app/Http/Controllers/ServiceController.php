@@ -14,6 +14,15 @@ class ServiceController extends Controller
         ]);
     }
 
+    public function archive()
+    {
+        return view('services.archive', [
+            'services' => Service::withTrashed()
+                ->where('deleted_at', '!=', null)
+                ->get()
+        ]);
+    }
+
     public function show(Service $service)
     {
         return view('services.show', [
@@ -52,17 +61,18 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function update(Service $service)
+    public function update(Request $request, Service $service)
     {
-        $data = request()->validate([
+        $request->validate([
             'name' => 'required',
             'description' => 'required',
         ]);
 
-        $service->fill($data->only([
+        $service->fill($request->only(
                 'name',
-                'descsription'
-            ])
+                'description',
+                'added_by'
+            )
         )->save();
         
         return redirect()->back()->with('success', 'A service has been updated.');
