@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('patients/archive/index', 'PatientController@archive')->name('patients.archive');
     Route::delete('patients/force-delete/{id}', 'PatientController@deletePatient')->name('patients.delete');
     Route::get('patients/restore/{id}', 'PatientController@restorePatient')->name('patients.restore');
+    Route::post('patients/search', 'PatientController@search')->name('patients.search');
     
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');

@@ -25,6 +25,7 @@
           <input type="search" name="search" placeholder="Search for Patient " class="form-control">
           {{-- <input type="search" name="search" id="myInput" placeholder="Search for Patient " aria-describedby="button-addon5" class="form-control"> --}}
           <button type="submit">Search</button>
+            <a href="{{ route('patients.index') }}">Clear</a>
         </form>
       {{--<i class="fa fa-search"></i>--}}
         
