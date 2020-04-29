@@ -5,13 +5,13 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route('services.index') }}">Clinic Services</a>
+          <a class="nav-link " href="{{ route('services.index') }}">Clinic Services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('services.create') }}">Add New Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('services.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
+          <a class="nav-link active" href="{{ route('services.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
         </li>
       </ul>
       
@@ -34,13 +34,12 @@
                 <td>{{ $service->name }}</td>
                 <td>{{ $service->description }}</td>
                 <td>
-                  <form action="{{ route('services.destroy', $service->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                  <form action="{{ route('services.delete', $service->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                     @csrf
                     @method('DELETE')
-                    <a href="{{ route('services.show', $service->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                    <a href="{{ route('services.edit', $service->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                    <button class="btn" type="submit">
-                      <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
+                    <a href="{{ route('services.restore', $service->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
+                    <button type="submit" class="btn">
+                        <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
                     </button>
                   </form>
                 </td>

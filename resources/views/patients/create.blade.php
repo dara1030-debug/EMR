@@ -669,6 +669,7 @@
                                                         <div class="form-group">
                                                             <p class="register-heading text-center"><b>ASSESSMENT AND RECOMMENDATION</b></p>
                                                             
+<<<<<<< HEAD
                                                                 <div class="custom-control custom-radio custom-control-inline">
                                                                     <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" value="Yes">
                                                                     <label class="custom-control-label mb-3" for="customRadio">Physically Fit</label>
@@ -682,6 +683,19 @@
                                                                     <label >Comment: </label>
                                                                     <textarea class="form-control" name="assessment_comment" value=""></textarea><br>
                                                                 </div>
+=======
+                                                            <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" value="Yes">
+                                                                <label class="custom-control-label mb-3" for="customRadio">Physically Fit</label>
+                                                              </div>   
+                                                              <div class="custom-control custom-radio custom-control-inline">
+                                                                <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" value="No">
+                                                                <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
+                                                                <br>
+                                                            </div> 
+                                                              
+                                                                <textarea name="physically_fit_description" class="form-control"></textarea><br>
+>>>>>>> 2421dbdcf75cebac308f44d6241906cd497f0d6b
                                                                 <label >Date of Examination: </label>
                                                                 <input class="form-control" type="date" name="date_examined" value="">
                                                                 
