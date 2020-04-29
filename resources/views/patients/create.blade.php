@@ -669,17 +669,19 @@
                                                         <div class="form-group">
                                                             <p class="register-heading text-center"><b>ASSESSMENT AND RECOMMENDATION</b></p>
                                                             
-                                                            <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" value="Yes">
-                                                                <label class="custom-control-label mb-3" for="customRadio">Physically Fit</label>
-                                                              </div>   
-                                                              <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" value="No">
-                                                                <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
-                                                                <br>
-                                                            </div> 
-                                                              
-                                                                <textarea class="form-control"></textarea><br>
+                                                                <div class="custom-control custom-radio custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input mb-2" id="customRadio" name="physically_fit" value="Yes">
+                                                                    <label class="custom-control-label mb-3" for="customRadio">Physically Fit</label>
+                                                                </div>   
+                                                                <div class="custom-control custom-radio custom-control-inline">
+                                                                    <input type="radio" class="custom-control-input" id="customRadio1" name="physically_fit" value="No">
+                                                                    <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
+                                                                    <br>
+                                                                </div> 
+                                                                <div class="form-group">
+                                                                    <label >Comment: </label>
+                                                                    <textarea class="form-control" name="assessment_comment" value=""></textarea><br>
+                                                                </div>
                                                                 <label >Date of Examination: </label>
                                                                 <input class="form-control" type="date" name="date_examined" value="">
                                                                 
@@ -687,9 +689,8 @@
             
                                                                 <br><br>
                                                                 <div class="form-check-inline">
-                                                                    <label class="form-control-label mr-2 mb-2">By: </label>
-                                                                    <input class="form-control col-sm-12" type="text" name="by" value="">
-                                                                    <label class="form-control-label ml-1"> ,MD</label>
+                                                                    <label class="form-control-label mr-2 mb-2">Added By: </label>
+                                                                    <input class="form-control col-sm-10" type="text" name="by" value="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="form-check-inline">

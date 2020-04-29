@@ -22,10 +22,13 @@
       <div class="input-group mb-4" style="margin:auto;max-width:300px">
         <form action="{{ route('patients.search') }}" method="POST">
           @csrf
-          <input type="search" name="search" placeholder="Search for Patient " class="form-control">
-          {{-- <input type="search" name="search" id="myInput" placeholder="Search for Patient " aria-describedby="button-addon5" class="form-control"> --}}
-          <button type="submit">Search</button>
-            <a href="{{ route('patients.index') }}">Clear</a>
+          <div class="row">
+            <div class="input-group-prepend">
+              <input type="search" name="search" placeholder="Search for Patient " class="form-control">
+              <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
+              <a href="{{ route('patients.index') }}" class="form-control col-sm-3">Clear</a>
+            </div>
+          </div>
         </form>
       {{--<i class="fa fa-search"></i>--}}
         

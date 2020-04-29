@@ -191,6 +191,7 @@ class PatientController extends Controller
         ]);
         $assesment = $request->only([
             'physically_fit',
+            'assessment_comment',
             'date_examined',
             'by',
             'license_no',
