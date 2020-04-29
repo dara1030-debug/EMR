@@ -191,11 +191,7 @@ class PatientController extends Controller
         ]);
         $assesment = $request->only([
             'physically_fit',
-<<<<<<< HEAD
-            'assessment_comment',
-=======
             'physically_fit_description',
->>>>>>> 2421dbdcf75cebac308f44d6241906cd497f0d6b
             'date_examined',
             'by',
             'license_no',

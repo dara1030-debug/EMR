@@ -565,17 +565,10 @@
                                                                 <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
                                                                 <br>
                                                             </div> 
-                                                              
-<<<<<<< HEAD
                                                                 <div class="form-group">
                                                                     <label >Comment: </label>
-                                                                <textarea class="form-control" name="assessment_comment" value="{{ $patient->getAssessmentAttr('assessment_comment')}}"></textarea><br>
+                                                                    <textarea class="form-control" name="physically_fit_description">{{ $patient->getAssessmentAttr('physically_fit_description') }}</textarea><br>
                                                                 </div>
-=======
-                                                            <textarea name="physically_fit_description" class="form-control">
-                                                                {{ $patient->getAssessmentAttr('physically_fit_description') }}
-                                                            </textarea><br>
->>>>>>> 2421dbdcf75cebac308f44d6241906cd497f0d6b
                                                                 <label >Date of Examination: </label>
                                                                 <input class="form-control" type="date" name="date_examined" value="{{ $patient->getAssessmentAttr('date_examined') }}">
                                                                 
