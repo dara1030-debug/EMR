@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Service;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     public function index()
     {
-        return view('services.index');
+        return view('services.index', [
+            'services' => Service::get()
+        ]);
     }
 
-    public function show($id)
+    public function show(Service $service)
     {
-        $service = 'Service'.$id;
-        
-        return view('services.show')->with('service');
+        return view('services.show', [
+            'service' => $service
+        ]);
     }
 
     public function create()
@@ -25,36 +28,72 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        Service::create($request->only( 
+            'name',
+            'description',
+            'added_by'
+            )
+        );
+        
+        return redirect()
+            ->back()
+            ->with('success', 'A new service has been added.');
+    }
+
+    public function edit(Service $service)
+    {
+        return view('services.edit', [
+            'service' => $service
+        ]);
+    }
+
+    public function update(Service $service)
+    {
         $data = request()->validate([
             'name' => 'required',
             'description' => 'required',
         ]);
+
+        $service->fill($data->only([
+                'name',
+                'descsription'
+            ])
+        )->save();
         
-        return dd($request->all());
+        return redirect()->back()->with('success', 'A service has been updated.');
     }
 
-    public function edit()
+    public function destroy(Service $service)
     {
-        return view('services.edit');
-    }
-
-    public function update(Request $request, $id)
-    {
-        return dd($request->all());
-    }
-
-    public function destroy($id)
-    {
-        return $id;
+        $service->delete();
+        
+        return redirect()
+            ->back()
+            ->with('success', 'A service has been archived.');
     }
 
     public function forceDestroy($id)
     {
-        return $id;
+        $service = Service::withTrashed()->where('id', $id)->first();
+        $service->forceDelete();
+        
+        return redirect()
+            ->back()
+            ->with('success', 'A service has been deleted permanently.');
     }
 
     public function restore($id)
     {
-        return $id;
+        $service = Service::withTrashed()->where('id', $id)->first();
+        $service->restore();
+        
+        return redirect()
+            ->back()
+            ->with('success', 'A service has been restored.');
     }
 }

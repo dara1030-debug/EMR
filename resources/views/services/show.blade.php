@@ -26,14 +26,14 @@
             <div class="form-row">
               <div class="col-md-4 mb-3">
                 <label for="validationCustom01">Name of Service</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="service name" required>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="{{ $service->name }}" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-8 mb-3">
                 <label for="validationCustom02">Description</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="description" required>
+                <input type="text" class="form-control" id="validationCustom02" placeholder="{{ $service->description }}" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -44,7 +44,7 @@
               <div class="col-md-6 mb-3 ml-5 mx-auto" style="width: 200px;>
                 <label for="validationCustom03">Added By</label>
                 <select class="custom-select" required>
-                    <option value="">Added by</option>
+                    <option value="">{{ $service->addedBy->fullName() }}</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>

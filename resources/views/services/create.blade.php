@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+  @if ($message = Session::get('success'))
+  <div class="alert alert-success alert-block">
+      <button type="button" class="close" data-dismiss="alert">×</button>	
+      <strong>{{ $message }}</strong>
+  </div>
+  @endif
+
+  @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+  @endif
+
 <div class="card text-center">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
@@ -17,18 +34,19 @@
       
     </div>
     <div class="card-body">
-        <form class="needs-validation" novalidate>
+      <form class="needs-validation" method="POST" action="{{ route('services.store') }}" novalidate>
+        @csrf
             <div class="form-row">
               <div class="col-md-4 mb-3">
                 <label for="validationCustom01">Name of Service</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="service name" required>
+                <input name="name" type="text" class="form-control" id="validationCustom01" placeholder="service name" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-8 mb-3">
                 <label for="validationCustom02">Description</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="description" required>
+                <input name="description" type="text" class="form-control" id="validationCustom02" placeholder="description" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -38,11 +56,10 @@
             <div class="form-row">
               <div class="col-md-6 mb-3 ml-5 mx-auto" style="width: 200px;>
                 <label for="validationCustom03">Added By</label>
-                <select class="custom-select" required>
-                    <option value="">Added by</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select name="added_by" class="custom-select" required>
+                  @foreach(\App\User::get() as $user)
+                    <option value="{{ $user->id }}">{{ $user->fullName() }}</option>
+                  @endforeach
                   </select>
                 <div class="invalid-feedback">
                   Please provide name.
@@ -50,7 +67,7 @@
               </div>
             </div>
             
-            <a href="#" button class="btn btn-primary" type="submit">Submit form</button></a>
+            <button class="btn btn-primary" type="submit">Submit form</button>
           </form>
     </div>
   </div>

@@ -17,8 +17,13 @@ class CreateServicesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->unsignedBigInteger('added_by');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
+        });
+
+        Schema::table('services', function (Blueprint $table) {
+            $table->foreign('added_by')->references('id')->on('users');
         });
     }
 

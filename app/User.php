@@ -29,6 +29,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function fullName()
+    {
+        return "$this->first_name $this->middle_name $this->last_name";
+    }
+    
     public function role()
     {
         return $this->belongsTo('App\Role');
@@ -64,5 +69,10 @@ class User extends Authenticatable
         return Active::users()->get()->map(function ($data) {
             return $data->user;
         });
+    }
+
+    public function services()
+    {
+        return $this->hasMany('App\Service', 'added_by');
     }
 }

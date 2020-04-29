@@ -29,81 +29,23 @@
               </tr>
             </thead>
             <tbody id="myTable">
-            <tr>
-                <td>Checkup</td>
-                <td>Checkcup only description</td>
+              @foreach($services as $service)
+              <tr>
+                <td>{{ $service->name }}</td>
+                <td>{{ $service->description }}</td>
                 <td>
-                    <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                  		<a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                  		<a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
+                  <form action="{{ route('services.destroy', $service->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <a href="{{ route('services.show', $service->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
+                    <a href="{{ route('services.edit', $service->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                    <button class="btn" type="submit">
+                      <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
+                    </button>
+                  </form>
                 </td>
-            </tr>
-            <tr>
-                <td>Vaccine</td>
-                <td>Anti Tetano</td>
-                <td>
-                  <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                  <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                  <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-                </td>
-
-            </tr>
-            <tr>
-              <td>Dressing</td>
-              <td>After Injury, </td>
-              <td>
-                <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-              </td>
-          </tr>
-          <tr>
-            <td>Fist Aid</td>
-            <td>fdadfjhgaffsfdhfdhsfhfsdhsdfhh</td>
-            <td>
-              <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-              <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-              <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-            </td>
-        </tr>
-            <tr>
-                <td>Urinary Lab Test</td>
-                <td>Checkcup only description</td>
-                <td>
-                  <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                  <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                  <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-                </td>
-
-            </tr>
-            <tr>
-                <td>Blood Test</td>
-                <td>Checkcup only description</td>
-                <td>
-                  <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                  <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                  <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-                </td>
-
-            </tr>
-            <tr>
-              <td>Hematology Test</td>
-              <td>Checkcup only description</td>
-              <td>
-                <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-                <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-              </td>
-          </tr>
-          <tr>
-            <td>Follow Up Checkup</td>
-            <td>Anti Tetano</td>
-            <td>
-              <a href="/services/show"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-              <a href="services/edit"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
-              <a href="#"><i class="fa fa-archive" style="padding-right:15px"aria-hidden="true"></a></i>
-            </td>
-        </tr>
+              </tr>
+              @endforeach
             </tbody>
         
           </table>
@@ -120,6 +62,16 @@
       });
     });
     </script>
+
+<script>
+  const confirmDelete = () => {
+    if (confirm('Are you sure you want to delete this user?')) {
+      return true
+    } else {
+      return false
+    }
+  }
+</script>
 @stop
 
 {{--@extends('layouts.app')
