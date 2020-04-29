@@ -565,8 +565,10 @@
                                                                 <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
                                                                 <br>
                                                             </div> 
-                                                              
-                                                                <textarea class="form-control"></textarea><br>
+                                                                <div class="form-group">
+                                                                    <label >Comment: </label>
+                                                                    <textarea class="form-control" name="physically_fit_description">{{ $patient->getAssessmentAttr('physically_fit_description') }}</textarea><br>
+                                                                </div>
                                                                 <label >Date of Examination: </label>
                                                                 <input class="form-control" type="date" name="date_examined" value="{{ $patient->getAssessmentAttr('date_examined') }}">
                                                                 
@@ -574,9 +576,9 @@
             
                                                                 <br><br>
                                                                 <div class="form-check-inline">
-                                                                    <label class="form-control-label mr-2 mb-2">By: </label>
+                                                                    <label class="form-control-label mr-2 mb-2">Added By: </label>
                                                                     <input class="form-control col-sm-12" type="text" name="by" value="{{ $patient->getAssessmentAttr('by') }}">
-                                                                    <label class="form-control-label ml-1"> ,MD</label>
+                                                                   
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="form-check-inline">

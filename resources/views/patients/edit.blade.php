@@ -67,42 +67,29 @@
             <div class="col">
                 <div class="form-group">
                     <label for="idnum">ID Number:</label>
-                    <input type="text" name="id_number" class="form-control" id="idnum" placeholder="ID Number *" value="{{ $patient->id_number }}" />
+                    <input type="text" autocomplete="off" name="id_number" class="form-control" id="idnum" placeholder="ID Number *" value="{{ $patient->id_number }}" />
                 </div>
                 <div class="form-group">
                     <label for="fname">First Name:</label>
-                    <input id="first_name" name="first_name" type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
+                    <input id="first_name" autocomplete="off" name="first_name" type="text" class="form-control" placeholder="First Name *" value="{{ $patient->first_name }}" />
                 </div>
                 <div class="form-group">
                     <label for="mname">Middle Name:</label>
-                    <input id="middle_name" name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
+                    <input id="middle_name" autocomplete="off" name="middle_name" type="text" class="form-control"  placeholder="Middle Name *" value="{{ $patient->middle_name }}" />
                 </div>
                 <div class="form-group">
                     <label for="lname">Last Name:</label>
-                    <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
+                    <input id="last_name" autocomplete="off" name="last_name" type="text" class="form-control" placeholder="Last Name *" value="{{ $patient->last_name }}" />
                 </div>
                 <div class="form-group">
                     <label for="hadd">Home Address:</label>
-                    <input id="home_address" name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
+                    <input id="home_address" autocomplete="off" name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="{{ $patient->home_address }}" />
                 </div>
                 <div class="form-group">
                     <label for="padd">Present Address:</label>
-                    <input id="present_address" name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
+                    <input id="present_address" autocomplete="off" name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="{{ $patient->present_address }}" />
                 </div>
-                <div class="form-group">
-                    <label for="civilstat">Civil Status:</label>
-                    <select name="civil_status" id="civilstat" class="form-control">
-                        <option class="hidden"  selected disabled>Civil Status</option>
-                        @if(isset($patient->civil_status))
-                        <option selected>{{ $patient->civil_status }}</option>
-                        @endif
-                        <option>Single</option>
-                        <option>Married</option>
-                        <option>Widowed</option>
-                        <option>Separated</option>
-                        <option>In certain cases</option>
-                    </select>
-                </div>
+                
             </div>
             <div class="col">
                 <div class="form-group">
@@ -127,6 +114,20 @@
         <div class="form-group">
             <label for="bdate">Birth Date:</label>
             <input id="bdate" type="date" class="form-control" name="birthdate" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
+        </div>
+        <div class="form-group">
+            <label for="civilstat">Civil Status:</label>
+            <select name="civil_status" id="civilstat" class="form-control">
+                <option class="hidden"  selected disabled>Civil Status</option>
+                @if(isset($patient->civil_status))
+                <option selected>{{ $patient->civil_status }}</option>
+                @endif
+                <option>Single</option>
+                <option>Married</option>
+                <option>Widowed</option>
+                <option>Separated</option>
+                <option>In certain cases</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="cd">College/Department:</label>
@@ -181,7 +182,7 @@
         </div>
         <div class="form-group">
             <label for="phonenum">Phone Number:</label>
-            <input id="phonenum" type="text"  class="form-control" name="phone_number" value="{{ $patient->contact_number }}" />
+            <input id="phonenum" autocomplete="off" type="text"  class="form-control" name="phone_number" value="{{ $patient->phone_number }}" />
         </div>
         <div class="form-group">
         {{-- <label for="role">Role:</label> --}}
@@ -282,7 +283,7 @@
 <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Tuberculosis') ? 'checked' : '' }} value="Tuberculosis"> Tuberculosis<br>
 <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('UTI') ? 'checked' : '' }} value="UTI"> UTI<br>
 <input style= "margin-left: 2%" type="checkbox"> Others: 
-<input style= "margin-left: 2%" type="text" name="family_history[]">
+<input style= "margin-left: 2%" autocomplete="off" type="text" name="family_history[]">
 <br><br>       
 </div>
 </div>
@@ -334,7 +335,7 @@
 <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Allergies') ? 'checked' : '' }} value="Allergies"> Allergies<br>
 <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Cancer') ? 'checked' : '' }} value="Cancer"> Cancer<br>
 <input style= "margin-left: 2%" type="checkbox"> Other:
-<input style= "margin-left: 2%" type="text" name="family_history[]">
+<input style= "margin-left: 2%" autocomplete="off" type="text" name="family_history[]">
 <br>
 </div>
 </div>
@@ -372,7 +373,7 @@
 
 
 <h6><br>If yes, how many packs?</h6>
-<input class="form-control mb-3 col-sm-8" type="number" value="{{ $patient->getSocialHistory()['packs_smoked'] }}"  name="packs_smoked">
+<input class="form-control mb-3 col-sm-8" autocomplete="off" type="number" value="{{ $patient->getSocialHistory()['packs_smoked'] }}"  name="packs_smoked">
 <h6> <br> 2. Do you drink alcohol (beer/liquer)? </h6>
 <div class="form-check">
 <div class="custom-control custom-radio ">
@@ -434,8 +435,9 @@
 </div>
 </div>
 <h6> <br> If yes, please indicate below</h6>
+
 @foreach($patient->getSocialHistory()['medications'] as $key => $medication)
-{{ $key+1 }}. <input type="text" name="medications[]" value="{{ $medication }}"><br>
+{{ $key+1 }}. <input type="text" class="form-control col-sm-8" name="medications[]" autocomplete="off" value="{{ $medication }}"><br>
 @endforeach
 </ol>
 
@@ -467,7 +469,7 @@
 <td>Skin</td>
 <td><input type="radio" name="skin_status" {{  isset($patient->getPhysicalExamination()['skin_status']) ? ($patient->getPhysicalExamination()['skin_status'] == 'normal' ? 'checked' : '') : '' }} value="normal"></td>
 <td><input type="radio" name="skin_status" {{  isset($patient->getPhysicalExamination()['skin_status']) ? ($patient->getPhysicalExamination()['skin_status'] == 'abnormal' ? 'checked' : '') : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{  isset($patient->getPhysicalExamination()['skin_remarks']) ? ($patient->getPhysicalExamination()['skin_remarks']) : '' }}" name="skin_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{  isset($patient->getPhysicalExamination()['skin_remarks']) ? ($patient->getPhysicalExamination()['skin_remarks']) : '' }}" name="skin_remarks"></td>
 </td>
 
 </tr>
@@ -476,7 +478,7 @@
 <td>Head / Neck / Scalp</td>
 <td><input  type="radio" name="head_status" {{ isset($patient->getPhysicalExamination()['head_status']) ? ($patient->getPhysicalExamination()['head_status'] == 'normal' ? 'checked' : '') : '' }} value="normal"></td>
 <td><input type="radio" name="head_status" {{ isset($patient->getPhysicalExamination()['head_status']) ? ($patient->getPhysicalExamination()['head_status'] == 'abnormal' ? 'checked' : '') : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ isset($patient->getPhysicalExamination()['head_remarks']) ? ($patient->getPhysicalExamination()['head_remarks']) : '' }}" name="head_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ isset($patient->getPhysicalExamination()['head_remarks']) ? ($patient->getPhysicalExamination()['head_remarks']) : '' }}" name="head_remarks"></td>
 </td>
 
 </tr>
@@ -485,7 +487,7 @@
 <td>Eyes</td>
 <td><input  type="radio" name="eyes_status" {{ isset($patient->getPhysicalExamination()['eyes_status']) ? ($patient->getPhysicalExamination()['eyes_status'] == 'normal' ? 'checked' : '') : '' }} value="normal"></td>
 <td><input type="radio" name="eyes_status" {{ isset($patient->getPhysicalExamination()['eyes_status']) ? ($patient->getPhysicalExamination()['eyes_status'] == 'abnormal' ? 'checked' : '') : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ isset($patient->getPhysicalExamination()['eyes_remarks']) ? ($patient->getPhysicalExamination()['eyes_remarks']) : '' }}" name="eyes_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ isset($patient->getPhysicalExamination()['eyes_remarks']) ? ($patient->getPhysicalExamination()['eyes_remarks']) : '' }}" name="eyes_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -493,7 +495,7 @@
 <td>Ears/Nose/Throat</td>
 <td><input  type="radio" name="ears_status" {{ isset($patient->getPhysicalExamination()['ears_status']) ? ($patient->getPhysicalExamination()['ears_status'] == 'normal' ? 'checked' : '') : '' }} value="normal"></td>
 <td><input type="radio" name="ears_status" {{ isset($patient->getPhysicalExamination()['ears_status']) ? ($patient->getPhysicalExamination()['ears_status'] == 'abnormal' ? 'checked' : '') : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ isset($patient->getPhysicalExamination()['ears_remarks']) ? ($patient->getPhysicalExamination()['ears_remarks']) : '' }}" name="ears_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ isset($patient->getPhysicalExamination()['ears_remarks']) ? ($patient->getPhysicalExamination()['ears_remarks']) : '' }}" name="ears_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -501,7 +503,7 @@
 <td>Nose/Sinuses</td>
 <td><input  type="radio" name="nose_status" {{ $patient->getPEAttr('nose_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="nose_status" {{ $patient->getPEAttr('nose_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('nose_remarks') }}" name="nose_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('nose_remarks') }}" name="nose_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -509,7 +511,7 @@
 <td>Mouth/Throat</td>
 <td><input  type="radio" name="mouth_status" {{ $patient->getPEAttr('mouth_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="mouth_status" {{ $patient->getPEAttr('mouth_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('mouth_remarks') }}" name="mouth_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('mouth_remarks') }}" name="mouth_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -517,7 +519,7 @@
 <td>Neck, LN, Thyroid</td>
 <td><input  type="radio" name="neck_status" {{ $patient->getPEAttr('neck_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="neck_status" {{ $patient->getPEAttr('neck_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('neck_remarks') }}" name="neck_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('neck_remarks') }}" name="neck_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -525,7 +527,7 @@
 <td>Chest-Breast-Axilla</td>
 <td><input  type="radio" name="chest_status" {{ $patient->getPEAttr('chest_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="chest_status" {{ $patient->getPEAttr('chest_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('chest_rearks') }}" name="chest_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('chest_rearks') }}" name="chest_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -533,7 +535,7 @@
 <td>Lungs</td>
 <td><input  type="radio" name="lungs_normal" {{ $patient->getPEAttr('lung_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="lungs_normal" {{ $patient->getPEAttr('lung_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('lung_remarks') }}" name="lungs_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('lung_remarks') }}" name="lungs_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -541,7 +543,7 @@
 <td>Heart</td>
 <td><input  type="radio" name="heart_status" {{ $patient->getPEAttr('heart_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="heart_status" {{ $patient->getPEAttr('heart_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('heart_remarks') }}" name="heart_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('heart_remarks') }}" name="heart_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -549,7 +551,7 @@
 <td>Abdomen</td>
 <td><input  type="radio" name="abdomen_status" {{ $patient->getPEAttr('abdomen_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="abdomen_status" {{ $patient->getPEAttr('abdomen_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('abdomen_remarks') }}" name="abdomen_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('abdomen_remarks') }}" name="abdomen_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -557,7 +559,7 @@
 <td>Back, Flank</td>
 <td><input  type="radio" name="back_status" {{ $patient->getPEAttr('back_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="back_status" {{ $patient->getPEAttr('back_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('back_remarks') }}" name="back_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('back_remarks') }}" name="back_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -565,7 +567,7 @@
 <td>Anus-rectum</td>
 <td><input  type="radio" name="anus_status" {{ $patient->getPEAttr('anus_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="anus_status" {{ $patient->getPEAttr('anus_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('anus_remarks') }}" name="anus_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('anus_remarks') }}" name="anus_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -573,7 +575,7 @@
 <td>GU system</td>
 <td><input  type="radio" name="gu_system_status" {{ $patient->getPEAttr('gu_system_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="gu_system_status" {{ $patient->getPEAttr('gu_system_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('gu_system_remarks') }}" name="gu_system_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('gu_system_remarks') }}" name="gu_system_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -581,7 +583,7 @@
 <td>Inguinals, Genitals</td>
 <td><input  type="radio" name="genitals_status" {{ $patient->getPEAttr('genitals_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="genitals_status" {{ $patient->getPEAttr('genitals_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('genitals_remarks') }}" name="genitals_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('genitals_remarks') }}" name="genitals_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -589,7 +591,7 @@
 <td>Reflexes</td>
 <td><input  type="radio" name="reflexes_status" {{ $patient->getPEAttr('reflexes_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="reflexes_status" {{ $patient->getPEAttr('reflexes_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('reflexes_remarks') }}" name="reflexes_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('reflexes_remarks') }}" name="reflexes_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -597,7 +599,7 @@
 <td>Extremities</td>
 <td><input  type="radio" name="extermities_status" {{ $patient->getPEAttr('extremities_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="extermities_status" {{ $patient->getPEAttr('extremities_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('extremities_remarks') }}" name="extremities_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('extremities_remarks') }}" name="extremities_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -605,7 +607,7 @@
 <td>Neurologic</td>
 <td><input  type="radio" name="neurologic_status" {{ $patient->getPEAttr('neurologic_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="neurologic_status" {{ $patient->getPEAttr('neurologic_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('neurologic_remarks') }}" name="neurologic_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('neurologic_remarks') }}" name="neurologic_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -613,7 +615,7 @@
 <td>Endocrine</td>
 <td><input  type="radio" name="endocrine_status" {{ $patient->getPEAttr('endocrine_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="endocrine_status" {{ $patient->getPEAttr('endocrine_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('endocrine_remarks') }}" name="endocrine_remarks"></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('endocrine_remarks') }}" name="endocrine_remarks"></td>
 </td>
 </tr>
 <tr>
@@ -621,7 +623,7 @@
 <td>Others</td>
 <td><input  type="radio" name="others_status" {{ $patient->getPEAttr('others_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
 <td><input type="radio" name="others_status" {{ $patient->getPEAttr('others_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
-<td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('others_remarks') }}" name="others_remarks" value=""></td>
+<td><input class="form-control  col-sm-10" autocomplete="off" type="text" value="{{ $patient->getPEAttr('others_remarks') }}" name="others_remarks" value=""></td>
 </td>
 </tr>
 </form>
@@ -639,10 +641,10 @@
 <div class="form-inline ">
 
 <label for="temp" class="mr-sm-2">Temperature :</label>
-<input type="number" value="{{ $patient->getVitalSignAttr('temperature') }}" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
+<input type="number" autocomplete="off" value="{{ $patient->getVitalSignAttr('temperature') }}" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
 <label class="form-control-label ml-1 mr-2"><i>°C</i></label>
 <label for="pulse_rate" class="col-sm-2 ml-5 ">Pulse Rate :</label> 
-<input type="number" value="{{ $patient->getVitalSignAttr('pulse_rate') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
+<input type="number" autocomplete="off" value="{{ $patient->getVitalSignAttr('pulse_rate') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
 </div>
 </div>
@@ -650,10 +652,10 @@
 <div class="form-inline ">
 
 <label for="r_r" class="mr-sm-2">Respiratory Rate:</label>
-<input type="number" value="{{ $patient->getVitalSignAttr('respiratory_rate') }}" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
+<input type="number" autocomplete="off" value="{{ $patient->getVitalSignAttr('respiratory_rate') }}" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
 <label for="bp" class="ml-sm-5 ">Blood Pressure :</label> 
-<input type="number" value="{{ $patient->getVitalSignAttr('blood_pressure') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
+<input type="number" autocomplete="off" value="{{ $patient->getVitalSignAttr('blood_pressure') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
 <label class="form-control-label ml-1 mr-2"><i>mmhg</i></label>
 </div>
 </div>
@@ -661,7 +663,7 @@
 <div class="row justify-content-center ">
 <div class="form-inline">
 <label for="weight" class="mr-sm-2 mt-4 mb-4"> Weight : </label>
-<input type="number" value="{{ $patient->getVitalSignAttr('weight') }}" class="form-control col-sm-5 mt-4 mb-4" name="weight" id="weight" value="">
+<input type="number" autocomplete="off" value="{{ $patient->getVitalSignAttr('weight') }}" class="form-control col-sm-5 mt-4 mb-4" name="weight" id="weight" value="">
 <label class="form-control-label ml-1"><i>kg</i></label>
 </div>
 </div>               
@@ -683,24 +685,24 @@
 </thead>
 <tbody>
 <tr>
-<td><input class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervent" value=""></td>
+<td><input class="form-control col-sm-15 mb-2 mt-2" autocomplete="off" type="text" name="nursing_intervent" value=""></td>
 <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
-<td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value=""></td>
+<td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" autocomplete="off" type="text" name="by" value=""></td>
 </tr>
 <tr>
-<td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervent" value=""></td>
+<td><input class="form-control col-sm-15 mb-2" autocomplete="off" type="text" name="nursing_intervent" value=""></td>
 <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-<td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
+<td><input class="form-control col-sm-14 mb-2 ml-2" autocomplete="off" type="text" name="by" value=""></td>
 </tr>
 <tr>
-<td><input class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
+<td><input class="form-control col-sm-15 mb-2" autocomplete="off" type="text" name="" value=""></td>
 <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-<td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+<td><input class="form-control col-sm-14 mb-2 ml-2" autocomplete="off" type="text" name="" value=""></td>
 </tr>
 <tr>
-<td><input class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
+<td><input class="form-control col-sm-15 mb-2" autocomplete="off" type="text" name="" value=""></td>
 <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-<td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+<td><input class="form-control col-sm-14 mb-2 ml-2" autocomplete="off" type="text" name="" value=""></td>
 </tr>
 
 </tbody>
@@ -724,8 +726,10 @@
 <label class="custom-control-label" for="customRadio1">Not Physically Fit</label>
 <br>
 </div> 
-
-<textarea class="form-control"></textarea><br>
+<div class="form-group">
+    <label >Comment: </label>
+    <textarea class="form-control" autocomplete="off" name="physically_fit_description">{{ $patient->getAssessmentAttr('physically_fit_description') }}</textarea><br>
+</div>
 <label >Date of Examination: </label>
 <input class="form-control" type="date" name="date_examined" value="{{ $patient->getAssessmentAttr('date_examined') }}">
 
@@ -733,14 +737,13 @@
 
 <br><br>
 <div class="form-check-inline">
-<label class="form-control-label mr-2 mb-2">By: </label>
-<input class="form-control col-sm-12" type="text" name="by" value="{{ $patient->getAssessmentAttr('by') }}">
-<label class="form-control-label ml-1"> ,MD</label>
+<label class="form-control-label mr-2 mb-2">Added By: </label>
+<input class="form-control col-sm-12" autocomplete="off" type="text" name="by" value="{{ $patient->getAssessmentAttr('by') }}">
 </div>
 <div class="form-group">
 <div class="form-check-inline">
 <label class="form-control-label mr-2 "><br>License No.</label>
-<input class="form-control col-sm-8" type="number" name="license_no" value="{{ $patient->getAssessmentAttr('license_no') }}">
+<input class="form-control col-sm-8" autocomplete="off" type="number" name="license_no" value="{{ $patient->getAssessmentAttr('license_no') }}">
 </div>
 </div> 
 <b class="font-italic">MEDICAL EXAMINER</b> 
