@@ -679,7 +679,7 @@
                                                                 <br>
                                                             </div> 
                                                               
-                                                                <textarea class="form-control"></textarea><br>
+                                                                <textarea name="physically_fit_description" class="form-control"></textarea><br>
                                                                 <label >Date of Examination: </label>
                                                                 <input class="form-control" type="date" name="date_examined" value="">
                                                                 
