@@ -93,8 +93,8 @@
                                             <input name="birthdate" type="date" class="form-control" placeholder="Birth Date *" id="bdate" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <label for="civilstat">Civil Status:</label>
-                                            <select name="civil_status" class="form-control" id="civilstat">
+                                            <label for="status">Civil Status:</label>
+                                            <select name="status" class="form-control" id="status">
                                                 <option class="hidden"  selected disabled>Civil Status</option>
                                                 <option>Single</option>
                                                 <option>Married</option>

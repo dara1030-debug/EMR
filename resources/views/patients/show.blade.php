@@ -47,19 +47,19 @@
                                     <h6><i>Present Address:</h6></i>
                                     <p>{{ $patient->present_address }}</p>
                                         <h6><i>Civil Status:</i></h6>
-                                        <p>Single</p>
+                                        <p>{{ $patient->status }}</p>
                                         <h6><i>Gender:</i></h6>
                                         <p>{{ $patient->gender }}</p>
                                     </div>
                                     <div class="col">
-                                        <h6><i>College/ Department:</i></h6>
-                                        <p>College of Computer Studies</p>
-                                        <h6><i>Phone Number:</i></h6>
-                                        <p>{{ $patient->phone_number }}</p>   
-                                        <h6><i>Birth Date/Month/Year:</i></h6>
-                                        <p>{{ $patient->birthdate }}</p>
                                         <h6><i>Age:</i></h6>
                                         <p>{{ $patient->age }}</p>
+                                        <h6><i>Birth Date/Month/Year:</i></h6>
+                                        <p>{{ $patient->birthdate }}</p>
+                                        <h6><i>College/ Department:</i></h6>
+                                        <p>{{ $patient->college_department }}</p>
+                                        <h6><i>Phone Number:</i></h6>
+                                        <p>{{ $patient->phone_number }}</p>   
                                     </div>
                                 </div>
 

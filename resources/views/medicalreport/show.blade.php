@@ -263,11 +263,13 @@
 {{----------------modal 2----}}    
 
                     <!-- Modal -->
+            <div id="printThis">
                 <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">+Add/Edit Consultation</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">+Add/Edit Consultation </h5>
+                        
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -410,12 +412,14 @@
                             </form>
                         </div>
                         <div class="modal-footer">
+                            <button id="btnPrint" type="button" class="btn btn-outline-info">Print</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                     </div>
                 </div>
+            </div>
 
 {{---------------------------end of modal 2---}}
     <!-- Modal -->
@@ -481,5 +485,26 @@
       var fileName = $(this).val().split("\\").pop();
       $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
+    </script>
+    <script>
+    document.getElementById("btnPrint").onclick = function () {
+        printElement(document.getElementById("printThis"));
+    }
+
+    function printElement(elem) {
+        var domClone = elem.cloneNode(true);
+        
+        var $printSection = document.getElementById("printSection");
+        
+        if (!$printSection) {
+            var $printSection = document.createElement("div");
+            $printSection.id = "printSection";
+            document.body.appendChild($printSection);
+        }
+        
+        $printSection.innerHTML = "";
+        $printSection.appendChild(domClone);
+        window.print();
+    }
     </script>
 @stop   

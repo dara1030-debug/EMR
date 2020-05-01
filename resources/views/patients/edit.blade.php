@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success alert-block">
-        <button type="button" class="close" data-dismiss="alert">×</button>	
-        <strong>{{ $message }}</strong>
-    </div>
-    @endif
+    
 
     <div class="card">
         <div class="card-header">
@@ -39,11 +34,12 @@
             </div>
             @endif
 
-            @if (session('success'))
-                <div class="alert alert-success">
-                {{ session('success') }}
-                </div>
-            @endif
+            @if ($message = Session::get('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
+        <strong>{{ $message }}</strong>
+    </div>
+    @endif
 
         <form action="{{ route('patients.update', $patient->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -116,17 +112,16 @@
             <input id="bdate" type="date" class="form-control" name="birthdate" placeholder="Birth Date *" value="{{ $patient->birthdate }}" />
         </div>
         <div class="form-group">
-            <label for="civilstat">Civil Status:</label>
-            <select name="civil_status" id="civilstat" class="form-control">
-                <option class="hidden"  selected disabled>Civil Status</option>
-                @if(isset($patient->civil_status))
-                <option selected>{{ $patient->civil_status }}</option>
-                @endif
-                <option>Single</option>
-                <option>Married</option>
-                <option>Widowed</option>
-                <option>Separated</option>
-                <option>In certain cases</option>
+            <label for="status">Civil Status:</label>
+            <select name="status" id="status" 
+                value="{{ $patient->status ? $patient->status : old('status') }}"
+                class="form-control @error('status') is-invalid @enderror">
+                <option class="hidden" @if(!$patient->status) selected @endif disabled>Civil Status</option>
+                    <option value="Single" @if($patient->status == 'Single') selected @endif>Single</option>
+                    <option value="Married" @if($patient->status == 'Married') selected @endif>Married</option>
+                    <option value="Widowed" @if($patient->status == 'Widowed') selected @endif>Widowed</option>
+                    <option value="Separated" @if($patient->status == 'Separated') selected @endif>Separated</option>
+                    <option value="In certain cases" @if($patient->tatus == 'In certain cases') selected @endif>In certain cases</option>
             </select>
         </div>
         <div class="form-group">

@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <div class="card text-center">
+    <div class="card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
@@ -35,37 +35,116 @@
         
         <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
             <div class="card-body">
-            <img src="/img/Picture1.png" alt="create_avatar" class="create_avatar"><br> {{--Upload Profile Pic (Restrict user thaht only img/png file can be uploaded--}}
-            <input name="avatar" id="inp" type="file" accept="image/*">
+                <div class="form-group text-center">
+                    <div class="col" style=" margin-top: 3%">
+                        <img src="/img/no_avatar.jpg" alt="create_avatar" class="create_avatar"><br> {{--Upload Profile Pic (Restrict user thaht only img/png file can be uploaded--}}
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <div class="col"><br>
+                        <input name="avatar" type="file" style="width: 30%" class="form-control-file border ml-auto mr-auto" accept="image/*">
+                    </div>
+                </div>
         
-        <div class="container register"  style="margin-left: 0%;"><br>
+                <div class="container"><br>
 
-            <div class="row justify-content-center align-items-center">
-        <div class="row">
-            <div class="tab-content input-center" id="myTabContent" >
-                <br>
-                    @csrf
-                    <div class="row register-form" >
-                        <div class="col-md-6">
+                    <div class="row">
+                        @csrf
+                        <div class="col">
                             {{-- <div class="form-group">
                                 <input type="number" class="form-control" placeholder="ID Number *" value="" />
                             </div> --}}
                             <div class="form-group">
-                                <input name="first_name" type="text" class="form-control" placeholder="First Name *" value="" />
+                                <label for="first_name">First Name:</label>
+                                <input id="first_name" name="first_name" type="text" class="form-control" placeholder="" value="" />
                             </div>
                             <div class="form-group">
-                                <input name="middle_name" type="text" class="form-control" placeholder="Middle Name *" value="" />
+                                <label for="middle_name">Middle Name:</label>
+                                <input id="middle_name" name="middle_name" type="text" class="form-control" placeholder="" value="" />
                             </div>
                             <div class="form-group">
-                                <input name="last_name" type="text" class="form-control"  placeholder="Last Name *" value="" />
+                                <label for="last_name">Last Name:</label>
+                                <input id="last_name" name="last_name" type="text" class="form-control"  placeholder="" value="" />
                             </div>
                             <div class="form-group">
-                                <input name="home_address" type="text" class="form-control"  placeholder="Home Address *" value="" />
+                                <label for="home_address">Home Address:</label>
+                                <input id="home_address" name="home_address" type="text" class="form-control"  placeholder="" value="" />
                             </div>
                             <div class="form-group">
-                                <input name="present_address" type="text" class="form-control"  placeholder="Present Address *" value="" />
+                                <label for="present_address">Present Address:</label>
+                                <input id="present_address" name="present_address" type="text" class="form-control"  placeholder="" value="" />
                             </div>
                             <div class="form-group">
+                                    <label for="email">E-mail Address:</label>
+                                    <input id="email"
+                                    name="email" 
+                                    type="email" 
+                                    class="form-control @error('email') is-invalid @enderror" 
+                                    placeholder="" 
+                                    value="{{ old('email') }}" />
+        
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input id="password" name="password" type="password" 
+                                class="form-control @error('password') is-invalid @enderror" 
+                                placeholder="" 
+                                value="{{ old('password') }}" />
+    
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password_confirmation">Password Confirmation:</label>
+                                <input id="password_confirmation" name="password_confirmation" type="password" 
+                                class="form-control @error('password_confirmation') is-invalid @enderror" 
+                                placeholder="" 
+                                value="{{ old('password') }}" />
+    
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label class="mt-3">Gender:</label>
+                                <div class="form-check">
+
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input"  id="malegender" name="gender" value="male">
+                                        <label class="custom-control-label" for="malegender">Male</label>
+                                      </div>   
+                                      <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input mt-4 " id="femalegender" name="gender" value="female">
+                                        <label class="custom-control-label" for="femalegender">Female</label>
+                                        <br>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Age:</label>
+                                <input id="age" name="age" type="number" class="form-control" placeholder="" value="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="bdate">Birth Date:</label>
+                                <input id="bdate" name="birthdate" type="date" class="form-control" placeholder="" value="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="civilstat">Civil Status:</label>
                                 <select name="civil_status" class="form-control">
                                     <option class="hidden"  selected disabled>Civil Status</option>
                                     <option>Single</option>
@@ -75,82 +154,21 @@
                                     <option>In certain cases</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <div class="maxl">
-                                    <label class="radio inline"> 
-                                        <input type="radio" name="gender" value="male" checked>
-                                        <span> Male </span> 
-                                    </label>
-                                    <label class="radio inline"> 
-                                        <input type="radio" name="gender" value="female">
-                                        <span>Female </span> 
-                                    </label>
-                                </div>
-                            </div>
+
                             
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-group">
+                            
                             <div class="form-group">
-                                <input 
-                                name="email" 
-                                type="email" 
-                                class="form-control @error('email') is-invalid @enderror" 
-                                placeholder="Email Address *" 
-                                value="{{ old('email') }}" />
-    
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <input 
-                                name="password" 
-                                type="password" 
-                                class="form-control @error('password') is-invalid @enderror" 
-                                placeholder="Password *" 
-                                value="{{ old('password') }}" />
-    
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <input 
-                                name="password_confirmation" 
-                                type="password" 
-                                class="form-control @error('password_confirmation') is-invalid @enderror" 
-                                placeholder="Password Confirmation *" 
-                                value="{{ old('password') }}" />
-    
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <label for="phonenum">Phone Number:</label>
+                                <input id="phonenum" type="number" minlength="10" maxlength="10" name="phone_number" class="form-control" placeholder="" value="" />
                             </div>
                             
                             <div class="form-group">
-                                <input type="number" minlength="10" maxlength="10" name="phone_number" class="form-control" placeholder="Phone Number *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input name="age" type="number" class="form-control" placeholder="Age *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input name="birthdate" type="date" class="form-control" placeholder="Birth Date *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input 
+                                <label for="license_number">License Number:</label>
+                                <input id="license_number"
                                 name="license_number" 
                                 type="number" 
                                 class="form-control @error('license_number') is-invalid @enderror" 
-                                placeholder="License Number *" 
+                                placeholder="" 
                                 value="{{ old('license_number') }}" />
     
                                 @error('license_number')
@@ -160,7 +178,8 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <select name="role_id" class="form-control">
+                                <label for="role_id">Role:</label>
+                                <select id="role_id" name="role_id" class="form-control">
                                     <option class="hidden"  selected disabled>Role</option>
                                     @foreach(\App\Role::get() as $role)
                                         <option value="{{ $role->id }}">
@@ -169,17 +188,15 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <br><button style="postion: center" type ="submit" class = "btn btn-info">Register</button>
-                            <button style="postion: center" type ="button" class = "btn btn-secondary">Cancel</button>
+                            <div class="form-group text-right mt-5">
+                                <button type ="submit" class = "btn btn-info">Register</button>
+                                <a href="/users"><button type ="button" class = "btn btn-secondary">Cancel</button></a>
+                            </div>
+                            
                         </div>
                     </div>
-                </form>
-
-                
-
-       
+                </div>
             </div>
-        </div>
+        </form>
     </div>
-</div>
 @stop

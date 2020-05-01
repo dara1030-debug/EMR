@@ -81,7 +81,7 @@ $activeUsers = \App\User::getActive();
                 <a href="/patients"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Patients</a>
                 <a href="/users"><i class="fa fa-tasks"style="padding-right:27px"></i>Manage Users</a>
                 <a href="/services"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Services</a>
-                <a href="/services"><i class="fa fa-file" style="padding-right:29px"></i>Generate Report</a>
+                
                 <a href="#"><i class="fa fa-power-off" style="padding-right:29px"></i>Logout</a>
             
                 <!--   <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a> -->

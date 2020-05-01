@@ -24,7 +24,7 @@
           @csrf
             <div class="row">
                 <div class="input-group-prepend">
-                  <input type="search" name="search" placeholder="Search for Patient " class="form-control">
+                  <input type="search" autocomplete="off" name="search" placeholder="Search for Patient " class="form-control">
                   <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
                 </div>
             </div>  
@@ -53,7 +53,7 @@
                 	<td>{{ $patient->middle_name }}</td>
                 	<td>
                   		
-                      <form action="{{ route('patients.destroy', $patient->id) }}" id="deleteForm" onsubmit="confirmDelete()" method="post">
+                      <form action="{{ route('patients.destroy', $patient->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                         @csrf
                         @method('DELETE')
                         <a href="{{ route('patients.show', $patient->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
