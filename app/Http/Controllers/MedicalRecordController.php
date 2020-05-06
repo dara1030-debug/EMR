@@ -14,7 +14,11 @@ class MedicalRecordController extends Controller
 
 	public function edit($id)
 	{
-		return view('medicalreport.edit');
+		$patient = Patient::findOrFail($id);
+		
+		return view('medicalreport.edit', [
+			'patient' => $patient
+		]);
 	}
 
 	public function show($id)
