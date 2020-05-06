@@ -70,9 +70,11 @@ $activeUsers = \App\User::getActive();
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="prof">
-            <img src="/img/Picture1.png" alt="Avatar" class="user-panel"><br>
-            <h4 style="color:white">Anne Hayathi Albiso</h4>
-            <p class="role" style="color:gray">Admin</p>
+            <a href="{{ route('users.show', auth()->user()->id) }}" style="text-decoration: none">
+                <img src="/img/Picture1.png" alt="Avatar" class="user-panel"><br>
+                <h4 style="color:white">Anne Hayathi Albiso</h4>
+                <p class="role" style="color:gray">Admin</p>
+            </a>
         </div>
         <div class="row">
             <div class="col text-left">
