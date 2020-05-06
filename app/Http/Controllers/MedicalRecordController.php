@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Patient;
 use Illuminate\Http\Request;
 
 class MedicalRecordController extends Controller
@@ -18,7 +19,11 @@ class MedicalRecordController extends Controller
 
 	public function show($id)
 	{
-		return view('medicalreport.show')->with('id', $id);
+		$patient = Patient::findOrFail($id);
+		
+		return view('medicalreport.show', [
+			'patient' => $patient
+		]);
 	}
 
 	public function create()
