@@ -59,7 +59,7 @@ body {
   <div class="column w3-padding-64 w3-opacity w3-hover-opacity-off" onclick="openTab('b1');" style="background: linear-gradient(#AED6F1,#3498DB);">
     CLINIC CONTACT INFORMATION
   </div>
-  <div class="column w3-padding-64 w3-opacity w3-hover-opacity-off" onclick="openTab('b2');" style="background: linear-gradient(#F2D7D5,#C0392B);">
+  <div class="column w3-padding-64 w3-opacity w3-hover-opacity-off" onclick="openTab('b2');" style="background: linear-gradient(#AED6F1,#3498DB);">
     DEVELOPERS CONTACT INFORMATION
   </div>
 </div>
@@ -99,13 +99,13 @@ body {
   </div>
 
 
-<div id="b2" class="containerTab" style="display:none;background:#7B241C ;">
+<div id="b2" class="containerTab" style="display:none;background:#273746 ;">
   <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
   <h1><center>DEVELOPERS CONTACT INFORMATION<center></h1>
   <br>
    
   <div class="row">
-  <div class="column" style="background-color:#7B241C;">
+  <div class="column" style="background-color:#273746;">
   <h2>Anne Hayathi S. Albiso</h2>   
   <hr style="width:100%;text-align:left;margin-left:0">                                         
         <p class="title"><small><em>EMR System Developer</em></small></p>
@@ -115,7 +115,7 @@ body {
         <p style="text-align:left;"><small>facebook link: https://www.facebook.com/anneyourlife.anneong</small></p>
   </div>
 
-  <div class="column" style="background-color:#7B241C;">
+  <div class="column" style="background-color:#273746;">
   <h2>Isnaina U. Abdulazis</h2>
   <hr style="width:100%;text-align:left;margin-left:0">
         <p class="title"><small><em>EMR System Developer</em></small></p>
