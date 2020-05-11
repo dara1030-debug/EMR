@@ -139,16 +139,17 @@
                                                     <div class="form-group">
                                                         <div class="form-check">
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Sinusitis/Allergic rhinitis') ? 'checked' : '' }} value="Sinusitis/Allergic rhinitis"> Sinusitis/Allergic rhinitis<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Skin') ? 'checked' : '' }} value="Skin Disorders"> Skin Disorders<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('STI') ? 'checked' : '' }} value="STI/HIV"> STI/HIV<br>
-                                                            <input style= "margin-left: 2%" type="checkbox" nname="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Stroke') ? 'checked' : '' }} value="Stroke"> Stroke<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Skin Disorders') ? 'checked' : '' }} value="Skin Disorders"> Skin Disorders<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('STI/HIV') ? 'checked' : '' }} value="STI/HIV"> STI/HIV<br>
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Stroke') ? 'checked' : '' }} value="Stroke"> Stroke<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Surgery/Injury') ? 'checked' : '' }} value="Surgery/Injury"> Surgery/Injury<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Thyroid Problems') ? 'checked' : '' }} value="Thyroid Problems"> Thyroid Problems<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Tonsillitis') ? 'checked' : '' }} value="Tonsillitis"> Tonsillitis<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('Tuberculosis') ? 'checked' : '' }} value="Tuberculosis"> Tuberculosis<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('UTI') ? 'checked' : '' }} value="UTI"> UTI<br>
-                                                            <input style= "margin-left: 2%" type="checkbox"> Others: 
-                                                            <input style= "margin-left: 2%" type="text" name="family_history[]">
+                                                            <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('others') ? 'checked' : '' }} value="others"> Others: 
+                                                           
+                                                            <input style= "margin-left: 2%" type="text" name="pastmedical_history[]" value=" {{ $patient->hasPastMedicalHistory('others') }}" >
                                                             <br><br>    
                                                         </div>
                                                     </div>
@@ -184,7 +185,7 @@
                                                     
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('High Blood Pressure') ? 'checked' : '' }} value="High Blood Pressure"> High Blood Pressure<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Tuberculosis') ? 'checked' : '' }} value="Tuberculosis"> Tuberculosis<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Heart') ? 'checked' : '' }} value="Heart Disease"> Heart Disease<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Heart Disease') ? 'checked' : '' }} value="Heart Disease"> Heart Disease<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Asthma') ? 'checked' : '' }} value="Asthma"> Asthma<br>
                                                                 <br>
                                                         </div> 
@@ -197,8 +198,8 @@
                                                             <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Diabetes') ? 'checked' : '' }} value="Diabetes"> Diabetes<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Allergies') ? 'checked' : '' }} value="Allergies"> Allergies<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Cancer') ? 'checked' : '' }} value="Cancer"> Cancer<br>
-                                                            <input style= "margin-left: 2%" type="checkbox"> Other:
-                                                            <input style= "margin-left: 2%" type="text" name="family_history[]">
+                                                            <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Others') ? 'checked' : '' }} value="Others"> Other:
+                                                            <input style= "margin-left: 2%" type="text" name="family_history[]" value=" {{ $patient->hasFamilyHistory('Others')}}">
                                                             <br>
                                                         </div>
                                                     </div>
@@ -258,13 +259,13 @@
                                                          <h6> <br> 3. Do you take medication at present? </h6>
                                                         <div class="form-check">
                                                             <div class="custom-control custom-radio ">
-                                                                <input type="radio" class="custom-control-input" id="choice3a" name="is_taking_medication" {{ $patient->getSocialHistoryAttr('is_taking_medication') == 'No' ? 'selected' : '' }} value="No">
+                                                                <input type="radio" class="custom-control-input" id="choice3a" name="is_taking_medication" {{ $patient->getSocialHistoryAttr('is_taking_medication') == 'No' ? 'checked' : '' }} value="No">
                                                                 <label class="custom-control-label" for="choice3a">No</label>
                                                             </div> 
                                                         </div>
                                                             <div class="form-check">
                                                                 <div class="custom-control custom-radio ">
-                                                                    <input type="radio" class="custom-control-input" id="choice3b" name="is_taking_medication" {{ $patient->getSocialHistoryAttr('is_taking_medication') == 'Yes' ? 'selected' : '' }} value="Yes">
+                                                                    <input type="radio" class="custom-control-input" id="choice3b" name="is_taking_medication" {{ $patient->getSocialHistoryAttr('is_taking_medication') == 'Yes' ? 'checked' : '' }} value="Yes">
                                                                     <label class="custom-control-label" for="choice3b">Yes</label>
                                                                 </div>
                                                             </div>
@@ -368,8 +369,8 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Lungs</td>
-                                                                            <td><input  type="radio" name="lungs_normal" {{ $patient->getPEAttr('lungs_normal') == 'normal' ? 'checked' : '' }} value="normal"></td>
-                                                                            <td><input type="radio" name="lungs_normal" {{ $patient->getPEAttr('lungs_normal') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input  type="radio" name="lungs_status" {{ $patient->getPEAttr('lungs_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="lungs_status" {{ $patient->getPEAttr('lungs_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
                                                                             <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('lungs_remarks') }}" name="lungs_remarks"></td>
                                                                             </td>
                                                                         </tr>
@@ -432,8 +433,8 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Extremities</td>
-                                                                            <td><input  type="radio" name="extermities_status" {{ $patient->getPEAttr('extermities_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
-                                                                            <td><input type="radio" name="extermities_status" {{ $patient->getPEAttr('extermities_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
+                                                                            <td><input type="radio" name="extremities_status" {{ $patient->getPEAttr('extremities_status') == 'normal' ? 'checked' : '' }} value="normal"></td>
+                                                                            <td><input type="radio" name="extremities_status" {{ $patient->getPEAttr('extremities_status') == 'abnormal' ? 'checked' : '' }} value="abnormal"></td>
                                                                             <td><input class="form-control  col-sm-10" type="text" value="{{ $patient->getPEAttr('extremities_remarks') }}" name="extremities_remarks"></td>
                                                                             </td>
                                                                         </tr>
@@ -523,24 +524,24 @@
                                                                 </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervent" value=""></td>
+                                                                        <td><input class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervention" value=""></td>
                                                                         <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
                                                                         <td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervent" value=""></td>
+                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervention" value=""></td>
                                                                         <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
                                                                         <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervention" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervention" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
                                                                     </tr>
                                                                     
                                                                 </tbody>

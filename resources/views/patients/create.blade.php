@@ -257,14 +257,14 @@
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Sinusitis/Allergic rhinitis"> Sinusitis/Allergic rhinitis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Skin Disorders"> Skin Disorders<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="STI/HIV"> STI/HIV<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox" nname="pastmedical_history[]" value="Stroke"> Stroke<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Stroke"> Stroke<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Surgery/Injury"> Surgery/Injury<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Thyroid Problems"> Thyroid Problems<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tonsillitis"> Tonsillitis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tuberculosis"> Tuberculosis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="UTI"> UTI<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox"> Others: 
-                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="family_history[]">
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="others"> Others: 
+                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="pastmedical_history[]" value="">
                                                                     <br><br>    
                                                                 </div>
                                                             </div>
@@ -315,8 +315,8 @@
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Diabetes"> Diabetes<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Allergies"> Allergies<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Cancer"> Cancer<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox"> Other:
-                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="family_history[]">
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Others"> Other:
+                                                                    <input style= "margin-left: 2%" type="text" name="family_history[]" value="">
                                                                     <br>
                                                                 </div>
                                                             </div>
@@ -492,8 +492,8 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Lungs</td>
-                                                                            <td><input  type="radio" name="lungs_normal" value="normal"></td>
-                                                                            <td><input type="radio" name="lungs_normal" value="abnormal"></td>
+                                                                            <td><input  type="radio" name="lungs_status" value="normal"></td>
+                                                                            <td><input type="radio" name="lungs_status" value="abnormal"></td>
                                                                             <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="lungs_remarks"></td>
                                                                             </td>
                                                                         </tr>
@@ -501,11 +501,7 @@
                                                                             <td>
                                                                                 <td>Heart</td>
                                                                             <td><input  type="radio" name="heart_status" value="normal"></td>
-                                                                            <td><input type="radio" name="heart_status" value="abnormal"></td>
-                                                                            <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="heart_remarks"></td>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
+                                                                            <td><input type="radio" name="heart_status" value=0
                                                                             <td>
                                                                                 <td>Abdomen</td>
                                                                             <td><input  type="radio" name="abdomen_status" value="normal"></td>
@@ -556,8 +552,8 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Extremities</td>
-                                                                            <td><input  type="radio" name="extermities_status" value="normal"></td>
-                                                                            <td><input type="radio" name="extermities_status" value="abnormal"></td>
+                                                                            <td><input type="radio" name="extremities_status" value="normal"></td>
+                                                                            <td><input type="radio" name="extremities_status" value="abnormal"></td>
                                                                             <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="extremities_remarks"></td>
                                                                             </td>
                                                                         </tr>

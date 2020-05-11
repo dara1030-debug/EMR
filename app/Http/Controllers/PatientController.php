@@ -157,7 +157,7 @@ class PatientController extends Controller
             'neck_remarks',
             'chest_status',
             'chest_remarks',
-            'lungs_normal',
+            'lungs_status',
             'lungs_remarks',
             'heart_status',
             'heart_remarks',
@@ -173,7 +173,7 @@ class PatientController extends Controller
             'genitals_remarks',
             'reflexes_status',
             'reflexes_remarks',
-            'extermities_status',
+            'extremities_status',
             'extremities_remarks',
             'neurologic_status',
             'neurologic_remarks',
@@ -188,6 +188,12 @@ class PatientController extends Controller
             'respiratory_rate',
             'blood_pressure',
             'weight',
+        ]);
+        $nursingIntervention = $request->only([
+            'nursing_intervention',
+            'time',
+            'by',
+            
         ]);
         $assesment = $request->only([
             'physically_fit',
@@ -317,7 +323,7 @@ class PatientController extends Controller
             'neck_remarks',
             'chest_status',
             'chest_remarks',
-            'lungs_normal',
+            'lungs_status',
             'lungs_remarks',
             'heart_status',
             'heart_remarks',
@@ -333,7 +339,7 @@ class PatientController extends Controller
             'genitals_remarks',
             'reflexes_status',
             'reflexes_remarks',
-            'extermities_status',
+            'extremities_status',
             'extremities_remarks',
             'neurologic_status',
             'neurologic_remarks',
@@ -348,6 +354,11 @@ class PatientController extends Controller
             'respiratory_rate',
             'blood_pressure',
             'weight',
+        ]);
+        $nursingIntervention = $request->only([
+            'nursing_intervention',
+            'time',
+            'by',
         ]);
         $assesment = $request->only([
             'physically_fit',

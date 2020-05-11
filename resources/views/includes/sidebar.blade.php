@@ -76,16 +76,24 @@ $activeUsers = \App\User::getActive();
                 <p class="role" style="color:gray">Admin</p>
             </a>
         </div>
+        {{--{{ route('users.show', $user->id) }}--}}
         <div class="row">
             <div class="col text-left">
                 <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard" style="padding-right:27px"></i>Dashboard</a>
-                <a href="#"><i class="fa fa-user" style="padding-right:32px"></i>Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
+                <a href="# "><i class="fa fa-user" style="padding-right:32px"></i>Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
                 <a href="/patients"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Patients</a>
                 <a href="/users"><i class="fa fa-tasks"style="padding-right:27px"></i>Manage Users</a>
                 <a href="/services"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Services</a>
                 
-                <a href="#"><i class="fa fa-power-off" style="padding-right:29px"></i>Logout</a>
-            
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                 document.getElementById('logout-form').submit();">
+                 <i class="fa fa-power-off" style="padding-right:29px"></i>{{ __('Logout') }}</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+                
+
                 <!--   <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a> -->
             </div>
         </div>
