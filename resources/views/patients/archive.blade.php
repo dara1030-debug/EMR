@@ -19,8 +19,16 @@
       
 </div>
     <div class="card-body">
-      <div class="input-group mb-4" style="margin:auto;max-width:300px">
-        <input type="search" id="myInput" placeholder="Search for Patient " aria-describedby="button-addon5" class="form-control">
+      <div class="input-group mb-4" style="margin:auto;max-width:250px">
+        <form action="{{ route('patients.search') }}" method="POST">
+          @csrf
+            <div class="row">
+                <div class="input-group-prepend">
+                  <input type="search" autocomplete="off" name="search" placeholder="Search for Patient " class="form-control">
+                  <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
+                </div>
+            </div>  
+        </form>
       {{--<i class="fa fa-search"></i>--}}
         
       </div>

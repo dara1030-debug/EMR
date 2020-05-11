@@ -8,7 +8,7 @@
           <a class="nav-link active">Medical Record</a>
         </li>
         <li class="nav nav-item-right ml-auto">
-            <button type="button" class="close" href="/patients">&times; </button> </a> {{--redirect to patient record ID--}}
+            <a href="{{route('patients.show', $patient->id)}}"><button type="button" class="close" >&times; </button> </a> {{--redirect to patient record ID--}}
         </li>
       </ul>
     </div>
@@ -19,22 +19,23 @@
                     </div>
                 </div>
                 <div class="row">
+                 
                     <div class="col mb-2 mt-3">
-                        <label for="validation2"><b>OPD / Id Number :</b> 2015-8418</label>
+                        <label for="validation2"><b>OPD / Id Number :</b> {{$patient->id_number}}</label>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-4">
-                        <label for="validation2">Patient Name : Mario Maurer</label>
+                        <label for="validation2">Patient Name : {{"$patient->first_name $patient->middle_name $patient->last_name"}} </label>
                     </div>
                     <div class="col-2">
-                        <label for="validation2">Age : 29</label> 
+                        <label for="validation2">Age :{{$patient->age}}</label> 
                     </div>
                     <div class="col-2">
-                        <label for="validation2">Gender : Male</label> 
+                        <label for="validation2">Gender : {{$patient->gender}}</label> 
                     </div>
                     <div class="col-4">
-                        <label for="validation2">Contact No.: +09111111</label> 
+                        <label for="validation2">Contact No.: {{$patient->phone_number}}</label> 
                     </div>
                 </div>
                 <hr>

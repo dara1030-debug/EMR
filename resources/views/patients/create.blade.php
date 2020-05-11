@@ -21,6 +21,12 @@
 
     {{--BOdy--}}
     <div class="card-body">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>	
+                <strong>{{ $message }}</strong>
+            </div>
+         @endif
         <form action="{{ route('patients.store') }}" method="POST" enctype="multipart/form-data">
             <div class="form-group text-center">
                 <div class="col" style=" margin-top: 3%">

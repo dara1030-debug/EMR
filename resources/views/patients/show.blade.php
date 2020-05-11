@@ -13,11 +13,11 @@
           <a class="nav-link" href="/patients/create">Add New Patient</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Archive</a>
+            <a class="nav-link" href="{{ route('patients.archive') }}">Archive</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/patients">View Patient... 
-            <button type="button" class="close" href="/patients">&times; </button> </a>
+            <a class="nav-link active" href="{{ route('patients.index') }}">View Patient... 
+            <button type="button" class="close">&times; </button> </a>
           </li>
       </ul>
     </div>

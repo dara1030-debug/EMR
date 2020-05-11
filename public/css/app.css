@@ -11664,6 +11664,8 @@ a.text-dark:focus {
   height: 250px;
 }
 
+/*Print Medical Record*/
+
 @media screen {
   #printSection {
       display: none;
@@ -11683,3 +11685,4 @@ a.text-dark:focus {
     top:0;
   }
 }
+/*end print */
