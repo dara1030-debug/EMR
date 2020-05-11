@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if ($message = Session::get('success'))
-    <div class="alert alert-success alert-block">
-        <button type="button" class="close" data-dismiss="alert">×</button>	
-        <strong>{{ $message }}</strong>
-    </div>
-    @endif
+    
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -35,6 +30,12 @@
         
         <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
             <div class="card-body">
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>	
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
                 <div class="form-group text-center">
                     <div class="col" style=" margin-top: 3%">
                         <img src="/img/no_avatar.jpg" alt="create_avatar" class="create_avatar"><br> {{--Upload Profile Pic (Restrict user thaht only img/png file can be uploaded--}}
