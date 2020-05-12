@@ -24,6 +24,7 @@ class CreateHealthExaminationRecordsTable extends Migration
             $table->json('phyiscal_examination')->nullable();
             $table->json('vital_signs')->nullable();
             $table->json('assessment')->nullable();
+            $table->json('nursing_interventions')->nullable();
             $table->string('reccommendation')->nullable();  
             $table->date('examination_date')->nullable();
             $table->unsignedBigInteger('added_by')->nullable();

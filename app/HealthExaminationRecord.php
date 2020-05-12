@@ -31,6 +31,7 @@ class HealthExaminationRecord extends Model
         'phyiscal_examination' => 'array',
         'vital_signs' => 'array',
         'assessment' => 'array',
+        'nursing_interventions' => 'array'
     ];
 
     /**

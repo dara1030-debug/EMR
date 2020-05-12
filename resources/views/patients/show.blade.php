@@ -523,27 +523,13 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    @foreach($patient->getNursingInterventions() as $row)
                                                                     <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervention" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value=""></td>
+                                                                        <td><input class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervention" value="{{ $row['intervention'] }}"></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value="{{ $row['time'] }}"></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value="{{ $row['by'] }}"></td>
                                                                     </tr>
-                                                                    <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervention" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervention" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><input class="form-control col-sm-15 mb-2" type="text" name="nursing_intervention" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
-                                                                    </tr>
-                                                                    
+                                                                    @endforeach
                                                                 </tbody>
                                                             </table><br>
                                                         </div>

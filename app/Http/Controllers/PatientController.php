@@ -87,6 +87,8 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        // return dd($request->all());
+        
         $imagePath = null;
         
         if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
@@ -189,12 +191,7 @@ class PatientController extends Controller
             'blood_pressure',
             'weight',
         ]);
-        $nursingIntervention = $request->only([
-            'nursing_intervention',
-            'time',
-            'by',
-            
-        ]);
+        $nursingIntervention = $request->only('nursing_interventions');
         $assesment = $request->only([
             'physically_fit',
             'physically_fit_description',
@@ -211,6 +208,7 @@ class PatientController extends Controller
             'phyiscal_examination' => $physicalExamination,
             'vital_signs' => $vitalSigns,
             'assessment' => $assesment,
+            'nursing_interventions' => $nursingIntervention,
             'added_by' => auth()->user()->id,
         ]);
         
@@ -355,11 +353,7 @@ class PatientController extends Controller
             'blood_pressure',
             'weight',
         ]);
-        $nursingIntervention = $request->only([
-            'nursing_intervention',
-            'time',
-            'by',
-        ]);
+        $nursingIntervention = $request->only('nursing_interventions');
         $assesment = $request->only([
             'physically_fit',
             'physically_fit_description',
@@ -377,6 +371,7 @@ class PatientController extends Controller
             'phyiscal_examination' => $physicalExamination,
             'vital_signs' => $vitalSigns,
             'assessment' => $assesment,
+            'nursing_interventions' => $nursingIntervention,
             'added_by' => auth()->user()->id,
         ]);
         

@@ -171,6 +171,17 @@ class Patient extends Model
 	}
 
 	/**
+	 * Gets the nursing interventions of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getNursingInterventions()
+	{
+		return isset($this->healthExaminationRecord->nursing_interventions['nursing_interventions'])
+			? $this->healthExaminationRecord->nursing_interventions['nursing_interventions'] : [];
+	}
+
+	/**
 	 * Gets the PE attribute.
 	 * 
 	 * @param String

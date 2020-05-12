@@ -679,27 +679,13 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @foreach($patient->getNursingInterventions() as $key => $value)
                                                                 <tr>
-                                                                    <td><input class="form-control col-sm-15 mb-2 mt-2" autocomplete="off" type="text" name="nursing_intervent" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" autocomplete="off" type="text" name="by" value=""></td>
+                                                                    <td><input class="form-control col-sm-15 mb-2 mt-2" autocomplete="off" type="text" name="nursing_interventions[{{ $key }}][intervention]" value="{{ $value['intervention'] }}"></td>
+                                                                    <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="nursing_interventions[{{ $key }}][time]" value="{{ $value['time'] }}"></td>
+                                                                    <td><input class="form-control col-sm-14 mb-2 ml-2 mt-2" autocomplete="off" type="text" name="nursing_interventions[{{ $key }}][by]" value="{{ $value['by'] }}"></td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td><input class="form-control col-sm-15 mb-2" autocomplete="off" type="text" name="nursing_intervent" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-2" autocomplete="off" type="text" name="by" value=""></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><input class="form-control col-sm-15 mb-2" autocomplete="off" type="text" name="" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-2" autocomplete="off" type="text" name="" value=""></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td><input class="form-control col-sm-15 mb-2" autocomplete="off" type="text" name="" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                    <td><input class="form-control col-sm-14 mb-2 ml-2" autocomplete="off" type="text" name="" value=""></td>
-                                                                </tr>
-
+                                                                @endforeach
                                                             </tbody>
                                                         </table><br>
                                                     </div>

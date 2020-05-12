@@ -639,25 +639,34 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    @php
+                                                                        $nursingIntervention = [
+                                                                            [
+                                                                                'intervention' => null,
+                                                                                'time' => null,
+                                                                                'by' => null,
+                                                                            ]
+                                                                        ];
+                                                                    @endphp
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervent" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_interventions[0][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="nursing_interventions[0][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="nursing_interventions[0][by]" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_intervent" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_interventions[1][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="nursing_interventions[1][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="nursing_interventions[1][by]" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_interventions[2][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="nursing_interventions[2][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="nursing_interventions[2][by]" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_interventions[3][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="nursing_interventions[3][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="nursing_interventions[3][by]" value=""></td>
                                                                     </tr>
                                                                     
                                                                 </tbody>
