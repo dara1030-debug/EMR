@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
 		return view('patients.labreport');
     });    
 
+    Route::get('profile/{user}', 'ProfileController@show')->name('profile.show');
+
     Route::middleware('admin')->group(function () {
         Route::resource('users', 'UserController');
         Route::get('users/archive/index', 'UserController@archive')->name('users.archive');

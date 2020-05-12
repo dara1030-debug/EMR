@@ -70,7 +70,7 @@ $activeUsers = \App\User::getActive();
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="prof">
-            <a href="{{ route('users.show', auth()->user()->id) }}" style="text-decoration: none">
+            <a href="{{ route('profile.show', auth()->user()->id) }}" style="text-decoration: none">
                 <img src="{{Auth::user()->avatar ?? '/img/no_avatar.jpg' }}" alt="Avatar" class="user-panel"><br>
                 <h4 style="color:white">{{Auth::user()->first_name . " " . Auth::user()->middle_name . " " . Auth::user()->last_name}}</h4>
                 <p class="role" style="color:gray">

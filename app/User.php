@@ -29,6 +29,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $with = [
+        'role'
+    ];
+
     public function fullName()
     {
         return "$this->first_name $this->middle_name $this->last_name";
