@@ -64,39 +64,25 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row" > 04-24-2020 </th>
-                                <td type="button" id="myBtn3" data-toggle="tooltip" data-placement="right" title="Click to view more"
-                                >
-                                    Checkup</td>
-                                <td>Headache and tummy ache</td>
-                                <td>Due to lack of sleep and not eating on time</td>
-                                <td>Overnight Pa more</td>
-                                <td>Name of Current ACtive user</td>
-                                <td type="button" id="myBtn4" data-toggle="tooltip" data-placement="right" title="Click to Open file">
-                                    File</td>
-                              </tr>
-                              <tr>
-                                <th scope="row" > 04-24-2020 </th>
-                                <td type="button" id="myBtn3" data-toggle="tooltip" data-placement="right" title="Click to view more"
-                                >
-                                    Checkup</td>
-                                <td>Headache and tummy ache</td>
-                                <td>Due to lack of sleep and not eating on time</td>
-                                <td>Overnight Pa more</td>
-                                <td>Name of Current ACtive user</td>
-                                <td type="button" id="myBtn4" data-toggle="tooltip" data-placement="right" title="Click to Open file">
-                                    File</td>
-                              </tr>
-                              <tr>
-                                <th scope="row"> 04-24-2020 </th>
-                                <td>Checkup</td>
-                                <td>Headache and tummy ache</td>
-                                <td>Due to lack of sleep and not eating on time</td>
-                                <td>Overnight Pa more</td>
-                                <td>Name of Current ACtive user</td>
-                                <td>File</td>
-                              </tr>
+                                @foreach($patient->medicalRecords as $row)
+                                <tr>
+                                    <td scope="row">{{ $row->date_of_consultation }}</td>
+                                    <td type="button" id="myBtn3" data-toggle="tooltip" data-placement="right" title="Click to view more">
+                                        {{ $row->performed_service }}    
+                                    </td>
+                                    <td>{{ $row->chief_complaint }}</td>
+                                    <td>{{ $row->findings }}</td>
+                                    <td>{{ $row->recommendation }}</td>
+                                    <td>{{ $row->attending_physician }}</td>
+                                    <td type="button" id="myBtn4" data-toggle="tooltip" data-placement="right" title="Click to Open file">
+                                        @if ($row->file)
+                                        <a href="{{ $row->file }}" target="_blank" class="btn">File</a>
+                                        @else
+                                        No file
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
                               
                             </tbody>
                           </table>
@@ -116,7 +102,9 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form>
+                                    <form method="POST" action="{{ route('medical-records.store') }}" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="text" name="patient_id" value="{{ $patient->id }}" hidden/>
                                         <div class="form-group row">
                                             <label for="date_added" class="col-sm-2 col-form-label"><b>Date:</b></label>
                                             <div class="col-sm-4">
@@ -156,14 +144,14 @@
                                                 <div class="col-sm-2">
                                                     <div class="form-inline ">
                                                         <label for="temp" class="col-form-label">T :</label>
-                                                        <input type="number" class="form-control-sm col-sm-5" name="temperature" id="temp" value="">
+                                                        <input type="number" class="form-control-sm col-sm-5" name="vital_signs[temperature]" id="temp" value="">
                                                         <label class="col-form-label"><i><small> °C</small></i></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="form-inline ">
                                                         <label for="pulse_rate" class="col-form-label">PR:</label>
-                                                        <input type="number" class="form-control-sm col-sm-5" name="pulse_rate" id="pulse_rate" value="">
+                                                        <input type="number" class="form-control-sm col-sm-5" name="vital_signs[pulse_rate]" id="pulse_rate" value="">
                                                         <label class="col-form-label"><i><small> bpm</small></i></label>
                                                     </div>
                                                 </div>
@@ -171,14 +159,14 @@
                                                     <div class="form-inline ">
                                                                 
                                                         <label for="res_rate" class="col-form-label">RR :</label>
-                                                        <input type="number" class="form-control-sm col-sm-5" name="respiratory_rate" id="res_rate" value="">
+                                                        <input type="number" class="form-control-sm col-sm-5" name="vital_signs[respiratory_rate]" id="res_rate" value="">
                                                         <label class="col-form-label"><i><small> bpm</small></i></label>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <div class="form-inline ">
                                                         <label for="b_p" class="col-form-label">BP:</label>
-                                                        <input type="number" class="form-control-sm col-sm-5" name="blood_pressure" id="b_p" value="">
+                                                        <input type="number" class="form-control-sm col-sm-5" name="vital_signs[blood_pressure]" id="b_p" value="">
                                                         <label class="col-form-label"><i><small>mmhg</small></i></label>
                                                     </div>
                                                 </div>
@@ -186,7 +174,7 @@
                                                     <div class="form-inline ">
                                                                 
                                                         <label for="weight" class="col-form-label">WT :</label>
-                                                        <input type="number" class="form-control-sm col-sm-5" name="weight" id="weight" value="">
+                                                        <input type="number" class="form-control-sm col-sm-5" name="vital_signs[weight]" id="weight" value="">
                                                         <label class="col-form-label"><i><small> kg</small></i></label>
                                                     </div>
                                                 </div>
@@ -232,10 +220,10 @@
                                              </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="attach_file" class="col-sm-2 col-form-label"><i><b>Attach File:</b></i></label>
+                                            <label for="file" class="col-sm-2 col-form-label"><i><b>Attach File:</b></i></label>
                                                 <div class="col-sm-10">
                                                     <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="attach_file" name="attach_file">
+                                                    <input type="file" class="custom-file-input" id="file" name="file">
                                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                                     </div>
                                                 </div>
@@ -249,11 +237,12 @@
                                                     </select>
                                              </div>
                                         </div>
+                                        <input type="submit" id="submit-btn" hidden />
                                     </form>
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-primary" onclick="document.getElementById('submit-btn').click()">Submit</button>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 </div>
                              </div>
@@ -316,14 +305,14 @@
                                         <div class="col-sm-2">
                                             <div class="form-inline ">
                                                 <label for="temp" class="col-form-label">T :</label>
-                                                <input type="number" class="form-control-sm col-sm-5" name="temperature" id="temp" value="">
+                                                <input type="number" class="form-control-sm col-sm-5" name="vital_signs[temperature]" id="temp" value="">
                                                 <label class="col-form-label"><i><small> °C</small></i></label>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
                                             <div class="form-inline ">
                                                 <label for="pulse_rate" class="col-form-label">PR:</label>
-                                                <input type="number" class="form-control-sm col-sm-5" name="pulse_rate" id="pulse_rate" value="">
+                                                <input type="number" class="form-control-sm col-sm-5" name="vital_signs[pulse_rate]" id="pulse_rate" value="">
                                                 <label class="col-form-label"><i><small> bpm</small></i></label>
                                             </div>
                                         </div>
@@ -331,14 +320,14 @@
                                             <div class="form-inline ">
                                                         
                                                 <label for="res_rate" class="col-form-label">RR :</label>
-                                                <input type="number" class="form-control-sm col-sm-5" name="respiratory_rate" id="res_rate" value="">
+                                                <input type="number" class="form-control-sm col-sm-5" name="vital_signs[respiratory_rate]" id="res_rate" value="">
                                                 <label class="col-form-label"><i><small> bpm</small></i></label>
                                             </div>
                                         </div>
                                         <div class="col-sm-2">
                                             <div class="form-inline ">
                                                 <label for="b_p" class="col-form-label">BP:</label>
-                                                <input type="number" class="form-control-sm col-sm-5" name="blood_pressure" id="b_p" value="">
+                                                <input type="number" class="form-control-sm col-sm-5" name="vital_signs[blood_pressure]" id="b_p" value="">
                                                 <label class="col-form-label"><i><small>mmhg</small></i></label>
                                             </div>
                                         </div>
@@ -346,7 +335,7 @@
                                             <div class="form-inline ">
                                                         
                                                 <label for="weight" class="col-form-label">WT :</label>
-                                                <input type="number" class="form-control-sm col-sm-5" name="weight" id="weight" value="">
+                                                <input type="number" class="form-control-sm col-sm-5" name="vital_signs[weight]" id="weight" value="">
                                                 <label class="col-form-label"><i><small> kg</small></i></label>
                                             </div>
                                         </div>
@@ -409,7 +398,6 @@
                                             </select>
                                      </div>
                                 </div>
-                                
                             </form>
                         </div>
                         <div class="modal-footer">

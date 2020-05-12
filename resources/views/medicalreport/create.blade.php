@@ -17,7 +17,7 @@
       
     </div>
     <div class="card-body">
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" action="{{ route('medical-records.store') }}" method="POST" novalidate>
             <div class="form-row">
               <div class="col-md-4 mb-3">
                 <label for="validation1">Name of Service</label>
@@ -83,7 +83,7 @@
 
                 <div class="col">
                     <br><br>
-                    <a href="#" class="btn btn-info btn-md">Save</a>
+                    <button type="submit" class="btn btn-info btn-md">Save</button>
                     <a href="#" class="btn btn-secondary btn-md">Cancel</a>
                 </div>
           </form>
