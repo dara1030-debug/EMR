@@ -501,7 +501,10 @@
                                                                             <td>
                                                                                 <td>Heart</td>
                                                                             <td><input  type="radio" name="heart_status" value="normal"></td>
-                                                                            <td><input type="radio" name="heart_status" value=0
+                                                                            <td><input type="radio" name="heart_status" value="0"></td>
+                                                                            <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="heart_remarks"></td>
+                                                                            </td>
+                                                                        <tr>
                                                                             <td>
                                                                                 <td>Abdomen</td>
                                                                             <td><input  type="radio" name="abdomen_status" value="normal"></td>

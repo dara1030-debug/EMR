@@ -11422,7 +11422,8 @@ a.text-dark:focus {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
 }
 

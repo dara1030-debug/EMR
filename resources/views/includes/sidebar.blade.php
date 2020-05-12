@@ -91,7 +91,7 @@ $activeUsers = \App\User::getActive();
         <div class="row">
             <div class="col text-left">
                 <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard" style="padding-right:27px"></i>Dashboard</a>
-                <a href="{{ route('users.show', auth()->user()->id) }}"><i class="fa fa-user" style="padding-right:32px"></i>Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
+                <a href="{{ route('profile.show', auth()->user()->id) }}"><i class="fa fa-user" style="padding-right:32px"></i>Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
                 <a href="/patients"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Patients</a>
                 <a href="/users"><i class="fa fa-tasks"style="padding-right:27px"></i>Manage Users</a>
                 <a href="/services"><i class="fa fa-tasks" style="padding-right:27px"></i>Manage Services</a>

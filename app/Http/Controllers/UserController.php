@@ -146,6 +146,36 @@ class UserController extends Controller
     }
 
     /**
+     * Searches for a patient from DB.
+     * 
+     * @return Collection
+     */
+    public function search()
+    {
+        $data = request()->validate([
+            'search' => 'required',
+        ]);
+        
+        $users = User::where('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%')
+            ->paginate(20);
+
+        return view('users.search', [
+            'users' => $users 
+        ]);
+    }
+    
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

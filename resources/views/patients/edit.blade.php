@@ -47,7 +47,7 @@
                     {{--Profile--}}
                     <div class="form-group text-center">
                         <div class="col" style=" margin-top: 3%">
-                            <img src="/img/no_avatar.jpg"  alt="create_avatar" class="create_avatar "><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
+                            <img src="{{ $patient->avatar ?? '/img/no_avatar.jpg' }}"  alt="create_avatar" class="create_avatar "><br>{{--PRofile pic upload (Restrict user thaht only img/png file can be uploaded--}}
                         </div>
                         </div>
                             <div class="form-group text-center">
