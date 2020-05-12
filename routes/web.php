@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
         Route::get('users/archive/index', 'UserController@archive')->name('users.archive');
         Route::delete('users/force-delete/{id}', 'UserController@deleteUser')->name('users.delete');
         Route::get('users/restore/{id}', 'UserController@restoreUser')->name('users.restore');
+        Route::post('users/search', 'UserController@search')->name('users.search');
     });
     
     // Patients
@@ -53,7 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::get('services/archive/index', 'ServiceController@archive')->name('services.archive');
     Route::delete('services/force-delete/{id}', 'ServiceController@forceDestroy')->name('services.delete');
     Route::get('services/restore/{id}', 'ServiceController@restore')->name('services.restore');
-    
+    Route::post('services/search', 'ServiceController@search')->name('services.search');
+
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');
     Route::get('contact', 'ContactController@index')->name('contact');

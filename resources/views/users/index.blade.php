@@ -24,14 +24,16 @@
   </div>
   <div class="card-body">
     <div class="input-group mb-4" style="margin:auto;max-width:250px">
-      
+      <form action="{{ route('users.search') }}" method="POST">
         @csrf
           <div class="row">
               <div class="input-group-prepend">
                 <input type="search" autocomplete="off" name="search" placeholder="Search for User" class="form-control">
                 <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
+              
               </div>
-          </div>  
+          </div>
+      </form>  
     </div>
       <table class="table table-responsive-md table-hover">
           
