@@ -57,6 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('services/force-delete/{id}', 'ServiceController@forceDestroy')->name('services.delete');
     Route::get('services/restore/{id}', 'ServiceController@restore')->name('services.restore');
     Route::post('services/search', 'ServiceController@search')->name('services.search');
+    Route::post('services/archive/search', 'ServiceController@archive_search')->name('services.archive_search');
 
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');

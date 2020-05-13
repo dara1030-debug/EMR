@@ -7,13 +7,13 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route('patients.index') }}">Patients</a>
+          <a class="nav-link" href="{{ route('patients.index') }}">Patients</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('patients.create') }}">Add New Patient</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('patients.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
+          <a class="nav-link active" href="{{ route('patients.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
         </li>
       </ul>
       
@@ -26,7 +26,7 @@
             <div class="input-group-prepend">
               <input type="search" name="search" placeholder="Search for Patient " class="form-control">
               <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
-              <a href="{{ route('patients.index') }}" class="form-control col-sm-3">Clear</a>
+              <a href="{{ route('patients.archive') }}" class="form-control col-sm-3">Clear</a>
             </div>
           </div>
         </form>
@@ -86,7 +86,7 @@
 
 <script>
   const confirmDelete = () => {
-    if (confirm('Are you sure you want to delete this user?')) {
+    if (confirm('Are you sure you want to delete this patient?')) {
       return true
     } else {
       return false

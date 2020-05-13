@@ -7,13 +7,13 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="/users">Users</a>
+            <a class="nav-link" href="/users">Users</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/users/create">Add New User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('users.archive') }}">Archive</a>
+            <a class="nav-link active" href="{{ route('users.archive') }}">Archive</a>
           </li>
         </ul>
       </div>
@@ -26,7 +26,7 @@
             <div class="input-group-prepend">
               <input type="search" name="search" placeholder="Search for User " class="form-control">
               <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
-              <a href="{{ route('users.index') }}" class="form-control col-sm-3">Clear</a>
+              <a href="{{ route('users.archive') }}" class="form-control col-sm-3">Clear</a>
             </div>
           </div>
         </form>

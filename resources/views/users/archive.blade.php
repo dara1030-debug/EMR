@@ -30,8 +30,7 @@
             <div class="input-group-prepend">
               <input type="search" name="search" placeholder="Search for User " class="form-control">
               <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
-              <a href="{{ route('users.index') }}" class="form-control col-sm-3">Clear</a>
-            </div>
+             </div>
           </div>
         </form>
   </div>

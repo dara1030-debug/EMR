@@ -100,7 +100,7 @@
 
 <script>
   const confirmDelete = () => {
-    if (confirm('Are you sure you want to delete this user?')) {
+    if (confirm('Are you sure you want to archive this user?')) {
       return true
     } else {
       return false
