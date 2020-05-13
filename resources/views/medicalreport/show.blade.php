@@ -118,18 +118,12 @@
                                         <div class="form-group row">
                                             <label for="services" class="col-sm-2 col-form-label"><b>Service:</b></label>
                                             <div class="col-sm-10">
-                                                    
-                                                        <select class="form-control" id="services" name="performed_service" required>
-                                                            <option class="hidden"  selected disabled>Name of Service</option>
-                                                                <option value="1">Checkup</option>
-                                                                <option value="2">Vaccine</option>
-                                                                <option value="3">Blood Type Test</option>
-                                                                <option value="4">Urinary Test</option>
-                                                                <option value="5">Hematology Test</option>
-                                                                <option value="6">First Aid</option>
-                                                                <option value="7">Check Blood Pressure</option>
-                                                                <option value="8">Follow Up Checkup</option>
-                                                            </select>
+                                                <select class="form-control" id="services" name="performed_service" required>
+                                                    <option class="hidden"  selected disabled>Name of Service</option>
+                                                    @foreach(\App\Service::get() as $service)
+                                                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                          <div class="form-group row">
@@ -231,10 +225,7 @@
                                         <div class="form-group row">
                                             <label for="attending_physician" class="col-sm-2 col-form-label"><i><b>ATTENDING PHYSICIAN:</b></i></label>
                                             <div class="col-sm-10">
-                                                <select class="form-control mt-3" id="attending_physician" name="attending_physician" required>
-                                                    <option class="hidden"  selected disabled>Name of Physician</option>
-                                                        <option value="1">Current Active User/ Doctor using this account</option>
-                                                    </select>
+                                                <input class="form-control mt-3" id="attending_physician" name="attending_physician" value="{{ auth()->user()->fullName() }}" readonly />
                                              </div>
                                         </div>
                                         <input type="submit" id="submit-btn" hidden />
