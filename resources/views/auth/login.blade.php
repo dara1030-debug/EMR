@@ -6,6 +6,13 @@
         <div class="col-md-8">
             <div class="card">
 
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>	
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -60,7 +67,7 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link" href="{{ route('auth.forgot_password') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
