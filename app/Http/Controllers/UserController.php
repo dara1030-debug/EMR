@@ -95,7 +95,7 @@ class UserController extends Controller
             'role_id' => $request->role_id,
             'avatar' => $imagePath,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'first_name' => $request->first_name,
             'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
@@ -270,7 +270,7 @@ class UserController extends Controller
 
         
         if ($request->get('password') != null) {
-            $user->password = $request->password;
+            $user->password = bcrypt($request->password);
         }
 
         if ($request->get('gender') != null) {
