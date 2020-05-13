@@ -11,6 +11,10 @@
 |
 */
 
+use App\Mail\ForgotPasswordMail;
+use App\User;
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
@@ -22,6 +26,16 @@ Route::get('error', function () {
 
 Route::get('/about', function(){
 return view('about');
+});
+
+Route::get('/forgot-password', function () {
+    return view('auth.forgot_password');
+})->name('auth.forgot_password');
+
+Route::post('/forgot-password', 'ForgotPasswordController@send')->name('auth.send_code');
+Route::get('/forgot-password/verify/{email}', 'ForgotPasswordController@verify')->name('auth.verify');
+Route::get('/test', function () {
+    return new ForgotPasswordMail(User::first());
 });
 
 Route::middleware('auth')->group(function () {
