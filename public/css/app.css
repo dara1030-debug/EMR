@@ -4426,7 +4426,7 @@ input[type=button].btn-block {
 }
 
 .custom-file-input {
-  position: relative;
+  position: fixed;
   z-index: 2;
   width: 100%;
   height: calc(1.6em + 0.75rem + 2px);
