@@ -50,16 +50,16 @@
                 </div>
                 
                 <div class="row mt-4">
-                    <div class="col">
-                        <table class="table table-hover">
+                    <div class="col table-responsive">
+                        <table class="table table-hover table-bordered">
                             <thead>
                               <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">Performed Service</th>
-                                <th scope="col">Chief Complaints</th>
-                                <th scope="col">Attending Physician</th>
-                                <th scope="col">Attach File</th>
-                                <th scope="col">Action</th>
+                                <th class="w-20">Date</th>
+                                <th class="w-20">Performed Service</th>
+                                <th class="w-25">Chief Complaints</th>
+                                <th class="w-20">Attending Physician</th>
+                                <th class="w-20">Attach File</th>
+                                <th class="w-20">Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -206,7 +206,7 @@
                                         <div class="form-group row">
                                             <label for="medication_taken" class="col-sm-2 col-form-label"><b>Recommendations:</b></label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="medication_taken" name="recommendation" placeholder="">
+                                                <input type="text area" class="form-control" id="medication_taken" name="recommendation" placeholder="">
                                              </div>
                                         </div>
                                         <div class="form-group row">
