@@ -121,7 +121,7 @@
                                                 <select class="form-control" id="services" name="performed_service" required>
                                                     <option class="hidden"  selected disabled>Name of Service</option>
                                                     @foreach(\App\Service::get() as $service)
-                                                        <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                                        <option value="{{ $service->name }}">{{ $service->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
