@@ -72,7 +72,7 @@ $activeUsers = \App\User::getActive();
         <div class="prof">
             <a href="{{ route('profile.show', auth()->user()->id) }}" style="text-decoration: none">
                 <img src="{{Auth::user()->avatar ?? '/img/no_avatar.jpg' }}" alt="Avatar" class="user-panel"><br>
-                <h4 style="color:white">{{Auth::user()->first_name . " " . Auth::user()->middle_name . " " . Auth::user()->last_name}}</h4>
+                <h4 class="text-wrap" style="color:white; width: 14rem">{{Auth::user()->first_name . " " . Auth::user()->middle_name . " " . Auth::user()->last_name}}</h4>
                 <p class="role" style="color:gray">
                     <div class="badge 
                         @if(Auth::user()->role->name == 'Administrator') 
