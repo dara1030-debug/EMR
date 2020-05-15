@@ -17,6 +17,7 @@ class Patient extends Model
 	 */
 	protected $softCascade = [
 		'healthExaminationRecord',
+		'medicalRecords'
 	];
 
 	/**
@@ -59,6 +60,16 @@ class Patient extends Model
 		return $this->belongsTo('App\User', 'updated_by');
 	}
 
+	/**
+	 * A patient has many medical records / consultations.
+	 * 
+	 * @return HasMany
+	 */
+	public function medicalRecords()
+	{
+		return $this->hasMany('App\MedicalRecord');
+	}
+	
 	/**
 	 * This patient has a health examination record.
 	 * 
@@ -168,6 +179,17 @@ class Patient extends Model
 	public function getAssessment()
 	{
 		return $this->healthExaminationRecord->assessment;
+	}
+
+	/**
+	 * Gets the nursing interventions of Patient.
+	 * 
+	 * @return AssocArray
+	 */
+	public function getNursingInterventions()
+	{
+		return isset($this->healthExaminationRecord->nursing_interventions['nursing_interventions'])
+			? $this->healthExaminationRecord->nursing_interventions['nursing_interventions'] : [];
 	}
 
 	/**

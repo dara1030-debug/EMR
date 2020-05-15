@@ -30,6 +30,53 @@ class ServiceController extends Controller
         ]);
     }
 
+     /**
+     * Searches for a services from DB.
+     * 
+     * @return Collection
+     */
+    public function search()
+    {
+        $data = request()->validate([
+            'search' => 'required',
+        ]);
+        
+        $services = Service::where('name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('description', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('added_by', 'LIKE', '%' . $data['search'] . '%')
+          
+            ->paginate(20);
+
+        return view('services.search', [
+            'services' => $services
+        ]);
+    }
+
+    /**
+     * Searches for a services from DB.
+     * 
+     * @return Collection
+     */
+    public function archive_search()
+    {
+        $data = request()->validate([
+            'search' => 'required',
+        ]);
+        
+        $services = Service::onlyTrashed()
+            ->where('name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('description', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('added_by', 'LIKE', '%' . $data['search'] . '%')
+            ->paginate(20);
+
+        return view('services.archive_search', [
+            'services' => $services 
+        ]);
+    }
+
+
+
+
     public function create()
     {
         return view('services.create');
@@ -107,3 +154,4 @@ class ServiceController extends Controller
             ->with('success', 'A service has been restored.');
     }
 }
+

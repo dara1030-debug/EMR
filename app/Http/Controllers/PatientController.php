@@ -78,6 +78,39 @@ class PatientController extends Controller
             'patients' => $patients
         ]);
     }
+
+    /**
+     * Searches for a patient from DB.
+     * 
+     * @return Collection
+     */
+    public function archive_search()
+    {
+        $data = request()->validate([
+            'search' => 'required',
+        ]);
+        
+        $patients = Patient::onlyTrashed()
+            ->where('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('id_number', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('college_department', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('type', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('status', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%')
+            ->paginate(20);
+
+        return view('patients.archive_search', [
+            'patients' => $patients
+        ]);
+    }
     
     /**
      * Store a newly created resource in storage.
@@ -87,6 +120,8 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        // return dd($request->all());
+        
         $imagePath = null;
         
         if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
@@ -157,7 +192,7 @@ class PatientController extends Controller
             'neck_remarks',
             'chest_status',
             'chest_remarks',
-            'lungs_normal',
+            'lungs_status',
             'lungs_remarks',
             'heart_status',
             'heart_remarks',
@@ -173,7 +208,7 @@ class PatientController extends Controller
             'genitals_remarks',
             'reflexes_status',
             'reflexes_remarks',
-            'extermities_status',
+            'extremities_status',
             'extremities_remarks',
             'neurologic_status',
             'neurologic_remarks',
@@ -189,6 +224,7 @@ class PatientController extends Controller
             'blood_pressure',
             'weight',
         ]);
+        $nursingIntervention = $request->only('nursing_interventions');
         $assesment = $request->only([
             'physically_fit',
             'physically_fit_description',
@@ -205,6 +241,7 @@ class PatientController extends Controller
             'phyiscal_examination' => $physicalExamination,
             'vital_signs' => $vitalSigns,
             'assessment' => $assesment,
+            'nursing_interventions' => $nursingIntervention,
             'added_by' => auth()->user()->id,
         ]);
         
@@ -317,7 +354,7 @@ class PatientController extends Controller
             'neck_remarks',
             'chest_status',
             'chest_remarks',
-            'lungs_normal',
+            'lungs_status',
             'lungs_remarks',
             'heart_status',
             'heart_remarks',
@@ -333,7 +370,7 @@ class PatientController extends Controller
             'genitals_remarks',
             'reflexes_status',
             'reflexes_remarks',
-            'extermities_status',
+            'extremities_status',
             'extremities_remarks',
             'neurologic_status',
             'neurologic_remarks',
@@ -349,6 +386,7 @@ class PatientController extends Controller
             'blood_pressure',
             'weight',
         ]);
+        $nursingIntervention = $request->only('nursing_interventions');
         $assesment = $request->only([
             'physically_fit',
             'physically_fit_description',
@@ -366,6 +404,7 @@ class PatientController extends Controller
             'phyiscal_examination' => $physicalExamination,
             'vital_signs' => $vitalSigns,
             'assessment' => $assesment,
+            'nursing_interventions' => $nursingIntervention,
             'added_by' => auth()->user()->id,
         ]);
         

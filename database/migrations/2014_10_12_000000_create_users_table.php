@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('home_address')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('license_number')->nullable();
+            $table->rememberToken();
             $table->timestamp('deleted_at')->nullable();
             $table->timestamp('last_activity')->nullable();
             $table->timestamps();

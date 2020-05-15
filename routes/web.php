@@ -11,6 +11,10 @@
 |
 */
 
+use App\Mail\ForgotPasswordMail;
+use App\User;
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
@@ -24,6 +28,16 @@ Route::get('/about', function(){
 return view('about');
 });
 
+Route::get('/forgot-password', function () {
+    return view('auth.forgot_password');
+})->name('auth.forgot_password');
+
+Route::post('/forgot-password', 'ForgotPasswordController@send')->name('auth.send_code');
+Route::get('/forgot-password/verify/{email}', 'ForgotPasswordController@verify')->name('auth.verify');
+Route::get('/test', function () {
+    return new ForgotPasswordMail(User::first());
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('dashboard');
@@ -33,11 +47,15 @@ Route::middleware('auth')->group(function () {
 		return view('patients.labreport');
     });    
 
+    Route::get('profile/{user}', 'ProfileController@show')->name('profile.show');
+
     Route::middleware('admin')->group(function () {
         Route::resource('users', 'UserController');
         Route::get('users/archive/index', 'UserController@archive')->name('users.archive');
         Route::delete('users/force-delete/{id}', 'UserController@deleteUser')->name('users.delete');
         Route::get('users/restore/{id}', 'UserController@restoreUser')->name('users.restore');
+        Route::post('users/search', 'UserController@search')->name('users.search');
+        Route::post('users/archive/search', 'UserController@archive_search')->name('users.archive_search');
     });
     
     // Patients
@@ -46,12 +64,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('patients/force-delete/{id}', 'PatientController@deletePatient')->name('patients.delete');
     Route::get('patients/restore/{id}', 'PatientController@restorePatient')->name('patients.restore');
     Route::post('patients/search', 'PatientController@search')->name('patients.search');
+    Route::post('patients/archive/search', 'PatientController@archive_search')->name('patients.archive_search');
     
     Route::resource('services', 'ServiceController');
     Route::get('services/archive/index', 'ServiceController@archive')->name('services.archive');
     Route::delete('services/force-delete/{id}', 'ServiceController@forceDestroy')->name('services.delete');
     Route::get('services/restore/{id}', 'ServiceController@restore')->name('services.restore');
-    
+    Route::post('services/search', 'ServiceController@search')->name('services.search');
+    Route::post('services/archive/search', 'ServiceController@archive_search')->name('services.archive_search');
+
     Route::get('help', 'HelpController@index')->name('help');
     Route::get('doctors', 'DoctorsController@index')->name('doctors');
     Route::get('contact', 'ContactController@index')->name('contact');

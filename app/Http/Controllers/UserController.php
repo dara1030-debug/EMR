@@ -95,7 +95,7 @@ class UserController extends Controller
             'role_id' => $request->role_id,
             'avatar' => $imagePath,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'first_name' => $request->first_name,
             'middle_name' => $request->middle_name,
             'last_name' => $request->last_name,
@@ -146,6 +146,66 @@ class UserController extends Controller
     }
 
     /**
+     * Searches for a patient from DB.
+     * 
+     * @return Collection
+     */
+    public function search()
+    {
+        $data = request()->validate([
+            'search' => 'required',
+        ]);
+        
+        $users = User::where('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%')
+            ->paginate(20);
+
+        return view('users.search', [
+            'users' => $users 
+        ]);
+    }
+
+    /**
+     * Searches for a patient from DB.
+     * 
+     * @return Collection
+     */
+    public function archive_search()
+    {
+        $data = request()->validate([
+            'search' => 'required',
+        ]);
+        
+        $users = User::onlyTrashed()
+            ->where('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('first_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
+            ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%')
+            ->paginate(20);
+
+        return view('users.archive_search', [
+            'users' => $users 
+        ]);
+    }
+    
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -176,6 +236,9 @@ class UserController extends Controller
             'middle_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
+            'password' => 'required|confirmed',
+            'password_confirmation' => 'required',
+            'gender' => 'required',
             'civil_status' => 'required',
             'age' => 'required',
             'birthdate' => 'required', 
@@ -207,7 +270,7 @@ class UserController extends Controller
 
         
         if ($request->get('password') != null) {
-            $user->password = $request->password;
+            $user->password = bcrypt($request->password);
         }
 
         if ($request->get('gender') != null) {

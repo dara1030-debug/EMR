@@ -20,7 +20,7 @@
 </div>
     <div class="card-body">
       <div class="input-group mb-4" style="margin:auto;max-width:250px">
-        <form action="{{ route('patients.search') }}" method="POST">
+        <form action="{{ route('patients.archive_search') }}" method="POST">
           @csrf
             <div class="row">
                 <div class="input-group-prepend">

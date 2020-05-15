@@ -5,28 +5,28 @@
 
 <div class="card text-center">
     <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('patients.index') }}">Patients</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('patients.create') }}">Add New Patient</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('patients.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
-        </li>
-      </ul>
-      
-</div>
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/create">Add New User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('users.archive') }}">Archive</a>
+          </li>
+        </ul>
+      </div>
+
     <div class="card-body">
       <div class="input-group mb-4" style="margin:auto;max-width:300px">
-        <form action="{{ route('patients.search') }}" method="POST">
+        <form action="{{ route('users.search') }}" method="POST">
           @csrf
           <div class="row">
             <div class="input-group-prepend">
-              <input type="search" name="search" placeholder="Search for Patient " class="form-control">
+              <input type="search" name="search" placeholder="Search for User " class="form-control">
               <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
-              <a href="{{ route('patients.index') }}" class="form-control col-sm-3">Clear</a>
+              <a href="{{ route('users.index') }}" class="form-control col-sm-3">Clear</a>
             </div>
           </div>
         </form>
@@ -37,8 +37,7 @@
             <thead class="text-center thead-light">
               
               <tr>
-                <th>Picture</th>
-                <th scope="col">OPD/Id Number</th>
+                <th scope="col">Role</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Middle Name</th>
@@ -47,22 +46,30 @@
             </thead>
 
             <tbody class="p2 text-center" id="myTable">
-	          	@foreach ($patients as $patient)
+	          	@foreach ($users as $user)
 	          	<tr>
-                <td>
-                  <img src="{{ $patient->avatar ?? 'http://dev.emr.io/img/no_avatar.jpg' }}" style="height: 50px; width: 50px; border-radius: 50%" />
-                </td>
-                	<td>{{ $patient->id_number }}</td>
-               		<td>{{ $patient->last_name }}</td>
-                	<td>{{ $patient->first_name }}</td>
-                	<td>{{ $patient->middle_name }}</td>
+                	<td>
+                        <div class="badge 
+                        @if($user->role->name == 'Administrator') 
+                          badge-danger 
+                        @elseif($user->role->name == 'Doctor')  
+                          badge-success
+                        @elseif($user->role->name == 'Nurse')
+                          badge-primary
+                        @endif">
+                          {{ $user->role->name }}
+                        </div>
+                      </td>
+               		<td>{{ $user->last_name }}</td>
+                	<td>{{ $user->first_name }}</td>
+                	<td>{{ $user->middle_name }}</td>
                 	<td>
                   		
-                      <form action="{{ route('patients.destroy', $patient->id) }}" id="deleteForm" onsubmit="confirmDelete()" method="post">
+                      <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="confirmDelete()" method="post">
                         @csrf
                         @method('DELETE')
-                        <a href="{{ route('patients.show', $patient->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
-                        <a href="{{ route('patients.edit', $patient->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="edit" style="padding-right:20px" aria-hidden="true"></a></i>
+                        <a href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
+                        <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="edit" style="padding-right:20px" aria-hidden="true"></a></i>
                         <button class="btn" type="submit">
                           <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
                         </button>{{--archive nalang daw instead of deleting the files of user--}}
@@ -73,7 +80,7 @@
             </tbody>
           </table><br>
           <div class="pagination justify-content-center">
-            {{$patients->links()}}
+            {{$users->links()}}
             </div>
   </div>
 
@@ -90,7 +97,7 @@
 
 <script>
   const confirmDelete = () => {
-    if (confirm('Are you sure you want to delete this user?')) {
+    if (confirm('Are you sure you want to archive this user?')) {
       return true
     } else {
       return false

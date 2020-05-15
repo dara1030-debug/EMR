@@ -36,6 +36,7 @@
             <thead class="text-center thead-light">
               
               <tr>
+                <th>Picture</th>
                 <th scope="col">OPD/Id Number</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">First Name</th>
@@ -47,6 +48,9 @@
             <tbody class="p2 text-center" id="myTable">
 	          	@foreach ($patients as $patient)
 	          	<tr>
+                  <td>
+                    <img src="{{ $patient->avatar ?? 'http://dev.emr.io/img/no_avatar.jpg' }}" style="height: 50px; width: 50px; border-radius: 50%" />
+                  </td>
                 	<td>{{ $patient->id_number }}</td>
                		<td>{{ $patient->last_name }}</td>
                 	<td>{{ $patient->first_name }}</td>
@@ -85,7 +89,7 @@
 
 <script>
   const confirmDelete = () => {
-    if (confirm('Are you sure you want to delete this user?')) {
+    if (confirm('Are you sure you want to archive this patient?')) {
       return true
     } else {
       return false

@@ -54,7 +54,7 @@
               
             </div>
             <div class="form-row">
-              <div class="col-md-6 mb-3 ml-5 mx-auto" style="width: 200px;>
+              <div class="col-md-6 mb-3 ml-5 mx-auto" style="width: 200px;">
                 <label for="validationCustom03">Added By</label>
                 <select name="added_by" class="custom-select" required>
                   @foreach(\App\User::get() as $user)

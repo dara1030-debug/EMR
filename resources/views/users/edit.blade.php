@@ -1,22 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-@if ($message = Session::get('success'))
-<div class="alert alert-success alert-block">
-    <button type="button" class="close" data-dismiss="alert">×</button>	
-    <strong>{{ $message }}</strong>
-</div>
-@endif
+    
 
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
 <div class="card">
     <div class="card-header">
@@ -37,7 +32,14 @@
         </ul>
     </div>
     <div class="card-body">
+
         <div class="container px-10">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>	
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
         
             <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -166,6 +168,7 @@
                                     </span>
                                 @enderror
                             </div>
+                           
                         </div>
 
 
@@ -175,12 +178,12 @@
                                 <div class="form-check">
 
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input"  id="malegender" name="gender" value="male">
+                                        <input type="radio" class="custom-control-input"  id="malegender" name="gender" {{ $user->gender == 'male' ? 'checked' : '' }} value="male">
                                         <label class="custom-control-label" for="malegender">Male</label>
                                       </div>   
                                       <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input mt-4 " id="femalegender" name="gender" value="female">
-                                        <label class="custom-control-label" for="femalegender">Female</label>
+                                        <input type="radio" class="custom-control-input" id="femalegender" name="gender" {{ $user->gender == 'female' ? 'checked' : '' }} value="female">
+                                        <label class="custom-control-label" for="femalegender">Female</label> 
                                         <br>
                                     </div> 
                                 </div>

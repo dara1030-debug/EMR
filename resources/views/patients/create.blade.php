@@ -257,14 +257,14 @@
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Sinusitis/Allergic rhinitis"> Sinusitis/Allergic rhinitis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Skin Disorders"> Skin Disorders<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="STI/HIV"> STI/HIV<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox" nname="pastmedical_history[]" value="Stroke"> Stroke<br>
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Stroke"> Stroke<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Surgery/Injury"> Surgery/Injury<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Thyroid Problems"> Thyroid Problems<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tonsillitis"> Tonsillitis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tuberculosis"> Tuberculosis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="UTI"> UTI<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox"> Others: 
-                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="family_history[]">
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="others"> Others: 
+                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="pastmedical_history[]" value="">
                                                                     <br><br>    
                                                                 </div>
                                                             </div>
@@ -315,8 +315,8 @@
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Diabetes"> Diabetes<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Allergies"> Allergies<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Cancer"> Cancer<br>
-                                                                    <input style= "margin-left: 2%" type="checkbox"> Other:
-                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="family_history[]">
+                                                                    <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Others"> Other:
+                                                                    <input style= "margin-left: 2%" type="text" name="family_history[]" value="">
                                                                     <br>
                                                                 </div>
                                                             </div>
@@ -492,8 +492,8 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Lungs</td>
-                                                                            <td><input  type="radio" name="lungs_normal" value="normal"></td>
-                                                                            <td><input type="radio" name="lungs_normal" value="abnormal"></td>
+                                                                            <td><input  type="radio" name="lungs_status" value="normal"></td>
+                                                                            <td><input type="radio" name="lungs_status" value="abnormal"></td>
                                                                             <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="lungs_remarks"></td>
                                                                             </td>
                                                                         </tr>
@@ -501,10 +501,9 @@
                                                                             <td>
                                                                                 <td>Heart</td>
                                                                             <td><input  type="radio" name="heart_status" value="normal"></td>
-                                                                            <td><input type="radio" name="heart_status" value="abnormal"></td>
+                                                                            <td><input type="radio" name="heart_status" value="0"></td>
                                                                             <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="heart_remarks"></td>
                                                                             </td>
-                                                                        </tr>
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Abdomen</td>
@@ -556,8 +555,8 @@
                                                                         <tr>
                                                                             <td>
                                                                                 <td>Extremities</td>
-                                                                            <td><input  type="radio" name="extermities_status" value="normal"></td>
-                                                                            <td><input type="radio" name="extermities_status" value="abnormal"></td>
+                                                                            <td><input type="radio" name="extremities_status" value="normal"></td>
+                                                                            <td><input type="radio" name="extremities_status" value="abnormal"></td>
                                                                             <td><input class="form-control  col-sm-10" autocomplete="off" type="text" name="extremities_remarks"></td>
                                                                             </td>
                                                                         </tr>
@@ -643,25 +642,34 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
+                                                                    @php
+                                                                        $nursingIntervention = [
+                                                                            [
+                                                                                'intervention' => null,
+                                                                                'time' => null,
+                                                                                'by' => null,
+                                                                            ]
+                                                                        ];
+                                                                    @endphp
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_intervent" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="time" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="by" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2 mt-2" type="text" name="nursing_interventions[0][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1 mt-2" type="time" name="nursing_interventions[0][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2 mt-2" type="text" name="nursing_interventions[0][by]" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_intervent" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="time" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="by" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_interventions[1][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="nursing_interventions[1][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="nursing_interventions[1][by]" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_interventions[2][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="nursing_interventions[2][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="nursing_interventions[2][by]" value=""></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="" value=""></td>
-                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="" value=""></td>
-                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-15 mb-2" type="text" name="nursing_interventions[3][intervention]" value=""></td>
+                                                                        <td><input class="form-control col-sm-14 mb-2 ml-1" type="time" name="nursing_interventions[3][time]" value=""></td>
+                                                                        <td><input autocomplete="off" class="form-control col-sm-14 mb-2 ml-2" type="text" name="nursing_interventions[3][by]" value=""></td>
                                                                     </tr>
                                                                     
                                                                 </tbody>
