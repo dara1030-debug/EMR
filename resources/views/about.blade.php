@@ -6,13 +6,28 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
-  height: 100%;
+  height: 2500px;
   color: black;
   line-height: 1.8;  background-color: #cccccc;
-  background-image: linear-gradient(red, yellow, green);
+  background-image: linear-gradient(white,#7FEBFE);
+
+}
+h2{
+padding-left: 35px;
 
 }
 
+a{
+
+text-align: justify;
+
+}
+
+ul{
+
+  text-align: center;
+
+}
 /* Create a Parallax Effect */
 .bgimg-1{
   background-attachment: fixed;
@@ -62,13 +77,16 @@ The Office oversees the Institute Clinic which provides fast and competent medic
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
     <br><br>
-      <img src="img/d1.png" class="w3-round w3-image" alt="Photo" width="500" height="500">
+      <img src="img/d1.png" class="w3-round w3-image" alt="Photo" width="500" height="500" padding-bottom: 500px;  />
       <p><b><i class="fa fa-user w3-margin-right"></i>MUHAMMAD M. PUTING, M.D.<br>Chief Administrative Officer Medical and Health Services Division</b></p><br>
     </div>
 
+<br><br>
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
-    <p class="w3-center"><em>EMR SYSTEM</em></p>
+    <p class="w3-center"><em>EMR SYSTEM</em></p> 
+    
+    <a>
       <p>University clinics like in MSU-IIT deals with the health records of their 
         students.Health care professionals acknowledge the importance of
         medical records. <br> <br>
@@ -89,11 +107,12 @@ The Office oversees the Institute Clinic which provides fast and competent medic
         This would also address the problem of retrieving the patient's medical record 
         and can lessen the consumed time for appointments.<br>
         The doctor could easily view and add to the medical history, physical examination, 
-        medicine prescriptions, and remarks. <br></p>
+        medicine prescriptions, and remarks. <br></p> </a>
     </div>
   </div>
  
 <!-- Footer -->
+<br><br>
 <footer class="w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
 <h2>Features of the EMR System</h2>
 
