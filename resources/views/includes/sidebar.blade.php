@@ -68,15 +68,14 @@ $activeUsers = \App\User::getActive();
     </div>
 
     <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div class="prof">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="row">
             <a href="{{ route('users.show', auth()->user()->id) }}" style="text-decoration: none">
                 <img src="/img/Picture1.png" alt="Avatar" class="user-panel"><br>
                 <h4 style="color:white">Anne Hayathi Albiso</h4>
                 <p class="role" style="color:gray">Admin</p>
             </a>
-        </div>
-        <div class="row">
+        
             <div class="col text-left">
                 <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard" style="padding-right:27px"></i>Dashboard</a>
                 <a href="#"><i class="fa fa-user" style="padding-right:32px"></i>Profile</a> {{--User Profile Must Be Redirected to Users View (show)--}}
@@ -89,8 +88,8 @@ $activeUsers = \App\User::getActive();
                 <!--   <a href="{{ route('help') }}"><i class="fa fa-question"></i> Help</a> -->
             </div>
         </div>
-      
-
+    </div>      
+    
 
 
     <!--end of side bar content-->

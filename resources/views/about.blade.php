@@ -8,7 +8,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
   color: black;
-  line-height: 1.8;
+  line-height: 1.8;  background-color: #cccccc;
+  background-image: linear-gradient(red, yellow, green);
+
 }
 
 /* Create a Parallax Effect */
