@@ -80,7 +80,7 @@
                                         <form action="" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                                           @csrf
                                           @method('DELETE')
-                                          <a  href="{{ route('medical-records.edit', $patient->id) }}"><i class="fa fa-eye " data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
+                                          <a  href="{{ route('medical-records.edit', $row->id) }}"><i class="fa fa-eye " data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
                                         </form>
                                       </td>
                                 </tr>

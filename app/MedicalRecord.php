@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -48,5 +49,15 @@ class MedicalRecord extends Model
     public function service()
     {
         return $this->belongsTo('App\Service');
+    }
+
+    /**
+     * Get the consultation date and time in a readable format.
+     * 
+     * @return String
+     */
+    public function getDateTimeConsultation()
+    {
+        return Carbon::parse("$this->date_of_consultation $this->time_of_consultation")->format('Y-m-d h:m A');
     }
 }

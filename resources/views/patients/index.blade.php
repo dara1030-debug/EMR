@@ -34,7 +34,6 @@
       </div>
         <table class="table table-bordered table-responsive-md table-hover">
             <thead class="text-center thead-light">
-              
               <tr>
                 <th>Picture</th>
                 <th scope="col">OPD/Id Number</th>

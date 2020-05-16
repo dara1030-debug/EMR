@@ -25,20 +25,20 @@
                 <div class="col table-bordered mt-4">
                         <div class="row">
                             <div class="col">
-                            <p><b><h5>Medical Record No.</b></h5></p>
+                            <p><b><h5>Medical Record No. {{ $medicalRecord->id }}</b></h5></p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="validation2"><b>OPD / Id Number :</b> {{$patient->id_number}}</label>
                                 <br>
-                                <label for="validation2"><b>Date / Time:</b> {{""}} </label>
+                                <label for="validation2"><b>Date / Time:</b> {{ $medicalRecord->getDateTimeConsultation() }} </label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <br>
-                                <label for="validation2"><b>Attached File<i class="fa fa-paperclip"> :</b></i></label>
+                                <label for="validation2"><b>Attached File<i class="fa fa-paperclip"> : <a href="{{ $medicalRecord->file }}" target="_blank" rel="noopener noreferrer">FILE</a></b></i></label>
                                 <br>
                                 
                             </div>
@@ -48,14 +48,14 @@
                         <div class="form-group row">
                             <label for="chief_complaint" class="col-sm-2 col-form-label"><b>Chief Complaint:</b></label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="chief_complaint" name="chief_complaint" placeholder="">
+                            <input type="text" class="form-control" id="chief_complaint" name="chief_complaint" value="{{ $medicalRecord->chief_complaint }}" placeholder="">
                             </div>
                          </div>
                          <div class="form-group row">
                             <label for="services" class="col-sm-2 col-form-label"><b>Service:</b></label>
                             <div class="col-sm-10">
                                 <select class="form-control" id="services" name="performed_service" required>
-                                    <option class="hidden"  selected disabled>Name of Service</option>
+                                    <option class="hidden"  selected value="{{ $medicalRecord->performed_service }}">{{ $medicalRecord->performed_service }}</option>
                                     @foreach(\App\Service::get() as $service)
                                         <option value="{{ $service->name }}">{{ $service->name }}</option>
                                     @endforeach
@@ -67,14 +67,14 @@
                             <div class="col-sm-2">
                                 <div class="form-inline ">
                                     <label for="temp" class="col-form-label">T :</label>
-                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[temperature]" id="temp" value="">
+                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[temperature]" id="temp" value="{{ $medicalRecord->vital_signs['temperature'] }}">
                                     <label class="col-form-label"><i><small> °C</small></i></label>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-inline ">
                                     <label for="pulse_rate" class="col-form-label">PR:</label>
-                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[pulse_rate]" id="pulse_rate" value="">
+                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[pulse_rate]" id="pulse_rate" value="{{ $medicalRecord->vital_signs['pulse_rate'] }}">
                                     <label class="col-form-label"><i><small> bpm</small></i></label>
                                 </div>
                             </div>
@@ -82,21 +82,21 @@
                                 <div class="form-inline ">
                                             
                                     <label for="res_rate" class="col-form-label">RR :</label>
-                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[respiratory_rate]" id="res_rate" value="">
+                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[respiratory_rate]" id="res_rate" value="{{ $medicalRecord->vital_signs['respiratory_rate'] }}">
                                     <label class="col-form-label"><i><small> bpm</small></i></label>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-inline ">
                                     <label for="b_p" class="col-form-label">BP:</label>
-                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[blood_pressure]" id="b_p" value="">
+                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[blood_pressure]" id="b_p" value="{{ $medicalRecord->vital_signs['blood_pressure'] }}">
                                     <label class="col-form-label"><i><small>mmhg</small></i></label>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="form-inline ">
                                     <label for="weight" class="col-form-label">WT :</label>
-                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[weight]" id="weight" value="">
+                                    <input type="number" class="form-control-sm col-sm-5" name="vital_signs[weight]" id="weight" value="{{ $medicalRecord->vital_signs['weight'] }}">
                                     <label class="col-form-label"><i><small> kg</small></i></label>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                             <label for="by_nurse_assigned" class="col-sm-2 col-form-label mt-4"><b>By : </b></label>
                             <div class="col-sm-10 ">
                                 <div class="form-inline ">
-                                    <input type="text" class="form-control col-sm-8 mt-4" name="nurse_assigned" id="by_nurse_assigned" value="">
+                                    <input type="text" class="form-control col-sm-8 mt-4" name="nurse_assigned" id="by_nurse_assigned" value="{{ $medicalRecord->nurse_assigned }}">
                                     <label class="col-form-label mt-4"><i>,RN</i></label>
                                 </div>
                             </div>
@@ -115,31 +115,31 @@
                         <div class="form-group row">
                             <label for="history_p_i" class="col-sm-2 col-form-label"><b>History of Present Illness:</b></label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control mt-4" id="history_p_i" name="history_of_present_illness" placeholder="">
+                        <input type="text" class="form-control mt-4" id="history_p_i" name="history_of_present_illness" value="{{ $medicalRecord->history_of_present_illness }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="medication_taken" class="col-sm-2 col-form-label"><b>Medication Taken:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control mt-3" id="medication_taken" name="medication_taken" placeholder="">
+                            <input type="text" class="form-control mt-3" id="medication_taken" name="medication_taken" value="{{ $medicalRecord->medication_taken }}">
                          </div>
                     </div>
                     <div class="form-group row">
                         <label for="medication_taken" class="col-sm-2 col-form-label"><b>Findings:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="medication_taken" name="findings" placeholder="">
+                            <input type="text" class="form-control" id="medication_taken" name="findings" value="{{ $medicalRecord->findings }}">
                          </div>
                     </div>
                     <div class="form-group row">
                         <label for="medication_taken" class="col-sm-2 col-form-label"><b>Recommendations:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="medication_taken" name="recommendation" placeholder="">
+                            <input type="text" class="form-control" id="medication_taken" name="recommendation" value="{{ $medicalRecord->recommendation }}">
                          </div>
                     </div>
                     <div class="form-group row">
                         <label for="medication_taken" class="col-sm-2 col-form-label"><b>Diagnosis:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="medication_taken" name="diagnosis" placeholder="">
+                            <input type="text" class="form-control" id="medication_taken" name="diagnosis" value="{{ $medicalRecord->diagnosis }}">
                          </div>
                     </div>
                     <div class="form-group row">
@@ -154,7 +154,7 @@
                     <div class="form-group row">
                         <label for="attending_physician" class="col-sm-2 col-form-label"><i><b>ATTENDING PHYSICIAN:</b></i></label>
                         <div class="col-sm-10">
-                            <input class="form-control mt-3" id="attending_physician" name="attending_physician" value="{{ auth()->user()->fullName() }}" readonly />
+                            <input class="form-control mt-3" id="attending_physician" name="attending_physician" value="{{ $medicalRecord->attending_physician }}" readonly />
                          </div>
                     </div>
                     <div class="modal-footer">
