@@ -3,8 +3,8 @@
 @section('content')
 
 
-<div class="card text-center">
-    <div class="card-header">
+<div class="card text-center border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('patients.index') }}">Patients</a>
@@ -32,6 +32,9 @@
       {{--<i class="fa fa-search"></i>--}}
         
       </div>
+      <div class="pagination justify-content-center">
+        {{$patients->links()}}
+        </div>
         <table class="table table-bordered table-responsive-md table-hover">
             <thead class="text-center thead-light">
               <tr>

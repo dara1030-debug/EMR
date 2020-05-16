@@ -148,7 +148,7 @@ $activeUsers = \App\User::getActive();
 
         /*Sidebar*/
     function openNav() {
-      document.getElementById("mySidepanel").style.width = "250px";
+      document.getElementById("mySidepanel").style.width = "270px";
     }
     
     function closeNav() {

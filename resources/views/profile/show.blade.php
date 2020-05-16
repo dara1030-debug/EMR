@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="card">
-    <div class="card-header">
+  <div class="card border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link" href="#">Profile</a>
         </li>
+        <li class="nav nav-item-right ml-auto">
+          <a href="/dashboard"><button type="button" class="close" >&times; </button> </a> {{--redirect to patient record ID--}}
+      </li>
       </ul>
     </div>
 
@@ -63,5 +66,9 @@
                         
                  
     </div>  
+    
+  </div>
+  <div class="card-footer text-muted">
+   <small> <p class="font-italic">For Profile Updates, Please Go to the EMR System Administrator.</p></small>
   </div>
 @stop

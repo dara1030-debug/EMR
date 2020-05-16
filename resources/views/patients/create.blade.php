@@ -4,8 +4,8 @@
 @section('content')
     
 
- <div class="card">
-        <div class="card-header">
+ <div class="card border-info">
+        <div class="card-header border-info">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
                 <a class="nav-link" href="{{ route('patients.index') }}">Patients</a>
@@ -182,8 +182,8 @@
                                 {{--row2--}}
                                 <div class="row justify-content-center align-items-center">
                                     <div class="form-group">
-                                        <div class="border mt-3 tab-card mr-10" >
-                                            <div class="card-header tab-card-header">
+                                        <div class="border border-info mt-3 tab-card mr-10" >
+                                            <div class=" border-info card-header tab-card-header">
                                                 <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                                                     <li class="nav-item">
                                                         <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">Past Medical History</a>

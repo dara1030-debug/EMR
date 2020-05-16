@@ -84,7 +84,7 @@ The Office oversees the Institute Clinic which provides fast and competent medic
 <br><br>
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
-    <p class="w3-center"><em>EMR SYSTEM</em></p> 
+    <p class="w3-center" style="font-size: 25px"><em>EMR SYSTEM</em></p> 
     
     <a>
       <p>University clinics like in MSU-IIT deals with the health records of their 
@@ -113,18 +113,32 @@ The Office oversees the Institute Clinic which provides fast and competent medic
  
 <!-- Footer -->
 <br><br>
-<footer class="w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+<footer class="w3-black w3-padding-64  ">
 <h2>Features of the EMR System</h2>
-
-<ul>
-  <p>Can store the Profile of the Patients</p>
-  <p>Can record the Medical History of the Patients</p>
-  <p>Can record the Medical Activities of the Patient inside the Clinic</p>
-  <p>Can trace the Medical Records of the patients easily</p>
-  <p>Can retrieve the deleted medical records of the patients</p>
-  <p>Confidentially secure</p>
-  <p>Medical Recored stored on server safely</p>
-</ul>  
+<br>
+<div class="row">
+  <div class="col">
+    <ul class="round text-left">
+      <li>Can add/Store the Profile and Health Record of the Patients</li>
+      <li>Can Update the Profile and Health Record of the Patients</li>
+      <li>Can Record the Medical History of the Patients</li>
+      <li>Can Print the Medical Record of the Patients</li>
+      <li>Can Search/ Find the Patients easily</li>
+      <li>Can Archive the Patients Medical Information</li>
+      <li>Can retrieve the deleted medical records of the patients</li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul class="round text-left">
+      <li>Can Add New User (Authorized Personnel Only)</li>
+      <li>Can View User Information (Authorized Personnel Only)</li>
+      <li>Can Update User (Authorized Personnel Only)</li>
+      <li>Can Archive User Record (Authorized Personnel Only)</li>
+      <li>Can Restore the archived Users Record (Authorized Personnel Only)</li>
+      <li>Can Add/View/Edit/Archive & Restore Clinic Services</li>
+      <li>Can View Active Users</li>
+    </ul>
+  </div>
   <div class="w3-xlarge w3-section">
     
   </div>

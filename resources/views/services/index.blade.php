@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card text-center">
-    <div class="card-header">
+<div class="card text-center border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('services.index') }}">Clinic Services</a>
@@ -45,10 +45,10 @@
                   <form action="{{ route('services.destroy', $service->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
                     @csrf
                     @method('DELETE')
-                    <a href="{{ route('services.show', $service->id) }}"><i class="fa fa-eye" style="padding-right:20px"aria-hidden="true"></a></i>
-                    <a href="{{ route('services.edit', $service->id) }}"><i class="fa fa-edit" style="padding-right:20px"aria-hidden="true"></a></i>
+                    <a href="{{ route('services.show', $service->id) }}"><i class="fa fa-eye" title="View" aria-hidden="true"></a></i>
+                    <a href="{{ route('services.edit', $service->id) }}"><i class="fa fa-edit" title="Edit" style="padding-right:10px; padding-left:10px"aria-hidden="true"></a></i>
                     <button class="btn" type="submit">
-                      <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
+                      <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" aria-hidden="true"></i> 
                     </button>
                   </form>
                 </td>

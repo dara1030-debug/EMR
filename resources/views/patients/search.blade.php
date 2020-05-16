@@ -3,8 +3,8 @@
 @section('content')
 
 
-<div class="card text-center">
-    <div class="card-header">
+<div class="card text-center border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link active" href="{{ route('patients.index') }}">Patients</a>

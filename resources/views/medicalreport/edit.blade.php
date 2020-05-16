@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="border">
-    <div class="card-header">
+<div class="border border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="{{ route('medical-records.show', $patient->id) }}">Medical Record</a>
@@ -17,7 +17,7 @@
       </ul>
     </div>
     <div class="card-body">
-        <form>
+        <form >
             <div id="printThis">
             <div class="row">
                 <div class="col-auto">
@@ -25,7 +25,7 @@
                 <div class="col table-bordered mt-4">
                         <div class="row">
                             <div class="col">
-                            <p><b><h5>Medical Record No. {{ $medicalRecord->id }}</b></h5></p>
+                            <p><b><h5>Medical Record</b></h5></p>
                             </div>
                         </div>
                         <div class="row">
@@ -38,7 +38,12 @@
                         <div class="row">
                             <div class="col">
                                 <br>
-                                <label for="validation2"><b>Attached File<i class="fa fa-paperclip"> : <a href="{{ $medicalRecord->file }}" target="_blank" rel="noopener noreferrer">FILE</a></b></i></label>
+                                <label for="validation2"><b>Attached File :</b></label>
+                                @if ($medicalRecord->file)
+                                <a href="{{ $medicalRecord->file }}" target="_blank" class="btn">File <i class="fa fa-paperclip"></i></a>
+                                @else
+                                No file
+                                @endif
                                 <br>
                                 
                             </div>
@@ -48,7 +53,8 @@
                         <div class="form-group row">
                             <label for="chief_complaint" class="col-sm-2 col-form-label"><b>Chief Complaint:</b></label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="chief_complaint" name="chief_complaint" value="{{ $medicalRecord->chief_complaint }}" placeholder="">
+                                <textarea class="form-control" id="chief_complaint" rows="2" name="chief_complaint" value="">{{ $medicalRecord->chief_complaint }}</textarea>
+                        
                             </div>
                          </div>
                          <div class="form-group row">
@@ -115,31 +121,35 @@
                         <div class="form-group row">
                             <label for="history_p_i" class="col-sm-2 col-form-label"><b>History of Present Illness:</b></label>
                         <div class="col-sm-10">
-                        <input type="text" class="form-control mt-4" id="history_p_i" name="history_of_present_illness" value="{{ $medicalRecord->history_of_present_illness }}">
+                            <textarea class="form-control" id="history_p_i" rows="3" name="history_of_present_illness" >{{ $medicalRecord->history_of_present_illness }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="medication_taken" class="col-sm-2 col-form-label"><b>Medication Taken:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control mt-3" id="medication_taken" name="medication_taken" value="{{ $medicalRecord->medication_taken }}">
+                            <textarea class="form-control" id="medication_taken" rows="2" name="medication_taken" >{{ $medicalRecord->medication_taken }}</textarea>
+
                          </div>
                     </div>
                     <div class="form-group row">
-                        <label for="medication_taken" class="col-sm-2 col-form-label"><b>Findings:</b></label>
+                        <label for="findings" class="col-sm-2 col-form-label"><b>Findings:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="medication_taken" name="findings" value="{{ $medicalRecord->findings }}">
+                            <textarea class="form-control" id="findings" rows="2" name="findings" value="">{{ $medicalRecord->findings }}</textarea>
+                            
                          </div>
                     </div>
                     <div class="form-group row">
-                        <label for="medication_taken" class="col-sm-2 col-form-label"><b>Recommendations:</b></label>
+                        <label for="recommendation" class="col-sm-2 col-form-label"><b>Recommendations:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="medication_taken" name="recommendation" value="{{ $medicalRecord->recommendation }}">
+                            <textarea class="form-control" id="recommendation" rows="3" name="recommendation" value="">{{ $medicalRecord->recommendation }}</textarea>
+                            
                          </div>
                     </div>
                     <div class="form-group row">
-                        <label for="medication_taken" class="col-sm-2 col-form-label"><b>Diagnosis:</b></label>
+                        <label for="diagnosis" class="col-sm-2 col-form-label"><b>Diagnosis:</b></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="medication_taken" name="diagnosis" value="{{ $medicalRecord->diagnosis }}">
+                            <textarea class="form-control" id="diagnosis" rows="3" name="diagnosis" value="">{{ $medicalRecord->diagnosis }}</textarea>
+                            
                          </div>
                     </div>
                     <div class="form-group row">

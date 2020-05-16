@@ -74,25 +74,25 @@ body {
   <div class="row">
   <div class="column" style="background-color:#273746;">
   <h4 style="text-align:left;">MSU-ILIGAN INSTITUTE OF TECHNOLOGY</h4>
-  <p style="text-align:left;"><small>Website: www.msuiit.edu.ph</small></p>
-  <p style="text-align:left;"><small>Telephone # +63 (063) 221-4056</small></p>
+  <p style="text-align:left;"><small><i class="fa fa-globe" aria-hidden="true"> www.msuiit.edu.ph</small></p></i>
+  <p style="text-align:left;"><small><i class="fa fa-phone" aria-hidden="true"> +63 (063) 221-4056</small></p></i>
   </div>
   <div class="column" style="background-color:#273746;">
   <h4 style="text-align:left;">INSTITUTE CLINIC</h4>
-  <p style="text-align:left;"><small>Telephone # 4444 (local)</small></p>
+  <p style="text-align:left;"><small><i class="fa fa-phone" aria-hidden="true"> 4444 (local)</small></p></i>
   </div>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:#273746;">
   <h4 style="text-align:left;">REGISTRAR</h4>
-  <p style="text-align:left;"><small>Email address: registrar@g.msuiit.edu.ph</small></p>
-  <p style="text-align:left;"><small>Telephone # +63 (063) 223 3794</small></p>
+  <p style="text-align:left;"><small><i class="fa fa-envelope" aria-hidden="true"> registrar@g.msuiit.edu.ph</small></p></i>
+  <p style="text-align:left;"><small><i class="fa fa-phone" aria-hidden="true"> +63 (063) 223 3794</small></p></i>
   </div>
   <div class="column" style="background-color:#273746;">
   <h4 style="text-align:left;">ADMISSIONS</h4>
-  <p style="text-align:left;"><small>Email address: admissions@g.msuiit.edu.ph</small></p>
-  <p style="text-align:left;"><small>Telephone # +63 (063) 223 8641</small></p>
+  <p style="text-align:left;"><small><i class="fa fa-envelope" aria-hidden="true"> admissions@g.msuiit.edu.ph</small></p></i>
+  <p style="text-align:left;"><small><i class="fa fa-phone" aria-hidden="true"> +63 (063) 223 8641</small></p></i>
   </div>
 </div>
 
@@ -104,27 +104,27 @@ body {
   <h1><center>DEVELOPERS CONTACT INFORMATION<center></h1>
   <br>
    
-  <div class="row">
-  <div class="column" style="background-color:#273746;">
-  <h2>Anne Hayathi S. Albiso</h2>   
-  <hr style="width:100%;text-align:left;margin-left:0">                                         
-        <p class="title"><small><em>EMR System Developer</em></small></p>
-        <p style="text-align:left;"><small>Course: BS Information Technology - Multimedia</small></p>
-        <p style="text-align:left;"><small>E-mail Address: annehayathi1@gmail.com</small></p>
-        <p style="text-align:left;"><small>Phone Number: 0915-565-0790 / 0927-549-0750</small></p>
-        <p style="text-align:left;"><small>facebook link: https://www.facebook.com/anneyourlife.anneong</small></p>
-  </div>
+  <div class="row"  style="background-color:#273746;">
+    <div class="column">
+      <h2>Anne Hayathi S. Albiso</h2>   
+      <hr style="width:100%;text-align:left;margin-left:0">                                         
+            <p class="title"><small><em>EMR System Developer</em></small></p>
+            <p style="text-align:left;"><small>Course: BS Information Technology - Multimedia</small></p>
+            <p style="text-align:left;"><small><i class="fa fa-envelope" aria-hidden="true"> annehayathi1@gmail.com</small></p></i>
+            <p style="text-align:left;"><small><i class="fa fa-phone" aria-hidden="true"> 0915-565-0790 / 0927-549-0750</small></p></i>
+            <p style="text-align:left;"><small><i class="fa fa-facebook-square" aria-hidden="true"> https://www.facebook.com/anneyourlife.anneong</small></p></i> 
+    </div>
 
-  <div class="column" style="background-color:#273746;">
-  <h2>Isnaina U. Abdulazis</h2>
-  <hr style="width:100%;text-align:left;margin-left:0">
-        <p class="title"><small><em>EMR System Developer</em></small></p>
-        <p style="text-align:left;"><small>Course: BS Information Technology - Multimedia</small></p>
-        <p style="text-align:left;"><small>E-mail Address: isnainaabdulazis@gmail.com</small></p>
-        <p style="text-align:left;"><small>Phone Number: 0910-041-1645 / 0927-499-3905</small></p>
-        <p style="text-align:left;"><small>facebook link: https://www.facebook.com/ISNIE05</small></p>
+    <div class="column">
+      <h2>Isnaina U. Abdulazis</h2>
+      <hr style="width:100%;text-align:left;margin-left:0">
+            <p class="title"><small><em>EMR System Developer</em></small></p>
+            <p style="text-align:left;"><small>Course: BS Information Technology - Multimedia</small></p>
+            <p style="text-align:left;"><small><i class="fa fa-envelope" aria-hidden="true"> isnainaabdulazis@gmail.com</small></p></i>
+            <p style="text-align:left;"><small><i class="fa fa-phone" aria-hidden="true"> 0910-041-1645 / 0927-499-3905</small></p></i>
+            <p style="text-align:left;"><small><i class="fa fa-facebook-square" aria-hidden="true"> https://www.facebook.com/ISNIE05</small></p></i>
+    </div>
   </div>
-</div>
 
   </div>
 

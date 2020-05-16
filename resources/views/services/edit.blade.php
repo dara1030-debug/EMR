@@ -18,8 +18,8 @@
       </div>
   @endif
 
-<div class="card text-center">
-    <div class="card-header">
+<div class="card text-center border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link" href="{{ route('services.index') }}">Clinic Services</a>
@@ -31,7 +31,8 @@
           <a class="nav-link" href="{{ route('services.archive') }}">Archive</a>{{-- sir erik sudgested na walang delete. those student nga nag left sa school kay mabutang diri ilang medical records para maretrieve nila if kailanganin--}}
         </li>
         <li class="nav-item active">
-          <a class="nav-link active" href="/services">Edit Service</a>
+          <a class="nav-link active " href="/services">Edit Service ..
+            <button type="button" class="close" href="/services">&times; </button> </a>
         </li>
       </ul>
       

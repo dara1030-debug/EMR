@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="border">
-    <div class="card-header">
+<div class="border border-info">
+    <div class="card-header border-info">
       <ul class="nav nav-tabs card-header-tabs mr-auto">
         <li class="nav-item">
           <a class="nav-link active">Medical Record</a>
@@ -97,7 +97,7 @@
                         <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">+Add Consultation</h5>
+                                    <h6 class="modal-title" id="exampleModalLabel">+Add Consultation </h6><p class="font-italic ml-2"> ( Fill up the form completely. Don't leave it blank. N/a for no answer. )</p>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -117,7 +117,14 @@
                                             <input type="time" class="form-control" id="time_added" name="time_of_consultation" placeholder="">
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        
+                                         <div class="form-group row">
+                                            <label for="chief_complaint" class="col-sm-2 col-form-label"><b>Chief Complaint:</b></label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control" id="chief_complaint" rows="2" name="chief_complaint" value=""></textarea>
+                                            </div>
+                                         </div>
+                                         <div class="form-group row">
                                             <label for="services" class="col-sm-2 col-form-label"><b>Service:</b></label>
                                             <div class="col-sm-10">
                                                 <select class="form-control" id="services" name="performed_service" required>
@@ -128,12 +135,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                         <div class="form-group row">
-                                            <label for="chief_complaint" class="col-sm-2 col-form-label"><b>Chief Complaint:</b></label>
-                                            <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="chief_complaint" name="chief_complaint" placeholder="">
-                                            </div>
-                                         </div>
 
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label"><b>Vital Signs :</b></label>
@@ -188,31 +189,33 @@
                                             <div class="form-group row">
                                                     <label for="history_p_i" class="col-sm-2 col-form-label"><b>History of Present Illness:</b></label>
                                                 <div class="col-sm-10">
-                                                <input type="text" class="form-control mt-4" id="history_p_i" name="history_of_present_illness" placeholder="">
+                                                    <textarea class="form-control" id="history_p_i" rows="3" name="history_of_present_illness" value=""></textarea>
                                                 </div>
                                             </div>
                                         <div class="form-group row">
                                             <label for="medication_taken" class="col-sm-2 col-form-label"><b>Medication Taken:</b></label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control mt-3" id="medication_taken" name="medication_taken" placeholder="">
+                                                <textarea class="form-control" id="medication_taken" rows="2" name="medication_taken" value=""></textarea>
+                                                
                                              </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="medication_taken" class="col-sm-2 col-form-label"><b>Findings:</b></label>
+                                            <label for="findings" class="col-sm-2 col-form-label"><b>Findings:</b></label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="medication_taken" name="findings" placeholder="">
+                                                <textarea class="form-control" id="findings" rows="2" name="findings" value=""></textarea>
                                              </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="medication_taken" class="col-sm-2 col-form-label"><b>Recommendations:</b></label>
+                                            <label for="recommendation" class="col-sm-2 col-form-label"><b>Recommendations:</b></label>
                                             <div class="col-sm-10">
-                                                <input type="text area" class="form-control" id="medication_taken" name="recommendation" placeholder="">
+                                                <textarea class="form-control" id="recommendation" rows="3" name="recommendation" value=""></textarea>
                                              </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="medication_taken" class="col-sm-2 col-form-label"><b>Diagnosis:</b></label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="medication_taken" name="diagnosis" placeholder="">
+                                            <label for="diagnosis" class="col-sm-2 col-form-label"><b>Diagnosis:</b></label>
+                                            <div class="col-sm-10"> 
+                                                <textarea class="form-control" id="diagnosis" rows="3" name="diagnosis" value=""></textarea>
+                                               
                                              </div>
                                         </div>
                                         <div class="form-group row">

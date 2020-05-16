@@ -11689,3 +11689,20 @@ a.text-dark:focus {
   }
 }
 /*end print */
+
+ul.round {
+	li {
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 5px;
+			width: 10px;
+			height: 10px;
+			background-color: $main_color;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+		}
+	}
+}

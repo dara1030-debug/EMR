@@ -6,7 +6,7 @@
 
 
 <div class="text-center">
-<h2>MSU-IIT Office Clinic Staff</h2><br>
+<h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 50px;">MSU-IIT Office Clinic Staff</h2><br>
 <ul class="people-list">
   <div class="row">
   <div class="clinic">
