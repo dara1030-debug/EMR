@@ -264,7 +264,7 @@
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="Tuberculosis"> Tuberculosis<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="UTI"> UTI<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" value="others"> Others: 
-                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="pastmedical_history[]" value="">
+                                                                    <input style= "margin-left: 2%" autocomplete="off" type="text" name="past_medical_history_others" value="">
                                                                     <br><br>    
                                                                 </div>
                                                             </div>
@@ -316,7 +316,7 @@
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Allergies"> Allergies<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Cancer"> Cancer<br>
                                                                     <input style= "margin-left: 2%" type="checkbox" name="family_history[]" value="Others"> Other:
-                                                                    <input style= "margin-left: 2%" type="text" name="family_history[]" value="">
+                                                                    <input style= "margin-left: 2%" type="text" name="family_history_others">
                                                                     <br>
                                                                 </div>
                                                             </div>

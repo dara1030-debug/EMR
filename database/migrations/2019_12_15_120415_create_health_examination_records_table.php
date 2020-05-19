@@ -16,6 +16,8 @@ class CreateHealthExaminationRecordsTable extends Migration
         Schema::create('health_examination_records', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('patient_id');
+            $table->string('past_medical_history_others')->nullable();
+            $table->string('family_history_others')->nullable();
             $table->date('last_menstrual_period')->nullable();
             $table->string('menstrual_pattern')->nullable();
             $table->json('past_medical_history')->nullable();

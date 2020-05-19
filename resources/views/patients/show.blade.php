@@ -149,7 +149,7 @@
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('UTI') ? 'checked' : '' }} value="UTI"> UTI<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="pastmedical_history[]" {{ $patient->hasPastMedicalHistory('others') ? 'checked' : '' }} value="others"> Others: 
                                                            
-                                                            <input style= "margin-left: 2%" type="text" name="pastmedical_history[]" value=" {{ $patient->hasPastMedicalHistory('others') }}" >
+                                                            <input style= "margin-left: 2%" type="text" name="pastmedical_history[]" value="{{ $patient->healthExaminationRecord->past_medical_history_others }}" >
                                                             <br><br>    
                                                         </div>
                                                     </div>
@@ -199,7 +199,7 @@
                                                             <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Allergies') ? 'checked' : '' }} value="Allergies"> Allergies<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Cancer') ? 'checked' : '' }} value="Cancer"> Cancer<br>
                                                             <input style= "margin-left: 2%" type="checkbox" name="family_history[]" {{ $patient->hasFamilyHistory('Others') ? 'checked' : '' }} value="Others"> Other:
-                                                            <input style= "margin-left: 2%" type="text" name="family_history[]" value=" {{ $patient->hasFamilyHistory('Others')}}">
+                                                            <input style= "margin-left: 2%" type="text" name="family_history[]" value="{{ $patient->healthExaminationRecord->family_history_others }}">
                                                             <br>
                                                         </div>
                                                     </div>

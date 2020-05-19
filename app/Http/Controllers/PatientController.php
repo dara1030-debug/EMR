@@ -235,6 +235,8 @@ class PatientController extends Controller
         
         $examination = HealthExaminationRecord::create([
             'patient_id' => $patient->id,
+            'past_medical_history_others' => $request->past_medical_history_others,
+            'family_history_others' => $request->family_history_others,
             'past_medical_history' => $pastMedicalHistory,
             'family_history' => $familyHistory,
             'social_history' => $socialHistory,
@@ -398,6 +400,8 @@ class PatientController extends Controller
         $examination = HealthExaminationRecord::where('patient_id', $id)->first();
         $examination->update([
             'patient_id' => $patient->id,
+            'past_medical_history_others' => $request->past_medical_history_others,
+            'family_history_others' => $request->family_history_others,
             'past_medical_history' => $pastMedicalHistory,
             'family_history' => $familyHistory,
             'social_history' => $socialHistory,
