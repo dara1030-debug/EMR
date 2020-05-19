@@ -35,7 +35,6 @@
       </div>
         <table class="table table-bordered table-responsive-md table-hover">
             <thead class="text-center thead-light">
-              
               <tr>
                 <th scope="col">OPD/Id Number</th>
                 <th scope="col">Last Name</th>
@@ -46,26 +45,26 @@
             </thead>
 
             <tbody class="p2 text-center" id="myTable">
-	          	@foreach ($patients as $patient)
-	          	<tr>
-                	<td>{{ $patient->id_number }}</td>
-               		<td>{{ $patient->last_name }}</td>
-                	<td>{{ $patient->first_name }}</td>
-                	<td>{{ $patient->middle_name }}</td>
-                	<td>
-                  		
-                      <form action="{{ route('patients.destroy', $patient->id) }}" id="deleteForm" onsubmit="confirmDelete()" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <a href="{{ route('patients.show', $patient->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
-                        <a href="{{ route('patients.edit', $patient->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="edit" style="padding-right:20px" aria-hidden="true"></a></i>
-                        <button class="btn" type="submit">
-                          <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
-                        </button>{{--archive nalang daw instead of deleting the files of user--}}
-                      </form>
-                	</td>
-	      	      </tr>
-            @endforeach
+              @foreach ($patients as $patient)
+                @if($patient->trashed())
+                <tr>
+                  <td>{{ $patient->id_number }}</td>
+                  <td>{{ $patient->last_name }}</td>
+                  <td>{{ $patient->first_name }}</td>
+                  <td>{{ $patient->middle_name }}</td>
+                  <td>
+                    <form action="{{ route('patients.delete', $patient->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <a href="{{ route('patients.restore', $patient->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
+                      <button type="submit" class="btn">
+                        <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
+                      </button>{{--archive nalang daw instead of deleting the files of patient--}}
+                    </form>
+                  </td>
+                </tr>
+                @endif
+              @endforeach
             </tbody>
           </table><br>
           <div class="pagination justify-content-center">

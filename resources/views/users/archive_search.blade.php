@@ -46,37 +46,37 @@
             </thead>
 
             <tbody class="p2 text-center" id="myTable">
-	          	@foreach ($users as $user)
-	          	<tr>
-                	<td>
-                        <div class="badge 
-                        @if($user->role->name == 'Administrator') 
-                          badge-danger 
-                        @elseif($user->role->name == 'Doctor')  
-                          badge-success
-                        @elseif($user->role->name == 'Nurse')
-                          badge-primary
-                        @endif">
-                          {{ $user->role->name }}
-                        </div>
-                      </td>
-               		<td>{{ $user->last_name }}</td>
-                	<td>{{ $user->first_name }}</td>
-                	<td>{{ $user->middle_name }}</td>
-                	<td>
-                  		
-                      <form action="{{ route('users.destroy', $user->id) }}" id="deleteForm" onsubmit="confirmDelete()" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <a href="{{ route('users.show', $user->id) }}"><i class="fa fa-eye" data-toggle="tooltip" data-placement="top" title="view" style="padding-right:20px"aria-hidden="true"></a></i>
-                        <a href="{{ route('users.edit', $user->id) }}"><i class="fa fa-edit" data-toggle="tooltip" data-placement="top" title="edit" style="padding-right:20px" aria-hidden="true"></a></i>
-                        <button class="btn" type="submit">
-                          <i class="fa fa-archive" data-toggle="tooltip" data-placement="top" title="archive" style="padding-right:15px"aria-hidden="true"></i> 
-                        </button>{{--archive nalang daw instead of deleting the files of user--}}
-                      </form>
-                	</td>
-	      	      </tr>
-            @endforeach
+              @foreach ($users as $user)
+                @if($user->trashed())
+                <tr>
+                  <td>
+                    <div class="badge 
+                    @if($user->role->name == 'Administrator') 
+                      badge-danger 
+                    @elseif($user->role->name == 'Doctor')  
+                      badge-success
+                    @elseif($user->role->name == 'Nurse')
+                      badge-primary
+                    @endif">
+                      {{ $user->role->name }}
+                    </div>
+                  </td>
+                  <td>{{ $user->last_name }}</td>
+                  <td>{{ $user->first_name }}</td>
+                  <td>{{ $user->middle_name }}</td>
+                  <td>
+                    <form action="{{ route('users.delete', $user->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <a href="{{ route('users.restore', $user->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
+                      <button type="submit" class="btn">
+                        <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
+                      </button>{{--archive nalang daw instead of deleting the files of user--}}
+                    </form>
+                  </td>
+                </tr>
+                @endif
+              @endforeach
             </tbody>
           </table><br>
           <div class="pagination justify-content-center">

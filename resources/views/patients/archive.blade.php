@@ -22,12 +22,12 @@
       <div class="input-group mb-4" style="margin:auto;max-width:250px">
         <form action="{{ route('patients.archive_search') }}" method="POST">
           @csrf
-            <div class="row">
-                <div class="input-group-prepend">
-                  <input type="search" autocomplete="off" name="search" placeholder="Search for Patient " class="form-control">
-                  <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
-                </div>
-            </div>  
+          <div class="row">
+              <div class="input-group-prepend">
+                <input type="search" autocomplete="off" name="search" placeholder="Search for Patient " class="form-control">
+                <button type="submit" class="form-control col-sm-2"><i class="fa fa-search"></i></button>
+              </div>
+          </div>  
         </form>
       {{--<i class="fa fa-search"></i>--}}
         
@@ -52,15 +52,15 @@
                 	<td>{{ $patient->first_name }}</td>
                 	<td>{{ $patient->middle_name }}</td>
                 	<td>
-                        <form action="{{ route('patients.delete', $patient->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
-                          @csrf
-                          @method('DELETE')
-                          <a href="{{ route('patients.restore', $patient->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
-                          <button type="submit" class="btn">
-                            <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
-                          </button>{{--archive nalang daw instead of deleting the files of patient--}}
-                        </form>
-                      </td>
+                    <form action="{{ route('patients.delete', $patient->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <a href="{{ route('patients.restore', $patient->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
+                      <button type="submit" class="btn">
+                        <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
+                      </button>{{--archive nalang daw instead of deleting the files of patient--}}
+                    </form>
+                  </td>
 	      	      </tr>
             @endforeach
             </tbody>
