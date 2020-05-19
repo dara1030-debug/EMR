@@ -16,8 +16,30 @@
         </li>
       </ul>
     </div>
+
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>	
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="container mt-5">
+            <div class="alert alert-danger alert-block">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
+    
     <div class="card-body">
-        <form >
+        <form action="{{ route('medical-records.update', $medicalRecord->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
             <div id="printThis">
             <div class="row">
                 <div class="col-auto">
@@ -33,6 +55,8 @@
                                 <label for="validation2"><b>OPD / Id Number :</b> {{$patient->id_number}}</label>
                                 <br>
                                 <label for="validation2"><b>Date / Time:</b> {{ $medicalRecord->getDateTimeConsultation() }} </label>
+                                <input type="hidden" name="date_of_consultation" value="{{ $medicalRecord->date_of_consultation }}">
+                                <input type="hidden" name="time_of_consultation" value="{{ $medicalRecord->time_of_consultation }}">
                             </div>
                         </div>
                         <div class="row">
@@ -169,7 +193,7 @@
                     </div>
                     <div class="modal-footer">
                         <button id="btnPrint" type="button" class="btn btn-outline-info">Print</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
                         <a href="{{ route('medical-records.show', $patient->id) }}"><button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button></a>
                     </div>
                 </div>
