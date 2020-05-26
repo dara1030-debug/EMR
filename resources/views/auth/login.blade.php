@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card border-info">
 
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
@@ -65,12 +65,13 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
+                                {{--
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('auth.forgot_password') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                --}}
                             </div>
                         </div>
                     </form>
