@@ -38,6 +38,12 @@
         @include('includes.sidebar')
         <div class="container">
         <main class="py-5 my-5">
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    {!! implode('', $errors->all('<div>:message</div>')) !!}
+                </div>
+            @endif
+            
             @yield('content')
         </main>
         </div>

@@ -121,6 +121,17 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         // return dd($request->all());
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'phone_number' => 'required',
+            'college_department' => 'required',
+            'home_address' => 'required',
+            'present_address' => 'required',
+            'age' => 'required',
+            'birthdate' => 'required',
+        ]);
         
         $imagePath = null;
         
