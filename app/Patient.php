@@ -261,6 +261,6 @@ class Patient extends Model
 	public function getFamilyHistoryAttr($key) 
 	{
 		return isset($this->getFamilyHistory()[$key]) ?
-			($this->getFamilyHistory()[$key]) : '';
+			($this->getFamilyHistory()[$key]) : [];
 	}
 }
