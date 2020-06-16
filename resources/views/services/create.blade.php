@@ -56,11 +56,8 @@
             <div class="form-row">
               <div class="col-md-6 mb-3 ml-5 mx-auto" style="width: 200px;">
                 <label for="validationCustom03">Added By</label>
-                <select name="added_by" class="custom-select" required>
-                  @foreach(\App\User::get() as $user)
-                    <option value="{{ $user->id }}">{{ $user->fullName() }}</option>
-                  @endforeach
-                  </select>
+                <input name="added_by" value="{{ auth()->user()->fullName() }}" disabled type="text" class="form-control">
+                <input name="added_by" value="{{ auth()->user()->id }}" hidden type="text" class="form-control">
                 <div class="invalid-feedback">
                   Please provide name.
                 </div>
