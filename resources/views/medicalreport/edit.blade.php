@@ -178,18 +178,24 @@
                          </div>
                     </div>
                     <div class="form-group row">
-                        <label for="attached_file" class="col-sm-2 col-form-label"><i><b>Attach File:</b></i></label>
+                        <label for="file" class="col-sm-2 col-form-label"><i><b>Attach File:</b></i></label>
                             <div class="col-sm-10">
                                 <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="attached_file" name="attached_file">
-                                <label class="custom-file-label" for="attached_file">Choose file</label>
+                                <input type="file" class="custom-file-input" id="file" name="file">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
                     </div>
                     <div class="form-group row">
                         <label for="attending_physician" class="col-sm-2 col-form-label"><i><b>ATTENDING PHYSICIAN:</b></i></label>
                         <div class="col-sm-10">
-                            <input class="form-control mt-3" id="attending_physician" name="attending_physician" value="{{ $medicalRecord->attending_physician }}" readonly />
+                            <input class="form-control mt-3" id="attending_physician"  value="{{ $medicalRecord->attending_physician }}" readonly />
+                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="attending_physician" class="col-sm-2 col-form-label"><i><b>To be Update By:</b></i></label>
+                        <div class="col-sm-10">
+                            <input class="form-control mt-3" id="attending_physician" name="attending_physician" value="{{ auth()->user()->fullName() }}" readonly />
                          </div>
                     </div>
                     <div class="modal-footer">

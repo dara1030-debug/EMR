@@ -705,12 +705,12 @@
                                                                 <br><br>
                                                                 <div class="form-check-inline">
                                                                     <label class="form-control-label mr-2 mb-2">Added By: </label>
-                                                                    <input class="form-control col-sm-10" autocomplete="off" type="text" name="by" value="">
+                                                                <input class="form-control col-sm-10" autocomplete="off" type="text" name="by" value="{{ Auth::user()->first_name . " " . Auth::user()->last_name }}" readonly/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="form-check-inline">
                                                                         <label class="form-control-label mr-2 "><br>License No.</label>
-                                                                        <input class="form-control col-sm-8" type="number" autocomplete="off" name="license_no" value="">
+                                                                        <input class="form-control col-sm-8" type="number" autocomplete="off" name="license_no" value="{{ Auth::user()->license_number }}" readonly/>
                                                                     </div>
                                                                 </div> 
                                                                 <b class="font-italic">MEDICAL EXAMINER</b> 

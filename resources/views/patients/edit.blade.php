@@ -723,16 +723,30 @@
                                                 
                                                 <br><br>
                                                 <div class="form-check-inline">
-                                                <label class="form-control-label mr-2 mb-2">Added By: </label>
-                                                <input class="form-control col-sm-12" autocomplete="off" type="text" name="by" value="{{ $patient->getAssessmentAttr('by') }}">
+                                                    <label class="form-control-label mr-2 mb-2">Added By: </label>
+                                                    <input class="form-control col-sm-12" autocomplete="off" type="text"  value="{{ $patient->getAssessmentAttr('by') }}" readonly/>
                                                 </div>
                                                 <div class="form-group">
-                                                <div class="form-check-inline">
-                                                <label class="form-control-label mr-2 "><br>License No.</label>
-                                                <input class="form-control col-sm-8" autocomplete="off" type="number" name="license_no" value="{{ $patient->getAssessmentAttr('license_no') }}">
-                                                </div>
+                                                    <div class="form-check-inline">
+                                                        <label class="form-control-label mr-2 "><br>License No.</label>
+                                                        <input class="form-control col-sm-8" autocomplete="off" type="number"  value="{{ $patient->getAssessmentAttr('license_no') }}" readonly/>
+                                                    </div>
                                                 </div> 
+                                                <div class="form-check-inline">
+                                                    <label class="form-control-label mr-2 mb-2">To be Updated By: </label>
+                                                    <input class="form-control col-sm-12" autocomplete="off" type="text" name="by" value="{{ Auth::user()->first_name . " " . Auth::user()->last_name }}" readonly/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-check-inline">
+                                                        <label class="form-control-label mr-2 "><br>License No.</label>
+                                                        <input class="form-control col-sm-8" autocomplete="off" type="number" name="license_no" value="{{ Auth::user()->license_number }}" readonly/>
+                                                    </div>
+                                                </div> 
+                                                
+                                                <div class="row justify-content-center">
+                                                    <br>
                                                 <b class="font-italic">MEDICAL EXAMINER</b> 
+                                                </div>
                                                 </div>
                                                 </div>
                                                 </div> {{--end /div tab7--}}

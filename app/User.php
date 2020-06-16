@@ -38,6 +38,11 @@ class User extends Authenticatable
         return "$this->first_name $this->middle_name $this->last_name";
     }
     
+    public function license()
+    {
+        return "$this->license_number";
+    }
+
     public function role()
     {
         return $this->belongsTo('App\Role');

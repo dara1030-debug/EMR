@@ -62,12 +62,15 @@
         <div class="form-group row">
           <label for="added_by" class="col-sm-2 col-form-label"><b>Added by:</b></label>
           <div class="col-sm-10">
-            <select name="added_by" class="custom-select" required>
-              <option value="{{ $service->addedBy->id }}">{{ $service->addedBy->fullName() }}</option>
-              @foreach(\App\User::get() as $user)
-              <option value="{{ $user->id }}">{{ $user->fullName() }}</option>
-              @endforeach
-            </select>
+            <input  value="{{ $service->addedBy->fullName() }}" disabled type="text" class="form-control">
+            <input  value="{{ $service->addedBy->id }}" hidden type="text" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="added_by" class="col-sm-2 col-form-label"><b>To be Update by:</b></label>
+          <div class="col-sm-10">
+            <input name="added_by" value="{{ auth()->user()->fullName() }}" disabled type="text" class="form-control">
+            <input name="added_by" value="{{ auth()->user()->id }}" hidden type="text" class="form-control">
           </div>
         </div>
 
