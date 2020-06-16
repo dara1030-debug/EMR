@@ -2,10 +2,10 @@
 
 @section('content')
   <div class="card border-info">
-    <div class="card-header border-info">
+    <div class="card-header border">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="/users">Users</a>
+          <a class="nav-link active" href="/users">Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/users/create">Add New User</a>
@@ -13,9 +13,14 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('users.archive') }}">Archive</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="/users">View User... 
-            <button type="button" class="close" href="/patients">&times; </button> </a>
+      </ul>
+    </div>
+    <div class="card-header border-info">
+      <ul class="nav nav-tabs card-header-tabs">
+        
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ route('users.index') }}">View User... 
+            <button type="button" class="close">&times; </button> </a>
           </li>
       </ul>
     </div>

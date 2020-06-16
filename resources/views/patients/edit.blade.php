@@ -4,10 +4,10 @@
     
 
     <div class="card border-info">
-        <div class="card-header border-info">
+        <div class="card-header border">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="/patients">Patients</a>
+                    <a class="nav-link active" href="/patients">Patients</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/patients/create">Add New Patient</a>
@@ -15,12 +15,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Archive</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/patients">Edit Patient... 
-                    <button type="button" class="close" href="/users">&times; </button> </a>
-                </li>
             </ul>
         </div>
+        <div class="card-header border-info">
+            <ul class="nav nav-tabs card-header-tabs">
+              
+                <li class="nav-item">
+                  <a class="nav-link active" href="{{ route('patients.index') }}">Edit Patient... 
+                  <button type="button" class="close">&times; </button> </a>
+                </li>
+            </ul>
+          </div>
 
         <div class="card-body">
             <div class="container px-10">

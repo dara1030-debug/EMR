@@ -602,7 +602,7 @@
                                                                 <input type="number" autocomplete="off" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>°C</i></label>
                                                                 <label for="pulse_rate"  class="col-sm-2 ml-5 ">Pulse Rate :</label> 
-                                                                <input type="number" autocomplete="off" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
+                                                                <input type="text" autocomplete="off" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                         </div>
                                                     </div>
@@ -610,10 +610,10 @@
                                                         <div class="form-inline ">
                                                             
                                                                 <label for="r_r" class="mr-sm-2">Respiratory Rate:</label>
-                                                                <input type="number" autocomplete="off" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
+                                                                <input type="text" autocomplete="off" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                                 <label for="bp" class="ml-sm-5 ">Blood Pressure :</label> 
-                                                                <input type="number" autocomplete="off" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
+                                                                <input type="text" autocomplete="off" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>mmhg</i></label>
                                                         </div>
                                                     </div>

@@ -4,10 +4,10 @@
 @section('content')
 
 <div class="card border-info">
-    <div class="card-header border-info">
+    <div class="card-header border">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="/patients">Patients</a>
+          <a class="nav-link active" href="/patients">Patients</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/patients/create">Add New Patient</a>
@@ -15,6 +15,11 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('patients.archive') }}">Archive</a>
           </li>
+      </ul>
+    </div>
+    <div class="card-header border-info">
+      <ul class="nav nav-tabs card-header-tabs">
+        
           <li class="nav-item">
             <a class="nav-link active" href="{{ route('patients.index') }}">View Patient... 
             <button type="button" class="close">&times; </button> </a>
@@ -481,7 +486,7 @@
                                                                 <input type="number" value="{{ $patient->getVitalSignAttr('temperature') }}" class="form-control mb-3 col-sm-3 mt-3" name="temperature" id="temp" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>°C</i></label>
                                                                 <label for="pulse_rate" class="col-sm-2 ml-5 ">Pulse Rate :</label> 
-                                                                <input type="number" value="{{ $patient->getVitalSignAttr('pulse_rate') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
+                                                                <input type="text" value="{{ $patient->getVitalSignAttr('pulse_rate') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="pulse_rate" id="pulse_rate" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                         </div>
                                                     </div>
@@ -489,10 +494,10 @@
                                                         <div class="form-inline ">
                                                             
                                                                 <label for="r_r" class="mr-sm-2">Respiratory Rate:</label>
-                                                                <input type="number" value="{{ $patient->getVitalSignAttr('respiratory_rate') }}" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
+                                                                <input type="text" value="{{ $patient->getVitalSignAttr('respiratory_rate') }}" class="form-control mb-3 col-sm-3 mt-3" name="respiratory_rate" id="r_r" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>bpm</i></label>
                                                                 <label for="bp" class="ml-sm-5 ">Blood Pressure :</label> 
-                                                                <input type="number" value="{{ $patient->getVitalSignAttr('blood_pressure') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
+                                                                <input type="text" value="{{ $patient->getVitalSignAttr('blood_pressure') }}" class="form-control mb-3 ml-2 col-sm-3 mt-3" name="blood_pressure" id="bp" value="">
                                                                 <label class="form-control-label ml-1 mr-2"><i>mmhg</i></label>
                                                         </div>
                                                     </div>

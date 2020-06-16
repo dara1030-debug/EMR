@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<!DOCTYPE html>
-<html>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -53,7 +51,6 @@ ul{
   }
 }
 </style>
-<body>
 
 <!-- First Parallax Gradient Image Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min">
@@ -69,6 +66,8 @@ ul{
 
 <!-- Container (About Section) -->
 <div class="w3-padding-64 w3-center">
+  <br><br><br>
+
   <h3 class="w3-center">MINDANAO STATE UNIVERSITY <br> Iligan Institute of Technology</h3>
   <p class="w3-center"><em>Institute Clinic</em></p>
   <p>As the Mindanao State University-Iligan Institute of Technology aims for the holistic <br> development of the individual, it deems important the health and overall wellbeing of <br> students and employees alike. MSU-IIT constituents can be assured that their medical <br> and health needs are met all throughout their stay in the campus, even on medical <br> emergency situations.<br><br>
@@ -165,8 +164,5 @@ function toggleFunction() {
     }
 }
 </script>
-
-</body>
-</html>
 
 @stop

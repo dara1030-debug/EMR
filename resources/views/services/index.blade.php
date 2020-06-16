@@ -28,12 +28,14 @@
             </div> 
         </form> 
       </div>
-        <table class="table table-bordereds table-responsive-md table-hover">
+      <div class="row">
+        <div class="col table-responsive">
+        <table class="table table-bordered  table-hover">
             <thead class="text-center thead-light">
               <tr>
-                <th scope="col">Name of Service</th>
-                <th scope="col">Description</th>
-                <th scope="col">Action</th>
+                <th style="width: 20%">Name of Service</th>
+                <th style="width: 60%">Description</th>
+                <th style="width: 20%">Action</th>
               </tr>
             </thead>
             <tbody id="myTable">
@@ -57,6 +59,8 @@
             </tbody>
         
           </table>
+        </div>
+      </div>
     </div>
   </div>
 

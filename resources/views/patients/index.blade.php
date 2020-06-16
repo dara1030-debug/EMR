@@ -51,7 +51,7 @@
 	          	@foreach ($patients as $patient)
 	          	<tr>
                   <td>
-                    <img src="{{ $patient->avatar ?? 'http://dev.emr.io/img/no_avatar.jpg' }}" style="height: 50px; width: 50px; border-radius: 50%" />
+                    <img src="{{ $patient->avatar ?? 'img/no_avatar.jpg' }}" style="height: 50px; width: 50px; border-radius: 50%" />
                   </td>
                 	<td>{{ $patient->id_number }}</td>
                		<td>{{ $patient->last_name }}</td>

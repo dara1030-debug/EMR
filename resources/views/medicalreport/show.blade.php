@@ -176,6 +176,7 @@
                                                     </div>
                                                 </div>
                                              </div>
+                                             {{--
                                             <div class="form-group row ">
                                                 <label for="by_nurse_assigned" class="col-sm-2 col-form-label mt-4"><b>By : </b></label>
                                                 <div class="col-sm-10 ">
@@ -185,6 +186,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            --}}
                                         <hr>
                                             <div class="form-group row">
                                                     <label for="history_p_i" class="col-sm-2 col-form-label"><b>History of Present Illness:</b></label>

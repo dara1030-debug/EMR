@@ -41,7 +41,7 @@ class MedicalRecordController extends Controller
 			"date_of_consultation" => "required",
 			"time_of_consultation" => "required",
 			"chief_complaint" => "required",
-			"nurse_assigned" => "required",
+			/** "nurse_assigned" => "required", */
 			"diagnosis" => "required",
 		]);
 
@@ -81,7 +81,7 @@ class MedicalRecordController extends Controller
 			"date_of_consultation" => "required",
 			"time_of_consultation" => "required",
 			"chief_complaint" => "required",
-			"nurse_assigned" => "required",
+			/** "nurse_assigned" => "required", */
 			"diagnosis" => "required",
 		]);
 
