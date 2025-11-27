@@ -52,14 +52,21 @@
                 	<td>{{ $patient->first_name }}</td>
                 	<td>{{ $patient->middle_name }}</td>
                 	<td>
-                    <form action="{{ route('patients.delete', $patient->id) }}" id="deleteForm" onsubmit="return confirmDelete()" method="post">
-                      @csrf
-                      @method('DELETE')
-                      <a href="{{ route('patients.restore', $patient->id) }}"><i class="fa fa-refresh" style="padding-right:20px"aria-hidden="true"></a></i>
-                      <button type="submit" class="btn">
-                        <i class="fa fa-trash" style="padding-right:15px"aria-hidden="true"></i> 
-                      </button>{{--archive nalang daw instead of deleting the files of patient--}}
-                    </form>
+                  <form action="{{ route('patients.delete', $patient->id) }}" id="deleteForm" onsubmit="return false;" method="post">
+    @csrf
+    @method('DELETE')
+    <a href="{{ route('patients.restore', $patient->id) }}">
+        <i class="fa fa-refresh" style="padding-right:20px" aria-hidden="true"></i>
+    </a>
+
+    <!-- Disabled Delete Button -->
+    <button type="button" class="btn btn-secondary" disabled
+        style="cursor:not-allowed; opacity:0.6;" title="Delete disabled">
+        <i class="fa fa-trash" style="padding-right:3px" aria-hidden="true"></i>
+    </button>
+    {{-- archive nalang daw instead of deleting the files of patient --}}
+</form>
+
                   </td>
 	      	      </tr>
             @endforeach

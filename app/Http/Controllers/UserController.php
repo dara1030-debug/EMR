@@ -11,79 +11,63 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display active users.
      */
     public function index()
     {
-        $users = User::with('role')->get();
-
+        $users = User::with('role')->whereNull('deleted_at')->get();
         return view('users.index', compact('users'));
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display archived users.
      */
     public function archive()
     {
         $users = User::with('role')
-            ->withTrashed()
-            ->where('deleted_at', '!=', null)
+            ->onlyTrashed()
             ->get();
 
         return view('users.archive', compact('users'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the form for creating a new user.
      */
     public function create()
     {
         $roles = Role::all();
-
         return view('users.create', compact('roles'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created user.
      */
     public function store(Request $request)
     {
         $imagePath = null;
-        
+
         if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
             $request->validate([
-                'avatar' => 'image|max:2048|mimes: jpg,jpeg,png',
+                'avatar' => 'image|max:2048|mimes:jpg,jpeg,png',
             ]);
 
-            /** Variables. */
             $avatar = $request->file('avatar');
             $host = $request->getSchemeAndHttpHost();
-
-            /** Uploading the image. */
             $storage = Storage::disk('public');
             $filePath = $storage->putFile('avatars', new File($avatar), 'public');
-            $imagePath = $host.'/storage/'.$filePath;
+            $imagePath = $host . '/storage/' . $filePath;
         }
-        
+
         $request->validate([
             'first_name' => 'required',
             'middle_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
             'password' => 'required|confirmed',
-            'password_confirmation' => 'required',
             'civil_status' => 'required',
             'age' => 'required',
-            'birthdate' => 'required', 
+            'birthdate' => 'required',
             'present_address' => 'required',
             'gender' => 'required',
             'role_id' => 'required',
@@ -91,7 +75,7 @@ class UserController extends Controller
             'license_number' => 'required',
         ]);
 
-        $user = User::create([
+        User::create([
             'role_id' => $request->role_id,
             'avatar' => $imagePath,
             'email' => $request->email,
@@ -107,219 +91,157 @@ class UserController extends Controller
             'home_address' => $request->home_address,
             'phone_number' => $request->phone_number,
             'license_number' => $request->license_number,
-            'last_activity' => $request->last_activity,
         ]);
 
         return redirect()->back()->with('success', 'A user has been successfully added.');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     *
-   * public function show($id)
-    *{
-     *   $user = User::findOrFail($id);
-
-      *  return view('users.show', compact('user'));
-    *}*/
-
+     * Show a specific user.
+     */
     public function show(User $user)
     {
-        
         return view('users.show')->with('user', $user);
     }
-    
+
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Edit user details.
      */
     public function edit($id)
     {
         $user = User::findOrFail($id);
-
         return view('users.edit', compact('user'));
     }
 
     /**
-     * Searches for a patient from DB.
-     * 
-     * @return Collection
+     * Search active users.
      */
     public function search()
     {
         $data = request()->validate([
             'search' => 'required',
         ]);
-        
-        $users = User::where('first_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('first_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%')
-            ->paginate(20);
 
-        return view('users.search', [
-            'users' => $users 
-        ]);
+        $users = User::where(function ($query) use ($data) {
+            $query->where('first_name', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
+                ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%');
+        })->paginate(20);
+
+        return view('users.search', ['users' => $users]);
     }
 
     /**
-     * Searches for a patient from DB.
-     * 
-     * @return Collection
+     * Search archived users.
      */
     public function archive_search()
     {
         $data = request()->validate([
             'search' => 'required',
         ]);
-        
-        $users = User::onlyTrashed()
-            ->where('first_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('first_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
-            ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%')
-            ->paginate(20);
 
-        return view('users.archive_search', [
-            'users' => $users 
-        ]);
+        $users = User::onlyTrashed()
+            ->where(function ($query) use ($data) {
+                $query->where('first_name', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('middle_name', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('last_name', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('gender', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('phone_number', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('civil_status', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('home_address', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('present_address', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('age', 'LIKE', '%' . $data['search'] . '%')
+                    ->orWhere('birthdate', 'LIKE', '%' . $data['search'] . '%');
+            })->paginate(20);
+
+        return view('users.archive_search', ['users' => $users]);
     }
-    
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update a user.
      */
     public function update(Request $request, $id)
     {
-        $imagePath = null;
-        
-        if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
-            $request->validate([
-                'avatar' => 'image|max:2048|mimes: jpg,jpeg,png',
-            ]);
+        $user = User::findOrFail($id);
 
-            /** Variables. */
-            $avatar = $request->file('avatar');
-            $host = $request->getSchemeAndHttpHost();
-
-            /** Uploading the image. */
-            $storage = Storage::disk('public');
-            $filePath = $storage->putFile('avatars', new File($avatar), 'public');
-            $imagePath = $host.'/storage/'.$filePath;
-        }
-        
         $request->validate([
             'first_name' => 'required',
             'middle_name' => 'required',
             'last_name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|confirmed',
-            'password_confirmation' => 'required',
+            'password' => 'nullable|confirmed',
             'gender' => 'required',
             'civil_status' => 'required',
             'age' => 'required',
-            'birthdate' => 'required', 
+            'birthdate' => 'required',
             'present_address' => 'required',
             'role_id' => 'required',
             'phone_number' => 'required',
             'license_number' => 'required',
         ]);
 
-        $user = User::findOrFail($id);
-        $user->avatar = $imagePath;
-        $user->role_id = $request->role_id;
-        $user->email = $request->email;
-        $user->first_name = $request->first_name;
-        $user->middle_name = $request->middle_name;
-        $user->last_name = $request->last_name;
-        $user->civil_status = $request->civil_status;
-        $user->age = $request->age;
-        $user->birthdate = $request->birthdate;
-        $user->present_address = $request->present_address;
-        $user->home_address = $request->home_address;
-        $user->phone_number = $request->phone_number;
-        $user->license_number = $request->license_number;
-        $user->last_activity = $request->last_activity;
-        
-        if ($request->get('gender') != null) {
-            $user->gender = $request->gender;
+        $user->fill($request->except(['password', 'avatar']));
+
+        if ($request->hasFile('avatar') && $request->file('avatar')->isValid()) {
+            $avatar = $request->file('avatar');
+            $host = $request->getSchemeAndHttpHost();
+            $storage = Storage::disk('public');
+            $filePath = $storage->putFile('avatars', new File($avatar), 'public');
+            $user->avatar = $host . '/storage/' . $filePath;
         }
 
-        
-        if ($request->get('password') != null) {
+        if ($request->filled('password')) {
             $user->password = bcrypt($request->password);
-        }
-
-        if ($request->get('gender') != null) {
-            $user->gender = $request->gender;
         }
 
         $user->save();
 
-        return redirect()->back()->with('success', 'A user has been updated.');
+        return redirect()->back()->with('success', 'User has been updated successfully.');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Soft delete (archive) user.
      */
     public function destroy($id)
     {
-        $user = User::findOrfail($id);
+        $user = User::findOrFail($id);
 
-        if($user->delete()) {
-            return redirect()->back()->with('success', 'A user has been deleted successfully!');
+        // prevent deleting the admin itself
+        if ($user->role->name === 'Administrator') {
+            return redirect()->back()->with('error', 'You cannot archive an Administrator account.');
         }
+
+        $user->delete(); // soft delete
+        return redirect()->back()->with('success', 'User archived successfully.');
     }
 
+    /**
+     * Disable permanent delete.
+     */
     public function deleteUser($id)
     {
-        $user = User::withTrashed()->where('id', $id)->first();
-
-        if(!isset($user)) {
-            return redirect()->back()->with('error', 'The system was unable to delete the user permanently.');
-        }
-
-        $user->forceDelete();
-        
-        return redirect()->back()->with('success', 'A user has been deleted permanently.');
+        return redirect()->back()->with('error', 'Permanent deletion is disabled. Please contact the system administrator.');
     }
 
+    /**
+     * Restore archived user.
+     */
     public function restoreUser($id)
     {
-        $user = User::withTrashed()->where('id', $id)->first();
+        $user = User::withTrashed()->find($id);
 
-        if(!isset($user)) {
-            return redirect()->back()->with('error', 'The system was unable to restore the user.');
+        if (!$user) {
+            return redirect()->back()->with('error', 'Unable to restore user.');
         }
 
         $user->restore();
-        
-        return redirect()->back()->with('success', 'A user has been restored successfully!');
+        return redirect()->back()->with('success', 'User restored successfully.');
     }
 }

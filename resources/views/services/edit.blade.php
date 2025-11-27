@@ -7,7 +7,7 @@
       <strong>{{ $message }}</strong>
   </div>
   @endif
-
+{{---
   @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -17,6 +17,7 @@
           </ul>
       </div>
   @endif
+  ---}}
 
 <div class="card text-center border-info">
     <div class="card-header border">

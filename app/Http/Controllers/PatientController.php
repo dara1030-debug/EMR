@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ActivityLogger;
 use App\HealthExaminationRecord;
 use App\Patient;
 use Illuminate\Http\Request;
@@ -171,6 +172,8 @@ class PatientController extends Controller
         $data['avatar'] = $imagePath;
         
         $patient = Patient::create($data);
+
+        ActivityLogger::log(auth()->user()->name . ' added a new patient (' . $patient->first_name . ' ' . $patient->last_name . ')');
         
         $pastMedicalHistory = $request->only([
             'pastmedical_history',
@@ -335,6 +338,8 @@ class PatientController extends Controller
         
         $patient = Patient::find($id);
         $patient->update($data);
+
+        ActivityLogger::log(auth()->user()->name . ' updated a patient record (' . $patient->first_name . ' ' . $patient->last_name . ')');
         
         $pastMedicalHistory = $request->only([
             'pastmedical_history',
@@ -437,6 +442,8 @@ class PatientController extends Controller
         $patient = Patient::findOrFail($id);
         $patient->delete();
 
+        ActivityLogger::log(auth()->user()->name . ' archived patient (' . $patient->first_name . ' ' . $patient->last_name . ')');
+
         return redirect()->back()->with('success', 'A patient has been archived.');
     }
 
@@ -449,6 +456,8 @@ class PatientController extends Controller
         }
 
         $patient->forceDelete();
+
+        ActivityLogger::log(auth()->user()->name . ' permanently deleted patient (' . $patient->first_name . ' ' . $patient->last_name . ')');
         
         return redirect()->back()->with('success', 'A patient has been deleted permanently.');
     }
@@ -462,6 +471,8 @@ class PatientController extends Controller
         }
 
         $patient->restore();
+
+        ActivityLogger::log(auth()->user()->name . ' restored patient (' . $patient->first_name . ' ' . $patient->last_name . ')');
         
         return redirect()->back()->with('success', 'A patient has been restored successfully!');
     }

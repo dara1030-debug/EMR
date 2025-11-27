@@ -50,6 +50,12 @@ class Patient extends Model
 		return $this->belongsTo('App\User', 'added_by');
 	}
 
+	public function creator()
+{
+    return $this->belongsTo(User::class, 'added_by');
+}
+
+
 	/**
 	 * This patient information was updated by this user.
 	 * 

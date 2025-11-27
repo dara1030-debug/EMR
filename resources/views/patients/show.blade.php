@@ -570,7 +570,7 @@
                                                                 <div class="form-check-inline">
                                                                     <label class="form-control-label mr-2 mb-2">Added By: </label>
                                                                     <input class="form-control col-sm-12" type="text" name="by" value="{{ $patient->getAssessmentAttr('by') }}">
-                                                                   
+                                                                    
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <div class="form-check-inline">

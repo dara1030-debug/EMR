@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', function () {
     return view('auth.login');
+Route::get('/activity-logs', 'ActivityLogController@index')->name('activity.logs');
 });
 
 Route::get('error', function () {
@@ -37,6 +38,14 @@ Route::get('/forgot-password/verify/{email}', 'ForgotPasswordController@verify')
 Route::get('/test', function () {
     return new ForgotPasswordMail(User::first());
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/change-password', [App\Http\Controllers\Auth\PasswordChangeController::class, 'showChangePasswordForm'])
+        ->name('password.change');
+    Route::post('/change-password', [App\Http\Controllers\Auth\PasswordChangeController::class, 'updatePassword'])
+        ->name('password.update');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
